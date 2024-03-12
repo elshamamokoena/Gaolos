@@ -1,0 +1,12 @@
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\bin\Debug\net8.0\Gaolos.Domain.deps.json
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\bin\Debug\net8.0\Gaolos.Domain.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\bin\Debug\net8.0\Gaolos.Domain.pdb
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\obj\Debug\net8.0\Gaolos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\obj\Debug\net8.0\Gaolos.Domain.AssemblyInfoInputs.cache
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\obj\Debug\net8.0\Gaolos.Domain.AssemblyInfo.cs
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\obj\Debug\net8.0\Gaolos.Domain.csproj.CoreCompileInputs.cache
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\obj\Debug\net8.0\Gaolos.Domain.sourcelink.json
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\obj\Debug\net8.0\Gaolos.Domain.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\obj\Debug\net8.0\refint\Gaolos.Domain.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\obj\Debug\net8.0\Gaolos.Domain.pdb
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Domain\obj\Debug\net8.0\ref\Gaolos.Domain.dll

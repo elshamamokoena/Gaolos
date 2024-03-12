@@ -1,0 +1,97 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net6.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net6.0\\compressed\\sj1p5camea.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Gaolos.Web.App.styles.css",
+      "PackagePath": "staticwebassets\\Gaolos.Web.App.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Gaolos.Web.App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Gaolos.Web.App.props",
+      "PackagePath": "build\\Gaolos.Web.App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Gaolos.Web.App.props",
+      "PackagePath": "buildMultiTargeting\\Gaolos.Web.App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Gaolos.Web.App.props",
+      "PackagePath": "buildTransitive\\Gaolos.Web.App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

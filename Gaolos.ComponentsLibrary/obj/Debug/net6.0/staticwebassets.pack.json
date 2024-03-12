@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentsLibrary\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Gaolos.ComponentsLibrary.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Gaolos.ComponentsLibrary.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentsLibrary\\wwwroot\\background.png",
+      "PackagePath": "staticwebassets\\background.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentsLibrary\\wwwroot\\exampleJsInterop.js",
+      "PackagePath": "staticwebassets\\exampleJsInterop.js"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Gaolos.ComponentsLibrary.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Gaolos.ComponentsLibrary.props",
+      "PackagePath": "build\\Gaolos.ComponentsLibrary.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Gaolos.ComponentsLibrary.props",
+      "PackagePath": "buildMultiTargeting\\Gaolos.ComponentsLibrary.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Gaolos.ComponentsLibrary.props",
+      "PackagePath": "buildTransitive\\Gaolos.ComponentsLibrary.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

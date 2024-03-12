@@ -1,0 +1,6 @@
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence\obj\Debug\net6.0\Gaolos.Persistence.csproj.AssemblyReference.cache
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence\obj\Debug\net6.0\Gaolos.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence\obj\Debug\net6.0\Gaolos.Persistence.AssemblyInfoInputs.cache
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence\obj\Debug\net6.0\Gaolos.Persistence.AssemblyInfo.cs
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence\obj\Debug\net6.0\Gaolos.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence\obj\Debug\net6.0\Gaolos.Persistence.sourcelink.json
