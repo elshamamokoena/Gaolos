@@ -7,13 +7,15 @@ namespace Gaolos.Application.Features.Categories.Commands.CreateCateogry
 {
     public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, CreateCategoryCommandResponse>
     {
-        private readonly IAsyncRepository<Category> _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
 
-        public CreateCategoryCommandHandler(IMapper mapper, IAsyncRepository<Category> categoryRepository)
+        public CreateCategoryCommandHandler(IMapper mapper, ICategoryRepository categoryRepository)
         {
-            _mapper = mapper;
-            _categoryRepository = categoryRepository;
+            _mapper = mapper 
+                ?? throw new ArgumentNullException(nameof(mapper));
+            _categoryRepository = categoryRepository 
+                ?? throw new ArgumentNullException(nameof(categoryRepository));
         }
 
         public async Task<CreateCategoryCommandResponse> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
@@ -35,7 +37,8 @@ namespace Gaolos.Application.Features.Categories.Commands.CreateCateogry
             if (createCategoryCommandResponse.Success)
             {
                 var category = new Category() { Name = request.Name };
-                category = await _categoryRepository.AddAsync(category);
+                _categoryRepository.AddCategory(category);
+                await _categoryRepository.SaveAsync();
                 createCategoryCommandResponse.Category = _mapper.Map<CreateCategoryDto>(category);
             }
 

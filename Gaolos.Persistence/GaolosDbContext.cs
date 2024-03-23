@@ -1,4 +1,5 @@
-﻿using Gaolos.Domain.Common;
+﻿using Gaolos.Application.Contracts;
+using Gaolos.Domain.Common;
 using Gaolos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -7,46 +8,55 @@ namespace Gaolos.Persistence
 {
     public class GaolosDbContext : DbContext
     {
+        private readonly ILoggedInUserService? _loggedInUserService;
+
         public GaolosDbContext(DbContextOptions<GaolosDbContext> options)
            : base(options)
         {
         }
 
-      //  public DbSet<MenuItem> MenuItems { get; set; }
+        public GaolosDbContext(DbContextOptions<GaolosDbContext> options, ILoggedInUserService loggedInUserService)
+    : base(options)
+        {
+            _loggedInUserService = loggedInUserService;
+        }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<Menu> Menus { get; set; }  
+        public DbSet<Submenu> Submenus { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; }
 
-      //  public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GaolosDbContext).Assembly);
 
             //seed data, added through migrations
-            var mediterraneanGuid = Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDA}");
-            var pizzaGuid = Guid.Parse("{6313179F-7837-473A-A4D5-A5571B44E6A6}");
-            var pastaGuid = Guid.Parse("{BF3F3002-7E53-441E-8B76-F6280BE284AA}");
-            var burgersGuid = Guid.Parse("{FE98F549-E790-4E9F-AA16-18C2292A2EE9}");
+            var hauteCuisine = Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDA}");
+            var pizzaAndPastaGuid = Guid.Parse("{6313179F-7837-473A-A4D5-A5571B44E6A6}");
+            var noodlesGuid = Guid.Parse("{BF3F3002-7E53-441E-8B76-F6280BE284AA}");
+            var burgersAndFriesGuid = Guid.Parse("{FE98F549-E790-4E9F-AA16-18C2292A2EE9}");
             var grillAndSteakGuid = Guid.Parse("{AE98F549-E790-4E9F-AA16-18C2292A2EE9}");
             var chickenGuid = Guid.Parse("{BE98F549-E790-4E9F-AA16-18C2292A2EE9}");
             var healthyGuid = Guid.Parse("{CE98F549-E790-4E9F-AA16-18C2292A2EE9}");
             var fishAndSeafoodGuid = Guid.Parse("{DE98F549-E790-4E9F-AA16-18C2292A2EE9}");
             var coffeeAndDessertsGuid = Guid.Parse("{EE98F549-E790-4E9F-AA16-18C2292A2EE9}");
-            var asianGuid = Guid.Parse("{EE98F549-E790-5E9F-AA15-18C2292A2EE9}");
-            var indianGuid = Guid.Parse("{EA98F549-E710-5E9F-AA15-18C2392A2EE9}");
+           // var asianGuid = Guid.Parse("{EE98F549-E790-5E9F-AA15-18C2292A2EE9}");
+           // var indianGuid = Guid.Parse("{EA98F549-E710-5E9F-AA15-18C2392A2EE9}");
 
             modelBuilder.Entity<Category>().HasData(new Category
             {
-                CategoryId = mediterraneanGuid,
-                Name = "Mediterranean",
+                CategoryId = hauteCuisine,
+                Name = "Haute Cuisine",
                 ImageUrl = "img/food-delivery/category/04.jpg",
                 SvgUrl = "img/food-delivery/icons/pizza.svg",
 
             });
             modelBuilder.Entity<Category>().HasData(new Category
             {
-                CategoryId = asianGuid,
-                Name = "Asian",
+                CategoryId = noodlesGuid,
+                Name = "Noodles",
                 ImageUrl = "img/food-delivery/category/04.jpg",
                 SvgUrl = "img/food-delivery/icons/pizza.svg",
 
@@ -54,25 +64,18 @@ namespace Gaolos.Persistence
 
             modelBuilder.Entity<Category>().HasData(new Category
             {
-                CategoryId = pizzaGuid,
-                Name = "Pizza",
+                CategoryId = pizzaAndPastaGuid,
+                Name = "Pizza & Pasta",
                 ImageUrl = "img/food-delivery/category/04.jpg",
                 SvgUrl = "img/food-delivery/icons/pizza.svg",
 
             });
      
+        
             modelBuilder.Entity<Category>().HasData(new Category
             {
-                CategoryId = pastaGuid,
-                Name = "Pasta",
-                ImageUrl = "img/food-delivery/category/02.jpg",
-                SvgUrl = "img/food-delivery/icons/noodles.svg"
-
-            });
-            modelBuilder.Entity<Category>().HasData(new Category
-            {
-                CategoryId = burgersGuid,
-                Name = "Burgers",
+                CategoryId = burgersAndFriesGuid,
+                Name = "Burgers & Fries",
                 ImageUrl = "img/food-delivery/category/01.jpg",
                 SvgUrl = "img/food-delivery/icons/burger.svg"
 
@@ -96,7 +99,7 @@ namespace Gaolos.Persistence
             modelBuilder.Entity<Category>().HasData(new Category
             {
                 CategoryId = healthyGuid,
-                Name = "Healthy",
+                Name = "Healthy food",
                 ImageUrl = "img/food-delivery/category/06.jpg",
                 SvgUrl = "img/food-delivery/icons/healthy.svg"
 
@@ -116,13 +119,7 @@ namespace Gaolos.Persistence
                 ImageUrl = "img/food-delivery/category/05.jpg",
                 SvgUrl = "img/food-delivery/icons/coffee.svg"
             });
-            modelBuilder.Entity<Category>().HasData(new Category
-            {
-                CategoryId = indianGuid,
-                Name = "Indian",
-                ImageUrl = "img/food-delivery/category/05.jpg",
-                SvgUrl = "img/food-delivery/icons/coffee.svg"
-            });
+       
 
             // seed restaurants
             var kfcGuid = Guid.Parse("{6313179F-7837-473A-A4D5-B5571B43E6A6}");
@@ -163,21 +160,21 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = romansGuid,
                 Name = "Roman's Pizza",
-                CategoryId = pizzaGuid,
+                CategoryId = pizzaAndPastaGuid,
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = debonairsGuid,
                 Name = "Debonair's Pizza",
-                CategoryId = pizzaGuid,
+                CategoryId = pizzaAndPastaGuid,
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = mcdGuid,
                 Name = "McDonald's",
-                CategoryId = burgersGuid,
+                CategoryId = burgersAndFriesGuid,
 
             });
 
@@ -185,7 +182,7 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = steersGuid,
                 Name = "Steers",
-                CategoryId = burgersGuid,
+                CategoryId = burgersAndFriesGuid,
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
@@ -213,7 +210,7 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = doppiozeroGuid,
                 Name = "Doppio Zero",
-                CategoryId = mediterraneanGuid,
+                CategoryId = hauteCuisine,
 
 
             });
@@ -238,13 +235,13 @@ namespace Gaolos.Persistence
             {
                 RestaurantId= simplyAsiaGuid,
                 Name = "Simply Asia",
-                CategoryId= asianGuid,
+                CategoryId= hauteCuisine,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = andiccio24Guid,
                 Name = "Andiccio24",
-                CategoryId= pizzaGuid,
+                CategoryId= pizzaAndPastaGuid,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
@@ -256,13 +253,13 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = pizzaperfectGuid,
                 Name = "Pizza Perfect",
-                CategoryId= pizzaGuid,
+                CategoryId= pizzaAndPastaGuid,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = pronGuid,
                 Name = "Pron",
-                CategoryId= asianGuid,
+                CategoryId= hauteCuisine,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
@@ -274,7 +271,7 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = pizzaBabyGuid,
                 Name = "Pizza Baby",
-                CategoryId= pizzaGuid,
+                CategoryId= pizzaAndPastaGuid,
             });
 
             var teiAvonGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A1}");
@@ -290,7 +287,7 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = teiAvonGuid,
                 Name = "Tei Avon",
-                CategoryId= mediterraneanGuid,
+                CategoryId= hauteCuisine,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
@@ -302,25 +299,25 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = haokelaiGuid,
                 Name = "Hao Ke Lai",
-                CategoryId= asianGuid,
+                CategoryId= hauteCuisine,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = momoBaohausGuid,
                 Name = "Momo Baohaus",
-                CategoryId= asianGuid,
+                CategoryId= hauteCuisine,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = laPadrinoGuid,
                 Name = "La Padrino",
-                CategoryId= pizzaGuid,
+                CategoryId= pizzaAndPastaGuid,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = asianTwistGuid,
                 Name = "Asian Twist",
-                CategoryId= asianGuid,
+                CategoryId= hauteCuisine,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
@@ -332,7 +329,7 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = chopStixGuid,
                 Name = "Chop Stix",
-                CategoryId= asianGuid,
+                CategoryId= hauteCuisine,
             });
 
             var mikesHeritageHouseGuid = Guid.Parse("{2313179F-1837-173A-A4D5-A5571B43E6A9}");
@@ -355,37 +352,37 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = spiceBurgGreensideGuid,
                 Name = "Spiceburg Greenside",
-                CategoryId= indianGuid,
+                CategoryId= hauteCuisine,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = miyakoSushiGuid,
                 Name = "Miyako Sushi",
-                CategoryId = asianGuid
+                CategoryId = hauteCuisine
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = curryUpGuid,
                 Name = "Curry Up",
-                CategoryId= indianGuid,
+                CategoryId= hauteCuisine,
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = topoGigioGuid,
                 Name = "Topo Gigio",
-                CategoryId= pizzaGuid
+                CategoryId= pizzaAndPastaGuid
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = satoriGuid,
                 Name = "Satori",
-                CategoryId= pizzaGuid
+                CategoryId= pizzaAndPastaGuid
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = pizzaevinoGuid,
                 Name = "Pizza e Vino",
-                CategoryId= pizzaGuid
+                CategoryId= pizzaAndPastaGuid
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
@@ -397,9 +394,730 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = pastaWorxGuid,
                 Name = "Pasta Worx",
-                CategoryId = pastaGuid
+                CategoryId = pizzaAndPastaGuid
             });
 
+
+
+            //seed menus
+
+            var kfcMenuGuid = Guid.Parse("{2313179F-1837-173A-A4D5-A1571B43E6A9}");
+            var debonairsMenuGuid = Guid.Parse("{2313179F-1837-173A-A2D5-A2571B43E6A9}");
+            var mcdMenuGuid = Guid.Parse("{2313179F-1837-173A-A4D5-A3571B43E6A9}");
+            var jimmysMenuGuid = Guid.Parse("{2313179F-1837-173A-A4D5-A4571B43E6A9}");
+            var curryUpMenuGuid = Guid.Parse("{2313179F-1837-173A-A4D5-A6571B43E6A9}");
+
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            {
+                MenuId = kfcMenuGuid,
+                RestaurantId= kfcGuid
+            });
+
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            {
+                MenuId = mcdMenuGuid,
+                RestaurantId= mcdGuid
+            });
+
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            { 
+                MenuId = curryUpMenuGuid,
+                RestaurantId= curryUpGuid
+            });
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            { 
+                MenuId = debonairsMenuGuid,
+                RestaurantId = debonairsGuid
+            });
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            {
+                MenuId = jimmysMenuGuid,
+                RestaurantId =  jimmysGuid 
+            });
+
+            //seed submenus
+
+            //kfc submenus and kfc menu items
+            var kfcBucketsGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A1}");
+            var kfcBoxMealsGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A2}");
+            var kfcStreetwiseGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A3}");
+            var kfcDrinksAndTreatsGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A4}");
+            var kfcSharingGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A5}");
+            var kfcWingsAndSnacksGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A6}");
+            var kfcBurgersAndWrapsGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A7}");
+            var kfcAddOnsGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A8}");
+
+            modelBuilder.Entity<Submenu>().HasData(new Submenu
+            {
+                SubmenuId = kfcBucketsGuid,
+                Name = "Buckets",
+                MenuId = kfcMenuGuid
+            });
+
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId= Guid.NewGuid(),
+                Name = "21 Piece Bucket",
+                Description = "21 Pieces of juicy chicken seasoned with the 11 secret herbs and spices of Original Recipe® chicken, marinated and cooked to perfection.",
+                Price = 365.90M,
+                SubMenuId = kfcBucketsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId= Guid.NewGuid(),
+                Name = "15 Piece Bucket",
+                Description = "15 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs & spices.",
+                Price = 279.90M,
+                SubMenuId = kfcBucketsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name ="9 Piece Bucket",
+                Description = "9 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs and spices of Original Recipe® chicken, marinated and cooked to perfection.",
+                Price = 182.90M,
+                SubMenuId = kfcBucketsGuid
+            });
+
+
+            modelBuilder.Entity<Submenu>().HasData(new Submenu
+            {
+                SubmenuId = kfcBoxMealsGuid,
+                Name = "Box Meals",
+                MenuId = kfcMenuGuid
+            });
+
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId= Guid.NewGuid(),
+                Name ="Fully Loaded Box Meal",
+                Description= "The new Burger standard…Boxed! The new Colonel burger, 1 piece of original recipe chicken, regular mash & gravy, chips & a buddy no sugar drink.",
+                Price =115.90M,
+                SubMenuId= kfcBoxMealsGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId= Guid.NewGuid(),
+                Name = "Zinger Fully Loaded Buddy Box Meal",
+                Description = "The new Burger standard…Boxed! The Crispy Zinger burger, 1 piece of original recipe chicken, regular mash & gravy, chips & Buddy no sugar.",
+                Price = 115.90M,
+                SubMenuId = kfcBoxMealsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Nugget Box Buddy Meal",
+                Description = "4 Nuggets, 1 Crunch Burger, 1 Small Chips and a Buddy Drink",
+                Price = 79.90M,
+                SubMenuId = kfcBoxMealsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "All Star Box Meal Buddy",
+                Description = "Crunch Burger, 1 Piece of Original Recipe Chicken, 2 Zinger Wings, Small Chips & Buddy Drink",
+                Price = 94.90M,
+                SubMenuId = kfcBoxMealsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Wrapsta Box Meal",
+                Description = "Wrapsta, 1 Piece of Original Recipe Chicken, Small Chips & Buddy Drink",
+                Price = 84.90M,
+                SubMenuId = kfcBoxMealsGuid
+
+            });
+
+
+            modelBuilder.Entity<Submenu>().HasData(new Submenu
+            {
+                SubmenuId = kfcStreetwiseGuid,
+                Name = "Streetwise",
+                MenuId = kfcMenuGuid
+            });
+
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem 
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "SW Bozza Streetwise 1 Buddy",
+                Description = "Get yourself a Streetwise 1, with a Buddy no sugar free drink",
+                Price = 52.90M,
+                SubMenuId = kfcStreetwiseGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "SW Bozza Crunch Burger Box Buddy",
+                Description = "Enjoy a delicious Crunch Burger an orginal receipe chicken piece with small chips and a buddy no sugar drink",
+                Price = 71.90M,
+                SubMenuId = kfcStreetwiseGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "SW Bozza Streetwise 5 Buddy",
+                Description = "Get yourself a Streetwise 5, with 2 Buddy No Sugar",
+                Price = 143.90M,
+                SubMenuId = kfcStreetwiseGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Streetwise Five",
+                Description = "5 Pieces of Original Recipe chicken cooked to golden perfection and a large portion of chips or coleslaw.",
+                Price = 121.90M,
+                SubMenuId = kfcStreetwiseGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Streetwise Three with Chips",
+                Description = "3 Pieces of original recipe chicken, a portion of small chips.",
+                Price = 72.90M,
+                SubMenuId = kfcStreetwiseGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Streetwise Three with Pap",
+                Description = "3 Pieces of Original Recipe Chicken with a portion of pap and gravy",
+                Price = 72.90M,
+                SubMenuId = kfcStreetwiseGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Streetwise Two with Chips",
+                Description = "2 Pieces of Original Recipe Chicken and Small Chips or Coleslaw.",
+                Price = 49.90M,
+                SubMenuId = kfcStreetwiseGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Streetwise Bucket For One",
+                Description = "Enjoy a piece of original recipe chicken, 2 zinger wings and a small scrumptious chips.",
+                Price = 46.90M,
+                SubMenuId = kfcStreetwiseGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Streetwise Two with Pap",
+                Description = "2 Pieces of original recipe chicken cooked to golden perfection and a regular portion of pap & small gravy.",
+                Price = 49.90M,
+                SubMenuId = kfcStreetwiseGuid
+            });
+
+
+            modelBuilder.Entity<Submenu>().HasData(new Submenu
+            {
+                SubmenuId = kfcDrinksAndTreatsGuid,
+                Name = "Drinks & Treats",
+                MenuId = kfcMenuGuid
+            });
+
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name= "Cappy Juice 1.5 Litre",
+                Description ="",
+                Price = 44.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+            
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Oreo Krusher",
+                Description = "An icy sippable treat with Oreo bitz, and creamy soft-serve.",
+                Price = 42.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Verry Berry Krusher",
+                Description = "An icy sippable treat with Berry bitz, and creamy soft-serve.",
+                Price = 42.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Strawberry Milkshake",
+                Description = "Milk shake milk shake shake shake",
+                Price = 31.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Chocolate Milkshake",
+                Description = "Chocolate Milkshake",
+                Price = 31.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Coke 1.5 Litre Bottle",
+                Description = "Coke 1.5 Litre Bottle",
+                Price = 32.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Coke No Sugar 1.5 Litre",
+                Description = "Coke No Sugar 1.5 Litre",
+                Price = 29.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Coke No Sugar Buddy 440ml",
+                Description = "Coke No Sugar Buddy 440ml",
+                Price = 22.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Coca-Cola Sugar Buddy 440ml",
+                Description = "Coca-Cola Sugar Buddy 440ml",
+                Price = 24.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Fanta Sugar Buddy 440ml",
+                Description = "Fanta Sugar Buddy 440ml",
+                Price = 24.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Sprite Sugar Buddy 440ml",
+                Description = "Sprite Sugar Buddy 440ml",
+                Price = 24.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Bonaqua Still Spring Water 500ml",
+                Description = "Bonaqua Still Spring Water 500ml",
+                Price = 19.90M,
+                SubMenuId = kfcDrinksAndTreatsGuid
+
+            });
+
+
+
+
+            modelBuilder.Entity<Submenu>().HasData(new Submenu
+            {
+                SubmenuId = kfcSharingGuid,
+                Name = "Sharing",
+                MenuId = kfcMenuGuid
+            });
+
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "10 Piece Family Treat",
+                Description = "10pc Chicken, 2 snack burgers, 4 Zinger Wings, 2 Reg Coleslaw, 2 Reg chips",
+                Price = 316.90M,
+                SubMenuId = kfcSharingGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "8 Piece Family Treat",
+                Description = "8pc Chicken, 2 snack burgers, 4 Zinger Wings, 2 Reg Coleslaw, 2 Reg chips",
+                Price = 274.90M,
+                SubMenuId = kfcSharingGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "24 Zinger Wings Bucket",
+                Description = "24 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
+                Price = 194.90M,
+                SubMenuId = kfcSharingGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "All In One Feast",
+                Description = "Enjoy 6 pieces of delicious original recipe chicken, 1 large chips, 1 regular coleslaw plus 2 regular mash and gravies.",
+                Price = 194.90M,
+                SubMenuId = kfcSharingGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "2 Can Dine Buddy",
+                Description = "Enjoy 4 pieces of original recipe chicken, 2 small chips, 1 small pops & 2 buddy no sugar drinks.",
+                Price = 164.90M,
+                SubMenuId = kfcSharingGuid
+
+            });
+
+
+
+            modelBuilder.Entity<Submenu>().HasData(new Submenu
+            {
+                SubmenuId = kfcWingsAndSnacksGuid,
+                Name = "Wings & Snacks",
+                MenuId = kfcMenuGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Jalapeno Loaded Fries",
+                Description = "Enjoy KFC`s new Jalapeno loaded fries with brand new Hot * spicy sauce",
+                Price = 32.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "24 Zinger Wings Bucket",
+                Description = "24 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
+                Price = 194.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "10 Dunked Wings",
+                Description = "10 KFC famous Zinger Wings dunked in a delicious honey, ginger and soy sauce.",
+                Price = 104.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "10 Hot Zinger Wings",
+                Description = "10 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
+                Price = 89.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Large Pops",
+                Description = "Bite-sized pieces of chicken, tender on the inside and crunchy on the outside.",
+                Price = 54.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Sprinkle Pops",
+                Description = "Bite-sized pieces of chicken that are tender on the inside and crunchy on the outside. Served with a generous sprinkle of fruit chutney flavour.",
+                Price = 54.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "4 Dunked Wings",
+                Description = "4 KFC famous Zinger Wings dunked in a delicious honey, ginger and soy sauce.",
+                Price = 54.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "4 Zinger Wings",
+                Description = "4 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
+                Price = 48.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "9Pc Nuggets",
+                Description = "9 pieces of crispy, delicious golden brown Nuggets, paired with 1 delicious Colonel dipping sauce.",
+                Price = 42.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Dunked Pops",
+                Description = "Bite-sized pieces of chicken dunked in KFC’s famous honey, ginger and soy sauce!",
+                Price = 36.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "6Pc Nuggets",
+                Description = "6 pieces of crispy, delicious golden brown Nuggets, paired with 1 delicious Colonel dipping sauce.",
+                Price = 36.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Small Pops",
+                Description = "Bite-sized pieces of chicken that are tender on the inside and crunchy on the outside.",
+                Price = 29.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Snack Burger",
+                Description = "A delicious chicken patty served with shredded lettuce & Colonel dressing on a snack bun.",
+                Price = 29.90M,
+                SubMenuId = kfcWingsAndSnacksGuid
+
+            });
+
+
+            modelBuilder.Entity<Submenu>().HasData(new Submenu
+            {
+                SubmenuId = kfcBurgersAndWrapsGuid,
+                Name = "Burgers & Wraps",
+                MenuId = kfcMenuGuid
+            });
+
+  
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "New Colonel Burger",
+                Description = "Try the new standard! The New Colonel burger, Our trademark real chicken fillet; A fresh Brioche bun, Creamy Colonel sauce and cheese on a fresh bed of lettuce & succulent tomatoes",
+                Price = 60.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "New Zinger Burger",
+                Description = "Try the new standard! The New Crispy Zinger burger, Our trademark real chicken fillet; A fresh Brioche bun, New Hot & Spicy sauce and cheese on a fresh bed of lettuce & succulent tomatoes",
+                Price = 60.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "New Double Crunch Burger",
+                Description = "The new standard in burgers! 2 Spicy, crunchy mini fillets with 2 cheese slices, lettuce & tomato covered in tangy dressing on a burger bun",
+                Price = 68.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Zinger Boxmaster",
+                Description = "A warm tortilla wrapped around a delicious fillet zinger recipe - a slice of cheese, hash brown, crisp lettuce, fresh tomato and a dash of Colonel dressing.",
+                Price = 76.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Colonel Boxmaster",
+                Description = "A warm tortilla wrapped around a delicious fillet original recipe - a slice of cheese, hash brown, crisp lettuce, fresh tomato and a dash of Colonel dressing.",
+                Price = 76.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Classic Twister",
+                Description = "A warm tortilla wrapped around 2 deliciously crispy chicken strips, shredded crisp lettuce, sliced tomato and a dash of Colonel dressing.",
+                Price = 66.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Sweet Chilli Twister",
+                Description = "A warm tortilla wrapped around 2 deliciously crispy new and improved chicken strips, shredded crisp lettuce, sliced tomato, topped with Colonel dressing and sweet chilli sauce.",
+                Price = 66.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Wrapsta",
+                Description = "The game changer is here, and with a delicious spicy crunch fillet, tomato, lettuce and cheese with tangy dressing all wrapped up in a mini tortilla and grilled to perfection, meal time will never be the same again.",
+                Price = 42.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Crunch Burger",
+                Description = "A spicy, crunchy mini fillet with a slice of cheese and lettuce, covered in tangy dressing on a snack bun.",
+                Price = 36.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Snack Burger",
+                Description = "A delicious chicken patty served with shredded lettuce & Colonel dressing on a snack bun.",
+                Price = 29.90M,
+                SubMenuId = kfcBurgersAndWrapsGuid
+
+            });
+
+
+            modelBuilder.Entity<Submenu>().HasData(new Submenu
+            {
+                SubmenuId = kfcAddOnsGuid,
+                Name = "Add Ons",
+                MenuId = kfcMenuGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Sauce - Hot & Spicy",
+                Description = "Extra Hot & Spicy Zinger sauce on the side",
+                Price = 0,
+                SubMenuId = kfcAddOnsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Large Chips",
+                Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
+                Price = 0,
+                SubMenuId = kfcAddOnsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Regular Chips",
+                Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
+                Price = 26.90M,
+                SubMenuId = kfcAddOnsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "1 Piece Chicken",
+                Description = "1 Piece Chicken",
+                Price = 26.90M,
+                SubMenuId = kfcAddOnsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Large Mash & Gravy",
+                Description = "A portion of creamy mash and our delicious gravy.",
+                Price = 27.90M,
+                SubMenuId = kfcAddOnsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Regular Coleslaw",
+                Description = "A portion of freshly prepared cabbage, onions and carrots in a delicious dressing",
+                Price = 24.90M,
+                SubMenuId = kfcAddOnsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Regular Mash & Gravy",
+                Description = "A portion of creamy mash and our delicious gravy.",
+                Price = 19.90M,
+                SubMenuId = kfcAddOnsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Small Chips",
+                Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
+                Price = 16.90M,
+                SubMenuId = kfcAddOnsGuid
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Mini Loaf",
+                Description = "Oven baked, fresh mini loaf",
+                Price = 14.90M,
+                SubMenuId = kfcAddOnsGuid
+
+            });
+
+
+
+
+            //debonair submenus
+
+            //debonair menuitems
+
+
+            //mcd submenus
+            //mcd menuitems
+
+
+            //jimmy's submenus
+            //jimmy's menuitems
+            //seed menuitems
 
 
 
@@ -547,9 +1265,11 @@ namespace Gaolos.Persistence
                 {
                     case EntityState.Added:
                         entry.Entity.CreatedDate = DateTime.Now;
+                        entry.Entity.CreatedBy = _loggedInUserService.UserId;
                         break;
                     case EntityState.Modified:
                         entry.Entity.LastModifiedDate = DateTime.Now;
+                        entry.Entity.LastModifiedBy = _loggedInUserService.UserId;
                         break;
                 }
             }

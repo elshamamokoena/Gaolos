@@ -1,0 +1,8 @@
+{
+  "Gaolos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Api",
+  "Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Application",
+  "Gaolos.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Domain",
+  "Gaolos.Identity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Identity",
+  "Gaolos.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Infrastructure",
+  "Gaolos.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Persistence"
+}

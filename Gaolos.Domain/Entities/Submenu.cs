@@ -11,6 +11,8 @@ namespace Gaolos.Domain.Entities
     {
         public Guid SubmenuId { get; set; }
         public string Name { get; set; } = string.Empty;
+        public string? Description { get; set; }
+        public string? ImageUrl { get; set; }
         public Guid MenuId { get; set; }
         public Menu Menu { get; set; } = default!;
         public ICollection<MenuItem>? menuItems { get; set; }

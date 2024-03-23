@@ -1,0 +1,84 @@
+2024-03-16 00:52:27.697 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 00:52:40.366 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 00:52:40.371 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 00:52:40.421 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 00:52:40.427 +02:00 [INF] Hosting environment: Development
+2024-03-16 00:52:40.429 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 15:08:04.044 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 15:08:16.728 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 15:08:16.731 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 15:08:16.840 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 15:08:16.843 +02:00 [INF] Hosting environment: Development
+2024-03-16 15:08:16.844 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 15:43:45.076 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 15:43:57.487 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 15:43:57.491 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 15:43:57.580 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 15:43:57.582 +02:00 [INF] Hosting environment: Development
+2024-03-16 15:43:57.583 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 17:19:07.838 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 17:20:42.247 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 17:21:06.991 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 17:21:18.188 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 17:21:18.191 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 17:21:18.227 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 17:21:18.229 +02:00 [INF] Hosting environment: Development
+2024-03-16 17:21:18.231 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 17:25:26.219 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 17:25:37.494 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 17:25:46.174 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 17:25:57.885 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 17:25:57.894 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 17:25:57.964 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 17:25:57.965 +02:00 [INF] Hosting environment: Development
+2024-03-16 17:25:57.967 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 17:52:40.443 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 17:52:53.539 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 17:52:53.551 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 17:52:53.646 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 17:52:53.648 +02:00 [INF] Hosting environment: Development
+2024-03-16 17:52:53.651 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 19:30:30.630 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 19:30:43.684 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 19:30:43.689 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 19:30:43.815 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 19:30:43.816 +02:00 [INF] Hosting environment: Development
+2024-03-16 19:30:43.817 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 19:32:25.606 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 19:32:37.648 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 19:32:37.652 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 19:32:37.727 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 19:32:37.729 +02:00 [INF] Hosting environment: Development
+2024-03-16 19:32:37.731 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 19:40:14.249 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 19:40:28.551 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 19:40:28.573 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 19:40:29.178 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 19:40:29.262 +02:00 [INF] Hosting environment: Development
+2024-03-16 19:40:29.263 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 19:46:40.756 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 19:47:03.989 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 19:47:03.994 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 19:47:04.066 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 19:47:04.067 +02:00 [INF] Hosting environment: Development
+2024-03-16 19:47:04.068 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 19:52:42.835 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 19:52:55.895 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 19:52:55.956 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 19:52:56.100 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 19:52:56.104 +02:00 [INF] Hosting environment: Development
+2024-03-16 19:52:56.107 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 19:56:56.474 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 19:57:09.106 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 19:57:09.139 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 19:57:09.290 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 19:57:09.431 +02:00 [INF] Hosting environment: Development
+2024-03-16 19:57:09.433 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 20:33:45.135 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-03-16 20:33:58.094 +02:00 [INF] Now listening on: https://localhost:7234
+2024-03-16 20:33:58.099 +02:00 [INF] Now listening on: http://localhost:5206
+2024-03-16 20:33:58.175 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-16 20:33:58.177 +02:00 [INF] Hosting environment: Development
+2024-03-16 20:33:58.178 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-03-16 20:35:41.910 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-16 20:35:41.936 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.

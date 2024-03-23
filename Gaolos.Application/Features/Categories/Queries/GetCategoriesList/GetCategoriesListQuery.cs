@@ -2,7 +2,7 @@
 
 namespace Gaolos.Application.Features.Categories.Queries.GetCategoriesList
 {
-    public class GetCategoriesListQuery : IRequest<List<CategoryListVm>>
+    public class GetCategoriesListQuery : IRequest<IEnumerable<CategoryListDto>>
     {
     }
 }

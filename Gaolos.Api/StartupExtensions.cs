@@ -1,7 +1,14 @@
-﻿using Gaolos.Application;
+﻿using Gaolos.Api.Services;
+using Gaolos.Application.Contracts;
+using Gaolos.Identity.Models;
+using Gaolos.Api.Middleware;
+using Gaolos.Application;
+using Gaolos.Identity;
 using Gaolos.Infrastructure;
 using Gaolos.Persistence;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Gaolos.Api
 {
@@ -13,19 +20,25 @@ namespace Gaolos.Api
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddPersistenceServices(builder.Configuration);
+            builder.Services.AddIdentityServices(builder.Configuration);
+
+            builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
+
+            builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddControllers();
 
             builder.Services.AddCors(
                 options => options.AddPolicy(
                     "open",
-                    policy => policy.WithOrigins([builder.Configuration["ApiUrl"] ?? "https://localhost:7020",
-                        builder.Configuration["BlazorUrl"] ?? "https://localhost:7080"])
+                    policy => policy.WithOrigins([builder.Configuration["ApiUrl"] ?? "https://localhost:7234",
+                        builder.Configuration["BlazorUrl"] ?? "https://localhost:7209"])
             .AllowAnyMethod()
             .SetIsOriginAllowed(pol => true)
             .AllowAnyHeader()
             .AllowCredentials()));
 
+            builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             return builder.Build();
@@ -33,6 +46,13 @@ namespace Gaolos.Api
 
         public static WebApplication ConfigurePipeline(this WebApplication app)
         {
+            app.MapIdentityApi<ApplicationUser>();
+
+            app.MapPost("/Logout", async (ClaimsPrincipal user, SignInManager<ApplicationUser> signInManager) =>
+            {
+                await signInManager.SignOutAsync();
+                return TypedResults.Ok();
+            });
 
             app.UseCors("open");
 
@@ -41,6 +61,8 @@ namespace Gaolos.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCustomExceptionHandler();
 
             app.UseHttpsRedirection();
             app.MapControllers();
