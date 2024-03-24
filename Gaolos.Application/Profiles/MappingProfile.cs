@@ -29,7 +29,7 @@ namespace Gaolos.Application.Profiles
             CreateMap<Restaurant, CreateRestaurantCommand>().ReverseMap();
             CreateMap<Restaurant, UpdateRestaurantCommand>().ReverseMap();
             CreateMap<Restaurant, CategoryRestaurantDto>().ReverseMap();
-            CreateMap<Restaurant, RestaurantForCategoryDto>().ReverseMap();
+            CreateMap<Restaurant, RestaurantsForCategoryDto>().ReverseMap();
 
 
             CreateMap<Category, CreateCategoryCommand>().ReverseMap();

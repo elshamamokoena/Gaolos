@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCategory
 {
-    public class GetRestaurantsForCategoryQueryHandler : IRequestHandler<GetRestaurantsForCategoryQuery, IEnumerable<RestaurantForCategoryDto>>
+    public class GetRestaurantsForCategoryQueryHandler : IRequestHandler<GetRestaurantsForCategoryQuery, IEnumerable<RestaurantsForCategoryDto>>
     {
 
         private readonly IRestaurantRepository _restaurantRepository;
@@ -25,14 +25,14 @@ namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCateg
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<RestaurantForCategoryDto>> Handle(GetRestaurantsForCategoryQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<RestaurantsForCategoryDto>> Handle(GetRestaurantsForCategoryQuery request, CancellationToken cancellationToken)
         {
             if(! await _categoryRepository.CategoryExistsAsync(request.CategoryId))
             {
                 throw new NotFoundException(nameof(Category), request.CategoryId);
             }
             var restaurantsForCategory = await _restaurantRepository.GetRestaurantsAsync(request.CategoryId);
-            return _mapper.Map<IEnumerable<RestaurantForCategoryDto>>(restaurantsForCategory);
+            return _mapper.Map<IEnumerable<RestaurantsForCategoryDto>>(restaurantsForCategory);
 
         }
     }

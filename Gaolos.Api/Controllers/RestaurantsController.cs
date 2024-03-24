@@ -20,8 +20,18 @@ namespace Gaolos.Api.Controllers
 
         public RestaurantsController(IMediator mediator)
         {
-            _mediator = mediator;
+            _mediator = mediator 
+                ?? throw new ArgumentNullException(nameof(mediator));
         }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<RestaurantsForCategoryDto>>> GetRestaurantsForCategory(Guid categoryId)
+        {
+            var dtos = await _mediator.Send(new GetRestaurantsForCategoryQuery { CategoryId = categoryId });
+
+            return Ok(dtos);
+        }
+
 
         //[HttpGet]
         //[ProducesResponseType(StatusCodes.Status200OK)]

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCategory
 {
-    public class GetRestaurantsForCategoryQuery: IRequest<IEnumerable<RestaurantForCategoryDto>>
+    public class GetRestaurantsForCategoryQuery: IRequest<IEnumerable<RestaurantsForCategoryDto>>
     {
         public Guid CategoryId { get; set; }
     }

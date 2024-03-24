@@ -30,6 +30,7 @@ namespace Gaolos.Api.Controllers
         //}
 
         [HttpGet()]
+        [HttpHead]
         public async Task<ActionResult<IEnumerable<CategoryListDto>>> GetCategories()
         {
             var dtos = await _mediator.Send(new GetCategoriesListQuery());
@@ -51,13 +52,19 @@ namespace Gaolos.Api.Controllers
         public async Task<ActionResult<CreateCategoryCommandResponse>> CreateCategory([FromBody] CreateCategoryCommand createCategoryCommand)
         {
             var response = await _mediator.Send(createCategoryCommand);
-            // return Ok(response);
 
-            return CreatedAtRoute("GetCategory",
-                new { categoryId = response.Category.CategoryId },
-                response);
+            if(response.Success)
+                return CreatedAtRoute("GetCategory",new { categoryId = response.Category.CategoryId }, response);
+
+            return Ok(response);
         }
 
+        [HttpOptions()]
+        public IActionResult GetCategoriesOptions()
+        {
+            Response.Headers.Add("Allow", "GET,HEAD,POST,OPTIONS");
+            return Ok();
+        }
 
         //[HttpGet("/getpagedcategories", Name = "GetPagedCategories")]
         //[ProducesResponseType(StatusCodes.Status200OK)]

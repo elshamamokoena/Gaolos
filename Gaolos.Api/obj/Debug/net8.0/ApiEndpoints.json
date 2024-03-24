@@ -21,6 +21,26 @@
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.CategoriesController",
+    "Method": "GetCategories",
+    "RelativePath": "api/categories",
+    "HttpMethod": "HEAD",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Categories.Queries.GetCategoriesList.CategoryListDto, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Gaolos.Api.Controllers.CategoriesController",
     "Method": "CreateCategory",
     "RelativePath": "api/categories",
     "HttpMethod": "POST",
@@ -47,6 +67,16 @@
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.CategoriesController",
+    "Method": "GetCategoriesOptions",
+    "RelativePath": "api/categories",
+    "HttpMethod": "OPTIONS",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gaolos.Api.Controllers.CategoriesController",
     "Method": "GetCategory",
     "RelativePath": "api/categories/{categoryId}",
     "HttpMethod": "GET",
@@ -62,6 +92,32 @@
     "ReturnTypes": [
       {
         "Type": "Gaolos.Application.Features.Categories.Queries.GetCategory.CategoryDetailDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Gaolos.Api.Controllers.RestaurantsController",
+    "Method": "GetRestaurantsForCategory",
+    "RelativePath": "api/categories/{categoryId}/restaurants",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCategory.RestaurantForCategoryDto, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

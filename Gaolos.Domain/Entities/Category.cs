@@ -20,14 +20,5 @@ namespace Gaolos.Domain.Entities
         public string? SvgUrl { get; set; }
         public ICollection<Restaurant> Restaurants { get; set; } 
             = new List<Restaurant>();
-
-        //public Category(string name, string? imageUrl, string ? svgUrl  )
-        //{
-        //    Name = name;
-        //    ImageUrl = imageUrl;
-        //    SvgUrl = svgUrl;
-        
-        //}
-
     }
 }

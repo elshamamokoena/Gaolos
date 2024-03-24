@@ -14,8 +14,8 @@ namespace Gaolos.Domain.Entities
         public decimal Price { get; set; }
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }
-        public Guid SubMenuId { get; set; }
-        public Submenu Submenu { get; set; } = default!;
+        public Guid MenuId { get; set; }
+        public Menu Menu { get; set; } = null!;
 
     }
 }

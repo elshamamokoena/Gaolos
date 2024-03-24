@@ -16,8 +16,14 @@ namespace Gaolos.Domain.Entities
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }
 
+        [ForeignKey(nameof(RestaurantId))]
+        public Restaurant Restaurant { get; set; } = null!;
         public Guid RestaurantId { get; set; }
-        public Restaurant Restaurant { get; set; } = default!;
-        public ICollection<Submenu>? Submenus { get; set;}
+
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; } = null!;
+        public Guid CategoryId { get; set; }
+        public ICollection<MenuItem> MenuItems { get; set; } 
+            = new List<MenuItem>();
     }
 }

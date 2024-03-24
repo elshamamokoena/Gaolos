@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gaolos.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e66cda86fb3b7babbfee2f3d6b3dacaba674844e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c891d857f4c012990af2464800d125133f6929b0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaolos.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaolos.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
