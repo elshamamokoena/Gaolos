@@ -20,8 +20,7 @@ namespace Gaolos.Domain.Entities
         public string ? Description { get; set; }
         public string? ImageUrl { get; set; }
         public string? LogoUrl { get; set; }
-        public ICollection<string> Tags { get; set; } 
-            = new List<string>();
+        public string Tags { get; set; } = string.Empty;
         public ICollection< Menu> Menus { get; set; } 
             = new List< Menu>();
 

@@ -23,14 +23,15 @@ namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail
 
         public async Task<RestaurantDetailVm> Handle(GetRestaurantDetailQuery request, CancellationToken cancellationToken)
         {
-            var @restaurant = await _restaurantRepository.GetByIdAsync(request.Id);
-            var restaurantDetailDto = _mapper.Map<RestaurantDetailVm>(@restaurant);
+            //var @restaurant = await _restaurantRepository.GetByIdAsync(request.Id);
+            //var restaurantDetailDto = _mapper.Map<RestaurantDetailVm>(@restaurant);
 
-            var category = await _categoryRepository.GetByIdAsync(@restaurant.CategoryId);
+            //var category = await _categoryRepository.GetByIdAsync(@restaurant.CategoryId);
 
-            restaurantDetailDto.Category = _mapper.Map<CategoryDto>(category);
+            //restaurantDetailDto.Category = _mapper.Map<CategoryDto>(category);
 
-            return restaurantDetailDto;
+            //return restaurantDetailDto;
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,27 +9,32 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Persistence.Repositories
 {
-    public class MenuItemsRepository:BaseRepository<MenuItem>, IMenuItemsRepository
+    public class MenuItemsRepository:IMenuItemsRepository
     {
-        public MenuItemsRepository(GaolosDbContext dbContext):base(dbContext) { }
-
-        public async Task<MenuItem> GetMenuItemAsync(Guid subMenuId, Guid menuItemId)
+        private readonly GaolosDbContext _dbContext;
+        public MenuItemsRepository(GaolosDbContext dbContext)
         {
-            if (subMenuId == Guid.Empty) throw new ArgumentNullException(nameof(subMenuId));
+            _dbContext = dbContext 
+                ?? throw new ArgumentNullException(nameof(dbContext));
+        }
+
+        public async Task<MenuItem> GetMenuItemAsync(Guid menuId, Guid menuItemId)
+        {
+            if (menuId == Guid.Empty) throw new ArgumentNullException(nameof(menuId));
             if (menuItemId == Guid.Empty)  throw new ArgumentNullException(nameof(menuItemId));
 
             #pragma warning disable CS8603
-            return await _dbContext.MenuItems.Where(i => i.SubMenuId == subMenuId && i.MenuItemId == menuItemId).FirstOrDefaultAsync();
+            return await _dbContext.MenuItems.Where(i => i.MenuId == menuId && i.MenuItemId == menuItemId).FirstOrDefaultAsync();
             #pragma warning restore CS8603
 
         }
 
-        public async Task<IEnumerable<MenuItem>> GetMenuItemsAsync(Guid subMenuId)
+        public async Task<IEnumerable<MenuItem>> GetMenuItemsAsync(Guid menuId)
         {
-            if(subMenuId == Guid.Empty) throw new ArgumentNullException( nameof(subMenuId));
+            if(menuId == Guid.Empty) throw new ArgumentNullException( nameof(menuId));
 
             return await _dbContext.MenuItems
-                .Where(m=>m.SubMenuId==subMenuId)
+                .Where(m=>m.MenuId==menuId)
                 .ToListAsync();
         }
     }

@@ -136,6 +136,9 @@ namespace Gaolos.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -163,46 +166,76 @@ namespace Gaolos.Persistence.Migrations
 
                     b.HasKey("MenuId");
 
-                    b.HasIndex("RestaurantId")
-                        .IsUnique();
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("RestaurantId");
 
                     b.ToTable("Menus");
 
                     b.HasData(
                         new
                         {
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a1571b43e6a9"),
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1"),
+                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "",
+                            Name = "Buckets",
                             RestaurantId = new Guid("6313179f-7837-473a-a4d5-b5571b43e6a6")
                         },
                         new
                         {
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a3571b43e6a9"),
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
+                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "",
-                            RestaurantId = new Guid("6313179f-7837-473a-b4d5-a5571b43e6a6")
+                            Name = "Box Meals",
+                            RestaurantId = new Guid("6313179f-7837-473a-a4d5-b5571b43e6a6")
                         },
                         new
                         {
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a6571b43e6a9"),
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
+                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "",
-                            RestaurantId = new Guid("2313179f-1837-473a-a4d5-a5571b43e6a9")
+                            Name = "Streetwise",
+                            RestaurantId = new Guid("6313179f-7837-473a-a4d5-b5571b43e6a6")
                         },
                         new
                         {
-                            MenuId = new Guid("2313179f-1837-173a-a2d5-a2571b43e6a9"),
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
+                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "",
-                            RestaurantId = new Guid("6313179f-7837-473a-a4d5-f5571b43e6a6")
+                            Name = "Drnks & Treats",
+                            RestaurantId = new Guid("6313179f-7837-473a-a4d5-b5571b43e6a6")
                         },
                         new
                         {
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a4571b43e6a9"),
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
+                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "",
-                            RestaurantId = new Guid("2313179f-1837-873a-a4d5-a5571b43e6a9")
+                            Name = "Sharing Meals",
+                            RestaurantId = new Guid("6313179f-7837-473a-a4d5-b5571b43e6a6")
+                        },
+                        new
+                        {
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
+                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Wings & Snacks",
+                            RestaurantId = new Guid("6313179f-7837-473a-a4d5-b5571b43e6a6")
+                        },
+                        new
+                        {
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
+                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Burgers & Wraps",
+                            RestaurantId = new Guid("6313179f-7837-473a-a4d5-b5571b43e6a6")
+                        },
+                        new
+                        {
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
+                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Add-Ons",
+                            RestaurantId = new Guid("6313179f-7837-473a-a4d5-b5571b43e6a6")
                         });
                 });
 
@@ -230,6 +263,9 @@ namespace Gaolos.Persistence.Migrations
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("MenuId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -238,609 +274,611 @@ namespace Gaolos.Persistence.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid>("SubMenuId")
+                    b.Property<Guid?>("SubmenuId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("MenuItemId");
 
-                    b.HasIndex("SubMenuId");
+                    b.HasIndex("MenuId");
+
+                    b.HasIndex("SubmenuId");
 
                     b.ToTable("MenuItems");
 
                     b.HasData(
                         new
                         {
-                            MenuItemId = new Guid("9c88759a-f058-4147-a4cb-85cf3597678d"),
+                            MenuItemId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "21 Pieces of juicy chicken seasoned with the 11 secret herbs and spices of Original Recipe® chicken, marinated and cooked to perfection.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1"),
                             Name = "21 Piece Bucket",
-                            Price = 365.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1")
+                            Price = 365.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("cdee9122-fbe8-4a20-94e7-5f2d2fdf2c73"),
+                            MenuItemId = new Guid("c566b214-92b9-4689-b900-7f4613274818"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "15 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs & spices.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1"),
                             Name = "15 Piece Bucket",
-                            Price = 279.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1")
+                            Price = 279.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("961a8c20-1568-4f94-a07e-35602a25de43"),
+                            MenuItemId = new Guid("affb7430-dd2b-47e2-a7ee-98faa965cad4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "9 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs and spices of Original Recipe® chicken, marinated and cooked to perfection.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1"),
                             Name = "9 Piece Bucket",
-                            Price = 182.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1")
+                            Price = 182.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("30875b45-bb04-4dfb-9d8b-a1fcf4361296"),
+                            MenuItemId = new Guid("6a071839-589b-44d6-ae77-feead9d17718"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The new Burger standard…Boxed! The new Colonel burger, 1 piece of original recipe chicken, regular mash & gravy, chips & a buddy no sugar drink.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
                             Name = "Fully Loaded Box Meal",
-                            Price = 115.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2")
+                            Price = 115.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("328e4b37-d311-4d38-8284-ee11ea080e3d"),
+                            MenuItemId = new Guid("64dd45b5-6692-4486-bedd-7fc38aa3e8a0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The new Burger standard…Boxed! The Crispy Zinger burger, 1 piece of original recipe chicken, regular mash & gravy, chips & Buddy no sugar.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
                             Name = "Zinger Fully Loaded Buddy Box Meal",
-                            Price = 115.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2")
+                            Price = 115.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("04bdd615-4858-45bc-be07-be7e6e17ce96"),
+                            MenuItemId = new Guid("ebdcf908-f175-44d7-b311-64812bee8f92"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 Nuggets, 1 Crunch Burger, 1 Small Chips and a Buddy Drink",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
                             Name = "Nugget Box Buddy Meal",
-                            Price = 79.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2")
+                            Price = 79.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("e7a2aa34-1de1-4f74-be0e-50a3989dba8b"),
+                            MenuItemId = new Guid("9be38c72-5c83-457f-8a1b-1a0fec3e52aa"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Crunch Burger, 1 Piece of Original Recipe Chicken, 2 Zinger Wings, Small Chips & Buddy Drink",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
                             Name = "All Star Box Meal Buddy",
-                            Price = 94.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2")
+                            Price = 94.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("2ec6d136-7430-49bc-a846-6790ce3e97de"),
+                            MenuItemId = new Guid("a05fd97c-d93c-42d7-9054-ff1a65a96799"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wrapsta, 1 Piece of Original Recipe Chicken, Small Chips & Buddy Drink",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
                             Name = "Wrapsta Box Meal",
-                            Price = 84.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2")
+                            Price = 84.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("c53e8503-65ce-49dd-a137-e59a9dbf763a"),
+                            MenuItemId = new Guid("9baf8590-abf5-47f6-aab2-ecc0e947ab93"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Get yourself a Streetwise 1, with a Buddy no sugar free drink",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
                             Name = "SW Bozza Streetwise 1 Buddy",
-                            Price = 52.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3")
+                            Price = 52.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("3b1beae5-664a-4d23-99df-1e8a098980e9"),
+                            MenuItemId = new Guid("a65342e3-0ab0-41d5-96d4-2a31a630b268"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy a delicious Crunch Burger an orginal receipe chicken piece with small chips and a buddy no sugar drink",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
                             Name = "SW Bozza Crunch Burger Box Buddy",
-                            Price = 71.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3")
+                            Price = 71.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("d38121a0-0696-4fcd-9f6e-c3d7366366cc"),
+                            MenuItemId = new Guid("d0f03657-e3ce-44f4-b5b4-1143e019c908"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Get yourself a Streetwise 5, with 2 Buddy No Sugar",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
                             Name = "SW Bozza Streetwise 5 Buddy",
-                            Price = 143.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3")
+                            Price = 143.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("61ab9f1e-e7ef-4af7-941a-1f5d69ae7af0"),
+                            MenuItemId = new Guid("f802ff94-fde6-407e-88a1-0654192c3315"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "5 Pieces of Original Recipe chicken cooked to golden perfection and a large portion of chips or coleslaw.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
                             Name = "Streetwise Five",
-                            Price = 121.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3")
+                            Price = 121.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("68a5d943-dee2-4edd-bf73-ebd6fe6a47b7"),
+                            MenuItemId = new Guid("5acb832f-06a4-49c3-9a4d-4dd91724f1c8"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 Pieces of original recipe chicken, a portion of small chips.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
                             Name = "Streetwise Three with Chips",
-                            Price = 72.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3")
+                            Price = 72.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("5b42075d-a0ba-4553-8846-ec2a966c0d07"),
+                            MenuItemId = new Guid("6e41da38-3eb7-4161-a3bb-f956f13ebea6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 Pieces of Original Recipe Chicken with a portion of pap and gravy",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
                             Name = "Streetwise Three with Pap",
-                            Price = 72.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3")
+                            Price = 72.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("d05bb775-3cb2-44f0-af96-435d895e0dc0"),
+                            MenuItemId = new Guid("e2bef8a1-b97e-4c84-8f83-d6a4b3fa37d8"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Pieces of Original Recipe Chicken and Small Chips or Coleslaw.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
                             Name = "Streetwise Two with Chips",
-                            Price = 49.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3")
+                            Price = 49.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("2c1278b6-bedf-4464-a727-474870c05029"),
+                            MenuItemId = new Guid("28f83858-9742-4293-b29f-b851ef03d5b0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy a piece of original recipe chicken, 2 zinger wings and a small scrumptious chips.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
                             Name = "Streetwise Bucket For One",
-                            Price = 46.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3")
+                            Price = 46.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("b876a9bf-c655-4f0b-aa1f-24e836915713"),
+                            MenuItemId = new Guid("64014e17-8555-4e2a-ac3c-27c1b9a11da5"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Pieces of original recipe chicken cooked to golden perfection and a regular portion of pap & small gravy.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
                             Name = "Streetwise Two with Pap",
-                            Price = 49.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3")
+                            Price = 49.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("70777092-3da3-48f4-9b50-79279fd4e55d"),
+                            MenuItemId = new Guid("7d92c209-da6b-484a-800a-8661d8ca7b27"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Cappy Juice 1.5 Litre",
-                            Price = 44.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 44.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("10da7fb5-44d1-4dce-b9d6-1350a5b2e649"),
+                            MenuItemId = new Guid("beb53045-249a-46a3-a596-0c7e9e58ffee"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "An icy sippable treat with Oreo bitz, and creamy soft-serve.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Oreo Krusher",
-                            Price = 42.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 42.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("122b61eb-2448-429c-99ba-519850610ec9"),
+                            MenuItemId = new Guid("67a360fe-d264-4b6e-b2bf-445844309dc1"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "An icy sippable treat with Berry bitz, and creamy soft-serve.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Verry Berry Krusher",
-                            Price = 42.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 42.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("56bd0342-06ad-4ff9-97b6-464cf8afbe13"),
+                            MenuItemId = new Guid("86d624e9-c7e8-4572-b297-8668546318ac"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Milk shake milk shake shake shake",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Strawberry Milkshake",
-                            Price = 31.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 31.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("10fee9e5-123d-4b1a-b8b1-e22d76e69899"),
+                            MenuItemId = new Guid("ee0c162b-39ad-488c-a450-947a578734ae"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Chocolate Milkshake",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Chocolate Milkshake",
-                            Price = 31.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 31.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("e4e806b1-9d9b-423a-8d77-10cd527165fc"),
+                            MenuItemId = new Guid("64296f52-2800-4f7b-b34c-06827ca6582b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coke 1.5 Litre Bottle",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Coke 1.5 Litre Bottle",
-                            Price = 32.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 32.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("366f6bfb-7177-42ee-bb9b-fe3bf9bd0bc1"),
+                            MenuItemId = new Guid("5ba0916f-e2e1-4f92-bab9-f38151c83d7c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coke No Sugar 1.5 Litre",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Coke No Sugar 1.5 Litre",
-                            Price = 29.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 29.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("bf02831b-3a89-4438-ab64-d9bad998b5ae"),
+                            MenuItemId = new Guid("a2b07b14-ebf2-4683-a3d1-5510ddf78161"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coke No Sugar Buddy 440ml",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Coke No Sugar Buddy 440ml",
-                            Price = 22.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 22.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("087ca6bc-7788-4bde-a7d9-f2b3868f3434"),
+                            MenuItemId = new Guid("995ebc2c-9a35-4d4d-a467-afc0ba9d9c12"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coca-Cola Sugar Buddy 440ml",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Coca-Cola Sugar Buddy 440ml",
-                            Price = 24.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 24.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("b44cac15-1158-4544-b6da-9f94b5d6dc84"),
+                            MenuItemId = new Guid("429a226d-aed9-4b6c-aef9-000ebad4e4ee"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fanta Sugar Buddy 440ml",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Fanta Sugar Buddy 440ml",
-                            Price = 24.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 24.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("062fdec8-ebe9-47e7-b8b5-81ee8bb6f1be"),
+                            MenuItemId = new Guid("7e7a6ff1-ba10-459f-a09d-1116644d6929"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sprite Sugar Buddy 440ml",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Sprite Sugar Buddy 440ml",
-                            Price = 24.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 24.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("e065f58d-1308-4109-9dde-98d4e2049605"),
+                            MenuItemId = new Guid("516ad88f-11bc-4f12-8282-bc773495d5dc"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bonaqua Still Spring Water 500ml",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
                             Name = "Bonaqua Still Spring Water 500ml",
-                            Price = 19.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4")
+                            Price = 19.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("cb1afe33-b05b-4b6f-918b-841f9a12963b"),
+                            MenuItemId = new Guid("64d1153e-5815-4e9e-9e23-9147b526aa7e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10pc Chicken, 2 snack burgers, 4 Zinger Wings, 2 Reg Coleslaw, 2 Reg chips",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
                             Name = "10 Piece Family Treat",
-                            Price = 316.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5")
+                            Price = 316.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("4ca1993e-a33f-44a2-9dcc-759c4ba4efea"),
+                            MenuItemId = new Guid("47f0cd7c-ee26-46fa-b824-e9b6ff6b2a4a"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "8pc Chicken, 2 snack burgers, 4 Zinger Wings, 2 Reg Coleslaw, 2 Reg chips",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
                             Name = "8 Piece Family Treat",
-                            Price = 274.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5")
+                            Price = 274.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("5815ed95-97d9-45ed-b4c6-7cab3215755b"),
+                            MenuItemId = new Guid("85e34d5a-007b-48e1-bf0c-c44acf0741fa"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "24 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
                             Name = "24 Zinger Wings Bucket",
-                            Price = 194.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5")
+                            Price = 194.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("a5198560-ccd3-4153-acb4-8f2e8e04b6f6"),
+                            MenuItemId = new Guid("a88324e6-3820-401b-bd47-b063c24952a1"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy 6 pieces of delicious original recipe chicken, 1 large chips, 1 regular coleslaw plus 2 regular mash and gravies.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
                             Name = "All In One Feast",
-                            Price = 194.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5")
+                            Price = 194.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("d1de3f40-a36b-4a97-be0d-08d16d96b86d"),
+                            MenuItemId = new Guid("c9abc37c-119a-438c-8469-7be1c2ba069c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy 4 pieces of original recipe chicken, 2 small chips, 1 small pops & 2 buddy no sugar drinks.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
                             Name = "2 Can Dine Buddy",
-                            Price = 164.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5")
+                            Price = 164.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("0a6ecaed-708b-40c7-a9ec-3a8b59a37a6f"),
+                            MenuItemId = new Guid("2fa88a28-8cd7-44ba-bd49-e3ea5e0adae8"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy KFC`s new Jalapeno loaded fries with brand new Hot * spicy sauce",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "Jalapeno Loaded Fries",
-                            Price = 32.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 32.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("65541aa9-6390-4443-b943-8d0ea9d9e927"),
+                            MenuItemId = new Guid("6c5d4183-8ade-415e-a2e8-b050e95c58fb"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "24 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "24 Zinger Wings Bucket",
-                            Price = 194.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 194.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("25359ba0-3fae-47dc-a334-dc84dce17d20"),
+                            MenuItemId = new Guid("076cb54c-e156-4fc7-b303-3dcc2c83b885"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10 KFC famous Zinger Wings dunked in a delicious honey, ginger and soy sauce.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "10 Dunked Wings",
-                            Price = 104.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 104.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("2b8eb1dc-39ef-47c2-aa57-7a96700789ec"),
+                            MenuItemId = new Guid("dc4804d6-d578-416f-a57f-b78692d9ce12"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "10 Hot Zinger Wings",
-                            Price = 89.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 89.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("156466e4-4cd2-403a-9e87-417f605d0516"),
+                            MenuItemId = new Guid("0cb6a735-8c1f-4060-8aba-868bdaad08b3"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken, tender on the inside and crunchy on the outside.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "Large Pops",
-                            Price = 54.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 54.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("e87f9c52-9db5-4e63-84e8-371388d5b485"),
+                            MenuItemId = new Guid("25e73fd1-bc32-4529-8efd-405f8dea13fe"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken that are tender on the inside and crunchy on the outside. Served with a generous sprinkle of fruit chutney flavour.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "Sprinkle Pops",
-                            Price = 54.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 54.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("2fa018d5-3a51-4382-a6d3-3d9115af914f"),
+                            MenuItemId = new Guid("6084edf9-ecf4-434c-bbb7-d0b36081ae10"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 KFC famous Zinger Wings dunked in a delicious honey, ginger and soy sauce.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "4 Dunked Wings",
-                            Price = 54.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 54.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("a9735813-ff91-42e1-99b5-0804c894e680"),
+                            MenuItemId = new Guid("1b2c34e2-c4d9-447f-b48e-e7caa795889a"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "4 Zinger Wings",
-                            Price = 48.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 48.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("9b0e9659-ec1a-4cee-9fa4-387fc909971b"),
+                            MenuItemId = new Guid("0b7752fe-c2a7-41a6-b945-f55983098354"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "9 pieces of crispy, delicious golden brown Nuggets, paired with 1 delicious Colonel dipping sauce.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "9Pc Nuggets",
-                            Price = 42.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 42.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("197f4718-c66a-47f7-9bea-e4e0d5545ef6"),
+                            MenuItemId = new Guid("9d65b500-d042-47ef-8f37-6073cf69d4c7"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken dunked in KFC’s famous honey, ginger and soy sauce!",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "Dunked Pops",
-                            Price = 36.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 36.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("d78be622-f004-4a6d-a0f7-b0fad0714791"),
+                            MenuItemId = new Guid("991fda2a-4caf-4aa9-ac8d-bfa3154483bf"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 pieces of crispy, delicious golden brown Nuggets, paired with 1 delicious Colonel dipping sauce.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "6Pc Nuggets",
-                            Price = 36.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 36.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("b163c283-8557-45b8-950e-2b65b311692b"),
+                            MenuItemId = new Guid("879c36d3-6572-4444-ad16-bfb44d081007"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken that are tender on the inside and crunchy on the outside.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "Small Pops",
-                            Price = 29.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 29.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("1d8eb75e-ffeb-4025-abf7-d0d3eed7870e"),
+                            MenuItemId = new Guid("d81ad86e-1b00-4d88-a294-bad88ef76086"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A delicious chicken patty served with shredded lettuce & Colonel dressing on a snack bun.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
                             Name = "Snack Burger",
-                            Price = 29.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6")
+                            Price = 29.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("3964cabb-1dd1-47df-b3d2-e4995c070963"),
+                            MenuItemId = new Guid("b022962e-28b9-485a-9a69-7a498ace121f"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Try the new standard! The New Colonel burger, Our trademark real chicken fillet; A fresh Brioche bun, Creamy Colonel sauce and cheese on a fresh bed of lettuce & succulent tomatoes",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "New Colonel Burger",
-                            Price = 60.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 60.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("eacdf9d7-0558-4f97-b227-29f879f302cb"),
+                            MenuItemId = new Guid("79df7c11-e62a-4e8d-a227-802060b44f7a"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Try the new standard! The New Crispy Zinger burger, Our trademark real chicken fillet; A fresh Brioche bun, New Hot & Spicy sauce and cheese on a fresh bed of lettuce & succulent tomatoes",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "New Zinger Burger",
-                            Price = 60.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 60.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("daa02cf3-9cde-41be-be44-f9a53b978f9d"),
+                            MenuItemId = new Guid("d6eeaf89-f1ae-477b-a850-330ac33841e8"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The new standard in burgers! 2 Spicy, crunchy mini fillets with 2 cheese slices, lettuce & tomato covered in tangy dressing on a burger bun",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "New Double Crunch Burger",
-                            Price = 68.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 68.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("92d00a5b-b785-4cb9-aea0-70fec977197c"),
+                            MenuItemId = new Guid("20a4558e-d1db-4a55-bc7c-12c563a7e15d"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around a delicious fillet zinger recipe - a slice of cheese, hash brown, crisp lettuce, fresh tomato and a dash of Colonel dressing.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "Zinger Boxmaster",
-                            Price = 76.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 76.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("981e0990-ef7a-430a-900b-c7957a40b1bf"),
+                            MenuItemId = new Guid("9ab4a35f-a695-4630-8d44-d994e24fab99"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around a delicious fillet original recipe - a slice of cheese, hash brown, crisp lettuce, fresh tomato and a dash of Colonel dressing.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "Colonel Boxmaster",
-                            Price = 76.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 76.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("d0e7ff2f-b159-4e6b-bc83-79d296ddd18a"),
+                            MenuItemId = new Guid("cf1d174b-1ad9-4939-acdb-add75d94d186"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around 2 deliciously crispy chicken strips, shredded crisp lettuce, sliced tomato and a dash of Colonel dressing.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "Classic Twister",
-                            Price = 66.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 66.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("44658f51-6994-4d2f-b7bf-dcd58a936fd6"),
+                            MenuItemId = new Guid("65bfb64d-2023-490e-bf16-021c63a11844"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around 2 deliciously crispy new and improved chicken strips, shredded crisp lettuce, sliced tomato, topped with Colonel dressing and sweet chilli sauce.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "Sweet Chilli Twister",
-                            Price = 66.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 66.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("1acbcae5-6704-4014-8e98-3b42576e9560"),
+                            MenuItemId = new Guid("9f5a4efa-cfe0-40b0-ac2f-b74adde4b0e1"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The game changer is here, and with a delicious spicy crunch fillet, tomato, lettuce and cheese with tangy dressing all wrapped up in a mini tortilla and grilled to perfection, meal time will never be the same again.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "Wrapsta",
-                            Price = 42.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 42.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("8551b1ac-1077-467d-8c32-d24d4f95d150"),
+                            MenuItemId = new Guid("5471ad06-cbe4-403d-a182-ce8cded81536"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A spicy, crunchy mini fillet with a slice of cheese and lettuce, covered in tangy dressing on a snack bun.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "Crunch Burger",
-                            Price = 36.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 36.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("15e4cb8a-b838-4e99-a07a-cd8dd8a26cea"),
+                            MenuItemId = new Guid("f77465ed-a2c4-4f61-b474-8138a5068b17"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A delicious chicken patty served with shredded lettuce & Colonel dressing on a snack bun.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
                             Name = "Snack Burger",
-                            Price = 29.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7")
+                            Price = 29.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("7f4d0cec-8735-4720-8a8a-3bf637e3d364"),
+                            MenuItemId = new Guid("5fec8d6d-85a8-4778-8431-793d696ed1a0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Extra Hot & Spicy Zinger sauce on the side",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
                             Name = "Sauce - Hot & Spicy",
-                            Price = 0m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8")
+                            Price = 0m
                         },
                         new
                         {
-                            MenuItemId = new Guid("ec3412a5-3c4f-4505-a28f-ab766d4d3877"),
+                            MenuItemId = new Guid("c74b0250-eeca-43d6-8282-8ae04a942da3"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
                             Name = "Large Chips",
-                            Price = 0m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8")
+                            Price = 0m
                         },
                         new
                         {
-                            MenuItemId = new Guid("3c6881d0-fe52-4b77-875b-e89b51d2ff87"),
+                            MenuItemId = new Guid("cee97d54-2901-4ed1-b30f-3250facf5412"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
                             Name = "Regular Chips",
-                            Price = 26.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8")
+                            Price = 26.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("74a54ef1-9aea-4f26-bb83-6cbb6708bad0"),
+                            MenuItemId = new Guid("8d044188-251d-4911-82f0-30c495dd926d"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "1 Piece Chicken",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
                             Name = "1 Piece Chicken",
-                            Price = 26.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8")
+                            Price = 26.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("e6f508a5-0db3-4928-b08f-e826c346f4d2"),
+                            MenuItemId = new Guid("60482df3-4fff-4515-a0a9-0ee608ee6008"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of creamy mash and our delicious gravy.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
                             Name = "Large Mash & Gravy",
-                            Price = 27.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8")
+                            Price = 27.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("ae2f4bc4-9b76-4d95-90c2-c1f7a3d60f1e"),
+                            MenuItemId = new Guid("fd7493df-3ff1-4c07-b5aa-683f536b9cfb"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of freshly prepared cabbage, onions and carrots in a delicious dressing",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
                             Name = "Regular Coleslaw",
-                            Price = 24.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8")
+                            Price = 24.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("88ce0271-5b2b-4dfb-a708-430d53bae7ea"),
+                            MenuItemId = new Guid("4237ce0b-0fd2-4cc0-985e-950cea16bd45"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of creamy mash and our delicious gravy.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
                             Name = "Regular Mash & Gravy",
-                            Price = 19.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8")
+                            Price = 19.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("295f429b-df19-4ff8-8497-15fff5f8dc1b"),
+                            MenuItemId = new Guid("b5b97795-6eec-4c01-bb20-41fd550b499b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
                             Name = "Small Chips",
-                            Price = 16.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8")
+                            Price = 16.90m
                         },
                         new
                         {
-                            MenuItemId = new Guid("b1b8b8ca-6457-4584-aaae-b206ba8481b7"),
+                            MenuItemId = new Guid("13baad54-e294-40be-88b8-d865cc8c419d"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Oven baked, fresh mini loaf",
+                            MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
                             Name = "Mini Loaf",
-                            Price = 14.90m,
-                            SubMenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8")
+                            Price = 14.90m
                         });
                 });
 
@@ -850,7 +888,7 @@ namespace Gaolos.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid?>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CreatedBy")
@@ -880,6 +918,10 @@ namespace Gaolos.Persistence.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("Tags")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("RestaurantId");
 
                     b.HasIndex("CategoryId");
@@ -890,254 +932,254 @@ namespace Gaolos.Persistence.Migrations
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-a4d5-b5571b43e6a6"),
-                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "KFC"
+                            Name = "KFC",
+                            Tags = "Chicken, Chicken Wings, Burgers, Wraps, Fast Food, Dessert, American, Spicy, Light Meals, Juice, Halaal, Breakfast,"
                         },
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-a4d5-c5571b43e6a6"),
-                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Chicken Licken"
+                            Name = "Chicken Licken",
+                            Tags = "Chicken, Burgers, Chicken Wings, Spicy, Light Meals, Salad, Fast Food, Lunch, Dinner, Fries, Fried"
                         },
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-a4d5-d5571b43e6a6"),
-                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Nandos"
+                            Name = "Nandos",
+                            Tags = "Chicken, Burgers, Chicken Wings, Fast Food, Light Meals, Portuguese, Salad, Spicy, Dessert, South African, Dinner, Chips, Juice, Middle Eastern"
                         },
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-a4d5-e5571b43e6a6"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Roman's Pizza"
+                            Name = "Roman's Pizza",
+                            Tags = "Pizza, Pasta, Salad, Dessert, Lunch, Fast Food, Spicy, Mediterranean, American, Dinner"
                         },
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-a4d5-f5571b43e6a6"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Debonair's Pizza"
+                            Name = "Debonair's Pizza",
+                            Tags = "Pizza, Fast Food, Italian, Chicken Wings, Dessert, Vegetarian, Halaal"
                         },
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-b4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("fe98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "McDonald's"
+                            Name = "McDonald's",
+                            Tags = "Burgers, Fries, Fast Food, American, Breakfast, Dessert, Salad, Chicken, Juice, Halaal, Lunch, Dinner, Cafe, Coffee, Milkshake, Wraps"
                         },
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-c4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("fe98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Steers"
+                            Name = "Steers",
+                            Tags = "Burgers, Fries, Salad, Dessert, Chicken, Milkshake, Ribs, Ice Cream, Fast Food, Kids, Healthy, Chips, Vegetarian"
                         },
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-d4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("de98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Fishaways"
+                            Name = "Fishaways",
+                            Tags = "Fish, Seafood, Fast Food, Halaal, Chips, Lunch, Dinner, Salad, Dessert, Juice, Healthy, Light Meals, Seafood, Grilled, Sushi, Mediterranean, Low Carb"
                         },
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-e4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Kung Fu Chicken"
+                            Name = "Kung Fu Chicken",
+                            Tags = "Chicken, Fast Food, Spicy, Light Meals, Salad, Lunch, Dinner, Juice, Chinese, Asian, Sushi, Soup, Fried, Japanese, Noodles, Spicy"
                         },
                         new
                         {
                             RestaurantId = new Guid("6313179f-7837-473a-f4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Galito's"
+                            Name = "Galito's",
+                            Tags = "Chicken, Spicy, Light Meals, Salad, Lunch, Dinner, Juice, Portuguese, African, Spicy, Halaal, Middle Eastern, Mediterranean, Healthy, Low Carb"
                         },
                         new
                         {
                             RestaurantId = new Guid("1313179f-7837-473a-a4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Doppio Zero"
+                            Name = "Doppio Zero",
+                            Tags = "Italian, Vegan, Vegetarian, Pizza, Pasta, Burgers, Grill, Tapas, Woodfired, Healthy, Salad, Bakery, Breakfast, Calamari, Seafood, Chicken, Wraps, Poke, Mediterranean, Sandwiches, Dessert, Coffee, Health Drinks, Kids, Milkshake, Chips, Fruit"
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-7837-473a-a4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Mochachos"
+                            Name = "Mochachos",
+                            Tags = "Burgers, Fries, Salad, Dessert, Chicken, Milkshake, Ribs, Ice Cream, Fast Food, Kids, Healthy, Chips, Vegetarian, Grill, Lunch, Dinner, Mexican, Burrito, Prego, Halaal"
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-473a-a4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Simply Asia"
+                            Name = "Simply Asia",
+                            Tags = "Asian, Thai, Chinese, Japanese, Noodles, Sushi, Soup, Fried, Spicy, Healthy, Low Carb, Light Meals, Salad, Lunch, Dinner, Juice, Chinese, Asian, Sushi, Soup, Fried, Japanese, Noodles, Spicy, Traditional"
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-2837-473a-a4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Andiccio24"
+                            Name = "Andiccio24",
+                            Tags = "Pizza, Pasta, Salad, Soup, Healthy, Smoothies, Dessert, Milkshake, Homemade, Oven Baked, Italian, Ice Cream, Contemporary, Wheat and Gluten free, Vegan, Mediterranean"
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-3837-473a-a4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("be98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Pedro's Chicken"
+                            Name = "Pedro's Chicken",
+                            Tags = "Chicken, Spicy, Light Meals, Salad, Lunch, Dinner, Juice, Portuguese, African, Spicy, Halaal, Middle Eastern, Mediterranean, Healthy, Low Carb"
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-4837-473a-a4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Pizza Perfect"
+                            Name = "Pizza Perfect",
+                            Tags = "Pizza, Pasta, Salad, Dessert, Lunch, Fast Food, Spicy, Mediterranean, Light Meals, Dinner, Chicken Wings, Kids, Vegetarian"
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-5837-473a-a4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Pron"
+                            Name = "Pron",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-6837-473a-a4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("ce98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "The Fussy Vegan"
+                            Name = "The Fussy Vegan",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-8837-473a-a4d5-a5571b43e6a6"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Pizza Baby"
+                            Name = "Pizza Baby",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-7837-473a-a4d5-a5571b43e6a1"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Tei Avon"
+                            Name = "Tei Avon",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-7837-473a-a4d5-a5571b43e6a2"),
-                            CategoryId = new Guid("ee98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "X&O"
+                            Name = "X&O",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-7837-473a-a4d5-a5571b43e6a3"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Hao Ke Lai"
+                            Name = "Hao Ke Lai",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-7837-473a-a4d5-a5571b43e6a4"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Momo Baohaus"
+                            Name = "Momo Baohaus",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-7837-473a-a4d5-a5571b43e6a5"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "La Padrino"
+                            Name = "La Padrino",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-473a-a4d5-a5571b43e6a7"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Asian Twist"
+                            Name = "Asian Twist",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-473a-a4d5-a5571b43e6a8"),
-                            CategoryId = new Guid("ae98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Thunder Gun"
+                            Name = "Thunder Gun",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-473a-a4d1-a5571b43e6a9"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Chop Stix"
+                            Name = "Chop Stix",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-173a-a4d5-a5571b43e6a9"),
-                            CategoryId = new Guid("ae98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Mike's Heritage House"
+                            Name = "Mike's Heritage House",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-273a-a4d5-a5571b43e6a9"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Spiceburg Greenside"
+                            Name = "Spiceburg Greenside",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-373a-a4d5-a5571b43e6a9"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Miyako Sushi"
+                            Name = "Miyako Sushi",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-473a-a4d5-a5571b43e6a9"),
-                            CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dda"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Curry Up"
+                            Name = "Curry Up",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-573a-a4d5-a5571b43e6a9"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Topo Gigio"
+                            Name = "Topo Gigio",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-673a-a4d5-a5571b43e6a9"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Satori"
+                            Name = "Satori",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-773a-a4d5-a5571b43e6a9"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Pizza e Vino"
+                            Name = "Pizza e Vino",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-873a-a4d5-a5571b43e6a9"),
-                            CategoryId = new Guid("de98f549-e790-4e9f-aa16-18c2292a2ee9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Jimmy's"
+                            Name = "Jimmy's",
+                            Tags = ""
                         },
                         new
                         {
                             RestaurantId = new Guid("2313179f-1837-973a-a4d5-a5571b43e6a9"),
-                            CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b44e6a6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Pasta Worx"
+                            Name = "Pasta Worx",
+                            Tags = ""
                         });
                 });
 
@@ -1177,103 +1219,53 @@ namespace Gaolos.Persistence.Migrations
                     b.HasIndex("MenuId");
 
                     b.ToTable("Submenus");
-
-                    b.HasData(
-                        new
-                        {
-                            SubmenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a1571b43e6a9"),
-                            Name = "Buckets"
-                        },
-                        new
-                        {
-                            SubmenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a1571b43e6a9"),
-                            Name = "Box Meals"
-                        },
-                        new
-                        {
-                            SubmenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a1571b43e6a9"),
-                            Name = "Streetwise"
-                        },
-                        new
-                        {
-                            SubmenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a1571b43e6a9"),
-                            Name = "Drinks & Treats"
-                        },
-                        new
-                        {
-                            SubmenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a1571b43e6a9"),
-                            Name = "Sharing"
-                        },
-                        new
-                        {
-                            SubmenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a1571b43e6a9"),
-                            Name = "Wings & Snacks"
-                        },
-                        new
-                        {
-                            SubmenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a1571b43e6a9"),
-                            Name = "Burgers & Wraps"
-                        },
-                        new
-                        {
-                            SubmenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            MenuId = new Guid("2313179f-1837-173a-a4d5-a1571b43e6a9"),
-                            Name = "Add Ons"
-                        });
                 });
 
             modelBuilder.Entity("Gaolos.Domain.Entities.Menu", b =>
                 {
-                    b.HasOne("Gaolos.Domain.Entities.Restaurant", "Restaurant")
-                        .WithOne("Menu")
-                        .HasForeignKey("Gaolos.Domain.Entities.Menu", "RestaurantId")
+                    b.HasOne("Gaolos.Domain.Entities.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Gaolos.Domain.Entities.Restaurant", "Restaurant")
+                        .WithMany("Menus")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
 
                     b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("Gaolos.Domain.Entities.MenuItem", b =>
                 {
-                    b.HasOne("Gaolos.Domain.Entities.Submenu", "Submenu")
-                        .WithMany("menuItems")
-                        .HasForeignKey("SubMenuId")
+                    b.HasOne("Gaolos.Domain.Entities.Menu", "Menu")
+                        .WithMany("MenuItems")
+                        .HasForeignKey("MenuId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Submenu");
+                    b.HasOne("Gaolos.Domain.Entities.Submenu", null)
+                        .WithMany("menuItems")
+                        .HasForeignKey("SubmenuId");
+
+                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("Gaolos.Domain.Entities.Restaurant", b =>
                 {
-                    b.HasOne("Gaolos.Domain.Entities.Category", "Category")
+                    b.HasOne("Gaolos.Domain.Entities.Category", null)
                         .WithMany("Restaurants")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
+                        .HasForeignKey("CategoryId");
                 });
 
             modelBuilder.Entity("Gaolos.Domain.Entities.Submenu", b =>
                 {
                     b.HasOne("Gaolos.Domain.Entities.Menu", "Menu")
-                        .WithMany("Submenus")
+                        .WithMany()
                         .HasForeignKey("MenuId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1288,12 +1280,12 @@ namespace Gaolos.Persistence.Migrations
 
             modelBuilder.Entity("Gaolos.Domain.Entities.Menu", b =>
                 {
-                    b.Navigation("Submenus");
+                    b.Navigation("MenuItems");
                 });
 
             modelBuilder.Entity("Gaolos.Domain.Entities.Restaurant", b =>
                 {
-                    b.Navigation("Menu");
+                    b.Navigation("Menus");
                 });
 
             modelBuilder.Entity("Gaolos.Domain.Entities.Submenu", b =>

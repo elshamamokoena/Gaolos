@@ -103,21 +103,160 @@
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.RestaurantsController",
-    "Method": "GetRestaurantsForCategory",
-    "RelativePath": "api/categories/{categoryId}/restaurants",
+    "Method": "GetAllRestaurants",
+    "RelativePath": "api/restaurants",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "categoryId",
+        "Name": "Tag",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SearchQuery",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList.RestaurantListVm, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Gaolos.Api.Controllers.MenuController",
+    "Method": "GetMenusForRestaurant",
+    "RelativePath": "api/restaurants/{restaurantId}/menus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantId",
         "Type": "System.Guid",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCategory.RestaurantForCategoryDto, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant.MenuForRestaurantDto, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Gaolos.Api.Controllers.MenuController",
+    "Method": "GetMenuForRestaurant",
+    "RelativePath": "api/restaurants/{restaurantId}/menus/{menuId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "menuId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant.MenuForRestaurantDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Gaolos.Api.Controllers.MenuItemsController",
+    "Method": "GetMenuItemsForMenu",
+    "RelativePath": "api/restaurants/{restaurantId}/menus/{menuId}/menuitems",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "menuId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "restaurantId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.MenuItems.Queries.GetMenuItemsForMenu.MenuItemsForMenuDto, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Gaolos.Api.Controllers.MenuItemsController",
+    "Method": "GetMenuItemForMenu",
+    "RelativePath": "api/restaurants/{restaurantId}/menus/{menuId}/menuitems/{menuItemId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "menuId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "menuItemId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "restaurantId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gaolos.Application.Features.MenuItems.Queries.GetMenuItemForMenu.MenuItemForMenuDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

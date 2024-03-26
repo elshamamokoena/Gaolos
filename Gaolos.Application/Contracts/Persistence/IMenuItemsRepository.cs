@@ -9,7 +9,7 @@ namespace Gaolos.Application.Contracts.Persistence
 {
     public interface IMenuItemsRepository
     {
-        Task<IEnumerable<MenuItem>> GetMenuItemsAsync(Guid subMenuId);
-        Task<MenuItem> GetMenuItemAsync(Guid subMenuId, Guid menuItemId);
+        Task<IEnumerable<MenuItem>> GetMenuItemsAsync(Guid menuId);
+        Task<MenuItem> GetMenuItemAsync(Guid menuId, Guid menuItemId);
     }
 }

@@ -25,7 +25,9 @@ namespace Gaolos.Persistence
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
-         //   services.AddScoped<IOrderRepository, OrderRepository>();
+           services.AddScoped<IMenuRepository, MenuRepository>();
+            services.AddScoped<IMenuItemsRepository, MenuItemsRepository>();
+
 
             return services;
         }

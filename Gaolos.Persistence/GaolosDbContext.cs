@@ -16,7 +16,7 @@ namespace Gaolos.Persistence
         }
 
         public GaolosDbContext(DbContextOptions<GaolosDbContext> options, ILoggedInUserService loggedInUserService)
-    : base(options)
+        : base(options)
         {
             _loggedInUserService = loggedInUserService;
         }
@@ -139,14 +139,15 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = kfcGuid,
                 Name = "KFC",
-              //  CategoryId = chickenGuid,
+                //  CategoryId = chickenGuid,
+                Tags = "Chicken, Chicken Wings, Burgers, Wraps, Fast Food, Dessert, American, Spicy, Light Meals, Juice, Halaal, Breakfast,"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = chickenlickenGuid,
                 Name = "Chicken Licken",
-            //    CategoryId = chickenGuid,
+                Tags= "Chicken, Burgers, Chicken Wings, Spicy, Light Meals, Salad, Fast Food, Lunch, Dinner, Fries, Fried"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
@@ -154,13 +155,14 @@ namespace Gaolos.Persistence
                 RestaurantId = nandosGuid,
                 Name = "Nandos",
            //    CategoryId = chickenGuid,
-
+                Tags= "Chicken, Burgers, Chicken Wings, Fast Food, Light Meals, Portuguese, Salad, Spicy, Dessert, South African, Dinner, Chips, Juice, Middle Eastern"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = romansGuid,
                 Name = "Roman's Pizza",
             //    CategoryId = pizzaAndPastaGuid,
+               Tags = "Pizza, Pasta, Salad, Dessert, Lunch, Fast Food, Spicy, Mediterranean, American, Dinner"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
@@ -168,6 +170,7 @@ namespace Gaolos.Persistence
                 RestaurantId = debonairsGuid,
                 Name = "Debonair's Pizza",
              //   CategoryId = pizzaAndPastaGuid,
+               Tags = "Pizza, Fast Food, Italian, Chicken Wings, Dessert, Vegetarian, Halaal"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
@@ -175,6 +178,7 @@ namespace Gaolos.Persistence
                 RestaurantId = mcdGuid,
                 Name = "McDonald's",
               //  CategoryId = burgersAndFriesGuid,
+                Tags = "Burgers, Fries, Fast Food, American, Breakfast, Dessert, Salad, Chicken, Juice, Halaal, Lunch, Dinner, Cafe, Coffee, Milkshake, Wraps"
 
             });
 
@@ -183,6 +187,7 @@ namespace Gaolos.Persistence
                 RestaurantId = steersGuid,
                 Name = "Steers",
             //    CategoryId = burgersAndFriesGuid,
+              Tags = "Burgers, Fries, Salad, Dessert, Chicken, Milkshake, Ribs, Ice Cream, Fast Food, Kids, Healthy, Chips, Vegetarian"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
@@ -190,6 +195,7 @@ namespace Gaolos.Persistence
                 RestaurantId = fishawaysGuid,
                 Name = "Fishaways",
            //     CategoryId = fishAndSeafoodGuid,
+           Tags = "Fish, Seafood, Fast Food, Halaal, Chips, Lunch, Dinner, Salad, Dessert, Juice, Healthy, Light Meals, Seafood, Grilled, Sushi, Mediterranean, Low Carb"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
@@ -197,6 +203,7 @@ namespace Gaolos.Persistence
                 RestaurantId = kungfuChickenGuid,
                 Name = "Kung Fu Chicken",
            //     CategoryId = chickenGuid
+                 Tags = "Chicken, Fast Food, Spicy, Light Meals, Salad, Lunch, Dinner, Juice, Chinese, Asian, Sushi, Soup, Fried, Japanese, Noodles, Spicy"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
@@ -204,6 +211,7 @@ namespace Gaolos.Persistence
                 RestaurantId = galitosGuid,
                 Name = "Galito's",
           //      CategoryId = chickenGuid,
+                Tags = "Chicken, Spicy, Light Meals, Salad, Lunch, Dinner, Juice, Portuguese, African, Spicy, Halaal, Middle Eastern, Mediterranean, Healthy, Low Carb"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
@@ -211,6 +219,7 @@ namespace Gaolos.Persistence
                 RestaurantId = doppiozeroGuid,
                 Name = "Doppio Zero",
             //    CategoryId = hauteCuisine,
+                Tags = "Italian, Vegan, Vegetarian, Pizza, Pasta, Burgers, Grill, Tapas, Woodfired, Healthy, Salad, Bakery, Breakfast, Calamari, Seafood, Chicken, Wraps, Poke, Mediterranean, Sandwiches, Dessert, Coffee, Health Drinks, Kids, Milkshake, Chips, Fruit"
 
 
             });
@@ -219,6 +228,7 @@ namespace Gaolos.Persistence
                 RestaurantId = mochachosGuid,
                 Name = "Mochachos",
           //      CategoryId = chickenGuid,
+               Tags = "Burgers, Fries, Salad, Dessert, Chicken, Milkshake, Ribs, Ice Cream, Fast Food, Kids, Healthy, Chips, Vegetarian, Grill, Lunch, Dinner, Mexican, Burrito, Prego, Halaal"
 
             });
 
@@ -236,24 +246,29 @@ namespace Gaolos.Persistence
                 RestaurantId= simplyAsiaGuid,
                 Name = "Simply Asia",
            //     CategoryId= hauteCuisine,
+                Tags = "Asian, Thai, Chinese, Japanese, Noodles, Sushi, Soup, Fried, Spicy, Healthy, Low Carb, Light Meals, Salad, Lunch, Dinner, Juice, Chinese, Asian, Sushi, Soup, Fried, Japanese, Noodles, Spicy, Traditional"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = andiccio24Guid,
                 Name = "Andiccio24",
             //    CategoryId= pizzaAndPastaGuid,
+                Tags = "Pizza, Pasta, Salad, Soup, Healthy, Smoothies, Dessert, Milkshake, Homemade, Oven Baked, Italian, Ice Cream, Contemporary, Wheat and Gluten free, Vegan, Mediterranean"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = pedrosGuid,
                 Name = "Pedro's Chicken",
            //     CategoryId= chickenGuid,
+               Tags = "Chicken, Spicy, Light Meals, Salad, Lunch, Dinner, Juice, Portuguese, African, Spicy, Halaal, Middle Eastern, Mediterranean, Healthy, Low Carb"
+
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = pizzaperfectGuid,
                 Name = "Pizza Perfect",
           //      CategoryId= pizzaAndPastaGuid,
+            Tags = "Pizza, Pasta, Salad, Dessert, Lunch, Fast Food, Spicy, Mediterranean, Light Meals, Dinner, Chicken Wings, Kids, Vegetarian"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
@@ -421,9 +436,10 @@ namespace Gaolos.Persistence
                 CategoryId= chickenGuid
             });
 
+
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
-                MenuItemId = Guid.NewGuid(),
+                MenuItemId =  Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A9}"),
                 Name = "21 Piece Bucket",
                 Description = "21 Pieces of juicy chicken seasoned with the 11 secret herbs and spices of Original Recipe® chicken, marinated and cooked to perfection.",
                 Price = 365.90M,

@@ -1,5 +1,7 @@
 ﻿using Gaolos.Application.Contracts.Persistence;
+using Gaolos.Application.ResourceParameters;
 using Gaolos.Domain.Entities;
+using Gaolos.Application.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gaolos.Persistence.Repositories
@@ -15,19 +17,21 @@ namespace Gaolos.Persistence.Repositories
 
         public void AddRestaurant(Guid categoryId, Restaurant restaurant)
         {
-            if (categoryId == Guid.Empty)
-            {
-                throw new ArgumentNullException(nameof(categoryId));
-            }
+            //if (categoryId == Guid.Empty)
+            //{
+            //    throw new ArgumentNullException(nameof(categoryId));
+            //}
 
-            if (restaurant == null)
-            {
-                throw new ArgumentNullException(nameof(restaurant));
-            }
+            //if (restaurant == null)
+            //{
+            //    throw new ArgumentNullException(nameof(restaurant));
+            //}
 
-            // always set the CategoryId to the passed-in categoryId
-            restaurant.CategoryId = categoryId;
-            _dbContext.Restaurants.Add(restaurant);
+            //// always set the CategoryId to the passed-in categoryId
+            //restaurant.CategoryId = categoryId;
+            //_dbContext.Restaurants.Add(restaurant);
+            throw new NotImplementedException();
+
         }
 
         public void DeleteRestaurant(Restaurant restaurant)
@@ -38,28 +42,81 @@ namespace Gaolos.Persistence.Repositories
 
         public async Task<Restaurant> GetRestaurantAsync(Guid categoryId, Guid restaurantId)
         {
-            if(categoryId == Guid.Empty) throw new ArgumentNullException(nameof(categoryId));
-            if (restaurantId == Guid.Empty) throw new ArgumentNullException(nameof(restaurantId));
+            //if(categoryId == Guid.Empty) throw new ArgumentNullException(nameof(categoryId));
+            //if (restaurantId == Guid.Empty) throw new ArgumentNullException(nameof(restaurantId));
 
-            #pragma warning disable CS8603 // Possible null reference return.
-            return await _dbContext.Restaurants
-                 .Where(r => r.CategoryId == categoryId && r.RestaurantId == restaurantId)
-                .FirstOrDefaultAsync();
-            #pragma warning restore CS8603 // Possible null reference return.
+            //#pragma warning disable CS8603 // Possible null reference return.
+            //return await _dbContext.Restaurants
+            //     .Where(r => r.CategoryId == categoryId && r.RestaurantId == restaurantId)
+            //    .FirstOrDefaultAsync();
+            //#pragma warning restore CS8603 // Possible null reference return.
+            throw new NotImplementedException();
 
         }
 
         public async Task<IEnumerable<Restaurant>> GetRestaurantsAsync(Guid categoryId)
         {
             //check if categoryId is null in the query handler
-            if (categoryId == Guid.Empty)
+            //if (categoryId == Guid.Empty)
+            //{
+            //    throw new ArgumentNullException(nameof(categoryId));
+            //}
+
+            //return await _dbContext.Restaurants
+            //            .Where(r => r.CategoryId == categoryId)
+            //            .OrderBy(r => r.Name).ToListAsync();
+            throw new NotImplementedException();
+
+        }
+
+        public async Task<PagedList<Restaurant>> GetRestaurantsAsync(RestaurantResourceParameters resourceParameters)
+        {
+            if(resourceParameters == null)
             {
-                throw new ArgumentNullException(nameof(categoryId));
+                throw new ArgumentNullException(nameof(resourceParameters));
+            }
+            //if(string.IsNullOrWhiteSpace(resourceParameters.SearchQuery) 
+            //    && string.IsNullOrWhiteSpace(resourceParameters.Tag))
+            //{
+            //    return await GetRestaurantsAsync();
+            //}
+
+            // collection to start from
+            var collection = _dbContext.Restaurants as IQueryable<Restaurant>;
+
+            if(!string.IsNullOrWhiteSpace(resourceParameters.Tag))
+            {
+                var tag = resourceParameters.Tag.Trim();
+                collection = collection.Where(r => r.Tags.Contains(tag));
             }
 
-            return await _dbContext.Restaurants
-                        .Where(r => r.CategoryId == categoryId)
-                        .OrderBy(r => r.Name).ToListAsync();
+            if(!string.IsNullOrWhiteSpace(resourceParameters.SearchQuery))
+            {
+                var searchQuery = resourceParameters.SearchQuery.Trim();
+                collection = collection.Where(r => r.Name.Contains(searchQuery));
+            }
+
+            return await PagedList<Restaurant>.CreateAsync(collection,
+                        resourceParameters.PageNumber,
+                        resourceParameters.PageSize);
+            //return await collection
+            //    .Skip(resourceParameters.PageSize* (resourceParameters.PageNumber-1))
+            //    .Take(resourceParameters.PageSize)
+            //    .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Restaurant>> GetRestaurantsAsync()
+        {
+            return await _dbContext.Restaurants.ToListAsync();
+        }
+
+        public async Task<bool> RestaurantExistsAsync(Guid restaurantId)
+        {
+            if (restaurantId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(restaurantId));
+            }
+            return await _dbContext.Restaurants.AnyAsync(r => r.RestaurantId == restaurantId);
         }
 
         public void UpdateRestaurant(Restaurant restaurant)

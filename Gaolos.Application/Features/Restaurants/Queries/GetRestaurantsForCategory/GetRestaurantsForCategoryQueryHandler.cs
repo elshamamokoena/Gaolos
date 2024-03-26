@@ -27,12 +27,13 @@ namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCateg
 
         public async Task<IEnumerable<RestaurantsForCategoryDto>> Handle(GetRestaurantsForCategoryQuery request, CancellationToken cancellationToken)
         {
-            if(! await _categoryRepository.CategoryExistsAsync(request.CategoryId))
-            {
-                throw new NotFoundException(nameof(Category), request.CategoryId);
-            }
-            var restaurantsForCategory = await _restaurantRepository.GetRestaurantsAsync(request.CategoryId);
-            return _mapper.Map<IEnumerable<RestaurantsForCategoryDto>>(restaurantsForCategory);
+            //if(! await _categoryRepository.CategoryExistsAsync(request.CategoryId))
+            //{
+            //    throw new NotFoundException(nameof(Category), request.CategoryId);
+            //}
+            //var restaurantsForCategory = await _restaurantRepository.GetRestaurantsAsync(request.CategoryId);
+            //return _mapper.Map<IEnumerable<RestaurantsForCategoryDto>>(restaurantsForCategory);
+            throw new NotImplementedException();
 
         }
     }

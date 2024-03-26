@@ -1,4 +1,5 @@
-﻿using Gaolos.Api.Utility;
+﻿using Gaolos.Api.Helpers;
+using Gaolos.Api.Utility;
 using Gaolos.Application.Features.Restaurants.Commands.CreateRestaurant;
 using Gaolos.Application.Features.Restaurants.Commands.DeleteRestaurant;
 using Gaolos.Application.Features.Restaurants.Commands.UpdateRestaurant;
@@ -6,14 +7,17 @@ using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsExport;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCategory;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList;
+using Gaolos.Application.ResourceParameters;
 using Gaolos.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections;
+using System.Text.Json;
 
 namespace Gaolos.Api.Controllers
 {
     [ApiController]
-    [Route("api/categories/{categoryId}/restaurants")]
+    [Route("api/restaurants")]
     public class RestaurantsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -24,14 +28,71 @@ namespace Gaolos.Api.Controllers
                 ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<RestaurantsForCategoryDto>>> GetRestaurantsForCategory(Guid categoryId)
+    
+        private string? CreateRestaurantsResourceUri(RestaurantResourceParameters resourceParameters, ResourceUriType type)
         {
-            var dtos = await _mediator.Send(new GetRestaurantsForCategoryQuery { CategoryId = categoryId });
-
-            return Ok(dtos);
+            switch (type)
+            {
+                case ResourceUriType.PreviousPage:
+                    return Url.Link("GetAllRestaurants",
+                                             new
+                                             {
+                          pageNumber = resourceParameters.PageNumber - 1,
+                          pageSize = resourceParameters.PageSize,
+                          searchQuery = resourceParameters.SearchQuery,
+                          tag = resourceParameters.Tag
+                      });
+                case ResourceUriType.NextPage:
+                    return Url.Link("GetAllRestaurants",
+                                             new
+                                             {
+                          pageNumber = resourceParameters.PageNumber + 1,
+                          pageSize = resourceParameters.PageSize,
+                          searchQuery = resourceParameters.SearchQuery,
+                          tag = resourceParameters.Tag
+                      });
+                default:
+                    return Url.Link("GetAllRestaurants",
+                                           new
+                                           {
+                        pageNumber = resourceParameters.PageNumber,
+                        pageSize = resourceParameters.PageSize,
+                        searchQuery = resourceParameters.SearchQuery,
+                        tag = resourceParameters.Tag
+                    });
+            }
         }
+        [HttpGet(Name ="GetAllRestaurants")]
+        public async Task<ActionResult<IEnumerable<RestaurantListVm>>> GetAllRestaurants([FromQuery] RestaurantResourceParameters resourceParameters)
+        {
+            var result = await _mediator.Send(new GetRestaurantsListQuery { ResourceParameters = new RestaurantResourceParameters 
+            {
+                Tag =resourceParameters.Tag,
+                SearchQuery = resourceParameters.SearchQuery,
+                PageNumber = resourceParameters.PageNumber,
+                PageSize = resourceParameters.PageSize
+             } });
 
+            //var previousPageLink = result.HasPrevious 
+            //    ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.PreviousPage) : null;
+
+            //var nextPageLink = result.HasNext 
+            //    ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.NextPage) : null;
+
+            //var paginationMetadata = new
+            //{
+            //    totalCount = result.TotalCount,
+            //    pageSize = result.PageSize,
+            //    currentPage = result.CurrentPage,
+            //    totalPages = result.TotalPages,
+            //    previousPageLink=  previousPageLink,
+            //    nextPageLink=  nextPageLink
+            //};
+            //Response.Headers.Append("X-Pagination",
+            //    JsonSerializer.Serialize(paginationMetadata));
+
+            return Ok(result);
+        }
 
         //[HttpGet]
         //[ProducesResponseType(StatusCodes.Status200OK)]

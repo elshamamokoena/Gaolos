@@ -5,21 +5,22 @@ using MediatR;
 
 namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList
 {
-    public class GetRestaurantsListQueryHandler : IRequestHandler<GetRestaurantsListQuery, List<RestaurantListVm>>
+    public class GetRestaurantsListQueryHandler : IRequestHandler<GetRestaurantsListQuery, IEnumerable<RestaurantListVm>>
     {
-        private readonly IAsyncRepository<Restaurant> _restaurantRepository;
+        private readonly IRestaurantRepository _restaurantRepository;
         private readonly IMapper _mapper;
 
-        public GetRestaurantsListQueryHandler(IMapper mapper, IAsyncRepository<Restaurant> restaurantRepository)
+        public GetRestaurantsListQueryHandler(IMapper mapper, IRestaurantRepository restaurantRepository)
         {
             _mapper = mapper;
             _restaurantRepository = restaurantRepository;
         }
 
-        public async Task<List<RestaurantListVm>> Handle(GetRestaurantsListQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<RestaurantListVm>> Handle(GetRestaurantsListQuery request, CancellationToken cancellationToken)
         {
-            var allRestaurants = (await _restaurantRepository.ListAllAsync()).OrderBy(x => x.Name);
-            return _mapper.Map<List<RestaurantListVm>>(allRestaurants);
+            var allRestaurants = await _restaurantRepository.GetRestaurantsAsync(request.ResourceParameters);
+
+            return _mapper.Map<IEnumerable<RestaurantListVm>>(allRestaurants);
         }
     }
 }
