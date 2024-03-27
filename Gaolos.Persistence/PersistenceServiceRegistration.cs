@@ -1,5 +1,6 @@
 ﻿using Gaolos.Application.Contracts.Persistence;
 using Gaolos.Persistence.Repositories;
+using Gaolos.Persistence.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,20 +16,15 @@ namespace Gaolos.Persistence
 
                 options.UseSqlServer(configuration.GetConnectionString("GaolosConnectionString"));
                 options.EnableSensitiveDataLogging();
-
             }
-
-
-                );
+        );
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
-
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
-           services.AddScoped<IMenuRepository, MenuRepository>();
+            services.AddScoped<IMenuRepository, MenuRepository>();
             services.AddScoped<IMenuItemsRepository, MenuItemsRepository>();
-
-
+            services.AddTransient<IPropertyMappingService, PropertyMappingService>();
             return services;
         }
     }

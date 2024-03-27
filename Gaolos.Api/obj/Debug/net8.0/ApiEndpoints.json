@@ -128,19 +128,19 @@
         "Name": "PageSize",
         "Type": "System.Int32",
         "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Fields",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList.RestaurantListVm, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.MenuController",
@@ -185,19 +185,14 @@
         "Name": "menuId",
         "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "fields",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant.MenuForRestaurantDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.MenuItemsController",

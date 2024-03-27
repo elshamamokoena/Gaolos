@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SPa68JyQQq9/fDJxm1NFpvL9T2gn9oVqsRjxdECERnkmM1bekh/AVtIIr/yQ1cdCJYfYDMQJkwMWL48mKYjaCw==",
+  "dgSpecHash": "RP4T1aOFI21eYAX8/2c7fZwANwz4E0NI7dlR6+PB/MythG8rlpwdd7iBtQtGBVqOmqT2YUCHlmGXN/dNquR9yw==",
   "success": true,
   "projectFilePath": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Persistence\\Gaolos.Persistence.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\elsha\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.24.0\\system.identitymodel.tokens.jwt.6.24.0.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.io.filesystem.accesscontrol\\5.0.0\\system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\elsha\\.nuget\\packages\\system.linq.dynamic.core\\1.3.10\\system.linq.dynamic.core.1.3.10.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",

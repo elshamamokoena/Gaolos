@@ -1,5 +1,6 @@
 ﻿using Gaolos.Application.Features.Menus.Queries.GetMenuForRestaurant;
 using Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant;
+using Gaolos.Application.Helpers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,10 +24,10 @@ namespace Gaolos.Api.Controllers
         }
 
         [HttpGet("{menuId}", Name ="GetMenuForRestaurant")]
-        public async Task<ActionResult<MenuForRestaurantDto>> GetMenuForRestaurant(Guid restaurantId, Guid menuId)
+        public async Task<IActionResult> GetMenuForRestaurant(Guid restaurantId, Guid menuId, string? fields)
         {
             var menu = await _mediator.Send(new GetMenuForRestaurantQuery() { RestaurantId = restaurantId, MenuId = menuId });
-            return Ok(menu);
+            return Ok(menu.ShapeData(fields));
         }
 
     }

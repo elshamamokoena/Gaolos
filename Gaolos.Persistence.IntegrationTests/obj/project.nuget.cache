@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pBO4SxsfOcWfMV9pK3J5v60Mn0JqhQzmNRrxo42YUPQxMl1U8gma6Ug4NDzGWNUe0atHEF/BPRg1C89JWI3zJQ==",
+  "dgSpecHash": "O9X08TFo8i6E3E3FY54Kc3mudNi5mpqmqVJa19ntNTbIjItZjsmLppa95dyceaXymRgzLTHXamg7sOm9bir6QQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Persistence.IntegrationTests\\Gaolos.Persistence.IntegrationTests.csproj",
   "expectedPackageFiles": [
@@ -99,6 +99,7 @@
     "C:\\Users\\elsha\\.nuget\\packages\\system.io.filesystem.accesscontrol\\5.0.0\\system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
+    "C:\\Users\\elsha\\.nuget\\packages\\system.linq.dynamic.core\\1.3.10\\system.linq.dynamic.core.1.3.10.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.management\\6.0.1\\system.management.6.0.1.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",

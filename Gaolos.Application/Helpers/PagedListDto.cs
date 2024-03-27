@@ -17,5 +17,6 @@ namespace Gaolos.Application.Helpers
         public bool HasNext { get; set; }
 
         public IEnumerable<T> Subset { get; set; }
+
     }
 }

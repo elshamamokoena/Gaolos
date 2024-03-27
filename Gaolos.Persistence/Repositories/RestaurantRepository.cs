@@ -3,16 +3,21 @@ using Gaolos.Application.ResourceParameters;
 using Gaolos.Domain.Entities;
 using Gaolos.Application.Helpers;
 using Microsoft.EntityFrameworkCore;
+using Gaolos.Persistence.Helpers;
+using Gaolos.Application.Models.Restaurant;
 
 namespace Gaolos.Persistence.Repositories
 {
     public class RestaurantRepository: IRestaurantRepository
     {
         private readonly GaolosDbContext _dbContext;
-        public RestaurantRepository(GaolosDbContext dbContext)
+        private readonly IPropertyMappingService _propertyMappingService;
+
+        public RestaurantRepository(GaolosDbContext dbContext, IPropertyMappingService propertyMappingService)
         {
             _dbContext = dbContext ??
                 throw new ArgumentNullException(nameof(dbContext));
+            _propertyMappingService = propertyMappingService;
         }
 
         public void AddRestaurant(Guid categoryId, Restaurant restaurant)
@@ -94,6 +99,16 @@ namespace Gaolos.Persistence.Repositories
             {
                 var searchQuery = resourceParameters.SearchQuery.Trim();
                 collection = collection.Where(r => r.Name.Contains(searchQuery));
+            }
+
+            if (!string.IsNullOrWhiteSpace(resourceParameters.OrderBy))
+            {
+                // get property mapping dictionary
+                var authorPropertyMappingDictionary = _propertyMappingService
+                    .GetPropertyMapping<RestaurantDto, Restaurant>();
+
+                collection = collection.ApplySort(resourceParameters.OrderBy,
+                    authorPropertyMappingDictionary);
             }
 
             return await PagedList<Restaurant>.CreateAsync(collection,

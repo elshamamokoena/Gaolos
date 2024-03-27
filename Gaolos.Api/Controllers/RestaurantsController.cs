@@ -7,6 +7,7 @@ using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsExport;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCategory;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList;
+using Gaolos.Application.Helpers;
 using Gaolos.Application.ResourceParameters;
 using Gaolos.Domain.Entities;
 using MediatR;
@@ -37,6 +38,9 @@ namespace Gaolos.Api.Controllers
                     return Url.Link("GetAllRestaurants",
                                              new
                                              {
+
+                             fields = resourceParameters.Fields,
+                        orderBy = resourceParameters.OrderBy,
                           pageNumber = resourceParameters.PageNumber - 1,
                           pageSize = resourceParameters.PageSize,
                           searchQuery = resourceParameters.SearchQuery,
@@ -46,6 +50,8 @@ namespace Gaolos.Api.Controllers
                     return Url.Link("GetAllRestaurants",
                                              new
                                              {
+                          fields = resourceParameters.Fields,
+                          orderBy = resourceParameters.OrderBy,
                           pageNumber = resourceParameters.PageNumber + 1,
                           pageSize = resourceParameters.PageSize,
                           searchQuery = resourceParameters.SearchQuery,
@@ -55,6 +61,8 @@ namespace Gaolos.Api.Controllers
                     return Url.Link("GetAllRestaurants",
                                            new
                                            {
+                        fields = resourceParameters.Fields,
+                        orderBy = resourceParameters.OrderBy,
                         pageNumber = resourceParameters.PageNumber,
                         pageSize = resourceParameters.PageSize,
                         searchQuery = resourceParameters.SearchQuery,
@@ -63,15 +71,9 @@ namespace Gaolos.Api.Controllers
             }
         }
         [HttpGet(Name ="GetAllRestaurants")]
-        public async Task<ActionResult<IEnumerable<RestaurantListVm>>> GetAllRestaurants([FromQuery] RestaurantResourceParameters resourceParameters)
+        public async Task<IActionResult> GetAllRestaurants([FromQuery] RestaurantResourceParameters resourceParameters)
         {
-            var result = await _mediator.Send(new GetRestaurantsListQuery { ResourceParameters = new RestaurantResourceParameters 
-            {
-                Tag =resourceParameters.Tag,
-                SearchQuery = resourceParameters.SearchQuery,
-                PageNumber = resourceParameters.PageNumber,
-                PageSize = resourceParameters.PageSize
-             } });
+            var result = await _mediator.Send(new GetRestaurantsListQuery(resourceParameters));
 
             var previousPageLink = result.HasPrevious
                 ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.PreviousPage) : null;
@@ -91,7 +93,10 @@ namespace Gaolos.Api.Controllers
             Response.Headers.Append("X-Pagination",
                 JsonSerializer.Serialize(paginationMetadata));
 
-            return Ok(result.Subset);
+            var restaurantsToReturn = result.Subset
+                .ShapeData(resourceParameters.Fields);
+
+            return Ok(restaurantsToReturn);
         }
 
         //[HttpGet]
