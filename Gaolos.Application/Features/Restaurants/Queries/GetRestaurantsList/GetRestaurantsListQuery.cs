@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList
 {
-    public class GetRestaurantsListQuery : IRequest<IEnumerable<RestaurantListVm>>
+    public class GetRestaurantsListQuery : IRequest<PagedListDto<RestaurantListVm>>
     {
         public RestaurantResourceParameters ResourceParameters { get; set; }
     }

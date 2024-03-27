@@ -73,25 +73,25 @@ namespace Gaolos.Api.Controllers
                 PageSize = resourceParameters.PageSize
              } });
 
-            //var previousPageLink = result.HasPrevious 
-            //    ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.PreviousPage) : null;
+            var previousPageLink = result.HasPrevious
+                ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.PreviousPage) : null;
 
-            //var nextPageLink = result.HasNext 
-            //    ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.NextPage) : null;
+            var nextPageLink = result.HasNext
+                ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.NextPage) : null;
 
-            //var paginationMetadata = new
-            //{
-            //    totalCount = result.TotalCount,
-            //    pageSize = result.PageSize,
-            //    currentPage = result.CurrentPage,
-            //    totalPages = result.TotalPages,
-            //    previousPageLink=  previousPageLink,
-            //    nextPageLink=  nextPageLink
-            //};
-            //Response.Headers.Append("X-Pagination",
-            //    JsonSerializer.Serialize(paginationMetadata));
+            var paginationMetadata = new
+            {
+                totalCount = result.TotalCount,
+                pageSize = result.PageSize,
+                currentPage = result.CurrentPage,
+                totalPages = result.TotalPages,
+                previousPageLink = previousPageLink,
+                nextPageLink = nextPageLink
+            };
+            Response.Headers.Append("X-Pagination",
+                JsonSerializer.Serialize(paginationMetadata));
 
-            return Ok(result);
+            return Ok(result.Subset);
         }
 
         //[HttpGet]
