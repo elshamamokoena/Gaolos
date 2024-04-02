@@ -543,3 +543,7 @@ C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\obj\Debug\net8.0\refi
 C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\obj\Debug\net8.0\Gaolos.API.IntegrationTests.pdb
 C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\obj\Debug\net8.0\Gaolos.API.IntegrationTests.genruntimeconfig.cache
 C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\obj\Debug\net8.0\ref\Gaolos.API.IntegrationTests.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll

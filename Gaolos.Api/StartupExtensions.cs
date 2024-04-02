@@ -9,6 +9,8 @@ using Gaolos.Persistence;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace Gaolos.Api
 {
@@ -27,6 +29,17 @@ namespace Gaolos.Api
             builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddControllers();
+           builder. Services.Configure<MvcOptions>(config =>
+            {
+                var newtonsoftJsonOutputFormatter = config.OutputFormatters
+                      .OfType<NewtonsoftJsonOutputFormatter>()?.FirstOrDefault();
+
+                if (newtonsoftJsonOutputFormatter != null)
+                {
+                    newtonsoftJsonOutputFormatter.SupportedMediaTypes
+                        .Add("application/vnd.gaolos.hateoas+json");
+                }
+            });
 
             builder.Services.AddCors(
                 options => options.AddPolicy(

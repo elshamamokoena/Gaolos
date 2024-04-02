@@ -45,17 +45,16 @@ namespace Gaolos.Persistence.Repositories
 
         }
 
-        public async Task<Restaurant> GetRestaurantAsync(Guid categoryId, Guid restaurantId)
+        public async Task<Restaurant> GetRestaurantAsync( Guid restaurantId)
         {
             //if(categoryId == Guid.Empty) throw new ArgumentNullException(nameof(categoryId));
-            //if (restaurantId == Guid.Empty) throw new ArgumentNullException(nameof(restaurantId));
+            if (restaurantId == Guid.Empty) throw new ArgumentNullException(nameof(restaurantId));
 
-            //#pragma warning disable CS8603 // Possible null reference return.
-            //return await _dbContext.Restaurants
-            //     .Where(r => r.CategoryId == categoryId && r.RestaurantId == restaurantId)
-            //    .FirstOrDefaultAsync();
-            //#pragma warning restore CS8603 // Possible null reference return.
-            throw new NotImplementedException();
+#pragma warning disable CS8603 // Possible null reference return.
+            return await _dbContext.Restaurants
+                 .Where(r => r.RestaurantId == restaurantId)
+                .FirstOrDefaultAsync();
+#pragma warning restore CS8603 // Possible null reference return.
 
         }
 

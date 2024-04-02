@@ -213,3 +213,4 @@ C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence.IntegrationTests\obj\Debug
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence.IntegrationTests\obj\Debug\net8.0\Gaolos.Persistence.IntegrationTests.pdb
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence.IntegrationTests\obj\Debug\net8.0\Gaolos.Persistence.IntegrationTests.genruntimeconfig.cache
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence.IntegrationTests\obj\Debug\net8.0\ref\Gaolos.Persistence.IntegrationTests.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Persistence.IntegrationTests\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll

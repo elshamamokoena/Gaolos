@@ -1,7 +1,12 @@
-﻿using Gaolos.Application.Features.Categories.Commands.CreateCateogry;
+﻿using Gaolos.Api.ActionConstraints;
+using Gaolos.Application.Features.Categories.Commands.CreateCategoryWithParent;
+using Gaolos.Application.Features.Categories.Commands.CreateCateogry;
 using Gaolos.Application.Features.Categories.Queries.GetCategoriesList;
 //using Gaolos.Application.Features.Categories.Queries.GetCategoriesListWithRestaurants;
 using Gaolos.Application.Features.Categories.Queries.GetCategory;
+using Gaolos.Application.Helpers;
+using Gaolos.Application.Models;
+
 //using Gaolos.Application.Features.Categories.Queries.GetPagedCategories;
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -21,6 +26,10 @@ namespace Gaolos.Api.Controllers
                 ?? throw new ArgumentNullException(nameof(mediator));
         }
 
+
+
+
+
         //[HttpGet("all", Name = "GetAllCategories")]
         //[ProducesResponseType(StatusCodes.Status200OK)]
         //public async Task<ActionResult<List<CategoryListVm>>> GetAllCategories()
@@ -29,7 +38,7 @@ namespace Gaolos.Api.Controllers
         //    return Ok(dtos);
         //}
 
-        [HttpGet()]
+        [HttpGet(Name ="GetCategories")]
         [HttpHead]
         public async Task<ActionResult<IEnumerable<CategoryListDto>>> GetCategories()
         {
@@ -44,28 +53,92 @@ namespace Gaolos.Api.Controllers
         public async Task<ActionResult<CategoryDetailDto>> GetCategory(Guid categoryId)
         {
             var category = await _mediator.Send(new GetCategoryQuery { CategoryId = categoryId });
+
+
             return Ok(category);
+        }
+
+        [HttpPost(Name = "CreateCategoryWithParent")]
+        [RequestHeaderMatchesMediaType("Content-Type",
+                       "application/vnd.gaolos.createcategorycommandwithparent+json")]
+        [Consumes(
+            "application/vnd.gaolos.createcategorycommandwithparent+json")]
+        public async Task<IActionResult> CreateCategoryWithParent([FromBody] CreateCategoryWithParentCommand createCategoryCommand)
+        {
+            var response = await _mediator.Send(createCategoryCommand);
+            if (response.Success)
+            {
+                var links = CreateLinksForCategory(response.Category.CategoryId, response.Category.Name, null);
+                var linkedResourceToReturn = response.Category
+                                            .ShapeData(null) as IDictionary<string, object?>;
+                linkedResourceToReturn.Add("links", links);
+                return CreatedAtRoute("GetCategory", new { categoryId = linkedResourceToReturn["CategoryId"] }, linkedResourceToReturn);
+
+            }
+            return Ok(response);
         }
 
 
         [HttpPost(Name = "AddCategory")]
-        public async Task<ActionResult<CreateCategoryCommandResponse>> CreateCategory([FromBody] CreateCategoryCommand createCategoryCommand)
+        [RequestHeaderMatchesMediaType("Content-Type",
+            "application/vnd.gaolos.createcategorycommand+json")]
+        [Consumes("application/json",
+            "application/vnd.gaolos.createcategorycommand+json")]
+        public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryCommand createCategoryCommand)
         {
             var response = await _mediator.Send(createCategoryCommand);
+           
 
-            if(response.Success)
-                return CreatedAtRoute("GetCategory",new { categoryId = response.Category.CategoryId }, response);
+            if (response.Success)
+            {
+                var links = CreateLinksForCategory(response.Category.CategoryId,response.Category.Name, null);
+                var linkedResourceToReturn = response.Category
+                                            .ShapeData(null) as IDictionary<string, object?>;
+                linkedResourceToReturn.Add("links", links);
+                return CreatedAtRoute("GetCategory", new { categoryId = linkedResourceToReturn["CategoryId"] }, linkedResourceToReturn);
+
+            }
 
             return Ok(response);
         }
 
+
+
         [HttpOptions()]
         public IActionResult GetCategoriesOptions()
         {
-            Response.Headers.Add("Allow", "GET,HEAD,POST,OPTIONS");
+            Response.Headers.Append("Allow", "GET,HEAD,POST,OPTIONS");
             return Ok();
         }
 
+
+        private IEnumerable<LinkDto> CreateLinksForCategory(Guid categoryId, string? tag,
+string? fields)
+        {
+            var links = new List<LinkDto>();
+
+            if (string.IsNullOrWhiteSpace(fields))
+            {
+                links.Add(
+                  new(Url.Link("GetCategory", new { categoryId }),
+                  "self",
+                  "GET"));
+            }
+            else
+            {
+                links.Add(
+                  new(Url.Link("GetCategory", new { categoryId, fields }),
+                  "self",
+                  "GET"));
+            }
+            links.Add(
+             new(Url.Link("GetAllRestaurants", new { tag }),
+             "restaurants",
+             "GET"));
+
+
+            return links;
+        }
         //[HttpGet("/getpagedcategories", Name = "GetPagedCategories")]
         //[ProducesResponseType(StatusCodes.Status200OK)]
         //[ProducesDefaultResponseType]

@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Gaolos.Application.Contracts.Services;
+using Gaolos.Application.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Gaolos.Application
 {
@@ -8,6 +10,7 @@ namespace Gaolos.Application
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
+            services.AddTransient<IPropertyCheckerService, PropertyCheckerService>();
 
             return services;
         }

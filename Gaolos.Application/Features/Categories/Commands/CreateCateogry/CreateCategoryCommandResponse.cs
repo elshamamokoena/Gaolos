@@ -10,5 +10,6 @@ namespace Gaolos.Application.Features.Categories.Commands.CreateCateogry
         }
 
         public CreateCategoryDto Category { get; set; } = default!;
+     //   public CreateCategoryWithParentCategoryDto CategoryWithParentCategory { get; set; } = default!;
     }
 }

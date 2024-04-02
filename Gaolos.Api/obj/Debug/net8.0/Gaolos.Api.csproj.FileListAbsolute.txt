@@ -181,3 +181,6 @@ C:\Users\elsha\source\repos\Gaolos\Gaolos.Api\bin\Debug\net8.0\Serilog.Sinks.Fil
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Api\bin\Debug\net8.0\Gaolos.Identity.dll
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Api\bin\Debug\net8.0\Gaolos.Identity.pdb
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Api\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

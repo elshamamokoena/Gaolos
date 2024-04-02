@@ -2,8 +2,9 @@
 
 namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail
 {
-    public class GetRestaurantDetailQuery : IRequest<RestaurantDetailVm>
+    public class GetRestaurantDetailQuery : IRequest<RestaurantDetailDto>
     {
-        public Guid Id { get; set; }
+        public Guid RestaurantId { get; set; }
+        public string? Fields { get; set; }
     }
 }

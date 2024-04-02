@@ -13,7 +13,7 @@ namespace Gaolos.Application.Contracts.Persistence
 
         Task<PagedList<Restaurant>> GetRestaurantsAsync(RestaurantResourceParameters resourceParameters);
 
-        //Task<Restaurant> GetRestaurantAsync(Guid categoryId,Guid restaurantId);
+        Task<Restaurant> GetRestaurantAsync(Guid restaurantId);
         // Task<Restaurant> GetRestaurantAsync(Guid restaurantId);
 
         //   void AddRestaurant(Guid categoryId, Restaurant restaurant);

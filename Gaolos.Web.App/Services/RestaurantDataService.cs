@@ -18,6 +18,7 @@ namespace Gaolos.Web.App.Services
 
         public async Task<List<RestaurantListViewModel>> GetAllRestaurants()
         {
+            //_client.HttpClient.DefaultRequestHeaders.
             var allEvents = await _client.GetAllRestaurantsAsync();
             var mappedEvents = _mapper.Map<ICollection<RestaurantListViewModel>>(allEvents);
             return mappedEvents.ToList();
@@ -25,7 +26,7 @@ namespace Gaolos.Web.App.Services
 
         public async Task<RestaurantDetailViewModel> GetRestaurantById(Guid id)
         {
-            var selectedEvent = await _client.GetRestaurantByIdAsync(id);
+            var selectedEvent = await _client.GetRestaurantAsync(id);
             var mappedEvent = _mapper.Map<RestaurantDetailViewModel>(selectedEvent);
             return mappedEvent;
         }

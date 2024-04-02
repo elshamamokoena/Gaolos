@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Gaolos.Application.Contracts.Persistence;
+using Gaolos.Application.Features.Categories.Commands.CreateCategoryWithParent;
 using Gaolos.Domain.Entities;
 using MediatR;
 
@@ -36,7 +37,9 @@ namespace Gaolos.Application.Features.Categories.Commands.CreateCateogry
             }
             if (createCategoryCommandResponse.Success)
             {
+
                 var category = new Category() { Name = request.Name };
+
                 _categoryRepository.AddCategory(category);
                 await _categoryRepository.SaveAsync();
                 createCategoryCommandResponse.Category = _mapper.Map<CreateCategoryDto>(category);

@@ -18,6 +18,10 @@ namespace Gaolos.Domain.Entities
         public string Name { get; set; } = string.Empty;
         public string ? ImageUrl { get; set; }
         public string? SvgUrl { get; set; }
+
+        public Guid ? ParentCategoryId { get; set; }
+        public Category ? ParentCategory { get; set; }
+
         public ICollection<Restaurant> Restaurants { get; set; } 
             = new List<Restaurant>();
     }

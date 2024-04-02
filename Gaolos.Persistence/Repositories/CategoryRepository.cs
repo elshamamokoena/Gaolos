@@ -23,6 +23,8 @@ namespace Gaolos.Persistence.Repositories
             {
                 restaurant.RestaurantId = Guid.NewGuid();
             }
+            //Check parent category exists later on
+
             _dbContext.Categories.Add(category);
 
         }

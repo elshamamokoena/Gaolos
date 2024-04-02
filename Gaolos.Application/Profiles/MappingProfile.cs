@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Gaolos.Application.Features.Categories.Commands.CreateCategoryWithParent;
 using Gaolos.Application.Features.Categories.Commands.CreateCateogry;
 using Gaolos.Application.Features.Categories.Queries.GetCategoriesList;
 using Gaolos.Application.Features.Categories.Queries.GetCategoriesListWithRestaurants;
@@ -23,7 +24,7 @@ namespace Gaolos.Application.Profiles
         public MappingProfile()
         {
             CreateMap<Restaurant, RestaurantDto>().ReverseMap();
-            CreateMap<Restaurant, RestaurantDetailVm>().ReverseMap();
+            CreateMap<Restaurant, RestaurantDetailDto>().ReverseMap();
 
             CreateMap<Category, CategoryDto>();
             CreateMap<Category, CategoryDetailDto>();
@@ -38,6 +39,9 @@ namespace Gaolos.Application.Profiles
 
             CreateMap<Category, CreateCategoryCommand>().ReverseMap();
             CreateMap<Category, CreateCategoryDto>().ReverseMap();
+            CreateMap<Category, CreateCategoryWithParentCommand>().ReverseMap();
+            CreateMap<Category, CreateCategoryWithParentCategoryDto>().ReverseMap();
+
             CreateMap<Restaurant, RestaurantExportDto>().ReverseMap();
 
             CreateMap<Menu,MenuForRestaurantDto>().ReverseMap();

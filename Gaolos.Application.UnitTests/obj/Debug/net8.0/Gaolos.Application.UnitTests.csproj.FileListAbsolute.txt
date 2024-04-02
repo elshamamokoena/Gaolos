@@ -164,3 +164,10 @@ C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\obj\Debug\net8.0
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\obj\Debug\net8.0\Gaolos.Application.UnitTests.pdb
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\obj\Debug\net8.0\Gaolos.Application.UnitTests.genruntimeconfig.cache
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\obj\Debug\net8.0\ref\Gaolos.Application.UnitTests.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Application.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll

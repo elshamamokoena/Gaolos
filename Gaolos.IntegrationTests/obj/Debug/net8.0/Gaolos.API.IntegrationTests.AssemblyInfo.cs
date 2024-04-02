@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gaolos.API.IntegrationTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07d556eaf63d189cc968fdba4df2d7e356ca2ec9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7878d6f3482519d92d0d2abeb64d03ccc08995db")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaolos.API.IntegrationTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaolos.API.IntegrationTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

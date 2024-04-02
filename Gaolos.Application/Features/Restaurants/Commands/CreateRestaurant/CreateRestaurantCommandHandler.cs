@@ -26,7 +26,7 @@ namespace Gaolos.Application.Features.Restaurants.Commands.CreateRestaurant
             if (validationResult.Errors.Count > 0)
                 throw new Exceptions.ValidationException(validationResult);
 
-      //      @restaurant = await _restaurantRepository.AddAsync(@restaurant);
+      //     @restaurant = await _restaurantRepository.AddAsync(@restaurant);
 
             return @restaurant.RestaurantId;
         }

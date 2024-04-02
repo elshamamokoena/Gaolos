@@ -5,6 +5,7 @@ using Gaolos.Application.Helpers;
 using Gaolos.Application.Models.Restaurant;
 using Gaolos.Domain.Entities;
 using MediatR;
+using System.Net.Http;
 
 namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList
 {
@@ -27,8 +28,19 @@ namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList
         {
             if(!_propertyMappingService.ValidMappingExistsFor<RestaurantDto, Restaurant>(request.ResourceParameters.OrderBy))
             {
-                throw new BadRequestException($"Invalid OrderBy Field: {request.ResourceParameters.OrderBy}");
+                throw new BadRequestException($"Invalid orderby field: {request.ResourceParameters.OrderBy}");
             }
+
+      //      if (!_propertyCheckerService.TypeHasProperties<AuthorDto>
+      //(authorsResourceParameters.Fields))
+      //      {
+      //          return BadRequest(
+      //              _problemDetailsFactory.CreateProblemDetails(HttpContext,
+      //                  statusCode: 400,
+      //                  detail: $"Not all requested data shaping fields exist on " +
+      //                  $"the resource: {authorsResourceParameters.Fields}"));
+      //      }
+
             var allRestaurants = await _restaurantRepository.GetRestaurantsAsync(request.ResourceParameters);
 
             return _mapper.Map<PagedList<Restaurant>, PagedListDto<RestaurantDto>>(allRestaurants);

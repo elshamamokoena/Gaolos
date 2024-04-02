@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gaolos.Application.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f34bfe7cb43e8362612fc3f980a2e1323681c08")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7878d6f3482519d92d0d2abeb64d03ccc08995db")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaolos.Application.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaolos.Application.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
