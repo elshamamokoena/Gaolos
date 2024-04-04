@@ -1060,7 +1060,6 @@ C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\webcil\Micros
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\webcil\Microsoft.Extensions.Http.wasm
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\webcil\Microsoft.Extensions.Options.ConfigurationExtensions.wasm
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\scopedcss\projectbundle\Gaolos.Web.App.bundle.scp.css
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\qdx8s8vl0p.gz
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\eu67f8hoxz.gz
@@ -1070,3 +1069,4 @@ C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\6c
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\t2agjzcy6l.gz
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\5rrlyov7qc.gz
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\e2rgof16jg.gz
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\bin\Debug\net8.0\libman.json

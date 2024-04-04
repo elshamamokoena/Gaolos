@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gaolos.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7878d6f3482519d92d0d2abeb64d03ccc08995db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5212051d36bd6c72deaf9fdcebcd7c3df9129697")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaolos.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaolos.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

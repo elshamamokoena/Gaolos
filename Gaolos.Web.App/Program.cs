@@ -31,8 +31,8 @@ builder.Services.AddHttpClient(
     client => client.BaseAddress = new Uri("https://localhost:7234"))
     .AddHttpMessageHandler<CookieHandler>();
 
-builder.Services.AddScoped<IRestaurantDataService, RestaurantDataService>();
-builder.Services.AddScoped<ICategoryDataService, CategoryDataService>();
+//builder.Services.AddScoped<IRestaurantDataService, RestaurantDataService>();
+//builder.Services.AddScoped<ICategoryDataService, CategoryDataService>();
 //builder.Services.AddScoped<IOrderDataService, OrderDataService>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 

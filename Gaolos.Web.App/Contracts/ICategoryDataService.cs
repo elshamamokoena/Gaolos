@@ -8,6 +8,6 @@ namespace Gaolos.Web.App.Contracts
     {
         Task<List<CategoryViewModel>> GetAllCategories();
         Task<List<CategoryRestaurantsViewModel>> GetAllCategoriesWithRestaurants(bool includeHistory);
-        Task<ApiResponse<CategoryDto>> CreateCategory(CategoryViewModel categoryViewModel);
+      //  Task<ApiResponse<CategoryDto>> CreateCategory(CategoryViewModel categoryViewModel);
     }
 }

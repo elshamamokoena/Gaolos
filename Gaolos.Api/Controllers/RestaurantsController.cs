@@ -288,6 +288,7 @@ namespace Gaolos.Api.Controllers
         public async Task<ActionResult<Guid>> CreateRestaurant([FromBody] CreateRestaurantCommand createRestaurantCommand)
         {
             var id = await _mediator.Send(createRestaurantCommand);
+
             return Ok(id);
         }
 
