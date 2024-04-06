@@ -1,4 +1,6 @@
-﻿using Gaolos.Domain.Entities;
+﻿using Gaolos.Application.Helpers;
+using Gaolos.Application.ResourceParameters;
+using Gaolos.Domain.Entities;
 
 namespace Gaolos.Application.Contracts.Persistence
 {
@@ -9,6 +11,7 @@ namespace Gaolos.Application.Contracts.Persistence
         Task <IEnumerable<Category>> GetCategoriesAsync ();
         Task<Category> GetCategoryAsync(Guid categoryId);
         Task<IEnumerable<Category>> GetCategoriesAsync(IEnumerable<Guid> categoryIds);
+        Task<PagedList<Category>> GetCategoriesAsync(CategoryResourceParameters resourceParameters);
         void AddCategory(Category category);
         void DeleteCategory(Category category);
         void UpdateCategory(Category author);

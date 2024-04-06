@@ -10,11 +10,13 @@ namespace Gaolos.Identity
     {
         public static void AddIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddAuthentication(IdentityConstants.ApplicationScheme).AddIdentityCookies();
+            services.AddAuthentication(IdentityConstants.ApplicationScheme)
+                .AddIdentityCookies();
 
             services.AddAuthorizationBuilder();
 
-            services.AddDbContext<GaolosIdentityDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("GaolosIdentityConnectionString")));
+            services.AddDbContext<GaolosIdentityDbContext>(options => 
+                 options.UseSqlServer(configuration.GetConnectionString("GaolosIdentityConnectionString")));
 
             services.AddIdentityCore<ApplicationUser>()
                 .AddEntityFrameworkStores<GaolosIdentityDbContext>()

@@ -6,13 +6,27 @@ using Gaolos.Web.App.ViewModels;
 
 namespace Gaolos.Web.App.Services
 {
-    public class CategoryDataService : BaseDataService//, ICategoryDataService
+    public class CategoryDataService : BaseDataService, ICategoryDataService
     {
         private readonly IMapper _mapper;
 
         public CategoryDataService(IClient client, IMapper mapper, ILocalStorageService localStorage): base(client, localStorage)
         {
             _mapper = mapper;
+        }
+
+        public async Task<CategoryListViewModel> GetCategories()
+        {
+            throw new NotImplementedException();
+
+        }
+
+        public async Task<CategoryListViewModel> GetCategories(string ? searchQuery,int? pageSize,  int ? pageNumber,
+            string? orderBy, string? fields)
+        {
+            var categories = await _client.GetCategoriesAsync(searchQuery,pageNumber, pageSize,orderBy,fields );
+            var mappedCategories = _mapper.Map<CategoryListViewModel>(categories);
+            return mappedCategories;
         }
 
         //public async Task<List<CategoryViewModel>> GetAllCategories()

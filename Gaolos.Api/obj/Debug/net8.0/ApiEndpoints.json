@@ -16,10 +16,36 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "SearchQuery",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Fields",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Categories.Queries.GetCategoriesList.CategoryListDto, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Gaolos.Application.Features.Categories.Queries.GetCategoriesList.PagedCategoriesVm",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -36,10 +62,36 @@
     "HttpMethod": "HEAD",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "SearchQuery",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Fields",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Categories.Queries.GetCategoriesList.CategoryListDto, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Gaolos.Application.Features.Categories.Queries.GetCategoriesList.PagedCategoriesVm",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -48,48 +100,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "Gaolos.Api.Controllers.CategoriesController",
-    "Method": "CreateCategoryWithParent",
-    "RelativePath": "api/categories",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "createCategoryCommand",
-        "Type": "Gaolos.Application.Features.Categories.Commands.CreateCategoryWithParent.CreateCategoryWithParentCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Gaolos.Api.Controllers.CategoriesController",
-    "Method": "CreateCategory",
-    "RelativePath": "api/categories",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "createCategoryCommand",
-        "Type": "Gaolos.Application.Features.Categories.Commands.CreateCateogry.CreateCategoryCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Gaolos.Api.Controllers.CategoriesController",
-    "Method": "GetCategoriesOptions",
-    "RelativePath": "api/categories",
-    "HttpMethod": "OPTIONS",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.CategoriesController",
@@ -114,6 +124,24 @@
           "text/json"
         ],
         "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 0
       }
     ]
   },
@@ -156,7 +184,17 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList.PagedRestaurantsVm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.RestaurantsController",
@@ -186,7 +224,7 @@
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.RestaurantsController",
-    "Method": "GetRestaurantWithoutLinks",
+    "Method": "GetRestaurant",
     "RelativePath": "api/restaurants/{restaurantId}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -201,30 +239,24 @@
         "Name": "fields",
         "Type": "System.String",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Gaolos.Api.Controllers.RestaurantsController",
-    "Method": "GetRestaurantWithLinks",
-    "RelativePath": "api/restaurants/{restaurantId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "restaurantId",
-        "Type": "System.Guid",
-        "IsRequired": true
       },
       {
-        "Name": "fields",
+        "Name": "Accept",
         "Type": "System.String",
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail.RestaurantDetailVm",
+        "MediaTypes": [
+          "application/json",
+          "application/vnd.gaolos.restaurant.friendly.hateoas\u002Bjson",
+          "application/vnd.gaolos.restaurant.friendly\u002Bjson"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.MenuController",
@@ -242,7 +274,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant.MenuForRestaurantDto, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant.MenuForRestaurantVm, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -276,7 +308,17 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant.MenuForRestaurantVm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Gaolos.Api.Controllers.MenuItemsController",
@@ -299,7 +341,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.MenuItems.Queries.GetMenuItemsForMenu.MenuItemsForMenuDto, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Gaolos.Application.Features.MenuItems.Queries.GetMenuItemsForMenu.MenuItemsForMenuVm, Gaolos.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -2,7 +2,7 @@
 {
 
     //  CategoryListVm => CategoryListDto
-    public class CategoryListDto
+    public class CategoryListVm
     {
         public Guid CategoryId { get; set; }
         public string Name { get; set; }

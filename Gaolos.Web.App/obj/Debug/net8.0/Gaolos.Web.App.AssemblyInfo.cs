@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gaolos.Web.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b606e2d2b3b14cf97d31b4312c53a945dcb26a2d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c939b56e5d8dd9c5412f669d2445800ba513106")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaolos.Web.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaolos.Web.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

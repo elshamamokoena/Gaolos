@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Application.Features.Menus.Queries.GetMenuForRestaurant
 {
-    public class GetMenuForRestaurantQuery:IRequest<MenuForRestaurantDto>
+    public class GetMenuForRestaurantQuery:IRequest<MenuForRestaurantVm>
     {
         public Guid RestaurantId { get; set; }
         public Guid MenuId { get; set; }

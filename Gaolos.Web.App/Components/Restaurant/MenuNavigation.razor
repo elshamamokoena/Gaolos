@@ -1,0 +1,24 @@
+﻿<!-- Page navigation-->
+<nav class="container mt-n5">
+    <div class="d-flex align-items-center bg-white rounded-3 shadow-lg py-2 ps-sm-2 pe-4 pe-lg-2">
+        <img class="d-block rounded-3" src="img/food-delivery/restaurants/logos/02.png" width="150" alt="Brand">
+        <div class="ps-lg-3 w-100 text-end">
+            <!-- For desktop-->
+            <ul class="nav nav-tabs d-none d-lg-flex border-0 mb-0">
+@*                 <li class="nav-item"><a class="nav-link active" href="#">Pizza</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sides</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Drinks</a></li> *@
+                @foreach(var menu in Menus)
+                {
+                    <li class="nav-item"><a class="nav-link" @onclick="async ()=>await OnMenuSelected.InvokeAsync(menu.MenuId)">@menu.Name</a></li>
+                }
+                @* <li class="nav-item"><a class="nav-link" href="#">Dessert</a></li> *@
+            </ul>
+            <!-- For mobile-->
+            <div class="btn-group dropdown d-lg-none ms-auto">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ci-menu fs-base me-2"></i>Menu</button>
+                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item fs-base active" href="#">Pizza    </a><a class="dropdown-item fs-base" href="#">Sides    </a><a class="dropdown-item fs-base" href="#">Drinks    </a><a class="dropdown-item fs-base" href="#">Dessert    </a></div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -16,8 +16,8 @@ namespace Gaolos.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<MenuItemsForMenuDto>>> GetMenuItemsForMenu(Guid menuId)
+        [HttpGet(Name ="GetMenuItemsForMenu")]
+        public async Task<ActionResult<IEnumerable<MenuItemsForMenuVm>>> GetMenuItemsForMenu(Guid menuId)
         {
             var menuItems = await _mediator.Send(new GetMenuItemsForMenuQuery() { MenuId = menuId });
             return Ok(menuItems);

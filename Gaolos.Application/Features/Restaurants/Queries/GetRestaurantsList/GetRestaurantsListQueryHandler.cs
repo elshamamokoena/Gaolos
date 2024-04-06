@@ -9,7 +9,7 @@ using System.Net.Http;
 
 namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList
 {
-    public class GetRestaurantsListQueryHandler : IRequestHandler<GetRestaurantsListQuery, PagedListDto<RestaurantDto>>
+    public class GetRestaurantsListQueryHandler : IRequestHandler<GetRestaurantsListQuery, PagedRestaurantsVm>
     {
 
         private readonly IRestaurantRepository _restaurantRepository;
@@ -24,7 +24,7 @@ namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList
             _propertyMappingService = propertyMappingService;
         }
 
-        public async Task<PagedListDto<RestaurantDto>> Handle(GetRestaurantsListQuery request, CancellationToken cancellationToken)
+        public async Task<PagedRestaurantsVm> Handle(GetRestaurantsListQuery request, CancellationToken cancellationToken)
         {
             if(!_propertyMappingService.ValidMappingExistsFor<RestaurantDto, Restaurant>(request.ResourceParameters.OrderBy))
             {
@@ -42,8 +42,16 @@ namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList
       //      }
 
             var allRestaurants = await _restaurantRepository.GetRestaurantsAsync(request.ResourceParameters);
+            var restaurants = _mapper.Map<List<RestaurantListVm>>(allRestaurants);
 
-            return _mapper.Map<PagedList<Restaurant>, PagedListDto<RestaurantDto>>(allRestaurants);
+            return new PagedRestaurantsVm
+            {
+                CurrentPage = allRestaurants.CurrentPage,
+                TotalPages = allRestaurants.TotalPages,
+                TotalCount = allRestaurants.TotalCount,
+                PageSize = allRestaurants.PageSize,
+                Restaurants = restaurants
+            };
 
 
           //  return _mapper.Map<PagedList<RestaurantListVm>>(allRestaurants);

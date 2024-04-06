@@ -5,10 +5,12 @@ namespace Gaolos.Web.App.Contracts
 {
     public interface IRestaurantDataService
     {
-        Task<List<RestaurantListViewModel>> GetAllRestaurants();
-        Task<RestaurantDetailViewModel> GetRestaurantById(Guid id);
-        Task<ApiResponse<Guid>> CreateRestaurant(RestaurantDetailViewModel eventDetailViewModel);
-        Task<ApiResponse<Guid>> UpdateRestaurant(RestaurantDetailViewModel eventDetailViewModel);
-        Task<ApiResponse<Guid>> DeleteRestaurant(Guid id);
+        Task<RestaurantListViewModel> GetRestaurants(string? tag,string? searchQuery, int? pageSize, int ?pageNumber,
+            string ? orderBy, string? fields);
+        Task<RestaurantViewModel> GetRestaurant(Guid restaurantId, string? fields, string ? accept);
+
+        //Task<ApiResponse<Guid>> CreateRestaurant(RestaurantDetailViewModel eventDetailViewModel);
+        //Task<ApiResponse<Guid>> UpdateRestaurant(RestaurantDetailViewModel eventDetailViewModel);
+        //Task<ApiResponse<Guid>> DeleteRestaurant(Guid id);
     }
 }

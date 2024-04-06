@@ -1,4 +1,5 @@
-﻿ @* @page "/category/{categoryId}" *@
+﻿  @* @page "/category/{categoryId}"  *@
+  @page "/category/{name}"
   @page "/category"
 
 
@@ -53,95 +54,21 @@
 <!-- Items grid-->
 <section class="container py-4 py-sm-5">
     <div class="row pt-3 pt-sm-0">
+
+        @foreach(var restaurant in RestaurantList.Restaurants)
+        {
+            
         <div class="col-md-4 col-sm-6 mb-grid-gutter">
-            <a class="card product-card h-100 border-0 shadow pb-2" href="food-delivery-single.html">
+            <a class="card product-card h-100 border-0 shadow pb-2" @onclick="()=> NavigateToRestaurant(restaurant.RestaurantId)">
                 <span class="badge badge-end badge-shadow bg-success fs-md fw-medium" data-bs-toggle="tooltip" title="Average meal cost">AMC: $17.<small>00</small></span><img class="card-img-top" src="img/food-delivery/restaurants/01.jpg" alt="McDonald's">
                 <div class="bg-white rounded-3 pt-1 px-2 mx-auto mt-n5" style="width: 175px;"><img class="d-block rounded-3 mx-auto" src="img/food-delivery/restaurants/logos/01.png" width="150" alt="Brand"></div>
                 <div class="card-body text-center pt-3 pb-4">
-                    <h3 class="h5 mb-2">McDonald's</h3>
+                    <h3 class="h5 mb-2"> @restaurant.Name </h3>
                     <div class="fs-ms text-muted">Burgers, Salads, French fries, Drinks</div>
                 </div>
             </a>
         </div>
-        <div class="col-md-4 col-sm-6 mb-grid-gutter">
-            <a class="card product-card h-100 border-0 shadow pb-2" href="food-delivery-single.html">
-                <span class="badge badge-end badge-shadow bg-info fs-md fw-medium" data-bs-toggle="tooltip" title="Average meal cost">AMC: $25.<small>00</small></span><img class="card-img-top" src="img/food-delivery/restaurants/02.jpg" alt="KFC">
-                <div class="bg-white rounded-3 pt-1 px-2 mx-auto mt-n5" style="width: 175px;"><img class="d-block rounded-3 mx-auto" src="img/food-delivery/restaurants/logos/04.png" width="150" alt="Brand"></div>
-                <div class="card-body text-center pt-3 pb-4">
-                    <h3 class="h5 mb-2">Kentucky Fried Chicken</h3>
-                    <div class="fs-ms text-muted">Fried chicken, Burgers, Sandwiches, French fries</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 mb-grid-gutter">
-            <a class="card product-card h-100 border-0 shadow pb-2" href="food-delivery-single.html">
-                <span class="badge badge-end badge-shadow bg-success fs-md fw-medium" data-bs-toggle="tooltip" title="Average meal cost">AMC: $18.<small>00</small></span><img class="card-img-top" src="img/food-delivery/restaurants/03.jpg" alt="Burger King">
-                <div class="bg-white rounded-3 pt-1 px-2 mx-auto mt-n5" style="width: 175px;"><img class="d-block rounded-3 mx-auto" src="img/food-delivery/restaurants/logos/07.png" width="150" alt="Brand"></div>
-                <div class="card-body text-center pt-3 pb-4">
-                    <h3 class="h5 mb-2">Burger King</h3>
-                    <div class="fs-ms text-muted">Burgers, Salads, French fries, Drinks</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 mb-grid-gutter">
-            <a class="card product-card h-100 border-0 shadow pb-2" href="food-delivery-single.html">
-                <span class="badge badge-end badge-shadow bg-info fs-md fw-medium" data-bs-toggle="tooltip" title="Average meal cost">AMC: $27.<small>00</small></span><img class="card-img-top" src="img/food-delivery/restaurants/04.jpg" alt="Logan's Roadhouse">
-                <div class="bg-white rounded-3 pt-1 px-2 mx-auto mt-n5" style="width: 175px;"><img class="d-block rounded-3 mx-auto" src="img/food-delivery/restaurants/logos/06.png" width="150" alt="Brand"></div>
-                <div class="card-body text-center pt-3 pb-4">
-                    <h3 class="h5 mb-2">Logan's Roadhouse</h3>
-                    <div class="fs-ms text-muted">Grill, Steaks, Burgers, Salads, French fries, Drinks</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 mb-grid-gutter">
-            <a class="card product-card h-100 border-0 shadow pb-2" href="food-delivery-single.html">
-                <span class="badge badge-end badge-shadow bg-danger fs-md fw-medium" data-bs-toggle="tooltip" title="Average meal cost">AMC: $40.<small>00</small></span><img class="card-img-top" src="img/food-delivery/restaurants/05.jpg" alt="Carrabba's">
-                <div class="bg-white rounded-3 pt-1 px-2 mx-auto mt-n5" style="width: 175px;"><img class="d-block rounded-3 mx-auto" src="img/food-delivery/restaurants/logos/10.png" width="150" alt="Brand"></div>
-                <div class="card-body text-center pt-3 pb-4">
-                    <h3 class="h5 mb-2">Carrabba's</h3>
-                    <div class="fs-ms text-muted">Grill, Steaks, Burgers, Salads, French fries, Drinks</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 mb-grid-gutter">
-            <a class="card product-card h-100 border-0 shadow pb-2" href="food-delivery-single.html">
-                <span class="badge badge-end badge-shadow bg-info fs-md fw-medium" data-bs-toggle="tooltip" title="Average meal cost">AMC: $26.<small>00</small></span><img class="card-img-top" src="img/food-delivery/restaurants/06.jpg" alt="Bonefish Grill">
-                <div class="bg-white rounded-3 pt-1 px-2 mx-auto mt-n5" style="width: 175px;"><img class="d-block rounded-3 mx-auto" src="img/food-delivery/restaurants/logos/08.png" width="150" alt="Brand"></div>
-                <div class="card-body text-center pt-3 pb-4">
-                    <h3 class="h5 mb-2">Bonefish Grill</h3>
-                    <div class="fs-ms text-muted">Grill, Fish, Burgers, Salads, French fries, Drinks</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 mb-grid-gutter">
-            <a class="card product-card h-100 border-0 shadow pb-2" href="food-delivery-single.html">
-                <span class="badge badge-end badge-shadow bg-success fs-md fw-medium" data-bs-toggle="tooltip" title="Average meal cost">AMC: $19.<small>00</small></span><img class="card-img-top" src="img/food-delivery/restaurants/07.jpg" alt="Domino's Pizza">
-                <div class="bg-white rounded-3 pt-1 px-2 mx-auto mt-n5" style="width: 175px;"><img class="d-block rounded-3 mx-auto" src="img/food-delivery/restaurants/logos/02.png" width="150" alt="Brand"></div>
-                <div class="card-body text-center pt-3 pb-4">
-                    <h3 class="h5 mb-2">Domino's Pizza</h3>
-                    <div class="fs-ms text-muted">Pizza, Burgers, Salads, French fries, Drinks</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 mb-grid-gutter">
-            <a class="card product-card h-100 border-0 shadow pb-2" href="food-delivery-single.html">
-                <span class="badge badge-end badge-shadow bg-success fs-md fw-medium" data-bs-toggle="tooltip" title="Average meal cost">AMC: $17.<small>00</small></span><img class="card-img-top" src="img/food-delivery/restaurants/08.jpg" alt="Hardee's">
-                <div class="bg-white rounded-3 pt-1 px-2 mx-auto mt-n5" style="width: 175px;"><img class="d-block rounded-3 mx-auto" src="img/food-delivery/restaurants/logos/13.png" width="150" alt="Brand"></div>
-                <div class="card-body text-center pt-3 pb-4">
-                    <h3 class="h5 mb-2">Hardee's</h3>
-                    <div class="fs-ms text-muted">Burgers, Salads, French fries, Drinks</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 mb-grid-gutter">
-            <a class="card product-card h-100 border-0 shadow pb-2" href="food-delivery-single.html">
-                <span class="badge badge-end badge-shadow bg-danger fs-md fw-medium" data-bs-toggle="tooltip" title="Average meal cost">AMC: $34.<small>00</small></span><img class="card-img-top" src="img/food-delivery/restaurants/09.jpg" alt="Ruth's Chris Steak House">
-                <div class="bg-white rounded-3 pt-1 px-2 mx-auto mt-n5" style="width: 175px;"><img class="d-block rounded-3 mx-auto" src="img/food-delivery/restaurants/logos/09.png" width="150" alt="Brand"></div>
-                <div class="card-body text-center pt-3 pb-4">
-                    <h3 class="h5 mb-2">Ruth's Chris Steak House</h3>
-                    <div class="fs-ms text-muted">Grill, Steaks, Burgers, Salads, French fries, Drinks</div>
-                </div>
-            </a>
-        </div>
+        }
+
     </div>
 </section>

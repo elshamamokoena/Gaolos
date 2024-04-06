@@ -6,8 +6,11 @@ namespace Gaolos.Web.App.Contracts
 {
     public interface ICategoryDataService
     {
-        Task<List<CategoryViewModel>> GetAllCategories();
-        Task<List<CategoryRestaurantsViewModel>> GetAllCategoriesWithRestaurants(bool includeHistory);
-      //  Task<ApiResponse<CategoryDto>> CreateCategory(CategoryViewModel categoryViewModel);
+        Task<CategoryListViewModel> GetCategories();
+        Task<CategoryListViewModel> GetCategories(string? searchQuery, int ?pageSize, int? pageNumber,
+            string? orderBy, string? fields);
+
+        // Task<List<CategoryRestaurantsViewModel>> GetAllCategoriesWithRestaurants(bool includeHistory);
+        //  Task<ApiResponse<CategoryDto>> CreateCategory(CategoryViewModel categoryViewModel);
     }
 }

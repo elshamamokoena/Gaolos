@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Application.Features.MenuItems.Queries.GetMenuItemsForMenu
 {
-    public class MenuItemsForMenuDto
+    public class MenuItemsForMenuVm
     {
         public Guid MenuItemId { get; set; }
         public string Name { get; set; }

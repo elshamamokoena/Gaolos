@@ -1,10 +1,14 @@
-﻿<!-- Quick View Modal-->
+﻿
+@if(_menuItem != null)
+{
+
+<!-- Quick View Modal-->
 <div class="modal-quick-view modal fade" id="quick-view" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Pizza with Salami and Olives</h4>
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h4 class="modal-title">@_menuItem.Name</h4>
+                <button class="btn-close" type="button" @onclick= "Close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -13,7 +17,7 @@
                     <!-- Product details-->
                     <div class="col-lg-5 col-md-6 pt-4 pt-lg-0">
                         <div class="product-details ms-auto pb-3">
-                            <div class="mb-3"><span class="h3 fw-normal text-accent me-1">$15.<small>99</small></span></div>
+                            <div class="mb-3"><span class="h3 fw-normal text-accent me-1">$@_menuItem.Price</span></div>
                             <form class="mb-grid-gutter">
                                 <div class="row mx-n2">
                                     <div class="col-6 px-2">
@@ -61,3 +65,4 @@
         </div>
     </div>
 </div>
+}

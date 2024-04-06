@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gaolos.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5212051d36bd6c72deaf9fdcebcd7c3df9129697")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c939b56e5d8dd9c5412f669d2445800ba513106")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaolos.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaolos.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

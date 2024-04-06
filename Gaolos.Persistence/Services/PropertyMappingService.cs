@@ -1,5 +1,6 @@
 ﻿
 using Gaolos.Application.Contracts.Persistence;
+using Gaolos.Application.Models.Category;
 using Gaolos.Application.Models.MappingService;
 using Gaolos.Application.Models.Restaurant;
 using Gaolos.Domain.Entities;
@@ -16,14 +17,22 @@ public class PropertyMappingService : IPropertyMappingService
            // { "Age", new(new[] { "DateOfBirth" }, true) },
             { "Name", new(new[] { "Name" }) }
         };
+    private readonly Dictionary<string, PropertyMappingValue> _categoryPropertyMapping =
+        new(StringComparer.OrdinalIgnoreCase)
+        {
+            { "CategoryId", new(new[] { "CategoryId" }) },
+            { "Name", new(new[] { "Name" }) }
+        };
 
     private readonly IList<IPropertyMapping> _propertyMappings =
         new List<IPropertyMapping>();
 
     public PropertyMappingService()
     {
-        _propertyMappings.Add(new PropertyMapping<RestaurantDto, Restaurant>(
-            _restaurantPropertyMapping));
+        _propertyMappings.Add(new PropertyMapping<RestaurantDto, Restaurant>
+            ( _restaurantPropertyMapping));
+        _propertyMappings.Add(new PropertyMapping<CategoryDto, Category>
+            (_categoryPropertyMapping));
     }
 
     public Dictionary<string, PropertyMappingValue> GetPropertyMapping

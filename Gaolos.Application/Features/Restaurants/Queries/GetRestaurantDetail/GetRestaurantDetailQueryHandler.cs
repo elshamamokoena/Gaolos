@@ -9,7 +9,7 @@ using System.Net.Http;
 
 namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail
 {
-    public class GetRestaurantDetailQueryHandler : IRequestHandler<GetRestaurantDetailQuery, RestaurantDetailDto>
+    public class GetRestaurantDetailQueryHandler : IRequestHandler<GetRestaurantDetailQuery, RestaurantDetailVm>
     {
         private readonly IRestaurantRepository _restaurantRepository;
         private readonly ICategoryRepository _categoryRepository;
@@ -28,7 +28,7 @@ namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail
             _propertyCheckerService = propertyCheckerService;
         }
 
-        public async Task<RestaurantDetailDto> Handle(GetRestaurantDetailQuery request, CancellationToken cancellationToken)
+        public async Task<RestaurantDetailVm> Handle(GetRestaurantDetailQuery request, CancellationToken cancellationToken)
         {
 
             //var @restaurant = await _restaurantRepository.GetByIdAsync(request.Id);
@@ -42,7 +42,7 @@ namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail
             // throw new NotImplementedException();
 
 
-            if (!_propertyCheckerService.TypeHasProperties<RestaurantDetailDto>
+            if (!_propertyCheckerService.TypeHasProperties<RestaurantDetailVm>
          (request.Fields))
             {
                 throw new BadRequestException($"Invalid field(s) requested: {request.Fields}");
@@ -57,7 +57,7 @@ namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail
             var restaurant = await _restaurantRepository.GetRestaurantAsync(request.RestaurantId);
             if (restaurant == null) { throw new NotFoundException(nameof(Restaurant), request.RestaurantId);}
 
-            return _mapper.Map<RestaurantDetailDto>(restaurant);
+            return _mapper.Map<RestaurantDetailVm>(restaurant);
 
 
         }

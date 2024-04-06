@@ -1,10 +1,9 @@
-﻿namespace Gaolos.Web.App.ViewModels
+﻿using Gaolos.Web.App.Pages;
+
+namespace Gaolos.Web.App.ViewModels
 {
-    public class RestaurantListViewModel
+    public class RestaurantListViewModel:ListViewModel
     {
-        public Guid EventId { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public DateTime Date { get; set; }
-        public string? ImageUrl { get; set; }
+        public ICollection<RestaurantViewModel>? Restaurants { get; set; }
     }
 }

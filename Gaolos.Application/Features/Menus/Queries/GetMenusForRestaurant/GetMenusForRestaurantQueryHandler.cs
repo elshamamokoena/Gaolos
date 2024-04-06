@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant
 {
-    public class GetMenusForRestaurantQueryHandler : IRequestHandler<GetMenusForRestaurantQuery, IEnumerable<MenuForRestaurantDto>>
+    public class GetMenusForRestaurantQueryHandler : IRequestHandler<GetMenusForRestaurantQuery, IEnumerable<MenuForRestaurantVm>>
     {
         private readonly IMenuRepository _menuRepository;
         private readonly IMapper _mapper;
@@ -24,7 +24,7 @@ namespace Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant
             _mapper = mapper;
             _restaurantRepository = restaurantRepository;
         }
-        public async Task<IEnumerable<MenuForRestaurantDto>> Handle(GetMenusForRestaurantQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<MenuForRestaurantVm>> Handle(GetMenusForRestaurantQuery request, CancellationToken cancellationToken)
         {
             if(! await _restaurantRepository.RestaurantExistsAsync(request.RestaurantId))
             {                 
@@ -32,7 +32,7 @@ namespace Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant
             }    
 
             var menus = await _menuRepository.GetMenusAsync(request.RestaurantId);
-            return _mapper.Map<IEnumerable<MenuForRestaurantDto>>(menus);
+            return _mapper.Map<IEnumerable<MenuForRestaurantVm>>(menus);
         }
     }
 }

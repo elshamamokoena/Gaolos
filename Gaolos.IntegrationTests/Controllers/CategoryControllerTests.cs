@@ -25,9 +25,9 @@ namespace Gaolos.API.IntegrationTests.Controllers
 
             var responseString = await response.Content.ReadAsStringAsync();
 
-            var result = JsonSerializer.Deserialize<List<CategoryListDto>>(responseString);
+            var result = JsonSerializer.Deserialize<List<CategoryListVm>>(responseString);
             
-            Assert.IsType<List<CategoryListDto>>(result);
+            Assert.IsType<List<CategoryListVm>>(result);
             Assert.NotEmpty(result);
         }
     }

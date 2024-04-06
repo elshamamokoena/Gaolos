@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
 using Gaolos.Application.Contracts.Persistence;
+using Gaolos.Application.Helpers;
 using Gaolos.Domain.Entities;
 using MediatR;
 
 namespace Gaolos.Application.Features.Categories.Queries.GetCategoriesList
 {
-    public class GetCategoriesListQueryHandler : IRequestHandler<GetCategoriesListQuery, IEnumerable<CategoryListDto>>
+    public class GetCategoriesListQueryHandler : IRequestHandler<GetCategoriesListQuery, PagedCategoriesVm>
     {
       //  private readonly IAsyncRepository<Category> _categoryRepository;
         private readonly ICategoryRepository _categoryRepository;
@@ -20,10 +21,16 @@ namespace Gaolos.Application.Features.Categories.Queries.GetCategoriesList
                 ?? throw new ArgumentNullException(nameof(categoryRepository));
         }
 
-        public async Task<IEnumerable<CategoryListDto>> Handle(GetCategoriesListQuery request, CancellationToken cancellationToken)
+        public async Task<PagedCategoriesVm> Handle(GetCategoriesListQuery request, CancellationToken cancellationToken)
         {
-            var allCategories = (await _categoryRepository.GetCategoriesAsync()).OrderBy(x => x.Name);
-            return _mapper.Map<List<CategoryListDto>>(allCategories);
+            var allCategories = await _categoryRepository.GetCategoriesAsync(request.ResourceParameters);
+            var categories = _mapper.Map<List<CategoryListVm>>(allCategories);
+            return new PagedCategoriesVm{ 
+                CurrentPage= allCategories.CurrentPage, 
+                TotalPages = allCategories.TotalPages, 
+                TotalCount = allCategories.TotalCount, 
+                PageSize = allCategories.PageSize, 
+                Categories = categories };
         }
     }
 }

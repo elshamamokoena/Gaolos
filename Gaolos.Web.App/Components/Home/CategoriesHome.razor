@@ -5,24 +5,45 @@
 
     <div class="row">
 
-        
-        @for (int i = 9; i > 0; i--)
+        @if (CategoryList is null)
         {
 
+            @for (int i = 9; i > 0; i--)
+            {
 
-            <div class="col-md-4 col-sm-6 mb-grid-gutter">
-                <a class="card border-0 shadow" href="food-delivery-category.html">
-                    <div class="position-relative placeholder-wave">
-                        <div class="card-img-top placeholder ratio ratio-16x9"></div>
-                        <i class="ci-image position-absolute top-50 start-50 translate-middle fs-1 text-muted opacity-50"></i>
-                    </div>
-                    <div class="card-body py-4 text-center">
-                        <h3 class="card-title placeholder-glow">
-                            <span class="placeholder col-6"></span>
-                        </h3>
-                    </div>
-                </a>
-            </div>
+
+                <div class="col-md-4 col-sm-6 mb-grid-gutter">
+                    <a class="card border-0 shadow" href="food-delivery-category.html">
+                        <div class="position-relative placeholder-wave">
+                            <div class="card-img-top placeholder ratio ratio-16x9"></div>
+                            <i class="ci-image position-absolute top-50 start-50 translate-middle fs-1 text-muted opacity-50"></i>
+                        </div>
+                        <div class="card-body py-4 text-center">
+                            <h3 class="card-title placeholder-glow">
+                                <span class="placeholder col-6"></span>
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+        else
+        {
+            foreach (var category in CategoryList.Categories)
+            {
+
+                <div class="col-md-4 col-sm-6 mb-grid-gutter">
+                    <a class="card border-0 shadow" @onclick="()=>NavigateToCategory(category.Name)">
+                        <img class="card-img-top" src="img/food-delivery/category/02.jpg" alt="Noodles">
+                        <div class="card-body py-4 text-center">
+                            <h3 class="h5 mt-1">@category.Name</h3>
+                        </div>
+                    </a>
+                </div>
+
+            }
+
+        
         }
 
     </div>

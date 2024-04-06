@@ -2,7 +2,7 @@
 
 namespace Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail
 {
-    public class RestaurantDetailDto
+    public class RestaurantDetailVm
     {
         public Guid RestaurantId { get; set; }
 

@@ -1,5 +1,9 @@
 ﻿using Gaolos.Application.Contracts.Persistence;
+using Gaolos.Application.Helpers;
+using Gaolos.Application.Models.Category;
+using Gaolos.Application.ResourceParameters;
 using Gaolos.Domain.Entities;
+using Gaolos.Persistence.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gaolos.Persistence.Repositories
@@ -7,10 +11,13 @@ namespace Gaolos.Persistence.Repositories
     public class CategoryRepository : ICategoryRepository
     {
         private readonly GaolosDbContext _dbContext;
-        public CategoryRepository(GaolosDbContext dbContext) 
+        private IPropertyMappingService _propertyMappingService;
+        public CategoryRepository(GaolosDbContext dbContext , IPropertyMappingService propertyMappingService) 
         {
             _dbContext = dbContext ?? 
                 throw new ArgumentNullException(nameof(dbContext));
+            _propertyMappingService = propertyMappingService ??               
+                throw new ArgumentNullException(nameof(propertyMappingService));
         }
 
         public void  AddCategory(Category category)
@@ -59,6 +66,33 @@ namespace Gaolos.Persistence.Repositories
             return await _dbContext.Categories.Where(c => categoryIds.Contains(c.CategoryId))
                 .OrderBy(a => a.Name)
                 .ToListAsync();
+        }
+
+        public async Task<PagedList<Category>> GetCategoriesAsync(CategoryResourceParameters resourceParameters)
+        {
+            
+            if(resourceParameters == null)
+            {
+                throw new ArgumentNullException(nameof(resourceParameters));
+            }
+            var collection = _dbContext.Categories as IQueryable<Category>;
+
+            if(!string.IsNullOrWhiteSpace(resourceParameters.SearchQuery))
+            {
+                var searchQuery = resourceParameters.SearchQuery.Trim();
+                collection = collection.Where(a => a.Name.Contains(searchQuery));
+            }
+            if(!string.IsNullOrWhiteSpace(resourceParameters.OrderBy))
+            {
+                var categoryPropertyMappingDictionary = _propertyMappingService
+                    .GetPropertyMapping<CategoryDto, Category>();
+                collection = collection.ApplySort(resourceParameters.OrderBy,
+                    categoryPropertyMappingDictionary);
+            }
+            return await PagedList<Category>.CreateAsync(collection,
+                               resourceParameters.PageNumber,
+                               resourceParameters.PageSize);
+
         }
 
         public async Task<List<Category>> GetCategoriesWithRestaurants(bool includeHistory)

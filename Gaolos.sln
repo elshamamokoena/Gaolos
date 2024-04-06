@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaolos.Identity", "Gaolos.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaolos.Web.App", "Gaolos.Web.App\Gaolos.Web.App.csproj", "{4BA7017F-54B6-4DC3-94AB-E75E6A67E5EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaolos.ComponentLibrary", "Gaolos.ComponentLibrary\Gaolos.ComponentLibrary.csproj", "{0FCEC013-66F6-433A-84C5-3DD53AA1EEEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaolos.ComponentLibrary", "Gaolos.ComponentLibrary\Gaolos.ComponentLibrary.csproj", "{0FCEC013-66F6-433A-84C5-3DD53AA1EEEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

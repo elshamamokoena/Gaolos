@@ -18,28 +18,28 @@ namespace Gaolos.Api.Controllers
         }
 
         [HttpGet(Name ="GetMenusForRestaurant")]
-        public async Task<ActionResult<IEnumerable<MenuForRestaurantDto>>> GetMenusForRestaurant(Guid restaurantId)
+        public async Task<ActionResult<IEnumerable<MenuForRestaurantVm>>> GetMenusForRestaurant(Guid restaurantId)
         {
             var menus = await _mediator.Send(new GetMenusForRestaurantQuery() { RestaurantId = restaurantId });
             return Ok(menus);
         }
 
         [HttpGet("{menuId}", Name ="GetMenuForRestaurant")]
-        public async Task<IActionResult> GetMenuForRestaurant(Guid restaurantId, Guid menuId, string? fields)
+        public async Task<ActionResult<MenuForRestaurantVm>> GetMenuForRestaurant(Guid restaurantId, Guid menuId, string? fields)
         {
             var menu = await _mediator.Send(new GetMenuForRestaurantQuery() { RestaurantId = restaurantId, MenuId = menuId });
             // create links
-            var links = CreateLinksForMenu(restaurantId,menuId, fields);
+           // var links = CreateLinksForMenu(restaurantId,menuId, fields);
 
             // add 
             //var linkedResourceToReturn = _mapper.Map<MenuForRestaurantDto>(menu)
             //    .ShapeData(fields) as IDictionary<string, object?>;
-            var linkedResourceToReturn = menu.ShapeData(fields) as IDictionary<string, object?>;
+            //var linkedResourceToReturn = menu.ShapeData(fields) as IDictionary<string, object?>;
 
-            linkedResourceToReturn.Add("links", links);
+            //linkedResourceToReturn.Add("links", links);
 
             // return
-            return Ok(linkedResourceToReturn);
+            return Ok(menu);
             //return Ok(menu.ShapeData(fields));
         }
         private IEnumerable<LinkDto> CreateLinksForMenu(Guid restaurantId, Guid menuId,

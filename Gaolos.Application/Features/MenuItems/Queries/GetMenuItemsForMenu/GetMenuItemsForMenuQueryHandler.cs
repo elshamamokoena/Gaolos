@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Application.Features.MenuItems.Queries.GetMenuItemsForMenu
 {
-    public class GetMenuItemsForMenuQueryHandler : IRequestHandler<GetMenuItemsForMenuQuery, IEnumerable<MenuItemsForMenuDto>>
+    public class GetMenuItemsForMenuQueryHandler : IRequestHandler<GetMenuItemsForMenuQuery, IEnumerable<MenuItemsForMenuVm>>
     {
         private readonly IMenuItemsRepository _menuItemsRepository;
         private readonly IMapper _mapper;
@@ -24,14 +24,14 @@ namespace Gaolos.Application.Features.MenuItems.Queries.GetMenuItemsForMenu
             _mapper = mapper;
             _menuRepository = menuRepository;
         }
-        public async Task<IEnumerable<MenuItemsForMenuDto>> Handle(GetMenuItemsForMenuQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<MenuItemsForMenuVm>> Handle(GetMenuItemsForMenuQuery request, CancellationToken cancellationToken)
         {
             if (!await _menuRepository.MenuExistsAsync(request.MenuId))
             {
                 throw new NotFoundException(nameof(Menu), request.MenuId);
             }
             var menuItems = await _menuItemsRepository.GetMenuItemsAsync(request.MenuId);
-            return _mapper.Map<IEnumerable<MenuItemsForMenuDto>>(menuItems);
+            return _mapper.Map<IEnumerable<MenuItemsForMenuVm>>(menuItems);
         }
     }
 }

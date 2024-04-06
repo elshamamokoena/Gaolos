@@ -1,6 +1,7 @@
 ﻿using Gaolos.Api.ActionConstraints;
 using Gaolos.Api.Helpers;
 using Gaolos.Api.Utility;
+using Gaolos.Application.Exceptions;
 using Gaolos.Application.Features.Restaurants.Commands.CreateRestaurant;
 using Gaolos.Application.Features.Restaurants.Commands.DeleteRestaurant;
 using Gaolos.Application.Features.Restaurants.Commands.UpdateRestaurant;
@@ -15,7 +16,10 @@ using Gaolos.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections;
+//using System.Net.Http.Headers;
+using Microsoft.Net.Http.Headers;
 using System.Text.Json;
+using Microsoft.Extensions.Primitives;
 
 namespace Gaolos.Api.Controllers
 {
@@ -27,44 +31,139 @@ namespace Gaolos.Api.Controllers
 
         public RestaurantsController(IMediator mediator)
         {
-            _mediator = mediator 
+            _mediator = mediator
                 ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        [RequestHeaderMatchesMediaType("Accept",
-    "application/json",
-    "application/vnd.gaolos.restaurant.friendly+json")]
-        [Produces("application/json",
-    "application/vnd.gaolos.restaurant.friendly+json")]
-        [HttpGet("{restaurantId}", Name = "GetRestaurant")]
-        public async Task<IActionResult> GetRestaurantWithoutLinks(Guid restaurantId, string ? fields)
+
+
+        [HttpGet(Name = "GetRestaurants")]
+        public async Task<ActionResult<PagedRestaurantsVm>> GetRestaurants([FromQuery] RestaurantResourceParameters resourceParameters)
         {
-            var restaurant = (await _mediator.Send(new GetRestaurantDetailQuery { RestaurantId = restaurantId, Fields= fields }))
-                .ShapeData(fields);
+            var result = await _mediator.Send(new GetRestaurantsListQuery(resourceParameters));
+
+            //var previousPageLink = result.HasPrevious
+            //    ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.PreviousPage) : null;
+
+            //var nextPageLink = result.HasNext
+            //    ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.NextPage) : null;
+
+            //var paginationMetadata = new
+            //{
+            //    totalCount = result.TotalCount,
+            //    pageSize = result.PageSize,
+            //    currentPage = result.CurrentPage,
+            //    totalPages = result.TotalPages,
+            //    //previousPageLink = previousPageLink
+            //    //nextPageLink = nextPageLink
+            //};
+            //Response.Headers.Append("X-Pagination",
+            //    JsonSerializer.Serialize(paginationMetadata));
+            // create links
+            //var links = CreateLinksForRestaurants(resourceParameters,
+            //    result.HasNext,
+            //    result.HasPrevious);
+
+            //var restaurantsToReturn = result.Subset
+            //    .ShapeData(resourceParameters.Fields);
+
+            //var shapedRestaurantsWithLinks = restaurantsToReturn.Select(restaurant =>
+            //{
+            //    var restaurantAsDictionary = restaurant as IDictionary<string, object?>;
+            //    var restaurantLinks = CreateLinksForRestaurant(
+            //        (Guid)restaurantAsDictionary["RestaurantId"],
+            //        null);
+            //    restaurantAsDictionary.Add("links", restaurantLinks);
+            //    return restaurantAsDictionary;
+            //});
+
+            //var linkedCollectionResource = new
+            //{
+            //    value = shapedRestaurantsWithLinks,
+            //    links = links
+            //};
+
+            // return them
+            return Ok(result);
+
+            //   return Ok(restaurantsToReturn);
+        }
+        //[RequestHeaderMatchesMediaType("Accept",
+        //"application/json", 
+        //"application/vnd.gaolos.restaurant.friendly.hateoas+json",
+        //"application/vnd.gaolos.restaurant.friendly+json")]
+        [Produces("application/json",
+          "application/vnd.gaolos.restaurant.friendly.hateoas+json",
+          "application/vnd.gaolos.restaurant.friendly+json")]
+        [HttpGet("{restaurantId}", Name = "GetRestaurant")]
+        public async Task<ActionResult<RestaurantDetailVm>> GetRestaurant(Guid restaurantId, string? fields, 
+            [FromHeader(Name ="Accept")] string? mediaType)
+        {
+            ////check if media type is valid
+            //if(!MediaTypeHeaderValue.TryParse(mediaType, out var parsedMediaType))
+            //{
+            //    throw new BadRequestException("Invalid media type");
+            //}
+            var restaurant = await _mediator
+                .Send(new GetRestaurantDetailQuery { RestaurantId = restaurantId, Fields = fields });
+
+            //var includeLinks = parsedMediaType.SubTypeWithoutSuffix
+            //        .EndsWith("hateoas", StringComparison.InvariantCultureIgnoreCase);
+            //IEnumerable<LinkDto> links = new List<LinkDto>();
+
+            //if (includeLinks)
+            //{
+            //    links = CreateLinksForRestaurant(restaurantId, fields);
+            //}
+            //var restaurantToReturn = restaurant.ShapeData(fields) 
+            //    as IDictionary<string, object?>;
+
+            //if (includeLinks)
+            //{
+            //    restaurantToReturn.Add("links", links);
+            //}
+
 
             return Ok(restaurant);
+
         }
 
-        [RequestHeaderMatchesMediaType("Accept",
-         "application/vnd.gaolos.hateoas+json",
-         "application/vnd.gaolos.restaurant.friendly.hateoas+json")]
-        [Produces("application/vnd.gaolos.hateoas+json",
-         "application/vnd.gaolos.restaurant.friendly.hateoas+json")]
-        [HttpGet("{restaurantId}", Name ="GetRestaurantWithLinks")]
 
-        public async Task<IActionResult> GetRestaurantWithLinks(Guid restaurantId, string ? fields)
-        {
-            var restaurant = await _mediator.Send(new GetRestaurantDetailQuery { RestaurantId = restaurantId, Fields = fields });
 
-            var links = CreateLinksForRestaurant(restaurantId, fields);
+        //    [RequestHeaderMatchesMediaType("Accept",
+        //"application/json",
+        //"application/vnd.gaolos.restaurant.friendly+json")]
+        //    [Produces("application/json",
+        //"application/vnd.gaolos.restaurant.friendly+json")]
+        //    [HttpGet("{restaurantId}", Name = "GetRestaurant")]
+        //    public async Task<IActionResult> GetRestaurantWithoutLinks(Guid restaurantId, string? fields)
+        //    {
+        //        var restaurant = (await _mediator.Send(new GetRestaurantDetailQuery { RestaurantId = restaurantId, Fields = fields }))
+        //            .ShapeData(fields);
 
-            var linkedResourceToReturn = restaurant.ShapeData(fields)
-                as IDictionary<string, object?>;
+        //        return Ok(restaurant);
+        //    }
 
-            linkedResourceToReturn.Add("links", links);
+        //[RequestHeaderMatchesMediaType("Accept",
+        // "application/vnd.gaolos.hateoas+json",
+        // "application/vnd.gaolos.restaurant.friendly.hateoas+json")]
+        //[Produces("application/vnd.gaolos.hateoas+json",
+        // "application/vnd.gaolos.restaurant.friendly.hateoas+json")]
+        //[HttpGet("{restaurantId}")]
 
-            return Ok(linkedResourceToReturn);
-        }
+        //public async Task<IActionResult> GetRestaurantWithLinks(Guid restaurantId, string ? fields)
+        //{
+        //    var restaurant = await _mediator.Send(new GetRestaurantDetailQuery { RestaurantId = restaurantId, Fields = fields });
+
+        //    var links = CreateLinksForRestaurant(restaurantId, fields);
+
+        //    var linkedResourceToReturn = restaurant.ShapeData(fields)
+        //        as IDictionary<string, object?>;
+
+        //    linkedResourceToReturn.Add("links", links);
+
+        //    return Ok(linkedResourceToReturn);
+        //}
 
 
         //[RequestHeaderMatchesMediaType("Accept",
@@ -79,57 +178,7 @@ namespace Gaolos.Api.Controllers
         //}
 
 
-        [HttpGet(Name ="GetRestaurants")]
-        public async Task<IActionResult> GetRestaurants([FromQuery] RestaurantResourceParameters resourceParameters)
-        {
-            var result = await _mediator.Send(new GetRestaurantsListQuery(resourceParameters));
 
-            //var previousPageLink = result.HasPrevious
-            //    ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.PreviousPage) : null;
-
-            //var nextPageLink = result.HasNext
-            //    ? CreateRestaurantsResourceUri(resourceParameters, ResourceUriType.NextPage) : null;
-
-            var paginationMetadata = new
-            {
-                totalCount = result.TotalCount,
-                pageSize = result.PageSize,
-                currentPage = result.CurrentPage,
-                totalPages = result.TotalPages,
-                //previousPageLink = previousPageLink,
-                //nextPageLink = nextPageLink
-            };
-            Response.Headers.Append("X-Pagination",
-                JsonSerializer.Serialize(paginationMetadata));
-            // create links
-            var links = CreateLinksForRestaurants(resourceParameters,
-                result.HasNext,
-                result.HasPrevious);
-
-            var restaurantsToReturn = result.Subset
-                .ShapeData(resourceParameters.Fields);
-
-            var shapedRestaurantsWithLinks = restaurantsToReturn.Select(restaurant =>
-            {
-                var restaurantAsDictionary = restaurant as IDictionary<string, object?>;
-                var restaurantLinks = CreateLinksForRestaurant(
-                    (Guid)restaurantAsDictionary["RestaurantId"],
-                    null);
-                restaurantAsDictionary.Add("links", restaurantLinks);
-                return restaurantAsDictionary;
-            });
-
-            var linkedCollectionResource = new
-            {
-                value = shapedRestaurantsWithLinks,
-                links = links
-            };
-
-            // return them
-            return Ok(linkedCollectionResource);
-
-         //   return Ok(restaurantsToReturn);
-        }
         //[RequestHeaderMatchesMediaType("Accept", "application/json", "application/vnd.gaolos.hateoas+json")]
         //[Produces("application/json", "application/vnd.gaolos.restaurant.friendly+json")]
         //[HttpGet("{restaurantId}", Name = "GetRestaurant")]
@@ -283,6 +332,10 @@ namespace Gaolos.Api.Controllers
         //    var getRestaurantDetailQuery = new GetRestaurantDetailQuery() { Id = id };
         //    return Ok(await _mediator.Send(getRestaurantDetailQuery));
         //}
+
+
+
+
 
         [HttpPost(Name = "CreateRestaurant")]
         public async Task<ActionResult<Guid>> CreateRestaurant([FromBody] CreateRestaurantCommand createRestaurantCommand)

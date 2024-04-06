@@ -24,11 +24,12 @@ namespace Gaolos.Application.Profiles
         public MappingProfile()
         {
             CreateMap<Restaurant, RestaurantDto>().ReverseMap();
-            CreateMap<Restaurant, RestaurantDetailDto>().ReverseMap();
+            CreateMap<Restaurant, RestaurantDetailVm>().ReverseMap();
+            CreateMap<Restaurant, RestaurantListVm>().ReverseMap();
 
             CreateMap<Category, CategoryDto>();
             CreateMap<Category, CategoryDetailDto>();
-            CreateMap<Category, CategoryListDto>();
+            CreateMap<Category, CategoryListVm>();
             CreateMap<Category, CategoryRestaurantListVm>();
 
             CreateMap<Restaurant, CreateRestaurantCommand>().ReverseMap();
@@ -44,10 +45,10 @@ namespace Gaolos.Application.Profiles
 
             CreateMap<Restaurant, RestaurantExportDto>().ReverseMap();
 
-            CreateMap<Menu,MenuForRestaurantDto>().ReverseMap();
+            CreateMap<Menu,MenuForRestaurantVm>().ReverseMap();
 
             CreateMap<MenuItem,MenuItemForMenuDto>().ReverseMap();
-            CreateMap<MenuItem, MenuItemsForMenuDto>().ReverseMap();
+            CreateMap<MenuItem, MenuItemsForMenuVm>().ReverseMap();
             CreateMap(typeof(PagedList<>), typeof(PagedListDto<>)).ConvertUsing(typeof(Helpers.Converter<,>));
         }
     }

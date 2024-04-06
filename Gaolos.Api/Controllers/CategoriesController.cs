@@ -6,6 +6,8 @@ using Gaolos.Application.Features.Categories.Queries.GetCategoriesList;
 using Gaolos.Application.Features.Categories.Queries.GetCategory;
 using Gaolos.Application.Helpers;
 using Gaolos.Application.Models;
+using Gaolos.Application.ResourceParameters;
+
 
 //using Gaolos.Application.Features.Categories.Queries.GetPagedCategories;
 using MediatR;
@@ -40,16 +42,20 @@ namespace Gaolos.Api.Controllers
 
         [HttpGet(Name ="GetCategories")]
         [HttpHead]
-        public async Task<ActionResult<IEnumerable<CategoryListDto>>> GetCategories()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+
+        public async Task<ActionResult<PagedCategoriesVm>> GetCategories([FromQuery]CategoryResourceParameters resourceParameters )
         {
-            var dtos = await _mediator.Send(new GetCategoriesListQuery());
+            var dtos = await _mediator.Send(new GetCategoriesListQuery(resourceParameters));
             return Ok(dtos);
         }
 
+
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         [HttpGet("{categoryId}", Name = "GetCategory")]
-        //[ProducesResponseType(StatusCodes.Status200OK)]
-        //[ProducesResponseType(StatusCodes.Status404NotFound)]
-       // [ProducesDefaultResponseType]
+
         public async Task<ActionResult<CategoryDetailDto>> GetCategory(Guid categoryId)
         {
             var category = await _mediator.Send(new GetCategoryQuery { CategoryId = categoryId });
@@ -58,87 +64,87 @@ namespace Gaolos.Api.Controllers
             return Ok(category);
         }
 
-        [HttpPost(Name = "CreateCategoryWithParent")]
-        [RequestHeaderMatchesMediaType("Content-Type",
-                       "application/vnd.gaolos.createcategorycommandwithparent+json")]
-        [Consumes(
-            "application/vnd.gaolos.createcategorycommandwithparent+json")]
-        public async Task<IActionResult> CreateCategoryWithParent([FromBody] CreateCategoryWithParentCommand createCategoryCommand)
-        {
-            var response = await _mediator.Send(createCategoryCommand);
-            if (response.Success)
-            {
-                var links = CreateLinksForCategory(response.Category.CategoryId, response.Category.Name, null);
-                var linkedResourceToReturn = response.Category
-                                            .ShapeData(null) as IDictionary<string, object?>;
-                linkedResourceToReturn.Add("links", links);
-                return CreatedAtRoute("GetCategory", new { categoryId = linkedResourceToReturn["CategoryId"] }, linkedResourceToReturn);
+        //[HttpPost(Name = "CreateCategoryWithParent")]
+        //[RequestHeaderMatchesMediaType("Content-Type",
+        //               "application/vnd.gaolos.createcategorycommandwithparent+json")]
+        //[Consumes(
+        //    "application/vnd.gaolos.createcategorycommandwithparent+json")]
+        //public async Task<IActionResult> CreateCategoryWithParent([FromBody] CreateCategoryWithParentCommand createCategoryCommand)
+        //{
+        //    var response = await _mediator.Send(createCategoryCommand);
+        //    if (response.Success)
+        //    {
+        //        var links = CreateLinksForCategory(response.Category.CategoryId, response.Category.Name, null);
+        //        var linkedResourceToReturn = response.Category
+        //                                    .ShapeData(null) as IDictionary<string, object?>;
+        //        linkedResourceToReturn.Add("links", links);
+        //        return CreatedAtRoute("GetCategory", new { categoryId = linkedResourceToReturn["CategoryId"] }, linkedResourceToReturn);
 
-            }
-            return Ok(response);
-        }
+        //    }
+        //    return Ok(response);
+        //}
 
 
-        [HttpPost(Name = "AddCategory")]
-        [RequestHeaderMatchesMediaType("Content-Type",
-            "application/vnd.gaolos.createcategorycommand+json")]
-        [Consumes("application/json",
-            "application/vnd.gaolos.createcategorycommand+json")]
-        public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryCommand createCategoryCommand)
-        {
-            var response = await _mediator.Send(createCategoryCommand);
+        //[HttpPost(Name = "AddCategory")]
+        //[RequestHeaderMatchesMediaType("Content-Type",
+        //    "application/vnd.gaolos.createcategorycommand+json")]
+        //[Consumes("application/json",
+        //    "application/vnd.gaolos.createcategorycommand+json")]
+        //public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryCommand createCategoryCommand)
+        //{
+        //    var response = await _mediator.Send(createCategoryCommand);
            
 
-            if (response.Success)
-            {
-                var links = CreateLinksForCategory(response.Category.CategoryId,response.Category.Name, null);
-                var linkedResourceToReturn = response.Category
-                                            .ShapeData(null) as IDictionary<string, object?>;
-                linkedResourceToReturn.Add("links", links);
-                return CreatedAtRoute("GetCategory", new { categoryId = linkedResourceToReturn["CategoryId"] }, linkedResourceToReturn);
+        //    if (response.Success)
+        //    {
+        //        var links = CreateLinksForCategory(response.Category.CategoryId,response.Category.Name, null);
+        //        var linkedResourceToReturn = response.Category
+        //                                    .ShapeData(null) as IDictionary<string, object?>;
+        //        linkedResourceToReturn.Add("links", links);
+        //        return CreatedAtRoute("GetCategory", new { categoryId = linkedResourceToReturn["CategoryId"] }, linkedResourceToReturn);
 
-            }
+        //    }
 
-            return Ok(response);
-        }
-
-
-
-        [HttpOptions()]
-        public IActionResult GetCategoriesOptions()
-        {
-            Response.Headers.Append("Allow", "GET,HEAD,POST,OPTIONS");
-            return Ok();
-        }
+        //    return Ok(response);
+        //}
 
 
-        private IEnumerable<LinkDto> CreateLinksForCategory(Guid categoryId, string? tag,
-string? fields)
-        {
-            var links = new List<LinkDto>();
 
-            if (string.IsNullOrWhiteSpace(fields))
-            {
-                links.Add(
-                  new(Url.Link("GetCategory", new { categoryId }),
-                  "self",
-                  "GET"));
-            }
-            else
-            {
-                links.Add(
-                  new(Url.Link("GetCategory", new { categoryId, fields }),
-                  "self",
-                  "GET"));
-            }
-            links.Add(
-             new(Url.Link("GetAllRestaurants", new { tag }),
-             "restaurants",
-             "GET"));
+        //[HttpOptions()]
+        //public IActionResult GetCategoriesOptions()
+        //{
+        //    Response.Headers.Append("Allow", "GET,HEAD,POST,OPTIONS");
+        //    return Ok();
+        //}
 
 
-            return links;
-        }
+//        private IEnumerable<LinkDto> CreateLinksForCategory(Guid categoryId, string? tag,
+//string? fields)
+//        {
+//            var links = new List<LinkDto>();
+
+//            if (string.IsNullOrWhiteSpace(fields))
+//            {
+//                links.Add(
+//                  new(Url.Link("GetCategory", new { categoryId }),
+//                  "self",
+//                  "GET"));
+//            }
+//            else
+//            {
+//                links.Add(
+//                  new(Url.Link("GetCategory", new { categoryId, fields }),
+//                  "self",
+//                  "GET"));
+//            }
+//            links.Add(
+//             new(Url.Link("GetAllRestaurants", new { tag }),
+//             "restaurants",
+//             "GET"));
+
+
+//            return links;
+//        }
         //[HttpGet("/getpagedcategories", Name = "GetPagedCategories")]
         //[ProducesResponseType(StatusCodes.Status200OK)]
         //[ProducesDefaultResponseType]
