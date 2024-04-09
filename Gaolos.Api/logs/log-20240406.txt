@@ -206,3 +206,19 @@
 2024-04-06 08:05:47.385 +02:00 [INF] Application started. Press Ctrl+C to shut down.
 2024-04-06 08:05:47.386 +02:00 [INF] Hosting environment: Development
 2024-04-06 08:05:47.388 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-04-06 11:03:09.243 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-04-06 11:03:09.334 +02:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'MenuItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-04-06 11:03:20.890 +02:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'MenuItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-04-06 11:03:21.855 +02:00 [INF] Now listening on: https://localhost:7234
+2024-04-06 11:03:21.858 +02:00 [INF] Now listening on: http://localhost:5206
+2024-04-06 11:03:21.864 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-06 11:03:21.868 +02:00 [INF] Hosting environment: Development
+2024-04-06 11:03:21.872 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api
+2024-04-06 21:02:20.723 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-04-06 21:02:20.911 +02:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'MenuItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-04-06 21:02:33.652 +02:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'MenuItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-04-06 21:02:35.033 +02:00 [INF] Now listening on: https://localhost:7234
+2024-04-06 21:02:35.050 +02:00 [INF] Now listening on: http://localhost:5206
+2024-04-06 21:02:35.060 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-06 21:02:35.063 +02:00 [INF] Hosting environment: Development
+2024-04-06 21:02:35.086 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api

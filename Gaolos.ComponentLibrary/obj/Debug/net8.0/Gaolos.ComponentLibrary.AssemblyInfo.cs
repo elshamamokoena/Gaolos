@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gaolos.ComponentLibrary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b606e2d2b3b14cf97d31b4312c53a945dcb26a2d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f17516401ebc9f2fbfc044911b9ba0b660e6810f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaolos.ComponentLibrary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaolos.ComponentLibrary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
