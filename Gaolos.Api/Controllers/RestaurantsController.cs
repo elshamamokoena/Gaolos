@@ -20,6 +20,7 @@ using System.Collections;
 using Microsoft.Net.Http.Headers;
 using System.Text.Json;
 using Microsoft.Extensions.Primitives;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Gaolos.Api.Controllers
 {

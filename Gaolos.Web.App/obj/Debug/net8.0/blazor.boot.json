@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Gaolos.Web.App",
   "resources": {
-    "hash": "sha256-hGgB5/HqORhVdUXAdRaVhRvCz84+BRptfdNWet0pct4=",
+    "hash": "sha256-PvXctCA62DgYT01HL2UkvV3ifHuonMxBjblTWMdaMHc=",
     "jsModuleNative": {
       "dotnet.native.8.0.3.4zyn4l6tcm.js": "sha256-D4sYBYmDfH/YekgYRgX959/2RG6k28sJSHmcsn+iikk="
     },
@@ -216,10 +216,10 @@
       "mscorlib.wasm": "sha256-OH3kXneWqQMz6CUSo6POZqIeMqn9+5RR+IgHn5TnIwA=",
       "netstandard.wasm": "sha256-ZOswxXEbR2TmqjpbaBEdgr85Bv1NC4GwOwoJ+oxXM3M=",
       "System.Private.CoreLib.wasm": "sha256-I2w0iHf5nvSQyF1YE1VbgdTzmmz6a4OE6J7vo5wFa/4=",
-      "Gaolos.Web.App.wasm": "sha256-XXZLEoV8Y5o5zezpBcgU73iH7fMLUSMBizj+2dWAvQ4="
+      "Gaolos.Web.App.wasm": "sha256-PaRqFWsbpTpo1wNEz3N5OrgZTvqASpPGTrvHvJD0fsE="
     },
     "pdb": {
-      "Gaolos.Web.App.pdb": "sha256-arVw/ALuKFZZTLFhqal4DO5FZLzbA7eu4nmWJLhHp2k="
+      "Gaolos.Web.App.pdb": "sha256-XyL+Uv8ypO+MruEDsE20LPcJOWiEMjm+E0GA8YQ3w6U="
     }
   },
   "cacheBootResources": true,

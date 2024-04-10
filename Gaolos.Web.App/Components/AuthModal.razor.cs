@@ -32,7 +32,7 @@ namespace Gaolos.Web.App.Components
             var response = await AuthenticationService.Login(LoginViewModel.Email, LoginViewModel.Password);
             if (response.Success)
             {
-                NavigationManager.NavigateTo("/",true);
+                NavigationManager.NavigateTo("/account",true);
             }
             else
             {
