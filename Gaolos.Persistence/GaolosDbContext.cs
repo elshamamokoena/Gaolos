@@ -1,6 +1,7 @@
 ﻿using Gaolos.Application.Contracts;
 using Gaolos.Domain.Common;
 using Gaolos.Domain.Entities;
+using Gaolos.Domain.Entities.ShoppingCart;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -26,7 +27,8 @@ namespace Gaolos.Persistence
         public DbSet<Menu> Menus { get; set; }  
         public DbSet<Submenu> Submenus { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
-
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketLine> BasketLines { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

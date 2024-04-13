@@ -13,9 +13,12 @@ using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsExport;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCategory;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList;
+using Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasket;
+using Gaolos.Application.Features.ShoppingBasket.Queries.GetBasket;
 using Gaolos.Application.Helpers;
 using Gaolos.Application.Models.Restaurant;
 using Gaolos.Domain.Entities;
+using Gaolos.Domain.Entities.ShoppingCart;
 
 namespace Gaolos.Application.Profiles
 {
@@ -23,6 +26,11 @@ namespace Gaolos.Application.Profiles
     {
         public MappingProfile()
         {
+            CreateMap<CreateBasketCommand, Basket>();
+            CreateMap<Basket, CreateBasketDto>().ReverseMap();
+            CreateMap<Basket, BasketVm>().ReverseMap();
+
+
             CreateMap<Restaurant, RestaurantDto>().ReverseMap();
             CreateMap<Restaurant, RestaurantDetailVm>().ReverseMap();
             CreateMap<Restaurant, RestaurantListVm>().ReverseMap();

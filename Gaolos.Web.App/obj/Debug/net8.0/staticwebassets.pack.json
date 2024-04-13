@@ -521,6 +521,10 @@
       "PackagePath": "staticwebassets\\img\\flags\\it.png"
     },
     {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\flags\\sa.jpg",
+      "PackagePath": "staticwebassets\\img\\flags\\sa.jpg"
+    },
+    {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\cart\\01.jpg",
       "PackagePath": "staticwebassets\\img\\food-delivery\\cart\\01.jpg"
     },
@@ -767,6 +771,10 @@
     {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\logo-icon.png",
       "PackagePath": "staticwebassets\\img\\logo-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\logo-light.png",
+      "PackagePath": "staticwebassets\\img\\logo-light.png"
     },
     {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\shop\\account\\avatar.jpg",

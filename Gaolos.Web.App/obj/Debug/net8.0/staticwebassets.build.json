@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "x5JKbQdw8yErsqBAgTREs1THNwf+BGgpspGJi4o0FeA=",
+  "Hash": "DveTpBWZv32EKxoSyJUcTKRYRBvX+fPtnD/xSG9fYiI=",
   "Source": "Gaolos.Web.App",
   "BasePath": "/",
   "Mode": "Root",
@@ -10524,6 +10524,25 @@
       "OriginalItemSpec": "wwwroot\\img\\flags\\it.png"
     },
     {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\flags\\sa.jpg",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "img/flags/sa.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\flags\\sa.jpg"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\cart\\01.jpg",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Discovered",
@@ -11700,6 +11719,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\logo-icon.png"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\logo-light.png",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "img/logo-light.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo-light.png"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\shop\\account\\avatar.jpg",

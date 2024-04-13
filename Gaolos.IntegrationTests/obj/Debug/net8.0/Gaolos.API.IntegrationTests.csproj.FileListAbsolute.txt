@@ -547,3 +547,7 @@ C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\Micr
 C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Identity.Core.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Identity.Stores.dll

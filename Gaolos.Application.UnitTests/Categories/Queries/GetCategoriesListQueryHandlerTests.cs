@@ -30,7 +30,7 @@ namespace Gaolos.Application.UnitTests.Categories.Queries
         {
             var handler = new GetCategoriesListQueryHandler(_mapper, _mockCategoryRepository.Object);
 
-            var result = await handler.Handle(new GetCategoriesListQuery(), CancellationToken.None);
+            var result = await handler.Handle(new GetCategoriesListQuery(new ResourceParameters.CategoryResourceParameters()), CancellationToken.None);
 
             result.ShouldBeOfType<List<CategoryListVm>>();
 

@@ -1,6 +1,7 @@
 ﻿using Gaolos.Web.App.Auth;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
+using System.Security.Claims;
 
 namespace Gaolos.Web.App.Shared
 {
@@ -14,8 +15,6 @@ namespace Gaolos.Web.App.Shared
         protected async override Task OnInitializedAsync()
         {
            var state= await ((CookieAuthenticationStateProvider)AuthenticationStateProvider).GetAuthenticationStateAsync();
-            
-         
         }
     }
 }

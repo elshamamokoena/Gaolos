@@ -59,7 +59,7 @@ namespace Gaolos.Api
 
         public static WebApplication ConfigurePipeline(this WebApplication app)
         {
-            app.MapIdentityApi<ApplicationUser>();
+            app.MapCustomIdentityApi<ApplicationUser>();
 
             app.MapPost("/Logout", async (ClaimsPrincipal user, SignInManager<ApplicationUser> signInManager) =>
             {

@@ -10,6 +10,8 @@ namespace Gaolos.Domain.Entities.ShoppingCart
     {
         public Guid BasketId { get; set; }
         public Guid UserId { get; set; }
-        public List<BasketLine> BasketLines { get; set; }
+        public ICollection<BasketLine> BasketLines { get; set; }
+            =new List<BasketLine>();
+        public Guid? CouponId { get; set; }
     }
 }

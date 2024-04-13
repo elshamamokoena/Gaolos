@@ -119,12 +119,14 @@ namespace Gaolos.Web.App.Auth
                 {
                     var claims = new List<Claim>
                     {
-                        new(ClaimTypes.Name, userInfo.Email),
+                       new(ClaimTypes.NameIdentifier, userInfo.UserId),
+                        new(ClaimTypes.Surname, userInfo.Surname),
+                        new(ClaimTypes.Name, userInfo.Name),
                         new(ClaimTypes.Email, userInfo.Email)
                     };
 
                     claims.AddRange(
-                        userInfo.Claims.Where(c => c.Key != ClaimTypes.Name && c.Key != ClaimTypes.Email)
+                        userInfo.Claims.Where(c => c.Key != ClaimTypes.Name && c.Key != ClaimTypes.Email && c.Key != ClaimTypes.Surname)
                             .Select(c => new Claim(c.Key, c.Value)));
 
                     var id = new ClaimsIdentity(claims, nameof(CookieAuthenticationStateProvider));

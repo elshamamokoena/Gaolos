@@ -1,4 +1,5 @@
-﻿using Gaolos.Identity.Models;
+﻿using Gaolos.Identity.Extensions;
+using Gaolos.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,7 @@ namespace Gaolos.Identity
             services.AddIdentityCore<ApplicationUser>()
                 .AddEntityFrameworkStores<GaolosIdentityDbContext>()
                 .AddApiEndpoints();
+            services.AddScoped<ApplicationUserManager>();
         }
     }
 }
