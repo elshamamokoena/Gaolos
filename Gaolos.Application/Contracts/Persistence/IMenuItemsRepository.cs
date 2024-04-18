@@ -11,5 +11,6 @@ namespace Gaolos.Application.Contracts.Persistence
     {
         Task<IEnumerable<MenuItem>> GetMenuItemsAsync(Guid menuId);
         Task<MenuItem> GetMenuItemAsync(Guid menuId, Guid menuItemId);
+        Task<bool> MenuItemExists(Guid menuItemId);
     }
 }

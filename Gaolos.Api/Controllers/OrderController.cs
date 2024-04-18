@@ -1,9 +1,10 @@
-﻿using MediatR;
+﻿using Gaolos.Application.Features.Orders.Queries.GetOrdersForUser;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GloboTicket.TicketManagement.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/orders")]
     [ApiController]
     public class OrderController : ControllerBase
     {
@@ -14,6 +15,12 @@ namespace GloboTicket.TicketManagement.Api.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet("user/{userId}", Name = "GetOrders")]
+        public async Task<ActionResult<IEnumerable<OrderForUserVm>>> GetOrdersForUser(Guid userId)
+        {
+            var dtos = await _mediator.Send(new GetOrdersForUserQuery { UserId=userId});
+            return Ok(dtos);
+        }
         
     }
 }

@@ -48,10 +48,12 @@ namespace Gaolos.Persistence.Repositories
         {
             if(basketId == Guid.Empty) throw new ArgumentNullException(nameof(basketId));
 
-        #pragma warning disable CS8603 // Possible null reference return.
-            return await _dbContext.Baskets.Include(b => b.BasketLines)
-                        .Where(b => b.BasketId == basketId).FirstOrDefaultAsync();
-        #pragma warning restore CS8603 // Possible null reference return.
+            #pragma warning disable CS8603 // Possible null reference return.
+            return await _dbContext.Baskets
+                .Include(b => b.BasketLines)
+                .ThenInclude(bl => bl.MenuItem)
+                .Where(b => b.BasketId == basketId).FirstOrDefaultAsync();
+            #pragma warning restore CS8603 // Possible null reference return.
         }
 
         public async Task<bool> SaveAsync()

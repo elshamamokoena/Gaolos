@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Repositories\OrderRepository.cs" />
     <Compile Remove="Repositories\SubmenuRepository.cs" />
   </ItemGroup>
 

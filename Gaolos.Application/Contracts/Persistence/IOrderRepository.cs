@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Application.Contracts.Persistence
 {
-    public interface IOrderRepository : IAsyncRepository<Order>
+    public interface IOrderRepository //: IAsyncRepository<Order>
     {
+        Task<IEnumerable<Order>> GetOrdersForUser(Guid userId);
+        Task AddOrder(Order order);
+        Task<Order> GetOrderById(Guid orderId);
+        Task UpdateOrderPaymentStatus(Guid orderId, bool paid);
+        Task<bool> SaveAsync();
     }
 }

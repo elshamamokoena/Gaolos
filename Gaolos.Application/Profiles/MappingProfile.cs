@@ -7,17 +7,25 @@ using Gaolos.Application.Features.Categories.Queries.GetCategory;
 using Gaolos.Application.Features.MenuItems.Queries.GetMenuItemForMenu;
 using Gaolos.Application.Features.MenuItems.Queries.GetMenuItemsForMenu;
 using Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant;
+using Gaolos.Application.Features.Orders.Queries.GetOrdersForUser;
 using Gaolos.Application.Features.Restaurants.Commands.CreateRestaurant;
 using Gaolos.Application.Features.Restaurants.Commands.UpdateRestaurant;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantDetail;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsExport;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsForCategory;
 using Gaolos.Application.Features.Restaurants.Queries.GetRestaurantsList;
+using Gaolos.Application.Features.ShoppingBasket.Commands.Checkout;
 using Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasket;
+using Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasketLine;
+using Gaolos.Application.Features.ShoppingBasket.Commands.UpdateBasketLine;
 using Gaolos.Application.Features.ShoppingBasket.Queries.GetBasket;
+using Gaolos.Application.Features.ShoppingBasket.Queries.GetBasketLine;
+using Gaolos.Application.Features.ShoppingBasket.Queries.GetBasketLines;
 using Gaolos.Application.Helpers;
+using Gaolos.Application.Models.Discount;
 using Gaolos.Application.Models.Restaurant;
 using Gaolos.Domain.Entities;
+using Gaolos.Domain.Entities.Discount;
 using Gaolos.Domain.Entities.ShoppingCart;
 
 namespace Gaolos.Application.Profiles
@@ -26,10 +34,27 @@ namespace Gaolos.Application.Profiles
     {
         public MappingProfile()
         {
+            CreateMap<CheckoutCommand, Order>().ReverseMap();
+            CreateMap<OrderForUserVm, Order>().ReverseMap();
+            CreateMap<OrderLine, BasketLine>().ReverseMap();
+
+            CreateMap<CreateBasketLineDto, BasketLine>().ReverseMap();
+            CreateMap<UpdateBasketLineDto, BasketLine>().ReverseMap();
+            CreateMap<UpdateBasketLineCommand, BasketLine>().ReverseMap();
+            CreateMap<CreateBasketLineCommand, BasketLine>().ReverseMap();
+
+            CreateMap<MenuItem, MenuItemDto>().ReverseMap();
+
+            CreateMap<BasketLine, BasketLineVm>().ReverseMap();
+            CreateMap<BasketLine, BasketLinesVm>().ReverseMap();
+
+            CreateMap<OrderLine,OrderLineDto>().ReverseMap();
+            CreateMap<Order, OrderVm>().ReverseMap();
+
+            CreateMap<Coupon, CouponVm>().ReverseMap();
             CreateMap<CreateBasketCommand, Basket>();
             CreateMap<Basket, CreateBasketDto>().ReverseMap();
             CreateMap<Basket, BasketVm>().ReverseMap();
-
 
             CreateMap<Restaurant, RestaurantDto>().ReverseMap();
             CreateMap<Restaurant, RestaurantDetailVm>().ReverseMap();

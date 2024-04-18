@@ -37,5 +37,10 @@ namespace Gaolos.Persistence.Repositories
                 .Where(m=>m.MenuId==menuId)
                 .ToListAsync();
         }
+
+        public async Task<bool> MenuItemExists(Guid menuItemId)
+        {
+            return await _dbContext.MenuItems.AnyAsync(i => i.MenuItemId == menuItemId);
+        }
     }
 }

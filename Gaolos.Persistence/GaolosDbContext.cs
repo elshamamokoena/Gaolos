@@ -1,6 +1,7 @@
 ﻿using Gaolos.Application.Contracts;
 using Gaolos.Domain.Common;
 using Gaolos.Domain.Entities;
+using Gaolos.Domain.Entities.Discount;
 using Gaolos.Domain.Entities.ShoppingCart;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -29,7 +30,9 @@ namespace Gaolos.Persistence
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketLine> BasketLines { get; set; }
-
+        public DbSet<Coupon> Coupons { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderLine> OrderLines { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GaolosDbContext).Assembly);
@@ -1130,6 +1133,32 @@ namespace Gaolos.Persistence
                 Price = 14.90M,
                 MenuId = kfcAddOnsGuid
 
+            });
+
+
+            //Coupons
+            modelBuilder.Entity<Coupon>().HasData(new Coupon
+            {
+                CouponId = Guid.NewGuid(),
+                Code = "BeNice",
+                Discount = 10,
+                AlreadyUsed = false
+            });
+
+            modelBuilder.Entity<Coupon>().HasData(new Coupon
+            {
+                CouponId = Guid.NewGuid(),
+                Code = "Awesome",
+                Discount = 20,
+                AlreadyUsed = false
+            });
+
+            modelBuilder.Entity<Coupon>().HasData(new Coupon
+            {
+                CouponId = Guid.NewGuid(),
+                Code = "AlmostFree",
+                Discount = 50,
+                AlreadyUsed = false
             });
 
 

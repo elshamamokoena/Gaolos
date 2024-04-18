@@ -26,6 +26,8 @@ namespace Gaolos.Persistence
             services.AddScoped<IMenuItemsRepository, MenuItemsRepository>();
             services.AddScoped<IBasketLineRepository, BasketLineRepository>();
             services.AddScoped<IBasketRepository, BasketRepository>();
+            services.AddScoped<ICouponRepository, CouponRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddTransient<IPropertyMappingService, PropertyMappingService>();
             return services;
         }

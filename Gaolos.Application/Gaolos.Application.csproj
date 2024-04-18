@@ -25,6 +25,7 @@
   <ItemGroup>
     <Folder Include="Features\MenuItems\Commands\" />
     <Folder Include="Features\Menus\Commands\" />
+    <Folder Include="Features\Orders\Commands\" />
     <Folder Include="Models\Menu\" />
   </ItemGroup>
 

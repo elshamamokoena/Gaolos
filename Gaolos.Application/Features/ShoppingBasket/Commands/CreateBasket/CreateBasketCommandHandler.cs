@@ -44,7 +44,10 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasket
             if (createBasketCommandResponse.Success)
             {
                 var basket = _mapper.Map<Basket>(request);
+
+              
                 _basketRepository.AddBasket(basket);
+
                 await _basketRepository.SaveAsync();
                 createBasketCommandResponse.Basket = _mapper.Map<CreateBasketDto>(basket);
             }

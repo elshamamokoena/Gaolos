@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gaolos.Identity.Migrations
 {
     [DbContext(typeof(GaolosIdentityDbContext))]
-    [Migration("20240411225312_NameNullable")]
-    partial class NameNullable
+    [Migration("20240415225311_Id1")]
+    partial class Id1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Gaolos.Application.Features.ShoppingBasket.Commands.ApplyCouponToBasket;
+using Gaolos.Application.Features.ShoppingBasket.Commands.Checkout;
 using Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasket;
 using Gaolos.Application.Features.ShoppingBasket.Queries.GetBasket;
 using MediatR;
@@ -44,5 +46,34 @@ namespace Gaolos.Api.Controllers
 
             return response;
         }
+
+        [HttpPut(Name ="ApplyCoupon")]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ApplyCouponToBasketCommandResponse>> ApplyCoupon([FromBody] ApplyCouponToBasketCommand applyCouponCommand)
+        {
+            var response = await _mediator.Send(applyCouponCommand);
+
+            if (response.Success)
+            {
+                return Accepted(response);
+            }
+
+            return response;
+        }
+
+        [HttpPost("Checkout")]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<CheckoutCommandResponse>> Checkout([FromBody] CheckoutCommand checkoutCommand)
+        {
+            var response = await _mediator.Send(checkoutCommand);
+
+            if (response.Success)
+                return Accepted(response);
+
+            return Ok(response);
+        }
+
     }
 }
