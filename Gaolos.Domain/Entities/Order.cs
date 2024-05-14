@@ -15,6 +15,8 @@ namespace Gaolos.Domain.Entities
         public bool OrderPaid { get; set; }
         public ICollection<OrderLine> OrderLines { get; set; } 
             = new List<OrderLine>();
+        public OrderStatus OrderStatus { get; set; } 
+            = OrderStatus.Processing;
 
         //user info
         public Guid? UserId { get; set; }

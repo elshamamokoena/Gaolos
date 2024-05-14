@@ -62,7 +62,7 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasketLine
             var processedBasketLine = await _basketLineRepository.AddOrUpdateBasketLine(request.BasketId,basketLine);
             await _basketLineRepository.SaveAsync();
 
-            response.BasketLine = _mapper.Map<CreateBasketLineDto>(processedBasketLine);
+            response.BasketLine = _mapper.Map<CreatedBasketLineVm>(processedBasketLine);
             return response;
         }
     }

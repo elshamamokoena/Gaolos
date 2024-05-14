@@ -1,0 +1,19 @@
+﻿    <!-- Location dropdown-->
+<ul class="navbar-nav navbar-mega-nav ms-lg-4 pe-lg-2 me-lg-2">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle ps-lg-0" href="#" data-bs-toggle="dropdown"><i class="ci-location me-2"></i>@_selectedAddress.Street</a>
+        <ul class="dropdown-menu">
+            @foreach(var address in Addresses)
+            {
+                <li><a class="dropdown-item" @onclick="async()=>await SetPrimaryAddress(address)" href="javascript:void(0)">@address.Street</a></li>
+            }
+
+            @* <li><a class="dropdown-item" href="#">Rosebank</a></li> *@
+           @*  <li><a class="dropdown-item" href="#">Sandhurst</a></li>
+            <li><a class="dropdown-item" href="#">Randburg</a></li>
+            <li><a class="dropdown-item" href="#">Centurion</a></li>
+            <li><a class="dropdown-item" href="#">Pretoria</a></li>
+            <li><a class="dropdown-item" href="#">Auckland Park</a></li> *@
+        </ul>
+    </li>
+</ul>

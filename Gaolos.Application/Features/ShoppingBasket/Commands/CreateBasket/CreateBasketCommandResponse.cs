@@ -13,6 +13,6 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasket
         {
 
         }
-        public CreateBasketDto Basket { get; set; }=default!;
+        public CreatedBasketVm Basket { get; set; }=default!;
     }
 }

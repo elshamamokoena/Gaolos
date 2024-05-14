@@ -2,6 +2,10 @@
     <div class="row">
         <!-- Items in cart-->
         <div class="col-lg-8 col-md-7 pt-sm-2">
+     
+                @foreach(var item in BasketLines)
+                {
+                    
             <!-- Item-->
             <div class="d-sm-flex justify-content-between align-items-center mt-3 mb-4 pb-3 border-bottom">
                 <div class="d-block d-sm-flex align-items-center text-center text-sm-start">
@@ -19,7 +23,10 @@
                     <button class="btn btn-link px-0 text-danger" type="button"><i class="ci-close-circle me-2"></i><span class="fs-sm">Remove</span></button>
                 </div>
             </div>
-            <!-- Item-->
+                }
+
+
+@*             <!-- Item-->
             <div class="d-sm-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
                 <div class="d-block d-sm-flex align-items-center text-center text-sm-start">
                     <a class="d-inline-block flex-shrink-0 mx-auto me-sm-4" href="#"><img src="img/food-delivery/cart/02.jpg" width="120" alt="Burger"></a>
@@ -51,14 +58,14 @@
                     <input class="form-control" type="number" id="quantity3" value="3" min="1">
                     <button class="btn btn-link px-0 text-danger" type="button"><i class="ci-close-circle me-2"></i><span class="fs-sm">Remove</span></button>
                 </div>
-            </div>
-        </div>
+            </div>*@
+        </div> 
         <!-- Sidebar-->
         <div class="col-lg-4 col-md-5 pt-3 pt-sm-4">
             <div class="rounded-3 bg-secondary px-3 px-sm-4 py-4">
                 <div class="text-center mb-4 pb-3 border-bottom">
                     <h3 class="h5 mb-3 pb-1">Total</h3>
-                    <h4 class="fw-normal">$24.<small>00</small></h4>
+                    <h4 class="fw-normal">R @Basket.BasketTotal <small>00</small></h4>
                 </div>
                 <div class="mb-4">
                     <label class="form-label mb-3" for="order-comments"><span class="badge bg-info fs-xs me-2">Note</span>Additional comments</label>

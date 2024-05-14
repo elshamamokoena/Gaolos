@@ -1,18 +1,28 @@
 ﻿@if (TotalPages > 0)
 {
-    <div class="float-left pager mt-3">
-        <button type="button" class="@((PageIndex == 1) ? "pager-btn-disabled" : "pager-btn")" @onclick="@(() => OnClick.InvokeAsync(1))">
-            <i class="fa-solid fa-angles-left" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="@(HasPreviousPage ? "pager-btn" : "pager-btn-disabled")" @onclick="@(() => OnClick.InvokeAsync(PageIndex - 1))">
-            <i class="fa-solid fa-angle-left" aria-hidden="true"></i>
-        </button>
-        <span>@PageIndex</span>
-        <button type="button" class="@(HasNextPage ? "pager-btn" : "pager-btn-disabled")" @onclick="@(() => OnClick.InvokeAsync(PageIndex + 1))">
-            <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="@((PageIndex == TotalPages) ? "pager-btn-disabled" : "pager-btn")" @onclick="@(() => OnClick.InvokeAsync(TotalPages))">
-            <i class="fa-solid fa-angles-right" aria-hidden="true"></i>
-        </button>
-    </div>
+    <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="@((PageIndex==1) ? "page-item disabled":"page-item")"><a class="page-link" @onclick="@(() => OnClick.InvokeAsync(PageIndex-1))" href="javascript:void(0)"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+        </ul>
+        <ul class="pagination">
+            <li class="page-item d-sm-none"><span class="page-link page-link-static"> @PageIndex / @TotalPages</span></li>
+            @* <li class="" aria-current="page"><span class="page-link">1<span class="visually-hidden">(current)</span></span></li> *@
+            @* <li class="page-item d-none d-sm-block"><a class="page-link" href="#">2</a></li> *@
+            @* <li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li> *@
+            @* <li class="@(HasPreviousPage ? "page-item active d-none d-sm-block": "page-item d-none d-sm-block")"><a class="page-link" @onclick="@(() => OnClick.InvokeAsync(PageIndex-1))" href="javascript:void(0)">@(PageIndex)</a></li> *@
+            @* <li class="@(HasNextPage? "page-item active d-none d-sm-block": "page-item d-none d-sm-block" )"><a class="page-link" @onclick="@(() => OnClick.InvokeAsync(PageIndex+1))" href="javascript:void(0)">@(PageIndex + 1)</a></li> *@
+            @for (int i = 1; i <= TotalPages; i++)
+            {
+                var index= i;
+                <li class="@(index == PageIndex ? "page-item active d-none d-sm-block" : "page-item d-none d-sm-block")"><a class="page-link" @onclick="@(() => OnClick.InvokeAsync(index))" href="javascript:void(0)">@i</a></li>
+            }
+
+        </ul>
+        <ul class="pagination">
+            <li class="@((PageIndex==TotalPages)? "page-item disabled" : "page-item" )"><a class="page-link" @onclick="@(() => OnClick.InvokeAsync(PageIndex+1))" href="javascript:void(0)" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+        </ul>
+    </nav>
+
 }
+
+

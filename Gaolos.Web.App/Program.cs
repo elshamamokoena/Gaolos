@@ -36,5 +36,9 @@ builder.Services.AddScoped<ICategoryDataService, CategoryDataService>();
 //builder.Services.AddScoped<IOrderDataService, OrderDataService>();
 builder.Services.AddScoped<IMenuDataService, MenuDataService>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
+builder.Services.AddScoped<IAccountDataService, AccountDataService>();
+builder.Services.AddScoped<IShoppingBasketService, ShoppingBasketDataService>();
+builder.Services.AddScoped<ApplicationState>();
 
 await builder.Build().RunAsync();

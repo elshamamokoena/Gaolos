@@ -18,9 +18,9 @@ namespace Gaolos.Web.App.Services
             return await _cookieAuthenticationStateProvider.Login(email, password);
         }
 
-        public  async Task<ApiResponse> Register(string email, string password)
+        public  async Task<ApiResponse> Register(string name, string surname, string email, string password)
         {
-            return await _cookieAuthenticationStateProvider.Register(email, password);
+            return await _cookieAuthenticationStateProvider.Register(name, surname,email, password);
         }
 
         public async Task Logout()

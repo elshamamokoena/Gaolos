@@ -47,15 +47,15 @@
               <div class="row gx-4 gy-3">
                 <div class="col-sm-6">
                   <label class="form-label" for="account-fn">First Name</label>
-                  <input class="form-control" type="text" id="account-fn" value="Susan">
+                  <input class="form-control" type="text" id="account-fn" value="@LoggedInUser.Name">
                 </div>
                 <div class="col-sm-6">
                   <label class="form-label" for="account-ln">Last Name</label>
-                  <input class="form-control" type="text" id="account-ln" value="Gardner">
+                  <input @bind="LoggedInUser.Surname" class="form-control" type="text" id="account-ln" >
                 </div>
                 <div class="col-sm-6">
                   <label class="form-label" for="account-email">Email Address</label>
-                  <input class="form-control" type="email" id="account-email" value="s.gardner@example.com" disabled>
+                  <input class="form-control" type="email" id="account-email" value="@LoggedInUser.Email" disabled>
                 </div>
                 <div class="col-sm-6">
                   <label class="form-label" for="account-phone">Phone Number</label>

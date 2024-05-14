@@ -17,7 +17,7 @@ namespace Gaolos.Persistence
                 options.UseSqlServer(configuration.GetConnectionString("GaolosConnectionString"));
                 options.EnableSensitiveDataLogging();
             }
-        );
+            );
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -28,6 +28,8 @@ namespace Gaolos.Persistence
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<ICouponRepository, CouponRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
+            services.AddScoped<ICreditCardRepository,CreditCardRepository>();
             services.AddTransient<IPropertyMappingService, PropertyMappingService>();
             return services;
         }

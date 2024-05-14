@@ -43,6 +43,7 @@ namespace Gaolos.Api.Controllers
         [HttpGet(Name ="GetCategories")]
         [HttpHead]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesDefaultResponseType]
 
         public async Task<ActionResult<PagedCategoriesVm>> GetCategories([FromQuery]CategoryResourceParameters resourceParameters )
         {

@@ -21,7 +21,7 @@ namespace Gaolos.Api.Controllers
                 ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        [HttpGet("{basketId}", Name = "GetBasket")]
+        [HttpGet("{basketId}", Name = "GetBasketAsync")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
@@ -32,45 +32,36 @@ namespace Gaolos.Api.Controllers
             return Ok(basket);
         }
 
-        [HttpPost(Name = "AddBasket")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [HttpPost(Name = "AddBasketAsync")]
         public async Task<ActionResult<CreateBasketCommandResponse>> AddBasket([FromBody] CreateBasketCommand addBasketCommand)
         {
             var response = await _mediator.Send(addBasketCommand);
-
-            if(response.Success)
-            {
-                return CreatedAtRoute("GetBasket", 
-                    new { basketId = response.Basket.BasketId }, response);
-            }
-
-            return response;
+            return Ok(response);
         }
 
-        [HttpPut(Name ="ApplyCoupon")]
-        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [HttpPut("{basketId}",Name ="ApplyCouponAsync")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<ApplyCouponToBasketCommandResponse>> ApplyCoupon([FromBody] ApplyCouponToBasketCommand applyCouponCommand)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> ApplyCoupon(Guid basketId, [FromBody] CouponDto coupon)
         {
-            var response = await _mediator.Send(applyCouponCommand);
+            var response = await _mediator.Send(new ApplyCouponToBasketCommand 
+            { BasketId=basketId,
+            CouponId  = coupon.CouponId,
+            CouponCode = coupon.Code
+            });
 
-            if (response.Success)
-            {
-                return Accepted(response);
-            }
+          
 
-            return response;
+            return NoContent();
         }
 
-        [HttpPost("Checkout")]
-        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [HttpPost("CheckoutAsync")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<CheckoutCommandResponse>> Checkout([FromBody] CheckoutCommand checkoutCommand)
         {
             var response = await _mediator.Send(checkoutCommand);
-
-            if (response.Success)
-                return Accepted(response);
 
             return Ok(response);
         }

@@ -39,21 +39,24 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.Checkout
                     response.ValidationErrors.Add(error.ErrorMessage);
                 }
             }
+
+            var basket = await _shoppingBasketRepository.GetBasketAsync(request.BasketId);
+            if (basket == null)
+            {
+                response.Success = false;
+                response.Message = "Basket Not Found";
+                return response;
+            }
+            if (basket.BasketLines.Count < 1)
+            {
+                response.Success = false;
+                response.Message = "Basket is Empty";
+                return response;
+            }
+
             if (response.Success)
             {
-                var basket = await _shoppingBasketRepository.GetBasketAsync(request.BasketId);
-                if (basket == null)
-                {
-                    response.Success = false;
-                    response.Message = "Basket Not Found";
-                    return response;
-                }
-                if (basket.BasketLines.Count < 1)
-                {
-                    response.Success = false;
-                    response.Message = "Basket is Empty";
-                    return response;
-                }
+            
                 var order = _mapper.Map<Order>(request);
                 order.UserId = basket.UserId;
                 order.OrderPlaced = DateTime.Now;
@@ -63,6 +66,7 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.Checkout
                 await _orderRepository.AddOrder(order);
                 await _orderRepository.SaveAsync();
                 response.Order = _mapper.Map<OrderVm>(order);
+                await _shoppingBasketRepository.ClearBasket(basket.BasketId);
             }
             return response;
         }

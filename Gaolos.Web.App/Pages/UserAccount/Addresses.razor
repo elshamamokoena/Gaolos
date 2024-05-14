@@ -1,5 +1,6 @@
 ﻿ @page "/account/addresses"
- <AddAddressModal/>
+ <AddAddressModal OnAddressAdded="@(async ()=> await RefreshAddresses())"/>
+<UpdateAddressModal DeliveryAddress="_selectedAddress" OnClose="ResetAddress"  OnAddressUpdated="@(async ()=> await GetAddresses())"/>
 <!-- Page Title-->
 <div class="page-title-overlap bg-dark pt-4">
     <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
@@ -31,6 +32,9 @@
                 <h6 class="fs-base text-light mb-0">List of your registered addresses:</h6><a class="btn btn-primary btn-sm" @onclick="Logout"><i class="ci-sign-out me-2"></i>Sign out</a>
             </div>
             <!-- Addresses list-->
+            @if(AddressesList.Count() > 0)
+            {
+                
             <div class="table-responsive fs-md">
                 <table class="table table-hover mb-0">
                     <thead>
@@ -40,15 +44,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach(var address in AddressesList)
+                        {
+                           
                         <tr>
-                            <td class="py-3 align-middle">396 Lillian Blvd, Holbrook, NY 11741, USA<span class="align-middle badge bg-info ms-2">Primary</span></td>
+                            <td class="py-3 align-middle">@address.ToString() <span class="align-middle badge bg-info ms-2"> @(address.IsPrimary ? "Primary":"")</span></td>
                             <td class="py-3 align-middle">
-                                <a class="nav-link-style me-2" href="#" data-bs-toggle="tooltip" title="Edit"><i class="ci-edit"></i></a><a class="nav-link-style text-danger" href="#" data-bs-toggle="tooltip" title="Remove">
+                                <a class="nav-link-style me-2" href="#update-address" @onclick="()=>SelectAddress(address)" data-bs-toggle="modal" title="Edit"><i class="ci-edit"></i></a>
+
+                                <a class="nav-link-style text-danger" href="javascript:void(0)" data-bs-toggle="tooltip" @onclick="async ()=> await DeleteAddress(address.DeliveryAddressId)" title="Remove">
                                     <div class="ci-trash"></div>
                                 </a>
                             </td>
                         </tr>
-                        <tr>
+                        }
+                     @*    <tr>
                             <td class="py-3 align-middle">769, Industrial, West Chicago, IL 60185, USA</td>
                             <td class="py-3 align-middle">
                                 <a class="nav-link-style me-2" href="#" data-bs-toggle="tooltip" title="Edit"><i class="ci-edit"></i></a><a class="nav-link-style text-danger" href="#" data-bs-toggle="tooltip" title="Remove">
@@ -63,10 +73,16 @@
                                     <div class="ci-trash"></div>
                                 </a>
                             </td>
-                        </tr>
+                        </tr> *@
                     </tbody>
                 </table>
             </div>
+            }else
+            {
+                <div class="alert alert-info">You have no registered addresses yet.</div>
+            }
+            
+
             <div class="text-sm-end pt-4"><a class="btn btn-primary" href="#add-address" data-bs-toggle="modal">Add new address</a></div>
         </section>
     </div>

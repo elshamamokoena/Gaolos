@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gaolos.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,6 @@ namespace Gaolos.Application.Features.Orders.Queries.GetOrdersForUser
         public int OrderTotal { get; set; }
         public DateTime OrderPlaced { get; set; }
         public bool OrderPaid { get; set; }
+        public string  OrderStatus { get; set; } 
     }
 }

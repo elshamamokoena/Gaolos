@@ -8,5 +8,7 @@ namespace Gaolos.Application.ResourceParameters
 {
     public class CategoryResourceParameters:BaseResourceParameters
     {
+        public string OrderBy { get; set; } = "Name";
+
     }
 }

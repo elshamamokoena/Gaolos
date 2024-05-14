@@ -16,9 +16,8 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.ApplyCouponToBaske
                 .NotNull()
                 .NotEqual(Guid.Empty).WithMessage("{PropertyName} is required.");
 
-            RuleFor(p => p.Coupon)
-                //.NotEmpty().WithMessage("{PropertyName} is required.")
-                .NotNull().WithMessage("Coupon cannot be null");
+            //RuleFor(p => p.CouponId)
+            //    .NotEmpty().WithMessage("{PropertyName} is required.");
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Gaolos.Web.App.Services
         public async Task<RestaurantListViewModel> GetRestaurants(string? tag,string? searchQuery, int? pageSize, 
             int? pageNumber, string? orderBy, string? fields)
         {
-            var restaurants = await _client.GetRestaurantsAsync(tag,searchQuery, pageNumber, pageSize, orderBy, fields);
+            var restaurants = await _client.GetRestaurantsAsync(tag,orderBy,searchQuery, pageNumber, pageSize, fields);
             var pagedRestaurants = _mapper.Map<RestaurantListViewModel>(restaurants);
             return pagedRestaurants;
 

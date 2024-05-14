@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gaolos.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Domain.Entities.ShoppingCart
 {
-    public class BasketLine
+    public class BasketLine:AuditableEntity
     {
         public Guid BasketLineId { get; set; }
         public Guid BasketId { get; set; }

@@ -1,5 +1,5 @@
 ﻿     <!-- Add Payment Method-->
-<form class="needs-validation modal fade" method="post" id="add-payment" tabindex="-1" novalidate>
+<EditForm Model="@PaymentMethod" OnValidSubmit="HandleValidSubmit"  class="needs-validation modal fade" method="post" id="add-payment" tabindex="-1" novalidate>
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,30 +7,34 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="form-check mb-4">
+            @*     <div class="form-check mb-4">
                     <input class="form-check-input" type="radio" id="paypal" name="payment-method">
                     <label class="form-check-label" for="paypal">PayPal<img class="d-inline-block align-middle ms-2" src="img/card-paypal.png" width="39" alt="PayPal"></label>
-                </div>
+                </div> *@
                 <div class="form-check mb-4">
                     <input class="form-check-input" type="radio" id="card" name="payment-method" checked>
                     <label class="form-check-label" for="card">Credit / Debit card<img class="d-inline-block align-middle ms-2" src="img/cards.png" width="187" alt="Credit card"></label>
                 </div>
                 <div class="row g-3 mb-2">
                     <div class="col-sm-6">
-                        <input class="form-control" type="text" name="number" placeholder="Card Number" required>
+                        <InputText @bind-Value="PaymentMethod.CardNumber" class="form-control" type="text" name="number" placeholder="Card Number" required></InputText>
                         <div class="invalid-feedback">Please fill in the card number!</div>
                     </div>
                     <div class="col-sm-6">
-                        <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                        <InputText @bind-Value="PaymentMethod.CardHolderName" class="form-control" type="text" name="name" placeholder="Full Name" required></InputText>
                         <div class="invalid-feedback">Please provide name on the card!</div>
                     </div>
                     <div class="col-sm-3">
-                        <input class="form-control" type="text" name="expiry" placeholder="MM/YY" required>
+                        <InputText @bind-Value="PaymentMethod.Expiry" class="form-control" type="text" name="expiry" placeholder="MM/YY" required></InputText>
                         <div class="invalid-feedback">Please provide card expiration date!</div>
                     </div>
                     <div class="col-sm-3">
-                        <input class="form-control" type="text" name="cvc" placeholder="CVC" required>
+                        <InputText @bind-Value="PaymentMethod.CVV" class="form-control" type="text" name="cvc" placeholder="CVV" required></InputText>
                         <div class="invalid-feedback">Please provide card CVC code!</div>
+                    </div>
+                    <div class="form-check">
+                        <InputCheckbox @bind-Value="PaymentMethod.isPrimary" class="form-check-input" type="checkbox" id="address-primary"></InputCheckbox>
+                        <label class="form-check-label" for="address-primary">Make this address primary</label>
                     </div>
                     <div class="col-sm-6">
                         <button class="btn btn-primary d-block w-100" type="submit">Register this card</button>
@@ -39,4 +43,4 @@
             </div>
         </div>
     </div>
-</form>
+</EditForm>

@@ -36,7 +36,7 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.ApplyCouponToBaske
             {
                 throw new NotFoundException(nameof(basket), request.BasketId);
             }
-            basket.CouponId = request.Coupon.CouponId;
+            basket.CouponId = request.CouponId;
             await  _shoppingBasketRepository.SaveAsync();
             response.Message= "Coupon Applied to Basket";
             return response;

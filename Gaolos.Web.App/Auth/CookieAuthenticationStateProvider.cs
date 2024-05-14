@@ -53,13 +53,15 @@ namespace Gaolos.Web.App.Auth
             };
         }
 
-        public async Task<ApiResponse> Register(string email, string password)
+        public async Task<ApiResponse> Register(string name,string surname, string email, string password)
         {
             try
             {
                 var result = await _httpClient.PostAsJsonAsync(
                     "register", new
                     {
+                        name,
+                        surname,
                         email,
                         password
                     });

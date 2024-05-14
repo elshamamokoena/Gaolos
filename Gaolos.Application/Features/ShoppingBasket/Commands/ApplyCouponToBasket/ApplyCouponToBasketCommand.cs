@@ -11,6 +11,7 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.ApplyCouponToBaske
     public class ApplyCouponToBasketCommand:IRequest<ApplyCouponToBasketCommandResponse>
     {
         public Guid BasketId { get; set; }
-        public Coupon Coupon { get; set; }
+        public Guid? CouponId { get; set; }
+        public string CouponCode { get; set; }=string.Empty;
     }
 }

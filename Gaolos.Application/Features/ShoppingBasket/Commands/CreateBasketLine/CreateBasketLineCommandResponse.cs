@@ -14,6 +14,6 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasketLine
 
         }
 
-        public CreateBasketLineDto BasketLine { get; set; }
+        public CreatedBasketLineVm BasketLine { get; set; }
     }
 }

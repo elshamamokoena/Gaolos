@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Gaolos.Application.Features.Orders.Queries.GetOrdersForUser
 {
-    public class GetOrdersForUserQueryHandler : IRequestHandler<GetOrdersForUserQuery, IEnumerable<OrderForUserVm>>
+    public class GetOrdersForUserQueryHandler : IRequestHandler<GetOrdersForUserQuery, PagedOrdersVm>
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IMapper _mapper;
@@ -20,10 +20,21 @@ namespace Gaolos.Application.Features.Orders.Queries.GetOrdersForUser
             _mapper = mapper
                 ?? throw new ArgumentNullException(nameof(mapper));
         }
-        public async Task<IEnumerable<OrderForUserVm>> Handle(GetOrdersForUserQuery request, CancellationToken cancellationToken)
+        public async Task<PagedOrdersVm> Handle(GetOrdersForUserQuery request, CancellationToken cancellationToken)
         {
-            var orders = await _orderRepository.GetOrdersForUser(request.UserId);
-            return _mapper.Map<IEnumerable<OrderForUserVm>>(orders);
+            var orders = await _orderRepository.GetOrdersForUser(request.UserId, request.OrderResourceParameters);
+
+            var ordersToReturn=  _mapper.Map<List<OrderForUserVm>>(orders.ToList());
+
+            return new PagedOrdersVm { 
+                Orders = ordersToReturn,
+                TotalPages = orders.TotalPages, 
+                PageSize = orders.PageSize, 
+                CurrentPage = orders.CurrentPage, 
+                TotalCount = orders.TotalCount, 
+                HasNext = orders.HasNext,
+                HasPrevious = orders.HasPrevious
+            };
         }
     }
 }

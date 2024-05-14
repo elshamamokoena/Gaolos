@@ -42,7 +42,9 @@ namespace Gaolos.Web.App.Components
         }
         protected async void HandleValidRegisterSubmit()
         {
-           var response= await AuthenticationService.Register(RegisterViewModel.Email, RegisterViewModel.Password);
+           var response= await AuthenticationService.Register(RegisterViewModel.Name,RegisterViewModel.Surname,
+               RegisterViewModel.Email, RegisterViewModel.Password);
+
             if(response.Success)
             {
                 NavigationManager.NavigateTo("/user/account");
@@ -54,7 +56,5 @@ namespace Gaolos.Web.App.Components
 
         }
         
-
-
     }
 }

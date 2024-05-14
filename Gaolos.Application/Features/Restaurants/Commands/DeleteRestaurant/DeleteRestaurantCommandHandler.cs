@@ -7,10 +7,10 @@ namespace Gaolos.Application.Features.Restaurants.Commands.DeleteRestaurant
 {
     public class DeleteRestaurantCommandHandler : IRequestHandler<DeleteRestaurantCommand>
     {
-        private readonly IAsyncRepository<Restaurant> _restaurantRepository;
+        private readonly IRestaurantRepository _restaurantRepository;
         private readonly IMapper _mapper;
 
-        public DeleteRestaurantCommandHandler(IMapper mapper, IAsyncRepository<Restaurant> restaurantRepository)
+        public DeleteRestaurantCommandHandler(IMapper mapper, IRestaurantRepository restaurantRepository)
         {
             _mapper = mapper;
             _restaurantRepository = restaurantRepository;
@@ -18,9 +18,9 @@ namespace Gaolos.Application.Features.Restaurants.Commands.DeleteRestaurant
 
         public async Task Handle(DeleteRestaurantCommand request, CancellationToken cancellationToken)
         {
-            var restaurantToDelete = await _restaurantRepository.GetByIdAsync(request.RestaurantId);
+            var restaurantToDelete = await _restaurantRepository.GetRestaurantAsync(request.RestaurantId);
 
-            await _restaurantRepository.DeleteAsync(restaurantToDelete);
+           // await _restaurantRepository.(restaurantToDelete);
         }
     }
 }

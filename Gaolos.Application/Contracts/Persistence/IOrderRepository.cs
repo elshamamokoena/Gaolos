@@ -1,4 +1,6 @@
-﻿using Gaolos.Domain.Entities;
+﻿using Gaolos.Application.Helpers;
+using Gaolos.Application.ResourceParameters;
+using Gaolos.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +11,9 @@ namespace Gaolos.Application.Contracts.Persistence
 {
     public interface IOrderRepository //: IAsyncRepository<Order>
     {
-        Task<IEnumerable<Order>> GetOrdersForUser(Guid userId);
+        Task<PagedList<Order>> GetOrdersForUser(Guid userId, OrderResourceParameters resourceParameters);
         Task AddOrder(Order order);
-        Task<Order> GetOrderById(Guid orderId);
+        Task<Order> GetOrderById(Guid userId, Guid orderId);
         Task UpdateOrderPaymentStatus(Guid orderId, bool paid);
         Task<bool> SaveAsync();
     }

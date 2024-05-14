@@ -20,48 +20,76 @@ namespace Gaolos.Api.Controllers
                 ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        [HttpGet]
+        [HttpGet(Name ="GetBasketLinesAsync")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<ActionResult<IEnumerable<BasketLinesVm>>> GetBasketLines(Guid basketId)
         {
-            var basketLines= await _mediator.Send(new GetBasketLinesQuery { BasketId = basketId });
+            var basketLines= await _mediator.Send(new GetBasketLinesQuery { BasketId = basketId});
 
             return Ok(basketLines);
         }
-        [HttpGet("{basketLineId}", Name ="GetBasketLine")]
-        public async Task<ActionResult<BasketLineVm>> GetBasketLine(Guid basketId, Guid basketLineId)
+        [HttpGet("{basketlineId}", Name ="GetBasketLineAsync")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult<BasketLineVm>> GetBasketLine(Guid basketId, Guid basketlineId)
         {
-            var basketLine = await _mediator.Send(new GetBasketLineQuery { BasketId = basketId, BasketLineId = basketLineId });
+            var basketLine = await _mediator.Send(new GetBasketLineQuery { BasketId= basketId, BasketLineId= basketlineId});
 
             return Ok(basketLine);
         }
-        [HttpPost]
+        [HttpPost(Name ="AddBasketLineAsync")]
         public async Task<ActionResult<CreateBasketLineCommandResponse>> AddBasketLine(Guid basketId,
-            [FromBody] CreateBasketLineCommand addBasketLineCommand)
+            [FromBody] BasketLineForCreationDto basketLine)
         {
-            addBasketLineCommand.BasketId = basketId;
-            var response = await _mediator.Send(addBasketLineCommand);
 
-            if(response.Success)
+            var response = await _mediator.Send(new CreateBasketLineCommand
             {
-                return CreatedAtRoute("GetBasketLine", 
-                                       new { basketId = basketId, basketLineId = response.BasketLine.BasketLineId }, response);
-            }
+                BasketId = basketId,
+                MenuItemId = basketLine.MenuItemId,
+                Price = basketLine.Price,
+                Quantity = basketLine.Quantity
+            });
+
+             //if(response.Success)
+             //   return CreatedAtRoute("GetBasketLineAsync", 
+             //       new { basketId, basketlineId = response.BasketLine.BasketLineId },
+             //       response);
 
             return Ok(response);
         }
 
-        [HttpPut("{basketLineId}")]
-        public async Task<ActionResult<UpdateBasketLineCommandResponse>> UpdateBasketLine(Guid basketId, Guid basketLineId,
-                       [FromBody] BasketLineForUpdate basketLine)
+        [HttpPut("basketlineId", Name ="UpdateBasketlineAsync")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult> UpdateBasketLine(Guid basketId, Guid basketlineId,
+            [FromBody] BasketLineForUpdateDto basketLine)
         {
-            var response = await _mediator.Send(new UpdateBasketLineCommand(basketLineId,basketId,basketLine.Quantity));
+            var response = await _mediator.Send(new UpdateBasketLineCommand
+            {
+                BasketId = basketId,
+                BasketLineId = basketlineId,
+                Quantity = basketLine.Quantity
 
-            return Ok(response);
+            });
+
+            return NoContent();
         }
-        [HttpDelete("{basketLineId}")]
-        public async Task<IActionResult> DeleteBasketLine(Guid basketId, Guid basketLineId)
+
+        [HttpDelete("{basketlineId}", Name ="DeleteBasketlineAsync")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult> DeleteBasketLine(Guid basketId, Guid basketlineId)
         {
-            await _mediator.Send(new DeleteBasketLineCommand(basketLineId, basketId));
+            await _mediator.Send(new DeleteBasketLineCommand 
+                    { BasketId=basketId, 
+                     BasketLineId= basketlineId
+                    });
 
             return NoContent();
         }

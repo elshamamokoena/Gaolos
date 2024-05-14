@@ -79,7 +79,7 @@ namespace Gaolos.Persistence.Repositories
             {
                 throw new ArgumentNullException(nameof(resourceParameters));
             }
-            //if(string.IsNullOrWhiteSpace(resourceParameters.SearchQuery) 
+            //if(string.IsNullOrWhiteSpace(resourceParameters.SearchQuery)
             //    && string.IsNullOrWhiteSpace(resourceParameters.Tag))
             //{
             //    return await GetRestaurantsAsync();

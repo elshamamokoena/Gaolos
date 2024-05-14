@@ -1,5 +1,5 @@
 ﻿@page "/cart"
-
+   
 <div class="container pt-4 pb-3 py-sm-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb flex-lg-nowrap justify-content-center justify-content-lg-start">
@@ -7,11 +7,26 @@
             <li class="breadcrumb-item text-nowrap active" aria-current="page">Cart</li>
         </ol>
     </nav>
+    
     <div class="rounded-3 shadow-lg mt-4 mb-5">
-        <ul class="nav nav-tabs nav-justified mb-4">
-            <li class="nav-item"><a class="nav-link fs-lg fw-medium py-4 @(Widget==typeof(Order) ? "active":"") " @onclick="()=>SelectWidget(typeof(Order))">1. Your order</a></li>
-            <li class="nav-item"><a class="nav-link fs-lg fw-medium py-4 @(Widget==typeof(Checkout) ? "active": "") " @onclick="()=>SelectWidget(typeof(Checkout))">2. Checkout</a></li>
-        </ul>
+   
+                <ul class="nav nav-tabs nav-justified mb-4">
+                    <li class="nav-item"><a class="nav-link fs-lg fw-medium py-4 @(Widget==typeof(Order) ? "active":"") " @onclick="()=>SelectWidget(typeof(Order))">1. Your order</a></li>
+                     <AuthorizeView>
+                         <Authorized>
+                    <li class="nav-item"><a class="nav-link fs-lg fw-medium py-4 @(Widget==typeof(Checkout) ? "active": "") " @onclick="()=>SelectWidget(typeof(Checkout))">2. Checkout</a></li>
+
+                         </Authorized>
+                         <NotAuthorized>
+
+                    <li class="nav-item"><a class="nav-link fs-lg fw-medium py-4 @(Widget==typeof(CheckoutUnauth) ? "active": "") " @onclick="()=>SelectWidget(typeof(Checkout))">2. Checkout</a></li>
+                         </NotAuthorized>
+
+                    </AuthorizeView>
+                
+                </ul>
+         
+
       
         <DynamicComponent Type="Widget" />
 

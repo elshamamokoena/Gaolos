@@ -1,4 +1,5 @@
-﻿using Gaolos.Identity.Models;
+﻿using Gaolos.Domain.Entities.UserAccount;
+using Gaolos.Identity.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,7 @@ namespace Gaolos.Identity
         public GaolosIdentityDbContext(DbContextOptions<GaolosIdentityDbContext> options) : base(options)
         {
         }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder

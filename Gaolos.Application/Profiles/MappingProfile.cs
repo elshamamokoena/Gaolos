@@ -1,4 +1,11 @@
 ﻿using AutoMapper;
+using Gaolos.Application.Features.Account.Commands.Addresses.CreateAddress;
+using Gaolos.Application.Features.Account.Commands.Addresses.UpdateAddress;
+using Gaolos.Application.Features.Account.Commands.PaymentMethods.AddPaymentMethod;
+using Gaolos.Application.Features.Account.Commands.PaymentMethods.UpdatePaymentMethod;
+using Gaolos.Application.Features.Account.Queries.Addresses.GetAddresses;
+using Gaolos.Application.Features.Account.Queries.PaymentMethods.GetPaymentMethod;
+using Gaolos.Application.Features.Account.Queries.PaymentMethods.GetPaymentMethods;
 using Gaolos.Application.Features.Categories.Commands.CreateCategoryWithParent;
 using Gaolos.Application.Features.Categories.Commands.CreateCateogry;
 using Gaolos.Application.Features.Categories.Queries.GetCategoriesList;
@@ -7,6 +14,7 @@ using Gaolos.Application.Features.Categories.Queries.GetCategory;
 using Gaolos.Application.Features.MenuItems.Queries.GetMenuItemForMenu;
 using Gaolos.Application.Features.MenuItems.Queries.GetMenuItemsForMenu;
 using Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant;
+using Gaolos.Application.Features.Orders.Queries.GetOrderForUser;
 using Gaolos.Application.Features.Orders.Queries.GetOrdersForUser;
 using Gaolos.Application.Features.Restaurants.Commands.CreateRestaurant;
 using Gaolos.Application.Features.Restaurants.Commands.UpdateRestaurant;
@@ -23,10 +31,12 @@ using Gaolos.Application.Features.ShoppingBasket.Queries.GetBasketLine;
 using Gaolos.Application.Features.ShoppingBasket.Queries.GetBasketLines;
 using Gaolos.Application.Helpers;
 using Gaolos.Application.Models.Discount;
+using Gaolos.Application.Models.Order;
 using Gaolos.Application.Models.Restaurant;
 using Gaolos.Domain.Entities;
 using Gaolos.Domain.Entities.Discount;
 using Gaolos.Domain.Entities.ShoppingCart;
+using Gaolos.Domain.Entities.UserAccount;
 
 namespace Gaolos.Application.Profiles
 {
@@ -34,11 +44,27 @@ namespace Gaolos.Application.Profiles
     {
         public MappingProfile()
         {
+
+            //Account
+        
+         
+
             CreateMap<CheckoutCommand, Order>().ReverseMap();
-            CreateMap<OrderForUserVm, Order>().ReverseMap();
+            CreateMap<DetailedOrderForUserVm, Order>()
+              .ReverseMap()
+              .ForMember(dest => dest.OrderStatus,
+              opt => opt.MapFrom(src => src.OrderStatus.ToString()));
+            CreateMap<OrderForUserVm, Order>()
+                .ReverseMap()
+                .ForMember( dest=> dest.OrderStatus ,
+                opt=> opt.MapFrom(src =>  src.OrderStatus.ToString()));
+
+            CreateMap<OrderLine, OrderLineDto>().ReverseMap();
+
+
             CreateMap<OrderLine, BasketLine>().ReverseMap();
 
-            CreateMap<CreateBasketLineDto, BasketLine>().ReverseMap();
+            CreateMap<CreatedBasketLineVm, BasketLine>().ReverseMap();
             CreateMap<UpdateBasketLineDto, BasketLine>().ReverseMap();
             CreateMap<UpdateBasketLineCommand, BasketLine>().ReverseMap();
             CreateMap<CreateBasketLineCommand, BasketLine>().ReverseMap();
@@ -50,10 +76,11 @@ namespace Gaolos.Application.Profiles
 
             CreateMap<OrderLine,OrderLineDto>().ReverseMap();
             CreateMap<Order, OrderVm>().ReverseMap();
+            CreateMap<Order, OrderDto>().ReverseMap();
 
             CreateMap<Coupon, CouponVm>().ReverseMap();
             CreateMap<CreateBasketCommand, Basket>();
-            CreateMap<Basket, CreateBasketDto>().ReverseMap();
+            CreateMap<Basket, CreatedBasketVm>().ReverseMap();
             CreateMap<Basket, BasketVm>().ReverseMap();
 
             CreateMap<Restaurant, RestaurantDto>().ReverseMap();

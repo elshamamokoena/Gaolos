@@ -45,11 +45,18 @@
 
 
                 <EditForm Model="@RegisterViewModel" OnValidSubmit="HandleValidRegisterSubmit" class="needs-validation tab-pane fade" autocomplete="off" novalidate id="signup-tab">
-               @*      <div class="mb-3">
-                        <label class="form-label" for="su-name">Full name</label>
-                        <input class="form-control" type="text" id="su-name" placeholder="John Doe" required>
+                    <div class="mb-3">
+                        <label class="form-label" for="su-name">First name</label>
+                        <InputText @bind-Value="RegisterViewModel.Name"  class="form-control" type="text" id="su-name" placeholder="John" required></InputText>
                         <div class="invalid-feedback">Please fill in your name.</div>
-                    </div> *@
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="su-surname">Last name</label>
+                        <InputText @bind-Value="RegisterViewModel.Surname" class="form-control" type="text" id="su-surname" placeholder="Doe" required></InputText>
+                        <div class="invalid-feedback">Please fill in your name.</div>
+                    </div>
+
                     <div class="mb-3">
                         <label class="form-label" for="su-email" >Email address</label>
                         <InputText @bind-Value="RegisterViewModel.Email" class="form-control" type="email" id="su-email" placeholder="johndoe@example.com" required></InputText>

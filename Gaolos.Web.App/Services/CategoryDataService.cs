@@ -24,7 +24,7 @@ namespace Gaolos.Web.App.Services
         public async Task<CategoryListViewModel> GetCategories(string ? searchQuery,int? pageSize,  int ? pageNumber,
             string? orderBy, string? fields)
         {
-            var categories = await _client.GetCategoriesAsync(searchQuery,pageNumber, pageSize,orderBy,fields );
+            var categories = await _client.GetCategoriesAsync(orderBy, searchQuery,pageNumber, pageSize,fields );
             var mappedCategories = _mapper.Map<CategoryListViewModel>(categories);
             return mappedCategories;
         }

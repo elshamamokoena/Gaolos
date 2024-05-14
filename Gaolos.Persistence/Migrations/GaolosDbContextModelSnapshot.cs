@@ -148,8 +148,20 @@ namespace Gaolos.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<decimal>("Discount")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("CouponId");
 
@@ -158,23 +170,26 @@ namespace Gaolos.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            CouponId = new Guid("e0d2611d-0d2d-4886-b64d-e5755318901b"),
+                            CouponId = new Guid("584ec916-4aa5-4573-906a-258f18a63aff"),
                             AlreadyUsed = false,
                             Code = "BeNice",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Discount = 10m
                         },
                         new
                         {
-                            CouponId = new Guid("5b6801fb-c799-4c5f-871b-6d70ea886367"),
+                            CouponId = new Guid("ac0a7e7c-62cd-47ac-a432-6f4eb76898bb"),
                             AlreadyUsed = false,
                             Code = "Awesome",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Discount = 20m
                         },
                         new
                         {
-                            CouponId = new Guid("ac8aa34b-764c-4f95-8626-533c4cb41448"),
+                            CouponId = new Guid("f47316eb-d297-4eb7-aa83-80eef0e58f38"),
                             AlreadyUsed = false,
                             Code = "AlmostFree",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Discount = 50m
                         });
                 });
@@ -346,7 +361,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("da7741a0-ee5a-4e07-989d-cdf030c05291"),
+                            MenuItemId = new Guid("71bb9626-dc12-43cc-8631-41737c937a2e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "15 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs & spices.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1"),
@@ -355,7 +370,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("c6915d33-2c2f-4383-96b1-98747a5252f2"),
+                            MenuItemId = new Guid("649ac921-9cf6-49bf-8768-9299250255e0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "9 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs and spices of Original Recipe® chicken, marinated and cooked to perfection.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a1"),
@@ -364,7 +379,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("ebf2977f-f986-41ac-9435-debc6e91faa7"),
+                            MenuItemId = new Guid("bb13b247-c942-4ad9-86c1-45412f6801d7"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The new Burger standard…Boxed! The new Colonel burger, 1 piece of original recipe chicken, regular mash & gravy, chips & a buddy no sugar drink.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
@@ -373,7 +388,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("fffbb65b-652f-442d-9e24-fc1cfe15ae6a"),
+                            MenuItemId = new Guid("8df2a318-6f32-4e08-bd03-6dc8819f7d83"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The new Burger standard…Boxed! The Crispy Zinger burger, 1 piece of original recipe chicken, regular mash & gravy, chips & Buddy no sugar.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
@@ -382,7 +397,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("b53f3c3e-d7d8-40d8-a0f6-a63fb89e47bc"),
+                            MenuItemId = new Guid("227d1d94-403a-4a16-82f3-64779874b12a"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 Nuggets, 1 Crunch Burger, 1 Small Chips and a Buddy Drink",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
@@ -391,7 +406,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("1941e36e-05ee-4d99-ad00-4b7fc21f4e03"),
+                            MenuItemId = new Guid("4ce6e8a2-fa21-4521-9198-5f3e9a6b38aa"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Crunch Burger, 1 Piece of Original Recipe Chicken, 2 Zinger Wings, Small Chips & Buddy Drink",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
@@ -400,7 +415,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("0f51557c-1e78-472a-8e48-33ddcdd83180"),
+                            MenuItemId = new Guid("c9f70957-bb85-492c-b98d-9f2e4bd53257"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wrapsta, 1 Piece of Original Recipe Chicken, Small Chips & Buddy Drink",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a2"),
@@ -409,7 +424,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("b8c22e17-d561-4ed7-8698-344857a2f433"),
+                            MenuItemId = new Guid("8b45e454-3fa6-4187-9904-48e2a7575f8c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Get yourself a Streetwise 1, with a Buddy no sugar free drink",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -418,7 +433,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("6ae0128c-3bcd-4642-8163-8905834caa24"),
+                            MenuItemId = new Guid("1ab32d47-c17c-4476-9837-927ccd54e163"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy a delicious Crunch Burger an orginal receipe chicken piece with small chips and a buddy no sugar drink",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -427,7 +442,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("f9940ec0-c753-4c23-8ba1-60ae21a258e3"),
+                            MenuItemId = new Guid("731fb046-ce8f-4306-9500-d11880befa64"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Get yourself a Streetwise 5, with 2 Buddy No Sugar",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -436,7 +451,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("af7cacd1-d981-44cf-a0c2-1bc8d36ee43a"),
+                            MenuItemId = new Guid("fb1d7c79-81e1-453c-b8ac-5cbe90256338"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "5 Pieces of Original Recipe chicken cooked to golden perfection and a large portion of chips or coleslaw.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -445,7 +460,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("1eef921f-655e-452b-92b4-3417b9ea1d9e"),
+                            MenuItemId = new Guid("0a357efb-ee96-479a-9971-355bf2c029c7"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 Pieces of original recipe chicken, a portion of small chips.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -454,7 +469,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("49adfc93-f826-46c9-a9c5-33680c947813"),
+                            MenuItemId = new Guid("2226cc18-4fbc-47c2-a044-b8a70312ca35"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 Pieces of Original Recipe Chicken with a portion of pap and gravy",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -463,7 +478,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("5d9fe2cc-d14f-49d9-98f0-222a4191d470"),
+                            MenuItemId = new Guid("421542ae-b55a-4506-8f6f-96cad85ddbbf"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Pieces of Original Recipe Chicken and Small Chips or Coleslaw.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -472,7 +487,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("70a44b80-7d4f-4ddf-8eb6-0f5ee74b4f58"),
+                            MenuItemId = new Guid("13be613f-e3fc-4819-9727-2994295aad72"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy a piece of original recipe chicken, 2 zinger wings and a small scrumptious chips.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -481,7 +496,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("40447213-59cb-46c0-8e75-f606c61692af"),
+                            MenuItemId = new Guid("23fd8cc3-43c1-4acb-bdf4-23355c779745"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Pieces of original recipe chicken cooked to golden perfection and a regular portion of pap & small gravy.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -490,7 +505,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("0f22bbdb-be5b-49d2-9de3-686423058716"),
+                            MenuItemId = new Guid("a00bdc1c-056f-4264-9b39-e1b6b97c7402"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -499,7 +514,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("058438b5-1256-492d-983b-125d14d74078"),
+                            MenuItemId = new Guid("9d91eaec-64f3-40c9-838f-8afca4528ce9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "An icy sippable treat with Oreo bitz, and creamy soft-serve.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -508,7 +523,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("c5a3a34b-9c65-4d4c-b519-6b2c715e6d41"),
+                            MenuItemId = new Guid("f119755f-af82-49f0-a7c0-995b5bc0b8ff"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "An icy sippable treat with Berry bitz, and creamy soft-serve.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -517,7 +532,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a0e94c97-d04b-4fb6-aaf6-691cb53902b4"),
+                            MenuItemId = new Guid("d6a4b1a7-2276-4ec6-adb5-0cafedc1ac51"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Milk shake milk shake shake shake",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -526,7 +541,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("e68669ce-50f4-4a94-a324-9452a8902051"),
+                            MenuItemId = new Guid("6eeb3c2f-f177-4f07-8d83-6c2d465ab7c9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Chocolate Milkshake",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -535,7 +550,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("ccb30060-22ee-4095-bcbd-0328d86036fa"),
+                            MenuItemId = new Guid("4186733e-3d28-44d4-bb36-97c8014de57c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coke 1.5 Litre Bottle",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -544,7 +559,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("70ea5296-cb4a-4f05-973a-0bbd1ebb8a8a"),
+                            MenuItemId = new Guid("36dba51d-5ad1-4712-97c2-86bcbabfddcf"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coke No Sugar 1.5 Litre",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -553,7 +568,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("37fda067-8bb8-44f1-bc3e-6881cfc934bf"),
+                            MenuItemId = new Guid("d3e1998f-b10a-4cf7-ad64-45d2fdd5bad5"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coke No Sugar Buddy 440ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -562,7 +577,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("11bff1b5-6f0b-4225-a6ef-fc11c7de1814"),
+                            MenuItemId = new Guid("c567075f-9449-4455-b58a-b92be2aeb2b3"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coca-Cola Sugar Buddy 440ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -571,7 +586,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("74da4fa6-8137-4cf7-af4b-9bb55f26847b"),
+                            MenuItemId = new Guid("77502213-6365-4d4d-807f-c1fb73533359"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fanta Sugar Buddy 440ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -580,7 +595,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("25a7ba3a-d006-4a6d-bf51-3b5c69c476a1"),
+                            MenuItemId = new Guid("4da7224c-b2b8-4a0a-860d-18c552be7536"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sprite Sugar Buddy 440ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -589,7 +604,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("6c5eef91-5be6-4a13-9560-6505ba279333"),
+                            MenuItemId = new Guid("4c5a12ce-af5c-4fb7-9816-186c0f5a74fa"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bonaqua Still Spring Water 500ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -598,7 +613,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("56b3e35b-f8e0-4b55-a192-39fdbcf846d0"),
+                            MenuItemId = new Guid("cad31c35-ec2f-42a4-b02a-f89ebbb40ad2"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10pc Chicken, 2 snack burgers, 4 Zinger Wings, 2 Reg Coleslaw, 2 Reg chips",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -607,7 +622,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("130d7a28-c793-4840-9625-c3d8b0c975fd"),
+                            MenuItemId = new Guid("10008b11-cef3-4367-92dc-fa779670c2d0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "8pc Chicken, 2 snack burgers, 4 Zinger Wings, 2 Reg Coleslaw, 2 Reg chips",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -616,7 +631,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("67e55590-018c-4a43-8eea-25a16c697e16"),
+                            MenuItemId = new Guid("1a9d3b8d-aa0b-4841-a3a8-feba2a49fbe2"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "24 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -625,7 +640,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("3b74fe8a-0bee-4ded-8e61-2c5694dfbf6d"),
+                            MenuItemId = new Guid("d86c7bc3-3d4d-4ff3-8a77-e2b3eabd34f0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy 6 pieces of delicious original recipe chicken, 1 large chips, 1 regular coleslaw plus 2 regular mash and gravies.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -634,7 +649,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("52750c9a-7bd2-42ab-977f-0a9581daa1c3"),
+                            MenuItemId = new Guid("ee5d8572-eaa7-4dd9-aeaa-29e8bcfc9162"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy 4 pieces of original recipe chicken, 2 small chips, 1 small pops & 2 buddy no sugar drinks.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -643,7 +658,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("39c32e4a-5e46-4af1-9326-eef6bbf14a7c"),
+                            MenuItemId = new Guid("1bb88821-3354-4e97-98d2-6af46d8047b0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy KFC`s new Jalapeno loaded fries with brand new Hot * spicy sauce",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -652,7 +667,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("2c1343fd-13b2-4598-8801-dfc0387eb6f4"),
+                            MenuItemId = new Guid("16e49d88-df63-41b5-badd-855377849942"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "24 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -661,7 +676,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("593b82f4-fff6-48ac-86f2-1d1dee58ea12"),
+                            MenuItemId = new Guid("936ddcc3-e3ad-4674-8308-2091ec1a69fb"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10 KFC famous Zinger Wings dunked in a delicious honey, ginger and soy sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -670,7 +685,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("924fd5ee-ba32-4aee-b6ca-b344a75726cc"),
+                            MenuItemId = new Guid("3c9b2f78-4716-4994-8b39-bdf979cd759e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -679,7 +694,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("749bdcbe-8c2b-49c7-8209-0835b0634f1e"),
+                            MenuItemId = new Guid("ed832c7f-c648-4cbf-98e7-63c5cf2f9fae"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken, tender on the inside and crunchy on the outside.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -688,7 +703,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("355ebbfc-12cd-490a-b391-aa8bad052486"),
+                            MenuItemId = new Guid("98888758-e74d-4b94-92c4-2cf2cfaab660"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken that are tender on the inside and crunchy on the outside. Served with a generous sprinkle of fruit chutney flavour.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -697,7 +712,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("3269df3a-7159-495e-8242-65adbb978a8d"),
+                            MenuItemId = new Guid("ef36cfcd-b6d3-4935-a530-597478fa6390"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 KFC famous Zinger Wings dunked in a delicious honey, ginger and soy sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -706,7 +721,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("27effaed-0333-4ad7-820a-7b63ec83ff64"),
+                            MenuItemId = new Guid("f825d3a9-b476-491b-8f6c-c110e0b28907"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -715,7 +730,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("95d01516-0191-4b0c-828f-7d01267547e6"),
+                            MenuItemId = new Guid("a893e49b-4e8c-46c6-97f7-bb10f8ca0cbf"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "9 pieces of crispy, delicious golden brown Nuggets, paired with 1 delicious Colonel dipping sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -724,7 +739,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("42beee7b-34e8-4f1d-841a-ffe547a7c7ae"),
+                            MenuItemId = new Guid("6e341b00-71f1-4b84-8de1-efffdbce32e2"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken dunked in KFC’s famous honey, ginger and soy sauce!",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -733,7 +748,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("2eb7947b-7821-49e3-a783-ae0eafdb9825"),
+                            MenuItemId = new Guid("2e790c81-bf0e-4003-842d-c904b3494c59"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 pieces of crispy, delicious golden brown Nuggets, paired with 1 delicious Colonel dipping sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -742,7 +757,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("cc073569-630e-4946-ac03-153cfa94fd93"),
+                            MenuItemId = new Guid("0b4502f1-d070-43f2-bea9-2c0749d8e692"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken that are tender on the inside and crunchy on the outside.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -751,7 +766,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("39c2bbe4-0965-4aa9-8106-75be61745f15"),
+                            MenuItemId = new Guid("17044a5b-f920-44d0-86ac-864331c7add6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A delicious chicken patty served with shredded lettuce & Colonel dressing on a snack bun.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -760,7 +775,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("50e93fcc-6119-4ad9-8c64-68b29c5d508a"),
+                            MenuItemId = new Guid("9d9b87e3-bf00-44ea-8068-7d6a09cd7e4c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Try the new standard! The New Colonel burger, Our trademark real chicken fillet; A fresh Brioche bun, Creamy Colonel sauce and cheese on a fresh bed of lettuce & succulent tomatoes",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -769,7 +784,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("1541bbf5-97fc-47e4-b9d8-c2de5a4e5740"),
+                            MenuItemId = new Guid("7aaaebcb-1ccc-4779-b8f2-c7a657841548"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Try the new standard! The New Crispy Zinger burger, Our trademark real chicken fillet; A fresh Brioche bun, New Hot & Spicy sauce and cheese on a fresh bed of lettuce & succulent tomatoes",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -778,7 +793,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("44f91b60-5394-4b59-ac0d-08ec44dacba3"),
+                            MenuItemId = new Guid("137fedd1-5832-4f4c-b28d-ec7f8d83f18c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The new standard in burgers! 2 Spicy, crunchy mini fillets with 2 cheese slices, lettuce & tomato covered in tangy dressing on a burger bun",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -787,7 +802,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("696f1c9c-f7d6-415b-b693-a2f1e7de8d0c"),
+                            MenuItemId = new Guid("f34ce652-ceea-454f-8c75-41581c154943"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around a delicious fillet zinger recipe - a slice of cheese, hash brown, crisp lettuce, fresh tomato and a dash of Colonel dressing.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -796,7 +811,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("ba42de6b-3ae3-4944-8e6b-697d1427661f"),
+                            MenuItemId = new Guid("5f8fc5c2-952e-470a-a5ac-7b580ee6c445"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around a delicious fillet original recipe - a slice of cheese, hash brown, crisp lettuce, fresh tomato and a dash of Colonel dressing.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -805,7 +820,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("bfe8571b-f65f-41db-8515-44c37adaff05"),
+                            MenuItemId = new Guid("86e2b349-3683-464d-ac0f-8ae26bd7c162"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around 2 deliciously crispy chicken strips, shredded crisp lettuce, sliced tomato and a dash of Colonel dressing.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -814,7 +829,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("e2a91e8f-c3fd-4157-9146-a15579f58fde"),
+                            MenuItemId = new Guid("5b33d039-c11a-4775-998f-5cee5fede840"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around 2 deliciously crispy new and improved chicken strips, shredded crisp lettuce, sliced tomato, topped with Colonel dressing and sweet chilli sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -823,7 +838,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a0cf23d7-7314-4aa2-b26b-c8195f8c4878"),
+                            MenuItemId = new Guid("8fc65107-5987-44b7-bac4-2d6704fa19b5"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The game changer is here, and with a delicious spicy crunch fillet, tomato, lettuce and cheese with tangy dressing all wrapped up in a mini tortilla and grilled to perfection, meal time will never be the same again.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -832,7 +847,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("5a9ebba8-2d08-487b-9ab9-64e961cde84c"),
+                            MenuItemId = new Guid("5631539e-c768-4ae4-9104-1c2a4c2f372c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A spicy, crunchy mini fillet with a slice of cheese and lettuce, covered in tangy dressing on a snack bun.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -841,7 +856,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("e2bab4f2-2572-4ea7-8ad7-1754b09eb886"),
+                            MenuItemId = new Guid("cee30529-7c62-434c-8a7f-c1fca4e3db3b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A delicious chicken patty served with shredded lettuce & Colonel dressing on a snack bun.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -850,7 +865,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("2fe6a6c5-5f1a-45b6-80b4-00a0ae6dc765"),
+                            MenuItemId = new Guid("bd462c3b-7a27-41c3-950c-2d5d11a0836e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Extra Hot & Spicy Zinger sauce on the side",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
@@ -859,7 +874,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("51f5d6d2-6266-480e-b687-d10107ca5c1b"),
+                            MenuItemId = new Guid("87b86482-628f-497e-868e-88c6dd2a9bf6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
@@ -868,7 +883,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("02cade86-ee7f-4cea-ab14-a1c2867993fb"),
+                            MenuItemId = new Guid("4faf6a4f-b204-439f-87dd-94407afa0a7f"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
@@ -877,7 +892,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("714d8e7a-4b77-4753-8f63-d8dbabb30c13"),
+                            MenuItemId = new Guid("20062fc1-268a-47f2-8923-b46c3ac9c24c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "1 Piece Chicken",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
@@ -886,7 +901,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("1b3a99a2-377e-4c49-ac10-65aae0afd7b0"),
+                            MenuItemId = new Guid("9c5f7da2-17db-4955-a348-dda88a4e22c2"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of creamy mash and our delicious gravy.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
@@ -895,7 +910,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("8521883a-8f4c-4ac7-b56e-b1424bed06fd"),
+                            MenuItemId = new Guid("17cda0e9-d3ca-4663-9b1a-9f75a7146998"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of freshly prepared cabbage, onions and carrots in a delicious dressing",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
@@ -904,7 +919,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("8a640f74-4def-4def-aea0-508101919ba1"),
+                            MenuItemId = new Guid("b76dc7fc-ec3f-48c7-845b-538853aede16"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of creamy mash and our delicious gravy.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
@@ -913,7 +928,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("29120315-f969-4996-b957-443bbca5c383"),
+                            MenuItemId = new Guid("15acfc63-c43e-4e92-a09c-b194bbfb0ffa"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
@@ -922,7 +937,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("67995929-ab45-45e1-8cdb-5001d41361a5"),
+                            MenuItemId = new Guid("06385e8e-0fdd-4271-bf75-02d987d37b02"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Oven baked, fresh mini loaf",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a8"),
@@ -987,6 +1002,9 @@ namespace Gaolos.Persistence.Migrations
                     b.Property<DateTime>("OrderPlaced")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("OrderStatus")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("OrderTotal")
                         .HasColumnType("decimal(18,2)");
 
@@ -1012,6 +1030,18 @@ namespace Gaolos.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("MenuItemId")
                         .HasColumnType("uniqueidentifier");
 
@@ -1025,6 +1055,8 @@ namespace Gaolos.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("OrderLineId");
+
+                    b.HasIndex("MenuItemId");
 
                     b.HasIndex("OrderId");
 
@@ -1341,6 +1373,18 @@ namespace Gaolos.Persistence.Migrations
                     b.Property<Guid?>("CouponId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
@@ -1357,6 +1401,18 @@ namespace Gaolos.Persistence.Migrations
 
                     b.Property<Guid>("BasketId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("MenuItemId")
                         .HasColumnType("uniqueidentifier");
@@ -1414,6 +1470,102 @@ namespace Gaolos.Persistence.Migrations
                     b.ToTable("Submenus");
                 });
 
+            modelBuilder.Entity("Gaolos.Domain.Entities.UserAccount.CreditCard", b =>
+                {
+                    b.Property<Guid>("CreditCardId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CVV")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardHolderName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Expiry")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("isPrimary")
+                        .HasColumnType("bit");
+
+                    b.HasKey("CreditCardId");
+
+                    b.ToTable("CreditCards");
+                });
+
+            modelBuilder.Entity("Gaolos.Domain.Entities.UserAccount.DeliveryAddress", b =>
+                {
+                    b.Property<Guid>("DeliveryAddressId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Complex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Province")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Suburb")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("isPrimary")
+                        .HasColumnType("bit");
+
+                    b.HasKey("DeliveryAddressId");
+
+                    b.ToTable("Addresses");
+                });
+
             modelBuilder.Entity("Gaolos.Domain.Entities.Category", b =>
                 {
                     b.HasOne("Gaolos.Domain.Entities.Category", "ParentCategory")
@@ -1459,11 +1611,19 @@ namespace Gaolos.Persistence.Migrations
 
             modelBuilder.Entity("Gaolos.Domain.Entities.OrderLine", b =>
                 {
+                    b.HasOne("Gaolos.Domain.Entities.MenuItem", "MenuItem")
+                        .WithMany()
+                        .HasForeignKey("MenuItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Gaolos.Domain.Entities.Order", null)
                         .WithMany("OrderLines")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("MenuItem");
                 });
 
             modelBuilder.Entity("Gaolos.Domain.Entities.Restaurant", b =>

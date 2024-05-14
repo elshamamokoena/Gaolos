@@ -3,6 +3,7 @@ using Gaolos.Domain.Common;
 using Gaolos.Domain.Entities;
 using Gaolos.Domain.Entities.Discount;
 using Gaolos.Domain.Entities.ShoppingCart;
+using Gaolos.Domain.Entities.UserAccount;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -17,22 +18,36 @@ namespace Gaolos.Persistence
         {
         }
 
-        public GaolosDbContext(DbContextOptions<GaolosDbContext> options, ILoggedInUserService loggedInUserService)
+        public GaolosDbContext(DbContextOptions<GaolosDbContext> options,
+            ILoggedInUserService loggedInUserService)
         : base(options)
         {
             _loggedInUserService = loggedInUserService;
         }
 
+        //catalogue
         public DbSet<Category> Categories { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Menu> Menus { get; set; }  
         public DbSet<Submenu> Submenus { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
+
+        //shopping cart
+
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketLine> BasketLines { get; set; }
+
+        //discount
         public DbSet<Coupon> Coupons { get; set; }
+
+        //ordering
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderLine> OrderLines { get; set; }
+
+        //Delivery and Payments
+        public DbSet<DeliveryAddress> Addresses { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GaolosDbContext).Assembly);
@@ -1160,7 +1175,7 @@ namespace Gaolos.Persistence
                 Discount = 50,
                 AlreadyUsed = false
             });
-
+            base.OnModelCreating(modelBuilder);
 
         }
 
@@ -1173,6 +1188,7 @@ namespace Gaolos.Persistence
                     case EntityState.Added:
                         entry.Entity.CreatedDate = DateTime.Now;
                         entry.Entity.CreatedBy = _loggedInUserService.UserId;
+                        
                         break;
                     case EntityState.Modified:
                         entry.Entity.LastModifiedDate = DateTime.Now;
