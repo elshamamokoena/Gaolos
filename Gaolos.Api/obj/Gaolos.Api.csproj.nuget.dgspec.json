@@ -71,6 +71,10 @@
               "target": "Package",
               "version": "[8.0.2, )"
             },
+            "Microsoft.CodeAnalysis.CSharp.Workspaces": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.2.0-preview4.23342.2, )"
@@ -440,9 +444,17 @@
               "target": "Package",
               "version": "[12.2.1, )"
             },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "RazorEngineCore": {
+              "target": "Package",
+              "version": "[2024.4.1, )"
             },
             "SendGrid": {
               "target": "Package",

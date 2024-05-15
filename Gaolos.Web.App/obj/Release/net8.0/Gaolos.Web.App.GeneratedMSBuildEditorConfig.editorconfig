@@ -1,0 +1,179 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Gaolos.Web.App
+build_property.RootNamespace = Gaolos.Web.App
+build_property.ProjectDir = C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/AuthModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Cart/CartSummary.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYXJ0XENhcnRTdW1tYXJ5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Cart/Checkout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYXJ0XENoZWNrb3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Cart/CheckoutUnauth.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYXJ0XENoZWNrb3V0VW5hdXRoLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Cart/Order.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYXJ0XE9yZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Home/CategoriesHome.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXENhdGVnb3JpZXNIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Home/CourierPartnerCta.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXENvdXJpZXJQYXJ0bmVyQ3RhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Home/HeroSection.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXEhlcm9TZWN0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Home/MobileAppCta.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXE1vYmlsZUFwcEN0YS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Home/PopularRestaurants.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXFBvcHVsYXJSZXN0YXVyYW50cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Home/Reviews.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXFJldmlld3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/OrderDetailsModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPcmRlckRldGFpbHNNb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Pager.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Restaurant/MenuItemQuickViewModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXN0YXVyYW50XE1lbnVJdGVtUXVpY2tWaWV3TW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Restaurant/MenuItems.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXN0YXVyYW50XE1lbnVJdGVtcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Restaurant/MenuNavigation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXN0YXVyYW50XE1lbnVOYXZpZ2F0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/UserAccount/AddAddressModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyQWNjb3VudFxBZGRBZGRyZXNzTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/UserAccount/AddPaymentMethodModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyQWNjb3VudFxBZGRQYXltZW50TWV0aG9kTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/UserAccount/ProfilePicture.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyQWNjb3VudFxQcm9maWxlUGljdHVyZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/UserAccount/SideBar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyQWNjb3VudFxTaWRlQmFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/UserAccount/UpdateAddressModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyQWNjb3VudFxVcGRhdGVBZGRyZXNzTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/UserAccount/UpdatePaymentMethodModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyQWNjb3VudFxVcGRhdGVQYXltZW50TWV0aG9kTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/Category.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/OrderConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJDb25maXJtYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/OrderTracking.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJUcmFja2luZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/Restaurant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdGF1cmFudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/UserAccount/Addresses.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckFjY291bnRcQWRkcmVzc2VzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/UserAccount/Orders.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckFjY291bnRcT3JkZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/UserAccount/PaymentMethods.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckFjY291bnRcUGF5bWVudE1ldGhvZHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/UserAccount/ProfileInfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckFjY291bnRcUHJvZmlsZUluZm8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/VendorAccount.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVuZG9yQWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Shared/AddressDropdown.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFkZHJlc3NEcm9wZG93bi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Shared/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZvb3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Shared/NavBar.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdkJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-f5gh9ek0ws
