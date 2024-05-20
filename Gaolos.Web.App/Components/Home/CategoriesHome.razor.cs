@@ -17,6 +17,10 @@ namespace Gaolos.Web.App.Components.Home
         protected override async Task OnInitializedAsync()
         {
             CategoryList = await categoryDataService.GetCategories(null,9,1,null,null);
+            foreach (var category in CategoryList.Categories)
+            {
+                Console.WriteLine(category.ImageUrl);
+            }
         }
 
         public void NavigateToCategory(string name)

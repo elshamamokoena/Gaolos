@@ -114,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyQWNjb3VudFxVcGRhdGVQYXltZW50TWV0aG9kTW9kYWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Components/Widgets/LogoutButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xXaWRnZXRzXExvZ291dEJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/elsha/source/repos/Gaolos/Gaolos.Web.App/Pages/Cart.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

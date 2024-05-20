@@ -39,7 +39,7 @@
                     <option value="@Services.OrderStatus._3">Delivered</option>
                     <option value="@Services.OrderStatus._4">Canceled</option>
                 </select>
-                </div><a class="btn btn-primary btn-sm d-none d-lg-inline-block" @onclick="Logout"><i class="ci-sign-out me-2"></i>Sign out</a>
+                </div><a class="btn btn-primary btn-sm d-none d-lg-inline-block" @onclick="async()=> await Logout()"><i class="ci-sign-out me-2"></i>Sign out</a>
             </div>
 
             @if(ordersList.Count() > 0)

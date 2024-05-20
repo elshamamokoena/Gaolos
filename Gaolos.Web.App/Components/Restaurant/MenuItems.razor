@@ -10,7 +10,7 @@
         <!-- Item-->
         <div class="col-lg-3 col-md-4 col-sm-6 mb-grid-gutter">
             <div class="card product-card border pb-2">
-                    <a class="d-block" href="#quick-view" @onclick=@(async ()=>await OnMenuItemSelected.InvokeAsync(item)) data-bs-toggle="modal"><img class="card-img-top" src="https://tb-static.uber.com/prod/image-proc/processed_images/024b55a53985edf8fe0cf2a1069ccd40/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="Pizza"></a>
+                    <a class="d-block" href="#quick-view" @onclick=@(async ()=>await OnMenuItemSelected.InvokeAsync(item)) data-bs-toggle="modal"><img class="card-img-top" src="@item.ImageUrl" alt="Pizza"></a>
                 <div class="card-body pt-1 pb-2">
                     <h3 class="product-title fs-md"><a href="#quick-view" data-bs-toggle="modal">@item.Name</a></h3>
                     <p class="fs-ms text-muted">Broccoli, Mushrooms, Bell pepper, Corn, Onion, Mozzarella, Parmesan</p>

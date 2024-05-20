@@ -31,10 +31,9 @@
         {
             foreach (var category in CategoryList.Categories)
             {
-
                 <div class="col-md-4 col-sm-6 mb-grid-gutter">
                     <a class="card border-0 shadow" @onclick="()=>NavigateToCategory(category.Name)">
-                        <img class="card-img-top" src="img/food-delivery/category/02.jpg" alt="Noodles">
+                        <img class="card-img-top" src="@category.ImageUrl" alt="Noodles">
                         <div class="card-body py-4 text-center">
                             <h3 class="h5 mt-1">@category.Name</h3>
                         </div>

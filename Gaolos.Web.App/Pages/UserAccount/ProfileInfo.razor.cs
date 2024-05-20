@@ -21,10 +21,6 @@ namespace Gaolos.Web.App.Pages.UserAccount
             await base.OnInitializedAsync();
         }
 
-        public void Logout()
-        {
-            AuthenticationService.Logout();
-            NavigationManager.NavigateTo("/", true);
-        }
+    
     }
 }

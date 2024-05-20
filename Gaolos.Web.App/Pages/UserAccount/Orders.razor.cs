@@ -68,9 +68,9 @@ namespace Gaolos.Web.App.Pages.UserAccount
         {
             pageNumber = 1;
         }
-        public void Logout()
+        public async Task Logout()
         {
-            AuthenticationService.Logout();
+            await AuthenticationService.Logout();
             NavigationManager.NavigateTo("/", true);
         }
     }

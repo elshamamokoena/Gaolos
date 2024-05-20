@@ -5209,6 +5209,9 @@ namespace Gaolos.Web.App.Services
 
         [System.Text.Json.Serialization.JsonPropertyName("name")]
         public string Name { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
+        public string ImageUrl { get; set; }
+
 
     }
 
@@ -5656,6 +5659,10 @@ namespace Gaolos.Web.App.Services
 
         [System.Text.Json.Serialization.JsonPropertyName("price")]
         public double Price { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
+        public string ImageUrl { get; set; }
+
+
 
     }
 

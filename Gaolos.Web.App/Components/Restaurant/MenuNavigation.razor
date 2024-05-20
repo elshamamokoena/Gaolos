@@ -10,7 +10,7 @@
                 <li class="nav-item"><a class="nav-link" href="#">Drinks</a></li> *@
                 @foreach(var menu in Menus)
                 {
-                    <li class="nav-item"><a class="nav-link"  @onclick="async ()=>await OnMenuSelected.InvokeAsync(menu.MenuId)">@menu.Name</a></li>
+                    <li class="nav-item"><a class="@((_selectedMenu==menu) ?  "nav-link active" : "nav-link" )"  @onclick="async ()=>await SelectMenu(menu)">@menu.Name</a></li>
                 }
                 @* <li class="nav-item"><a class="nav-link" href="#">Dessert</a></li> *@
             </ul>

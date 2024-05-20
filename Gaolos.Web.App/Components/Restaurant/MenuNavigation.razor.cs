@@ -12,14 +12,21 @@ namespace Gaolos.Web.App.Components.Restaurant
         public IMenuDataService MenuDataService { get; set; }
 
         public ICollection<MenuViewModel> Menus { get; set; }
+        private MenuViewModel? _selectedMenu;
 
         [Parameter]
         public EventCallback<Guid> OnMenuSelected { get; set; }
 
-        protected override async Task OnParametersSetAsync()
+        protected override async Task OnInitializedAsync()
         {
             Menus = await MenuDataService.GetMenusForRestaurant(RestaurantId);
+            await SelectMenu(Menus.FirstOrDefault());
 
+        }
+        private async Task SelectMenu(MenuViewModel menu)
+        {
+            _selectedMenu = menu;
+            await OnMenuSelected.InvokeAsync(menu.MenuId);
         }
     }
 }
