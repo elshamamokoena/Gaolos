@@ -12,9 +12,12 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.ApplyCouponToBaske
     public class ApplyCouponToBasketHandler:IRequestHandler<ApplyCouponToBasketCommand, ApplyCouponToBasketCommandResponse>
     {
         private readonly IBasketRepository _shoppingBasketRepository;
-        public ApplyCouponToBasketHandler(IBasketRepository shoppingBasketRepository)
+        private readonly ICouponRepository _couponRepository;
+        public ApplyCouponToBasketHandler(IBasketRepository shoppingBasketRepository, 
+            ICouponRepository couponRepository)
         {
             _shoppingBasketRepository = shoppingBasketRepository;
+            _couponRepository = couponRepository;
         }
         public async Task<ApplyCouponToBasketCommandResponse> Handle(ApplyCouponToBasketCommand request, CancellationToken cancellationToken)
         {
@@ -36,9 +39,24 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.ApplyCouponToBaske
             {
                 throw new NotFoundException(nameof(basket), request.BasketId);
             }
+
+            if (!string.IsNullOrWhiteSpace(request.CouponCode))
+            {
+                var coupoun = await _couponRepository.GetCouponByCode(request.CouponCode);
+                basket.CouponId = coupoun.CouponId;
+                await _shoppingBasketRepository.SaveAsync();
+
+                response.Message = "Coupon Applied to Basket";
+            }
+            if(request.CouponId != null)
+            {
+                
             basket.CouponId = request.CouponId;
-            await  _shoppingBasketRepository.SaveAsync();
-            response.Message= "Coupon Applied to Basket";
+            await _shoppingBasketRepository.SaveAsync();
+
+                response.Message= "Coupon Applied to Basket";
+            }
+
             return response;
 
 

@@ -18,9 +18,17 @@ namespace Gaolos.Application.Profiles
         {
             CreateMap<CreatePaymentMethodCommand, PaymentMethodForCreationDto>().ReverseMap();
             CreateMap<PaymentMethodForUpdateDto, UpdatePaymentMethodCommand>().ReverseMap();
-            CreateMap<CreditCard, PaymentMethodVm>().ReverseMap();
+            CreateMap<PaymentMethodVm, CreditCard>()
+                .ReverseMap()
+                .ForMember(dest=>dest.CardNumber,
+                opt=>opt.MapFrom(src=>src.CreditCardNumber()));
+
+
             CreateMap<UpdatePaymentMethodCommand, CreditCard>().ReverseMap();
-            CreateMap<CreditCard, CreditCardsVm>().ReverseMap();
+            CreateMap<CreditCardsVm, CreditCard>().ReverseMap()
+                .ForMember(dest => dest.CardNumber,
+                opt => opt.MapFrom(src => src.CreditCardNumber())); 
+
             CreateMap<CreditCard, CreatedPaymentMethodVm>().ReverseMap();
             CreateMap<CreatePaymentMethodCommand, CreditCard>().ReverseMap();
          

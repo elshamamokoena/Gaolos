@@ -1,0 +1,38 @@
+﻿<!-- Categories-->
+<section class="bg-secondary py-4">
+    <div class="container" data-simplebar>
+        <div class="d-flex justify-content-between">
+
+            @foreach(var category in _categoryList)
+            {
+                <a class="d-block py-3 pe-sm-3 pe-lg-5 me-5" @onclick="()=>NavigateToCategory(category.Name)">
+                    <img class="d-block mx-auto mb-3" src="@category.SvgUrl" width="60" alt="@category.Name">
+                    <h6 class="fs-base text-center text-nowrap">@category.Name</h6>
+                </a>
+            }
+         
+            @* <a class="d-block py-3 pe-sm-3 pe-lg-5 me-5" href="food-delivery-category.html">
+                <img class="d-block mx-auto mb-3" src="img/food-delivery/icons/pizza.svg" width="60" alt="Pizza &amp; Pasta">
+                <h6 class="fs-base text-center text-nowrap">Pizza &amp; Pasta</h6>
+            </a><a class="d-block py-3 pe-sm-3 pe-lg-5 me-5" href="food-delivery-category.html">
+                <img class="d-block mx-auto mb-3" src="img/food-delivery/icons/steak.svg" width="60" alt="Grill &amp; Steaks">
+                <h6 class="fs-base text-center text-nowrap">Grill &amp; Steaks</h6>
+            </a><a class="d-block py-3 pe-sm-3 pe-lg-5 me-5" href="food-delivery-category.html">
+                <img class="d-block mx-auto mb-3" src="img/food-delivery/icons/fish.svg" width="60" alt="Fish &amp; Seafood">
+                <h6 class="fs-base text-center text-nowrap">Fish &amp; Seafood</h6>
+            </a><a class="d-block py-3 pe-sm-3 pe-lg-5 me-5" href="food-delivery-category.html">
+                <img class="d-block mx-auto mb-3" src="img/food-delivery/icons/healthy.svg" width="60" alt="Healthy Food">
+                <h6 class="fs-base text-center text-nowrap">Healthy Food</h6>
+            </a><a class="d-block py-3 pe-sm-3 pe-lg-5 me-5" href="food-delivery-category.html">
+                <img class="d-block mx-auto mb-3" src="img/food-delivery/icons/cuisine.svg" width="60" alt="Haute Cuisine">
+                <h6 class="fs-base text-center text-nowrap">Haute Cuisine</h6>
+            </a><a class="d-block py-3 pe-sm-3 pe-lg-5 me-5" href="food-delivery-category.html">
+                <img class="d-block mx-auto mb-3" src="img/food-delivery/icons/chicken.svg" width="60" alt="Chicken &amp; Snaks">
+                <h6 class="fs-base text-center text-nowrap">Chicken &amp; Snaks</h6>
+            </a><a class="d-block py-3 pe-2" href="food-delivery-category.html">
+                <img class="d-block mx-auto mb-3" src="img/food-delivery/icons/coffee.svg" width="60" alt="Coffee &amp; Desserts">
+                <h6 class="fs-base text-center text-nowrap">Coffee &amp; Desserts</h6>
+            </a> *@
+        </div>
+    </div>
+</section>

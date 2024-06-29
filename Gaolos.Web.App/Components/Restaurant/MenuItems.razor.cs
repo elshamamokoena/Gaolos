@@ -8,6 +8,8 @@ namespace Gaolos.Web.App.Components.Restaurant
     public partial class MenuItems
     {
         [Parameter]
+        public MenuViewModel Menu { get; set; }
+        [Parameter]
 
         public ICollection<MenuItemViewModel> MenuItemsList { get; set; } 
             = new List<MenuItemViewModel>();
@@ -22,17 +24,19 @@ namespace Gaolos.Web.App.Components.Restaurant
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
-        private async Task AddToCart(MenuItemViewModel menuItem)
+        protected override Task OnParametersSetAsync()
         {
-   
-           var response=  await ShoppingBasketService.AddItemToBasket(ApplicationState.BasketId, menuItem);
-           
-           if(response.Success)
-            {
-                ApplicationState.NumberOfItems = (await ShoppingBasketService.GetBasketLines(ApplicationState.BasketId)).Count();
-            }
-
+            StateHasChanged();
+            return base.OnParametersSetAsync();
         }
+        public async void ShowQuickViewModal(MenuItemViewModel menuItem)
+        {
+          await OnMenuItemSelected.InvokeAsync(menuItem);
+        }
+
+    
+
+  
 
 
      

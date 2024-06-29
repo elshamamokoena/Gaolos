@@ -56,7 +56,7 @@
                             <td class="py-3 align-middle">
                                 <div class="d-flex align-items-center">
                                     <img src="img/card-visa.png" width="39" alt="Visa">
-                                    <div class="ps-2"><span class="fw-medium text-heading me-1">Visa</span>ending in 4999  <span class="align-middle badge bg-info ms-2"> @(card.isPrimary ? "Primary" : "") </span> </div>
+                                    <div class="ps-2"><span class="fw-medium text-heading me-1">@card.CardType</span>@card.CardNumber  <span class="align-middle badge bg-info ms-2"> @(card.isPrimary ? "Primary" : "") </span> </div>
                                 </div>
                             </td>
                             <td class="py-3 align-middle">@card.CardHolderName</td>

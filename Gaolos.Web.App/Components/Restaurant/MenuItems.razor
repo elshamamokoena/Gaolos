@@ -1,50 +1,14 @@
 ﻿<!-- Menu (Products grid)-->
 <section class="container tab-content py-4 py-sm-5">
-    <h2 class="text-center pt-2 pt-sm-0 mb-sm-5">Pizza</h2>
+    <h2 class="text-center pt-2 pt-sm-0 mb-sm-5">@Menu.Name</h2>
     <div class="row pt-3 pt-sm-0">
 
 
         @foreach(var item in MenuItemsList)
         {
 
-        <!-- Item-->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-grid-gutter">
-            <div class="card product-card border pb-2">
-                    <a class="d-block" href="#quick-view" @onclick=@(async ()=>await OnMenuItemSelected.InvokeAsync(item)) data-bs-toggle="modal"><img class="card-img-top" src="@item.ImageUrl" alt="Pizza"></a>
-                <div class="card-body pt-1 pb-2">
-                    <h3 class="product-title fs-md"><a href="#quick-view" data-bs-toggle="modal">@item.Name</a></h3>
-                    <p class="fs-ms text-muted">Broccoli, Mushrooms, Bell pepper, Corn, Onion, Mozzarella, Parmesan</p>
-                    <div class="d-flex mb-1">
-                        <div class="form-check form-option form-check-justified mb-2">
-                            <input class="form-check-input" type="radio" name="size1" id="s1" checked>
-                            <label class="form-option-label" for="s1">Small</label>
-                        </div>
-                        <div class="form-check form-option form-check-justified mb-2">
-                            <input class="form-check-input" type="radio" name="size1" id="m1">
-                            <label class="form-option-label" for="m1">Medium</label>
-                        </div>
-                        <div class="form-check form-option form-check-justified mb-2">
-                            <input class="form-check-input" type="radio" name="size1" id="l1">
-                            <label class="form-option-label" for="l1">Large</label>
-                        </div>
-                    </div>
-                    <div class="d-flex mb-3">
-                        <div class="form-check form-option form-check-justified mb-2">
-                            <input class="form-check-input" type="radio" name="base1" id="standard1" checked>
-                            <label class="form-option-label" for="standard1">Standard</label>
-                        </div>
-                        <div class="form-check form-option form-check-justified mb-2">
-                            <input class="form-check-input" type="radio" name="base1" id="thin1">
-                            <label class="form-option-label" for="thin1">Thin</label>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="product-price"><span class="text-accent">$12.99</span></div>
-                        <button @onclick="async()=> await AddToCart(item)" class="btn btn-primary btn-sm" type="button">+<i class="ci-cart fs-base ms-1"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <MenuItem Item="item" OnMenuItemSelected="ShowQuickViewModal" />
+      
         }
 
  @*        <!-- Item-->
@@ -315,7 +279,7 @@
         </div>*@
     </div> 
     <!-- Load more button-->
-    <nav class="d-md-flex justify-content-between align-items-center text-center text-md-start pt-2 pb-4 mb-md-2" aria-label="Page navigation">
+@*     <nav class="d-md-flex justify-content-between align-items-center text-center text-md-start pt-2 pb-4 mb-md-2" aria-label="Page navigation">
         <div class="d-md-flex align-items-center w-100">
             <span class="fs-sm text-muted me-md-3">Showing 8 of 24 items</span>
             <div class="progress w-100 my-3 mx-auto mx-md-0" style="max-width: 10rem; height: 4px;">
@@ -323,5 +287,5 @@
             </div>
         </div>
         <button class="btn btn-outline-secondary" type="button">Load more items</button>
-    </nav>
+    </nav> *@
 </section>

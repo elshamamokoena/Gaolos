@@ -17,8 +17,9 @@ namespace Gaolos.Web.App.Services
 
         public async Task<CategoryListViewModel> GetCategories()
         {
-            throw new NotImplementedException();
-
+            var categories = await _client.GetCategoriesAsync(null, null,null,null,null);
+            var mappedCategories = _mapper.Map<CategoryListViewModel>(categories);
+            return mappedCategories;
         }
 
         public async Task<CategoryListViewModel> GetCategories(string ? searchQuery,int? pageSize,  int ? pageNumber,

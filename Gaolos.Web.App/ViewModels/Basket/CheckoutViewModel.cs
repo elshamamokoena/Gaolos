@@ -3,6 +3,9 @@
     public class CheckoutViewModel
     {
         public Guid BasketId { get; set; }
+        public string Comments { get; set; }
+
+        public decimal OrderTotal { get; set; }
 
         //user info
         public string Name { get; set; }
@@ -15,10 +18,10 @@
         public Guid? UserId { get; set; }
 
         //payment information
-        public string CardNumber { get; set; }
-        public string CardName { get; set; }
-        public string CardExpiration { get; set; }
-        public string CvvCode { get; set; }
+        public string CardNumber { get; set; } = "1234567891111213";
+        public string CardName { get; set; } = "Elhihi";
+        public string CardExpiration { get; set; } = "04/04";
+        public string CvvCode { get; set; } = "099";
 
     }
 }

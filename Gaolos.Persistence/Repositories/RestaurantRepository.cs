@@ -88,17 +88,35 @@ namespace Gaolos.Persistence.Repositories
             // collection to start from
             var collection = _dbContext.Restaurants as IQueryable<Restaurant>;
 
-            if(!string.IsNullOrWhiteSpace(resourceParameters.Tag))
+            //if (!string.IsNullOrWhiteSpace(resourceParameters.Tag))
+            //{
+            //    var tag = resourceParameters.Tag.Trim();
+
+            //    collection = collection.Where(r => r.Tags.Contains(tag));
+            //}
+
+
+            if (!string.IsNullOrWhiteSpace(resourceParameters.SearchQuery) && 
+                !string.IsNullOrWhiteSpace(resourceParameters.Tag))
             {
-                var tag = resourceParameters.Tag.Trim();
-                collection = collection.Where(r => r.Tags.Contains(tag));
+                var searchQuery = resourceParameters.SearchQuery.Trim();
+                collection = collection.Where(r => r.Name.Contains(searchQuery))
+                    .Union(collection.Where(r => r.Tags.Contains(searchQuery)));
             }
 
-            if(!string.IsNullOrWhiteSpace(resourceParameters.SearchQuery))
+            if(!string.IsNullOrWhiteSpace(resourceParameters.SearchQuery) &&
+                string.IsNullOrWhiteSpace(resourceParameters.Tag))
             {
                 var searchQuery = resourceParameters.SearchQuery.Trim();
                 collection = collection.Where(r => r.Name.Contains(searchQuery));
             }
+            if(!string.IsNullOrWhiteSpace(resourceParameters.Tag) 
+                && string.IsNullOrWhiteSpace(resourceParameters.SearchQuery))
+            {
+                var tag = resourceParameters.Tag.Trim();
+                collection = collection.Where(r => r.Tags.Contains(tag));
+            }
+     
 
             if (!string.IsNullOrWhiteSpace(resourceParameters.OrderBy))
             {

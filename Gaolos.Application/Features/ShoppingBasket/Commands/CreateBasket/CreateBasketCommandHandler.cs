@@ -17,7 +17,8 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasket
         private readonly IMapper _mapper;
         private readonly ILoggedInUserService _loggedInUserService;
 
-        public CreateBasketCommandHandler(IBasketRepository basketRepository, IMapper mapper, ILoggedInUserService loggedInUserService)
+        public CreateBasketCommandHandler(IBasketRepository basketRepository, IMapper mapper,
+            ILoggedInUserService loggedInUserService)
         {
             _basketRepository = basketRepository
                 ?? throw new ArgumentNullException(nameof(basketRepository));
@@ -28,7 +29,7 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasket
         }
         public async Task<CreateBasketCommandResponse> Handle(CreateBasketCommand request, CancellationToken cancellationToken)
         {
-
+            
             var createBasketCommandResponse = new CreateBasketCommandResponse();
             var validator = new CreateBasketCommandValidator();
             var validationResult = await validator.ValidateAsync(request);
@@ -53,5 +54,7 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasket
             }
             return createBasketCommandResponse;
         }
+
+      
     }
 }

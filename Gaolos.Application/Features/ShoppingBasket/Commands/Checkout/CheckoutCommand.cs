@@ -11,6 +11,8 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.Checkout
     {
         public Guid BasketId { get; set; }
 
+        public string? Comments { get; set; } 
+
         //user info
         public string Name { get; set; }
         public string Phone { get; set; }

@@ -9,7 +9,7 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.CreateBasket
 {
     public class CreateBasketCommand: IRequest<CreateBasketCommandResponse>
     {
-        public Guid UserId { get; set; }
+        public Guid? UserId { get; set; }
 
     }
 }

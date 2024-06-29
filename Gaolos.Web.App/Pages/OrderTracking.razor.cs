@@ -22,6 +22,11 @@ namespace Gaolos.Web.App.Pages
 
         protected override async Task OnInitializedAsync()
         {
+            await GetOrder();
+        }
+
+        private async Task GetOrder()
+        {
             _order = await OrderDataService.GetOrder(OrderId);
         }
     }

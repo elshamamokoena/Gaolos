@@ -1,5 +1,5 @@
 ﻿@page "/"
-
+@inject IJSRuntime JsRuntime
 <PageTitle>Home</PageTitle>
 
 
@@ -7,6 +7,14 @@
 <CategoriesHome />
 <MobileAppCta/>
 <CourierPartnerCta/>
-<PopularRestaurants/>
-<Reviews/>
+<PopularRestaurants />
+<Reviews />
+
+@code{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JsRuntime.InvokeAsync<IJSObjectReference>("import", "/js/theme.min.js");
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}
 

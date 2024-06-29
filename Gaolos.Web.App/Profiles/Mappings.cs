@@ -53,6 +53,7 @@ namespace Gaolos.Web.App.Profiles
 
             CreateMap<MenuForRestaurantVm, MenuViewModel>().ReverseMap();
             CreateMap<MenuItemsForMenuVm, MenuItemViewModel>().ReverseMap();
+            CreateMap<MenuItemViewModel, MenuItemDto>().ReverseMap();
 
             //CreateMap<RestaurantDetailViewModel, CreateRestaurantCommand>().ReverseMap();
             //CreateMap<RestaurantDetailViewModel, UpdateRestaurantCommand>().ReverseMap();

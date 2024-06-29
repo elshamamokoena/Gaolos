@@ -43,7 +43,7 @@ namespace Gaolos.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> ApplyCoupon(Guid basketId, [FromBody] CouponDto coupon)
+        public async Task<ActionResult> ApplyCoupon(Guid basketId, [FromBody] CouponDto coupon)
         {
             var response = await _mediator.Send(new ApplyCouponToBasketCommand 
             { BasketId=basketId,
@@ -51,9 +51,9 @@ namespace Gaolos.Api.Controllers
             CouponCode = coupon.Code
             });
 
-          
 
-            return NoContent();
+
+            return Ok(response);
         }
 
         [HttpPost("CheckoutAsync")]

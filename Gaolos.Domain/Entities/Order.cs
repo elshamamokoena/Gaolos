@@ -10,13 +10,19 @@ namespace Gaolos.Domain.Entities
     public class Order:AuditableEntity
     {
         public Guid OrderId { get; set; }
-        public decimal OrderTotal { get; set; }
+ 
         public DateTime OrderPlaced { get; set; }
         public bool OrderPaid { get; set; }
         public ICollection<OrderLine> OrderLines { get; set; } 
             = new List<OrderLine>();
         public OrderStatus OrderStatus { get; set; } 
             = OrderStatus.Processing;
+        public string ? Comments { get; set; }
+        
+        //summary
+        public decimal OrderTotal { get; set; }
+        public decimal? Delivery { get; set; }
+        public decimal? Subtotal { get; set; }
 
         //user info
         public Guid? UserId { get; set; }

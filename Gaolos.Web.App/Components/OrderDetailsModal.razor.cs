@@ -5,7 +5,14 @@ namespace Gaolos.Web.App.Components
 {
     public partial class OrderDetailsModal
     {
+      
         [Parameter]
-        public ICollection<OrderLineViewModel> OrderLines { get; set; }
+        public OrderViewModel? Order { get; set; }
+
+
+        private void Close()
+        {
+            Order = null;
+        }
     }
 }

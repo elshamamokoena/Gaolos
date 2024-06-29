@@ -1,7 +1,10 @@
-﻿<!-- Page navigation-->
+﻿<MenuItemQuickViewModal MenuItem="_selectedMenuItem" />
+
+
+<!-- Page navigation-->
 <nav class="container mt-n5">
     <div class="d-flex align-items-center bg-white rounded-3 shadow-lg py-2 ps-sm-2 pe-4 pe-lg-2">
-        <img class="d-block rounded-3" src="img/food-delivery/restaurants/logos/02.png" width="150" alt="Brand">
+        <img class="d-block rounded-3" src="@Restaurant.LogoUrl" width="150" alt="Brand">
         <div class="ps-lg-3 w-100 text-end">
             <!-- For desktop-->
             <ul class="nav nav-tabs d-none d-lg-flex border-0 mb-0">
@@ -17,8 +20,17 @@
             <!-- For mobile-->
             <div class="btn-group dropdown d-lg-none ms-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ci-menu fs-base me-2"></i>Menu</button>
-                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item fs-base active" href="#">Pizza    </a><a class="dropdown-item fs-base" href="#">Sides    </a><a class="dropdown-item fs-base" href="#">Drinks    </a><a class="dropdown-item fs-base" href="#">Dessert    </a></div>
+                <div class="dropdown-menu dropdown-menu-end">
+                    @foreach (var menu in Menus)
+                    {
+                        <a class=" @((_selectedMenu==menu) ? "dropdown-item fs-base active": "dropdown-item fs-base")" @onclick="async ()=>await SelectMenu(menu)" href="javascript:void(0)">@menu.Name</a>
+                    }
+
+                   
+                </div>
             </div>
         </div>
     </div>
 </nav>
+
+<MenuItems Menu="_selectedMenu" OnMenuItemSelected="ShowQuickViewPopup" MenuItemsList="MenuItemsList" />

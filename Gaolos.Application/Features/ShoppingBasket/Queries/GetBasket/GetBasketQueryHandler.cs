@@ -13,14 +13,18 @@ namespace Gaolos.Application.Features.ShoppingBasket.Queries.GetBasket
     public class GetBasketQueryHandler : IRequestHandler<GetBasketQuery, BasketVm>
     {
         private readonly IBasketRepository _basketRepository;
+        private readonly ICouponRepository _couponRepository;
         private readonly IMapper _mapper;
 
-        public GetBasketQueryHandler(IBasketRepository basketRepository, IMapper mapper)
+        public GetBasketQueryHandler(IBasketRepository basketRepository,
+            ICouponRepository couponRepository, IMapper mapper)
         {
             _basketRepository = basketRepository
                 ?? throw new ArgumentNullException(nameof(basketRepository));
             _mapper = mapper 
                 ?? throw new ArgumentNullException(nameof(mapper));
+            _couponRepository = couponRepository 
+                ?? throw new ArgumentNullException(nameof(couponRepository));
         }
 
         public async Task<BasketVm> Handle(GetBasketQuery request, CancellationToken cancellationToken)
@@ -32,7 +36,17 @@ namespace Gaolos.Application.Features.ShoppingBasket.Queries.GetBasket
             }
             var result= _mapper.Map<BasketVm>(basket);
             result.NumberOfItems = basket.BasketLines.Sum(bl => bl.Quantity);
-            result.BasketTotal = basket.BasketLines.Sum(bl => bl.Quantity * bl.MenuItem.Price);
+
+            if(basket.CouponId != null)
+            {
+                var coupon = await _couponRepository.GetCouponById(basket.CouponId.Value);
+                result.BasketTotal = basket.BasketLines.Sum(bl => bl.Quantity * bl.MenuItem.Price) - coupon.Discount;
+            }
+            else
+            {
+                result.BasketTotal = basket.BasketLines.Sum(bl => bl.Quantity * bl.MenuItem.Price);
+
+            }
             return result;
         }
     }

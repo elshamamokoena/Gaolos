@@ -1,0 +1,35 @@
+﻿      <!-- Topbar-->
+<div class="topbar topbar-dark bg-dark"  style="margin-top:-14px;">
+    <div class="container">
+        <div class="topbar-text dropdown d-md-none">
+            <a class="topbar-link dropdown-toggle" href="#" data-toggle="dropdown">Useful links</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="tel:+27679398796"><i class="czi-support text-muted mr-2"></i>(+27) 67 939 8796</a></li>
+                <AuthorizeView> 
+                    <Authorized>
+                        <li><a class="dropdown-item" href="@("/track-order")"><i class="czi-location text-muted mr-2"></i>Order tracking</a></li>
+
+                    </Authorized>
+                </AuthorizeView>
+
+            </ul>
+        </div>
+        <div class="topbar-text text-nowrap d-none d-md-inline-block"><i class="czi-support"></i><span class="text-muted mr-1">Support</span><a class="topbar-link" href="tel:+27679398796">(+27) 67 939 8796</a></div>
+        <div class="cz-carousel cz-controls-static d-none d-md-block">
+            <div class="cz-carousel-inner" data-carousel-options="{&quot;mode&quot;: &quot;gallery&quot;, &quot;nav&quot;: false}">
+                <div class="topbar-text">Free delivery for order over R200</div>
+                <div class="topbar-text">Money back guarantee</div>
+                <div class="topbar-text">Friendly 24/7 customer support</div>
+            </div>
+        </div>
+        <div class="ml-3 text-nowrap">
+            <AuthorizeView>
+                <Authorized>
+                    <a class="topbar-link mr-4 d-none d-md-inline-block" href="@("/track-order")"><i class="czi-location"></i>Order tracking</a>
+
+                </Authorized>
+            </AuthorizeView>
+     
+        </div>
+    </div>
+</div>

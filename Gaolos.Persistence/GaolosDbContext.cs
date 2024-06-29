@@ -70,7 +70,7 @@ namespace Gaolos.Persistence
                 CategoryId = hauteCuisine,
                 Name = "Haute Cuisine",
                 ImageUrl = "img/food-delivery/category/10.jpg",
-                SvgUrl = "img/food-delivery/icons/pizza.svg",
+                SvgUrl = "img/food-delivery/icons/cuisine.svg",
 
             });
             modelBuilder.Entity<Category>().HasData(new Category
@@ -78,7 +78,7 @@ namespace Gaolos.Persistence
                 CategoryId = noodlesGuid,
                 Name = "Noodles",
                 ImageUrl = "img/food-delivery/category/02.jpg",
-                SvgUrl = "img/food-delivery/icons/pizza.svg",
+                SvgUrl = "img/food-delivery/icons/noodles.svg",
 
             });
 
@@ -159,30 +159,34 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = kfcGuid,
                 Name = "KFC",
-
-                //  CategoryId = chickenGuid,
+                ImageUrl = "img/food-delivery/restaurants/02.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/04.png",
                 Tags = "Chicken, Chicken Wings, Burgers, Wraps, Fast Food, Dessert, American, Spicy, Light Meals, Juice, Halaal, Breakfast,"
-
+                
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = chickenlickenGuid,
                 Name = "Chicken Licken",
-                Tags= "Chicken, Burgers, Chicken Wings, Spicy, Light Meals, Salad, Fast Food, Lunch, Dinner, Fries, Fried"
+                ImageUrl = "img/food-delivery/restaurants/10.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/14.png",
+                Tags = "Chicken, Burgers, Chicken Wings, Spicy, Light Meals, Salad, Fast Food, Lunch, Dinner, Fries, Fried"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = nandosGuid,
                 Name = "Nandos",
-           //    CategoryId = chickenGuid,
+                ImageUrl = "img/food-delivery/restaurants/11.jpeg",
+                LogoUrl = "img/food-delivery/restaurants/logos/15.png",
                 Tags= "Chicken, Burgers, Chicken Wings, Fast Food, Light Meals, Portuguese, Salad, Spicy, Dessert, South African, Dinner, Chips, Juice, Middle Eastern"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = romansGuid,
                 Name = "Roman's Pizza",
-            //    CategoryId = pizzaAndPastaGuid,
+                ImageUrl = "img/food-delivery/restaurants/12.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/16.png",
                Tags = "Pizza, Pasta, Salad, Dessert, Lunch, Fast Food, Spicy, Mediterranean, American, Dinner"
 
             });
@@ -190,15 +194,17 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = debonairsGuid,
                 Name = "Debonair's Pizza",
-             //   CategoryId = pizzaAndPastaGuid,
-               Tags = "Pizza, Fast Food, Italian, Chicken Wings, Dessert, Vegetarian, Halaal"
+                ImageUrl = "img/food-delivery/restaurants/13.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/17.png",
+                Tags = "Pizza, Fast Food, Italian, Chicken Wings, Dessert, Vegetarian, Halaal"
 
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = mcdGuid,
                 Name = "McDonald's",
-              //  CategoryId = burgersAndFriesGuid,
+                ImageUrl = "img/food-delivery/restaurants/01.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/01.png",
                 Tags = "Burgers, Fries, Fast Food, American, Breakfast, Dessert, Salad, Chicken, Juice, Halaal, Lunch, Dinner, Cafe, Coffee, Milkshake, Wraps"
 
             });
@@ -207,7 +213,8 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = steersGuid,
                 Name = "Steers",
-            //    CategoryId = burgersAndFriesGuid,
+                ImageUrl = "img/food-delivery/restaurants/14.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/18.png",
               Tags = "Burgers, Fries, Salad, Dessert, Chicken, Milkshake, Ribs, Ice Cream, Fast Food, Kids, Healthy, Chips, Vegetarian"
 
             });
@@ -215,7 +222,8 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = fishawaysGuid,
                 Name = "Fishaways",
-           //     CategoryId = fishAndSeafoodGuid,
+                ImageUrl = "img/food-delivery/restaurants/15.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/19.png",
            Tags = "Fish, Seafood, Fast Food, Halaal, Chips, Lunch, Dinner, Salad, Dessert, Juice, Healthy, Light Meals, Seafood, Grilled, Sushi, Mediterranean, Low Carb"
 
             });
@@ -223,7 +231,8 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = kungfuChickenGuid,
                 Name = "Kung Fu Chicken",
-           //     CategoryId = chickenGuid
+              ImageUrl = "img/food-delivery/restaurants/16.jpeg",
+              LogoUrl = "img/food-delivery/restaurants/logos/20.png",
                  Tags = "Chicken, Fast Food, Spicy, Light Meals, Salad, Lunch, Dinner, Juice, Chinese, Asian, Sushi, Soup, Fried, Japanese, Noodles, Spicy"
 
             });
@@ -231,7 +240,8 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = galitosGuid,
                 Name = "Galito's",
-          //      CategoryId = chickenGuid,
+                ImageUrl = "img/food-delivery/restaurants/17.jpeg",
+                LogoUrl = "img/food-delivery/restaurants/logos/21.png",
                 Tags = "Chicken, Spicy, Light Meals, Salad, Lunch, Dinner, Juice, Portuguese, African, Spicy, Halaal, Middle Eastern, Mediterranean, Healthy, Low Carb"
 
             });
@@ -239,8 +249,9 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = doppiozeroGuid,
                 Name = "Doppio Zero",
-            //    CategoryId = hauteCuisine,
-                Tags = "Italian, Vegan, Vegetarian, Pizza, Pasta, Burgers, Grill, Tapas, Woodfired, Healthy, Salad, Bakery, Breakfast, Calamari, Seafood, Chicken, Wraps, Poke, Mediterranean, Sandwiches, Dessert, Coffee, Health Drinks, Kids, Milkshake, Chips, Fruit"
+                ImageUrl = "img/food-delivery/restaurants/18.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/22.png",
+                Tags = "Italian, Vegan, Vegetarian, Pizza, Pasta, Burgers, Grill, Tapas, Woodfired, Healthy, Salad, Bakery, Breakfast, Calamari, Seafood, Chicken, Wraps, Poke, Mediterranean, Sandwiches, Dessert, Coffee, Health Drinks, Kids, Milkshake, Chips, Fruit, Haute"
 
 
             });
@@ -248,7 +259,8 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = mochachosGuid,
                 Name = "Mochachos",
-          //      CategoryId = chickenGuid,
+                ImageUrl = "img/food-delivery/restaurants/19.jpeg",
+                LogoUrl = "img/food-delivery/restaurants/logos/23.png",
                Tags = "Burgers, Fries, Salad, Dessert, Chicken, Milkshake, Ribs, Ice Cream, Fast Food, Kids, Healthy, Chips, Vegetarian, Grill, Lunch, Dinner, Mexican, Burrito, Prego, Halaal"
 
             });
@@ -266,21 +278,24 @@ namespace Gaolos.Persistence
             {
                 RestaurantId= simplyAsiaGuid,
                 Name = "Simply Asia",
-           //     CategoryId= hauteCuisine,
+                ImageUrl = "img/food-delivery/restaurants/20.jpeg",
+                LogoUrl = "img/food-delivery/restaurants/logos/24.png",
                 Tags = "Asian, Thai, Chinese, Japanese, Noodles, Sushi, Soup, Fried, Spicy, Healthy, Low Carb, Light Meals, Salad, Lunch, Dinner, Juice, Chinese, Asian, Sushi, Soup, Fried, Japanese, Noodles, Spicy, Traditional"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = andiccio24Guid,
                 Name = "Andiccio24",
-            //    CategoryId= pizzaAndPastaGuid,
+                ImageUrl = "img/food-delivery/restaurants/21.jpeg",
+                LogoUrl = "img/food-delivery/restaurants/logos/25.png",
                 Tags = "Pizza, Pasta, Salad, Soup, Healthy, Smoothies, Dessert, Milkshake, Homemade, Oven Baked, Italian, Ice Cream, Contemporary, Wheat and Gluten free, Vegan, Mediterranean"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = pedrosGuid,
                 Name = "Pedro's Chicken",
-           //     CategoryId= chickenGuid,
+                ImageUrl = "img/food-delivery/restaurants/22.jpeg",
+                LogoUrl = "img/food-delivery/restaurants/logos/26.png",
                Tags = "Chicken, Spicy, Light Meals, Salad, Lunch, Dinner, Juice, Portuguese, African, Spicy, Halaal, Middle Eastern, Mediterranean, Healthy, Low Carb"
 
             });
@@ -288,150 +303,157 @@ namespace Gaolos.Persistence
             {
                 RestaurantId = pizzaperfectGuid,
                 Name = "Pizza Perfect",
-          //      CategoryId= pizzaAndPastaGuid,
-            Tags = "Pizza, Pasta, Salad, Dessert, Lunch, Fast Food, Spicy, Mediterranean, Light Meals, Dinner, Chicken Wings, Kids, Vegetarian"
+                ImageUrl = "img/food-delivery/restaurants/23.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/27.png",
+                Tags = "Pizza, Pasta, Salad, Dessert, Lunch, Fast Food, Spicy, Mediterranean, Light Meals, Dinner, Chicken Wings, Kids, Vegetarian"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = pronGuid,
                 Name = "Pron",
-           //     CategoryId= hauteCuisine,
+                ImageUrl = "img/food-delivery/restaurants/24.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/28.png",
+                Tags= "Chinese, Asian, Fried, Healthy, Tapas, Noodles, Spicy"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = theFussyVeganGuid,
                 Name = "The Fussy Vegan",
-          //      CategoryId= healthyGuid,
+                ImageUrl = "img/food-delivery/restaurants/25.jpeg",
+                LogoUrl = "img/food-delivery/restaurants/logos/29.png",
+                Tags= "Breakfast, Burgers, Burrito, Dessert, Healthy, Sandwiches, Plant-Based, Health Drinks, Health, Vegan"
             });
             modelBuilder.Entity<Restaurant>().HasData(new Restaurant
             {
                 RestaurantId = pizzaBabyGuid,
                 Name = "Pizza Baby",
-           //     CategoryId= pizzaAndPastaGuid,
+                ImageUrl = "img/food-delivery/restaurants/26.jpg",
+                LogoUrl = "img/food-delivery/restaurants/logos/30.png",
+                Tags= "Pasta, Pizza, Salad, Italian, Fast Food, Dessert, Healthy, Chicken, Non-Alcoholic, Vegetarian"
             });
 
-            var teiAvonGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A1}");
-            var xoGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A2}");
-            var haokelaiGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A3}");
-            var momoBaohausGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A4}");
-            var laPadrinoGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A5}");
-            var asianTwistGuid = Guid.Parse("{2313179F-1837-473A-A4D5-A5571B43E6A7}");
-            var thunderGunGuid = Guid.Parse("{2313179F-1837-473A-A4D5-A5571B43E6A8}");
-            var chopStixGuid = Guid.Parse("{2313179F-1837-473A-A4D1-A5571B43E6A9}");
+   //         var teiAvonGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A1}");
+   //         var xoGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A2}");
+   //         var haokelaiGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A3}");
+   //         var momoBaohausGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A4}");
+   //         var laPadrinoGuid = Guid.Parse("{2313179F-7837-473A-A4D5-A5571B43E6A5}");
+   //         var asianTwistGuid = Guid.Parse("{2313179F-1837-473A-A4D5-A5571B43E6A7}");
+   //         var thunderGunGuid = Guid.Parse("{2313179F-1837-473A-A4D5-A5571B43E6A8}");
+   //         var chopStixGuid = Guid.Parse("{2313179F-1837-473A-A4D1-A5571B43E6A9}");
 
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = teiAvonGuid,
-                Name = "Tei Avon",
-        //        CategoryId= hauteCuisine,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = xoGuid,
-                Name = "X&O",
-           //     CategoryId= coffeeAndDessertsGuid,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = haokelaiGuid,
-                Name = "Hao Ke Lai",
-          //      CategoryId= hauteCuisine,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = momoBaohausGuid,
-                Name = "Momo Baohaus",
-          //      CategoryId= hauteCuisine,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = laPadrinoGuid,
-                Name = "La Padrino",
-        //        CategoryId= pizzaAndPastaGuid,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = asianTwistGuid,
-                Name = "Asian Twist",
-    //            CategoryId= hauteCuisine,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = thunderGunGuid,
-                Name = "Thunder Gun",
-   //             CategoryId= grillAndSteakGuid,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = chopStixGuid,
-                Name = "Chop Stix",
-   //             CategoryId= hauteCuisine,
-            });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = teiAvonGuid,
+   //             Name = "Tei Avon",
+   //     //        CategoryId= hauteCuisine,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = xoGuid,
+   //             Name = "X&O",
+   //        //     CategoryId= coffeeAndDessertsGuid,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = haokelaiGuid,
+   //             Name = "Hao Ke Lai",
+   //       //      CategoryId= hauteCuisine,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = momoBaohausGuid,
+   //             Name = "Momo Baohaus",
+   //       //      CategoryId= hauteCuisine,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = laPadrinoGuid,
+   //             Name = "La Padrino",
+   //     //        CategoryId= pizzaAndPastaGuid,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = asianTwistGuid,
+   //             Name = "Asian Twist",
+   // //            CategoryId= hauteCuisine,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = thunderGunGuid,
+   //             Name = "Thunder Gun",
+   ////             CategoryId= grillAndSteakGuid,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = chopStixGuid,
+   //             Name = "Chop Stix",
+   ////             CategoryId= hauteCuisine,
+   //         });
 
-            var mikesHeritageHouseGuid = Guid.Parse("{2313179F-1837-173A-A4D5-A5571B43E6A9}");
-            var spiceBurgGreensideGuid = Guid.Parse("{2313179F-1837-273A-A4D5-A5571B43E6A9}");
-            var miyakoSushiGuid = Guid.Parse("{2313179F-1837-373A-A4D5-A5571B43E6A9}");
-            var curryUpGuid = Guid.Parse("{2313179F-1837-473A-A4D5-A5571B43E6A9}");
-            var topoGigioGuid = Guid.Parse("{2313179F-1837-573A-A4D5-A5571B43E6A9}");
-            var satoriGuid = Guid.Parse("{2313179F-1837-673A-A4D5-A5571B43E6A9}");
-            var pizzaevinoGuid = Guid.Parse("{2313179F-1837-773A-A4D5-A5571B43E6A9}");
-            var jimmysGuid = Guid.Parse("{2313179F-1837-873A-A4D5-A5571B43E6A9}");
-            var pastaWorxGuid = Guid.Parse("{2313179F-1837-973A-A4D5-A5571B43E6A9}");
+   //         var mikesHeritageHouseGuid = Guid.Parse("{2313179F-1837-173A-A4D5-A5571B43E6A9}");
+   //         var spiceBurgGreensideGuid = Guid.Parse("{2313179F-1837-273A-A4D5-A5571B43E6A9}");
+   //         var miyakoSushiGuid = Guid.Parse("{2313179F-1837-373A-A4D5-A5571B43E6A9}");
+   //         var curryUpGuid = Guid.Parse("{2313179F-1837-473A-A4D5-A5571B43E6A9}");
+   //         var topoGigioGuid = Guid.Parse("{2313179F-1837-573A-A4D5-A5571B43E6A9}");
+   //         var satoriGuid = Guid.Parse("{2313179F-1837-673A-A4D5-A5571B43E6A9}");
+   //         var pizzaevinoGuid = Guid.Parse("{2313179F-1837-773A-A4D5-A5571B43E6A9}");
+   //         var jimmysGuid = Guid.Parse("{2313179F-1837-873A-A4D5-A5571B43E6A9}");
+   //         var pastaWorxGuid = Guid.Parse("{2313179F-1837-973A-A4D5-A5571B43E6A9}");
 
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = mikesHeritageHouseGuid,
-                Name = "Mike's Heritage House",
-      //          CategoryId= grillAndSteakGuid,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = spiceBurgGreensideGuid,
-                Name = "Spiceburg Greenside",
-        //        CategoryId= hauteCuisine,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = miyakoSushiGuid,
-                Name = "Miyako Sushi",
-     //           CategoryId = hauteCuisine
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = curryUpGuid,
-                Name = "Curry Up",
-      //          CategoryId= hauteCuisine,
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = topoGigioGuid,
-                Name = "Topo Gigio",
-     //           CategoryId= pizzaAndPastaGuid
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = satoriGuid,
-                Name = "Satori",
-           //     CategoryId= pizzaAndPastaGuid
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = pizzaevinoGuid,
-                Name = "Pizza e Vino",
-           //     CategoryId= pizzaAndPastaGuid
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = jimmysGuid,
-                Name = "Jimmy's",
-          //      CategoryId= fishAndSeafoodGuid
-            });
-            modelBuilder.Entity<Restaurant>().HasData(new Restaurant
-            {
-                RestaurantId = pastaWorxGuid,
-                Name = "Pasta Worx",
-         //       CategoryId = pizzaAndPastaGuid
-            });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = mikesHeritageHouseGuid,
+   //             Name = "Mike's Heritage House",
+   //   //          CategoryId= grillAndSteakGuid,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = spiceBurgGreensideGuid,
+   //             Name = "Spiceburg Greenside",
+   //     //        CategoryId= hauteCuisine,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = miyakoSushiGuid,
+   //             Name = "Miyako Sushi",
+   //  //           CategoryId = hauteCuisine
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = curryUpGuid,
+   //             Name = "Curry Up",
+   //   //          CategoryId= hauteCuisine,
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = topoGigioGuid,
+   //             Name = "Topo Gigio",
+   //  //           CategoryId= pizzaAndPastaGuid
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = satoriGuid,
+   //             Name = "Satori",
+   //        //     CategoryId= pizzaAndPastaGuid
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = pizzaevinoGuid,
+   //             Name = "Pizza e Vino",
+   //        //     CategoryId= pizzaAndPastaGuid
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = jimmysGuid,
+   //             Name = "Jimmy's",
+   //       //      CategoryId= fishAndSeafoodGuid
+   //         });
+   //         modelBuilder.Entity<Restaurant>().HasData(new Restaurant
+   //         {
+   //             RestaurantId = pastaWorxGuid,
+   //             Name = "Pasta Worx",
+   //      //       CategoryId = pizzaAndPastaGuid
+   //         });
 
 
             //seed menus for chicken licken
@@ -448,13 +470,13 @@ namespace Gaolos.Persistence
             var chickenLickenTopDeluxeGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6A8}");
             var chickenLickenSoulBitesGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6A9}");
             var chickenLickenOriginalSlydersGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6A0}");
-            var chickenLickenSuperSlidersGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B1}");
-            var chickenLickenExtraLickenGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B2}");
-            var chickenLickenChickyLickyGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B3}");
-            var chickenLickenSaladLickenGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B4}");
-            var chickenLickenLekkerGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B5}");
-            var chickenLickenCoolersGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B6}");
-            var chickenLickenSecretMenuGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B7}");
+            //var chickenLickenSuperSlidersGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B1}");
+            //var chickenLickenExtraLickenGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B2}");
+            //var chickenLickenChickyLickyGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B3}");
+            //var chickenLickenSaladLickenGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B4}");
+            //var chickenLickenLekkerGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B5}");
+            //var chickenLickenCoolersGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B6}");
+            //var chickenLickenSecretMenuGuid = Guid.Parse("{2014179F-1037-173A-A4D5-A6571B43E6B7}");
 
             modelBuilder.Entity<Menu>().HasData(new Menu
             {
@@ -470,28 +492,36 @@ namespace Gaolos.Persistence
                 MenuItemId = Guid.NewGuid(),
                 Name = "Lunch Meal",
                 Price = 73.00M,
-                MenuId = chickenLickenMealGuid
+                MenuId = chickenLickenMealGuid,
+                Description = "2 pieces + toast + 300ml Coke",
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/63_lunch-meal.png"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
                 MenuItemId = Guid.NewGuid(),
                 Name = "Lunch Meal Max",
                 Price = 76.00M,
-                MenuId = chickenLickenMealGuid
+                MenuId = chickenLickenMealGuid,
+                Description = "2 pieces + toast + 440ml Coke",
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/64_lunch-meal-max.png"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
                 MenuItemId = Guid.NewGuid(),
                 Name = "Hotwings Meal",
                 Price = 86.00M,
-                MenuId = chickenLickenMealGuid
+                MenuId = chickenLickenMealGuid,
+                Description = "8 Hotwings + toast + 440ml Coke",
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/65_hotwings-meal-circle8ce.png"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
                 MenuItemId = Guid.NewGuid(),
                 Name = "Hotwings Meal Max",
                 Price = 90.00M,
-                MenuId = chickenLickenMealGuid
+                MenuId = chickenLickenMealGuid,
+                Description = "8 Hotwings + toast + 300ml Coke",
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/66_hotwings-meal-max-circle8ce.png"
             });
        
 
@@ -509,28 +539,36 @@ namespace Gaolos.Persistence
                 MenuItemId = Guid.NewGuid(),
                 Name = "6 Hotwings",
                 Price = 42.00M,
-                MenuId = chickenLickenHotwingsGuid
+                MenuId = chickenLickenHotwingsGuid,
+                Description = "6 Hotwings",
+                ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/98_hotwings-circle6ce.png"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
                 MenuItemId = Guid.NewGuid(),
                 Name = "12 Hotwings",
                 Price = 84.00M,
-                MenuId = chickenLickenHotwingsGuid
+                MenuId = chickenLickenHotwingsGuid,
+                Description = "12 Hotwings",
+                ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/3_hotwings-circle12ce.png"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
                 MenuItemId = Guid.NewGuid(),
                 Name = "24 Hotwings",
                 Price = 168.00M,
-                MenuId = chickenLickenHotwingsGuid
+                MenuId = chickenLickenHotwingsGuid,
+                Description = "24 Hotwings",
+                ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/4_hotwings-circle24ce.png"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
                 MenuItemId = Guid.NewGuid(),
                 Name = "36 Hotwings",
                 Price = 231.00M,
-                MenuId = chickenLickenHotwingsGuid
+                MenuId = chickenLickenHotwingsGuid,
+                Description = "36 Hotwings",
+                ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/5_hotwings-circle36ce.png"
             });
 
             modelBuilder.Entity<Menu>().HasData(new Menu
@@ -547,7 +585,9 @@ namespace Gaolos.Persistence
                 MenuItemId = Guid.NewGuid(),
                 Name = "Soul Square Meal",
                 Price = 50.00M,
-                MenuId = chickenLickenSouliciousGuid
+                MenuId = chickenLickenSouliciousGuid,
+                Description = "1 Piece + 4 Hotwing®s + 1 Licken Loaf",
+                ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/128_soul-square-meal-.png"
             });
 
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -555,7 +595,9 @@ namespace Gaolos.Persistence
                 MenuItemId = Guid.NewGuid(),
                 Name = "Hotwings Soul",
                 Price = 50.00M,
-                MenuId = chickenLickenSouliciousGuid
+                MenuId = chickenLickenSouliciousGuid,
+                Description = "6 Hotwings® + a portion of Soul Fries™",
+                ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/14_hotwings-soul-circle6ce.png"
             });
 
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -563,7 +605,9 @@ namespace Gaolos.Persistence
                 MenuItemId = Guid.NewGuid(),
                 Name = "Rock My Soul 3 Straight",
                 Price = 57.00M,
-                MenuId = chickenLickenSouliciousGuid
+                MenuId = chickenLickenSouliciousGuid,
+                Description= "3 pieces SoulFire® chicken + 1 sachet SoulFire® sauce",
+                ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/19_rock-my-soul-circle3cew-straight.png"
             });
 
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -571,7 +615,10 @@ namespace Gaolos.Persistence
                 MenuItemId = Guid.NewGuid(),
                 Name = "Rock My Soul 3 Combo",
                 Price = 60.00M,
-                MenuId = chickenLickenSouliciousGuid
+                MenuId = chickenLickenSouliciousGuid,
+                Description = "3 pieces SoulFire® chicken + a portion of Soul Fries™\r\n\r\n+ 1 sachet SoulFire® sauce ",
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/20_rock-my-soul-circle3ce.png"
+
             });
 
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -580,6 +627,7 @@ namespace Gaolos.Persistence
                 Name = "Hotwings Deluxe",
                 Price = 67.00M,
                 MenuId = chickenLickenSouliciousGuid,
+                Description= "6 Hotwings® + a portion of Soul Fries™ + 300ml Coke",
                 ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/15_hotwings-circle6ce-deluxe.png"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -588,6 +636,7 @@ namespace Gaolos.Persistence
                 Name = "Hotwings Max",
                 Price = 69.00M,
                 MenuId = chickenLickenSouliciousGuid,
+                Description= "6 Hotwings® + a portion of Soul Fries™ + 440ml Coke",
                 ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/16_hotwings-circle6ce-max.png"
             });
 
@@ -597,6 +646,7 @@ namespace Gaolos.Persistence
                 Name = "Feed My Craving",
                 Price = 79.00M,
                 MenuId = chickenLickenSouliciousGuid,
+                Description= "10 Hotwings® + a portion of Soul Fries™",
                 ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/18_feed-my-craving-circle10ce.png"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -605,6 +655,7 @@ namespace Gaolos.Persistence
                 Name = "Soulman Load Up",
                 Price = 80.00M,
                 MenuId = chickenLickenSouliciousGuid,
+                Description= "Love Me Tender® Burger + a regular Soul Fries™\r\n\r\n+ 2 Hotwings® + 440ml Coke",
                 ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/22_soulman-load-up.png"
 
             });
@@ -614,6 +665,7 @@ namespace Gaolos.Persistence
                 Name = "Rock My Soul",
                 Price = 105.00M,
                 MenuId = chickenLickenSouliciousGuid,
+                Description= "6 pieces SoulFire® chicken + 1 regular Soul Fries™\r\n\r\n+ 2 sachets SoulFire® sauce",
                 ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/21_rock-my-soul-circle6ce.png"
 
             });
@@ -623,6 +675,7 @@ namespace Gaolos.Persistence
                 Name = "Hotwings Party",
                 Price = 132.00M,
                 MenuId = chickenLickenSouliciousGuid,
+                Description= "16 Hotwings® + 2 regular Soul Fries™",
                 ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/17_hotwings-party-circle16ce.png"
 
             });
@@ -632,6 +685,7 @@ namespace Gaolos.Persistence
                 Name = "Family Full House",
                 Price = 143.00M,
                 MenuId = chickenLickenSouliciousGuid,
+                Description= "6 pieces + 2 regular Soul Fries™\r\n\r\n+ 2 regular Soulslaw® / Achaar / Tomato Salsa\r\n\r\n+ 2 Licken Loafs®",
                 ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/24_family-full-house-circle6ce.png"
 
             });
@@ -641,6 +695,7 @@ namespace Gaolos.Persistence
                 Name = "Soul Mates Classic Party",
                 Price = 145.00M,
                 MenuId = chickenLickenSouliciousGuid,
+                Description= "12 Hotwings® + 4 Sliders®\r\n\r\n+ 2 regular Soul Fries™",
                 ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/23_soul-mates-classic-party.png"
 
             });
@@ -650,8 +705,8 @@ namespace Gaolos.Persistence
                 Name = "Family Full House",
                 Price = 173.00M,
                 MenuId = chickenLickenSouliciousGuid,
+                Description = "8 pieces + 2 regular Soul Fries™\r\n\r\n+ 2 regular Soulslaw® / Achaar / Tomato Salsa\r\n\r\n+ 2 Licken Loafs®",
                 ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/25_family-full-house-circle8ce.png"
-
             });
 
             modelBuilder.Entity<Menu>().HasData(new Menu
@@ -668,7 +723,8 @@ namespace Gaolos.Persistence
                 Name = "Soul Sister Vibe",
                 Price = 40.00M,
                 MenuId = chickenLickenSoulSisterGuid,
-                ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/129_soulsister-2-vibe.png"
+                ImageUrl= "https://chickenlicken.co.za/assets/uploads/products/menu/129_soulsister-2-vibe.png",
+                Description = "2 pieces + a Licken Loaf"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -676,7 +732,8 @@ namespace Gaolos.Persistence
                 Name = "Soul Sister",
                 Price = 43.00M,
                 MenuId = chickenLickenSoulSisterGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/49_soulsister-circle2ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/49_soulsister-circle2ce.png",
+                Description= "2 pieces + a portion of Soul Fries™"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -684,7 +741,8 @@ namespace Gaolos.Persistence
                 Name = "Soul Sister Deluxe",
                 Price = 62.00M,
                 MenuId = chickenLickenSoulSisterGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/50_soulsister-circle2ce-deluxe.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/50_soulsister-circle2ce-deluxe.png",
+                Description= "2 pieces + a portion of Soul Fries™ + 300ml Coke"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -692,7 +750,8 @@ namespace Gaolos.Persistence
                 Name = "Soul Sister Max",
                 Price = 65.00M,
                 MenuId = chickenLickenSoulSisterGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/51_soulsister-circle2ce-max.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/51_soulsister-circle2ce-max.png",
+                Description= "2 pieces + a portion of Soul Fries™ + 440ml Coke"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -700,7 +759,8 @@ namespace Gaolos.Persistence
                 Name = "Soul Sister Party",
                 Price = 84.00M,
                 MenuId = chickenLickenSoulSisterGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/52_soulsister-party-circle4ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/52_soulsister-party-circle4ce.png",
+                Description= "4 pieces + a portion of Soul Fries™ + 300ml Coke"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -708,7 +768,8 @@ namespace Gaolos.Persistence
                 Name = "Soul Sister Party",
                 Price = 112.00M,
                 MenuId = chickenLickenSoulSisterGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/53_soulsister-party-circle5ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/53_soulsister-party-circle5ce.png",
+                Description= "5 pieces + a portion of Soul Fries™ + 440ml Coke"
             });
 
             modelBuilder.Entity<Menu>().HasData(new Menu
@@ -725,7 +786,9 @@ namespace Gaolos.Persistence
                 Name = "Just 1",
                 Price = 20.00M,
                 MenuId = chickenLickenJustGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/54_just-circle1ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/54_just-circle1ce.png",
+                Description = "1 piece"
+
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -733,7 +796,8 @@ namespace Gaolos.Persistence
                 Name = "Just 2",
                 Price = 39.00M,
                 MenuId = chickenLickenJustGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/55_just-circle2ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/55_just-circle2ce.png",
+                Description = "2 pieces"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -741,7 +805,8 @@ namespace Gaolos.Persistence
                 Name = "Just 3",
                 Price = 60.00M,
                 MenuId = chickenLickenJustGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/56_just-circle3ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/56_just-circle3ce.png",
+                Description = "3 pieces"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -749,7 +814,8 @@ namespace Gaolos.Persistence
                 Name = "Just 4",
                 Price = 80.00M,
                 MenuId = chickenLickenJustGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/57_just-circle4ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/57_just-circle4ce.png",
+                Description = "4 pieces"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
             {
@@ -757,7 +823,8 @@ namespace Gaolos.Persistence
                 Name = "Just 5",
                 Price = 99.00M,
                 MenuId = chickenLickenJustGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/58_just-circle5ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/58_just-circle5ce.png",
+                Description = "5 pieces"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
             {
@@ -765,7 +832,9 @@ namespace Gaolos.Persistence
                 Name = "Just 6",
                 Price = 120.00M,
                 MenuId = chickenLickenJustGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/59_just-circle6ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/59_just-circle6ce.png",
+                Description = "6 pieces"
+
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
             {
@@ -773,7 +842,8 @@ namespace Gaolos.Persistence
                 Name = "Chicken Inn",
                 Price = 150.00M,
                 MenuId = chickenLickenJustGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/60_chicken-inn-circle9ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/60_chicken-inn-circle9ce.png",
+                Description = "9 pieces"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
             {
@@ -781,7 +851,8 @@ namespace Gaolos.Persistence
                 Name = "Family Bucket",
                 Price = 230.00M,
                 MenuId = chickenLickenJustGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/61_family-bucket-circle15ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/61_family-bucket-circle15ce.png",
+                Description = "15 pieces"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
             {
@@ -789,8 +860,327 @@ namespace Gaolos.Persistence
                 Name = "Family Barrel",
                 Price = 300.00M,
                 MenuId = chickenLickenJustGuid,
-                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/62_family-barrel-circle21ce.png"
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/62_family-barrel-circle21ce.png",
+                Description = "21 pieces"
             });
+
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            {
+                MenuId = chickenLickenEasyBucksGuid,
+                Name = "Easy Bucks",
+                RestaurantId = chickenlickenGuid,
+                CategoryId = chickenGuid,
+                Description = "When it's almost mahala"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Slyder Snack",
+                Price = 30.00M,
+                MenuId = chickenLickenEasyBucksGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/44_slyder-snack-circle2ce.png",
+                Description = "2 Original Slyders® + a portion of Soul Fries™"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Popcorn Chicken Shaker",
+                Price = 30.00M,
+                MenuId = chickenLickenEasyBucksGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/45_popcorn-chicken-shaker.png",
+                Description= "Popcorn Chicken® in a shaker cup\r\n\r\n+ 2 sachets SoulFire® sauce or\r\n\r\n2 sachets of Uncle Jessup’s® Ketchup\r\n\r\nto shake up the taste!"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Hotwings Snack",
+                Price = 30.00M,
+                MenuId = chickenLickenEasyBucksGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/46_hotwings-snack.png",
+                Description= "4 Hotwings® + a portion of Soul Fries™"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Soul Mix Snack",
+                Price = 30.00M,
+                MenuId = chickenLickenEasyBucksGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/47_soul-mix-snack.png",
+                Description= "2 Hotwings® + a Slider®\r\n\r\n+ a portion of Soul Fries™"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Soul Bites Snack",
+                Price = 30.00M,
+                MenuId = chickenLickenEasyBucksGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/125_soulbites-snack.png",
+                Description= "4 SoulBites® + a portion of Soul Fries™ + a sachet of either \r\n\r\nUncle Jessups Ketchup®, SoulFire® sauce or Soulfirennaise™  sauce"
+            });
+
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            {
+                MenuId = chickenLickenBurgersGuid,
+                Name = "Just Chick'n Burgers",
+                RestaurantId = chickenlickenGuid,
+                CategoryId = chickenGuid,
+                Description = "When you're in the mood for a burger"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Love Me Tender",
+                Price = 37.00M,
+                MenuId = chickenLickenBurgersGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/7_love-me-tender-burger.png",
+                Description = "Chicken fillet + lettuce + tomato\r\n\r\n+ Dreamy Creamy® sauce on a toasted sesame bun"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Love Me Hot",
+                Price = 37.00M,
+                MenuId = chickenLickenBurgersGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/10_love-me-hot-burger.png",
+                Description= "Chicken fillet + lettuce + tomato\r\n\r\n+ Soulfirenaise™ sauce on a toasted sesame bun"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Love Me Tender Cheese Burger",
+                Price = 40.00M,
+                MenuId = chickenLickenBurgersGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/9_love-me-tender-cheese-burger.png",
+                Description= "Chicken fillet + lettuce + tomato\r\n\r\n+ Dreamy Creamy® sauce + a slice of cheese\r\n\r\non a toasted sesame bun"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Love Me Hot Cheese Burger",
+                Price = 40.00M,
+                MenuId = chickenLickenBurgersGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/12_love-me-hot-cheese-burger.png",
+                Description= "Chicken fillet + lettuce + tomato\r\n\r\n+ Soulfirenaise™ sauce + a slice of cheese\r\n\r\non a toasted sesame bun"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Big John",
+                Price = 42.00M,
+                MenuId = chickenLickenBurgersGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/13_big-john-burger.png",
+                Description= "2 Chicken Bresteaks® + lettuce + a slice of cheese\r\n\r\n+ 3 pickles + Dreamy Creamy® sauce\r\n\r\non a toasted sesame bun"
+            });
+
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            {
+                MenuId = chickenLickenTopDeluxeGuid,
+                Name = "Top Deluxe",
+                RestaurantId = chickenlickenGuid,
+                CategoryId = chickenGuid,
+                Description = "When you're hungry at heart"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Love Me Tender Top Deluxe",
+                Price = 70.00M,
+                MenuId = chickenLickenTopDeluxeGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/29_love-me-tender-top-deluxe.png",
+                Description= "Includes a regular Soul Fries™ + 300ml Coke"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Love Me Hot Top Deluxe",
+                Price = 70.00M,
+                MenuId = chickenLickenTopDeluxeGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/31_love-me-hot-top-deluxe.png",
+                Description= "Includes a regular Soul Fries™ + 300ml Coke"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Big John Top Deluxe",
+                Price = 72.00M,
+                MenuId = chickenLickenTopDeluxeGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/28_big-john-top-deluxe.png",
+                Description= "Includes a regular Soul Fries™ + 300ml Coke"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Love Me Tender Cheese Top Deluxe",
+                Price = 72.00M,
+                MenuId = chickenLickenTopDeluxeGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/30_love-me-tender-cheese-top-deluxe.png",
+                Description = "Includes a regular Soul Fries™ + 300ml Coke"
+
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Love Me Hot Cheese Top Deluxe",
+                Price = 72.00M,
+                MenuId = chickenLickenTopDeluxeGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/32_love-me-hot-cheese-top-deluxe.png",
+                Description= "Includes a regular Soul Fries™ + 300ml Coke"
+            });
+
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            {
+                MenuId = chickenLickenSoulBitesGuid,
+                Name = "Soul Bites",
+                RestaurantId = chickenlickenGuid,
+                CategoryId = chickenGuid,
+                Description = "When you need nuggets to feed your soul"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Soul Bites",
+                Price = 38.00M,
+                MenuId = chickenLickenSoulBitesGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/123_soulbites-circle6ce.png",
+                Description = "6 SoulBites®"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Soul Bites Max",
+                Price = 45.00M,
+                MenuId = chickenLickenSoulBitesGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/124_soulbites-circle9ce.png",
+                Description = "9 SoulBites®"
+            });
+
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            {
+                MenuId = chickenLickenOriginalSlydersGuid,
+                Name = "Original Slyders",
+                RestaurantId = chickenlickenGuid,
+                CategoryId = chickenGuid,
+                Description = "When you need a little snack"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "1 Slyder Original",
+                Price = 14.00M,
+                MenuId = chickenLickenOriginalSlydersGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/33_1-slyder-original.png",
+                Description = "Square chick’n burger on a toasted square bun with DREAMY CREAMY® sauce and a pickle"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "1 Slyder Chilli",
+                Price = 14.00M,
+                MenuId = chickenLickenOriginalSlydersGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/39_1-slyder-chilli.png",
+                Description= "Square chick’n burger on a toasted square bun with SOULFIRENAISE™ sauce and a pickle"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "1 Cheese Slyder",
+                Price = 16.00M,
+                MenuId = chickenLickenOriginalSlydersGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/36_1-slyder-cheese.png",
+                Description= "  Square chick’n burger on a toasted square bun with DREAMY CREAMY® sauce and a pickle and cheese"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "2 Original Slyders",
+                Price = 27.00M,
+                MenuId = chickenLickenOriginalSlydersGuid,
+                ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/34_2-slyders-original.png",
+                Description= "2 Square chick’n burgers on toasted square buns with DREAMY CREAMY® sauce and a pickle"
+            });
+
+            //seed menus for Nandos
+
+            //nandos menus and nandos menu items
+            var nandosPlattersGuid = Guid.Parse("{2013179F-1117-173A-A4D5-A6571B43E6A1}");
+            var nandosNandinosGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A2}");
+            var nandosBurgersGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A3}");
+            var nandosPitasGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A4}");
+            var nandosWrapsGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A5}");
+            var nandosSaladsGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A6}");
+            var nandosDessertsGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A7}");
+            var nandosDrinksGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A8}");
+            var nandosBowlsGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A9}");
+            var nandosFullChickenGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6A0}");
+            var nandosHalfChickenGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6B1}");
+            var nandosQuarterChickenGuid = Guid.Parse("{2013179F-1037-173A-A4D5-A6571B43E6B2}");
+
+            modelBuilder.Entity<Menu>().HasData(new Menu
+            {
+                MenuId = nandosPlattersGuid,
+                Name = "Platters",
+                RestaurantId = nandosGuid,
+                CategoryId = chickenGuid
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Cabo Sosatie Snack Platter",
+                Description = "A generous sharing platter of 4 succulent Flame-grilled Shisanyama Chicken Sosaties and 20 Winglets, served with 2 portions of our Sharing Wedges, 2 Garlic Rolls and our special PERinase dip.",
+                Price = 349.00M,
+                MenuId = nandosPlattersGuid,
+                ImageUrl= "https://imagesrv.nandos.co.za/179x212//MW_IMAGES/3d93a55d-440a-407c-8b7b-97cc1e6c510a"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Big on veg platter",
+                Description = "Half Platter",
+                Price = 640.00M,
+                MenuId = nandosPlattersGuid,
+                ImageUrl = "https://imagesrv.nandos.co.za/179x212//MW_IMAGES/f93c9cbe-5f94-4bb4-a937-811c28bd88df"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Hands-on delicious platter",
+                Description = "3 Pulled Chicken Wraps (cut into 6), 3 Chicken Wraps (cut into 6), 2 Sharing Wedges, 16 Winglets, 2 Flame-grilled Mielies cut into 3 (6 portions). Includes 1 PERinaise dip and 1 Creamy dip. All platters serve 6-8 people.",
+                Price = 640.00M,
+                MenuId = nandosPlattersGuid,
+                ImageUrl = "https://imagesrv.nandos.co.za/179x212//MW_IMAGES/ccc05d6a-734b-4fec-bbc7-50a7da7ad2da"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "More to share platter",
+                Description = "One and a 1/2 full chickens ( cut into 12), 2 Flame-grilled Mielies cut into 3 (6 portions), 4 Kids Burgers, 2 Sharing Wedges. Includes 1 PERinaise dip and 1 Creamy dip. All platters serve 6-8 people.",
+                Price = 640.00M,
+                MenuId = nandosPlattersGuid,
+                ImageUrl = "https://imagesrv.nandos.co.za/179x215//MW_IMAGES/5182f543-741a-4317-a731-e8098a228c37"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Peri-er Platter",
+                Description = "Two full chickens (cut into 16), 16 Winglets, 2 Flame-grilled Mielies cut into 3 (6 portions), 2 Sharing Wedges. Includes 1 PERinaise dip and 1 Creamy dip. All platters serve 6-8 people.",
+                Price = 640.00M,
+                MenuId = nandosPlattersGuid,
+                ImageUrl = "https://imagesrv.nandos.co.za/179x215//MW_IMAGES/fa60cb07-3c21-4718-8f02-cb91fd83319b"
+            });
+            modelBuilder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                MenuItemId = Guid.NewGuid(),
+                Name = "Veggie veggie nice platter",
+                Description = "2 Veg Burgers, 2 Halloumi & Roast Veg Wraps, 2 Halloumi & Roast Veg Pitas, 2 Sharing Wedges, 4 Flame-grilled Mielies cut into 3 (12 portions). Includes 1 PERinaise dip and 1 Creamy dip. All platters serve 6-8 people.",
+                Price = 640.00M,
+                MenuId = nandosPlattersGuid,
+                ImageUrl = "https://imagesrv.nandos.co.za/179x215//MW_IMAGES/3b7bc5aa-eb6c-4f3b-a289-ae9669f410dd"
+            });
+
+
+
+
+
 
             //seed menus for kfc
 
@@ -819,7 +1209,8 @@ namespace Gaolos.Persistence
                 Name = "21 Piece Bucket",
                 Description = "21 Pieces of juicy chicken seasoned with the 11 secret herbs and spices of Original Recipe® chicken, marinated and cooked to perfection.",
                 Price = 365.90M,
-                MenuId = kfcBucketsGuid
+                MenuId = kfcBucketsGuid,
+                ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/6eaDUybzXwyTZS51VNINU3/ed40587af0f56e4f8b753f4352a02f09/66752_-_E-Commerce_21_pc_Bucket_1200x900.jpg?h=600&w=800&fm=webp&fit=fill"
             });
 
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -828,7 +1219,8 @@ namespace Gaolos.Persistence
                 Name = "15 Piece Bucket",
                 Description = "15 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs & spices.",
                 Price = 279.90M,
-                MenuId = kfcBucketsGuid
+                MenuId = kfcBucketsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/WKTb7n2vvpdYR1v8mvXX0/4d01e6a6cf892c116f2e82bdd4b64b6a/66752_-_E-Commerce_15_pc_Bucket_1200x900.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -837,12 +1229,9 @@ namespace Gaolos.Persistence
                 Name = "9 Piece Bucket",
                 Description = "9 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs and spices of Original Recipe® chicken, marinated and cooked to perfection.",
                 Price = 182.90M,
-                MenuId = kfcBucketsGuid
+                MenuId = kfcBucketsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/2ZE6o3XzzI7YzGsVVT4ubY/e95c55d0c1b050b91a2b070a5ad1b32e/9_piece_bucket.jpg?h=600&w=800&fm=webp&fit=fill"
             });
-
-
-
-
 
 
             modelBuilder.Entity<Menu>().HasData(new Menu
@@ -858,7 +1247,8 @@ namespace Gaolos.Persistence
                 Name = "Fully Loaded Box Meal",
                 Description = "The new Burger standard…Boxed! The new Colonel burger, 1 piece of original recipe chicken, regular mash & gravy, chips & a buddy no sugar drink.",
                 Price = 115.90M,
-                MenuId = kfcBoxMealsGuid
+                MenuId = kfcBoxMealsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/31yPC9ryh5KT1pOdwEOOzG/d1e2df6fc99eaf513f84b63f7d475f58/65129_kfc_-_FLBM_cheese_buddy_1200x900.jpg?h=600&w=800&fm=webp&fit=fill"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -866,7 +1256,8 @@ namespace Gaolos.Persistence
                 Name = "Zinger Fully Loaded Buddy Box Meal",
                 Description = "The new Burger standard…Boxed! The Crispy Zinger burger, 1 piece of original recipe chicken, regular mash & gravy, chips & Buddy no sugar.",
                 Price = 115.90M,
-                MenuId = kfcBoxMealsGuid
+                MenuId = kfcBoxMealsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/3spYrESfEqEyv4TaIwhQnZ/e315445416a59f4ba60acf90090482dd/62279_WickedZinger_SF_-_1200x900.png?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -875,7 +1266,8 @@ namespace Gaolos.Persistence
                 Name = "Nugget Box Buddy Meal",
                 Description = "4 Nuggets, 1 Crunch Burger, 1 Small Chips and a Buddy Drink",
                 Price = 79.90M,
-                MenuId = kfcBoxMealsGuid
+                MenuId = kfcBoxMealsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/1L5C3sZ1MmaHtuQLewHqYa/5e4ecba1d83ade38d554eba1a7431551/ABC2120-nugget_box_buddy_1.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -884,7 +1276,8 @@ namespace Gaolos.Persistence
                 Name = "All Star Box Meal Buddy",
                 Description = "Crunch Burger, 1 Piece of Original Recipe Chicken, 2 Zinger Wings, Small Chips & Buddy Drink",
                 Price = 94.90M,
-                MenuId = kfcBoxMealsGuid
+                MenuId = kfcBoxMealsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/2tpR61h0KxupmA8U024fwu/55f538f6ae4384b9bbdf598435d6ea53/ABC1696-all_star_box_buddy.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -893,7 +1286,8 @@ namespace Gaolos.Persistence
                 Name = "Wrapsta Box Meal",
                 Description = "Wrapsta, 1 Piece of Original Recipe Chicken, Small Chips & Buddy Drink",
                 Price = 84.90M,
-                MenuId = kfcBoxMealsGuid
+                MenuId = kfcBoxMealsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/2snvT5LNlzizE6TGQ9KN4F/3f5c8ebf26502ad1bdf5a1cc456ccfc0/ABC1723-wrapsta_box_buddy.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
 
@@ -919,7 +1313,8 @@ namespace Gaolos.Persistence
                 Name = "SW Bozza Streetwise 1 Buddy",
                 Description = "Get yourself a Streetwise 1, with a Buddy no sugar free drink",
                 Price = 52.90M,
-                MenuId = kfcStreetwiseGuid
+                MenuId = kfcStreetwiseGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/3QpxFh5qLJj5GT8dEMW3iZ/3acbea341f4c8d3162163373ff8ed48f/COM2029-streetwise_bucket_for_1.jpg?h=600&w=800&fm=webp&fit=fill"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -927,7 +1322,8 @@ namespace Gaolos.Persistence
                 Name = "SW Bozza Crunch Burger Box Buddy",
                 Description = "Enjoy a delicious Crunch Burger an orginal receipe chicken piece with small chips and a buddy no sugar drink",
                 Price = 71.90M,
-                MenuId = kfcStreetwiseGuid
+                MenuId = kfcStreetwiseGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/3QpxFh5qLJj5GT8dEMW3iZ/3acbea341f4c8d3162163373ff8ed48f/COM2029-streetwise_bucket_for_1.jpg?h=600&w=800&fm=webp&fit=fill"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -935,7 +1331,8 @@ namespace Gaolos.Persistence
                 Name = "SW Bozza Streetwise 5 Buddy",
                 Description = "Get yourself a Streetwise 5, with 2 Buddy No Sugar",
                 Price = 143.90M,
-                MenuId = kfcStreetwiseGuid
+                MenuId = kfcStreetwiseGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/2uwM3hjbse4hzaZv6d5peO/576343077547dc714bf02883a79589f6/ICM1009-streetwise_5_chips.jpg?h=600&w=800&fm=webp&fit=fill"
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
             {
@@ -1430,7 +1827,8 @@ namespace Gaolos.Persistence
                 Name = "Sauce - Hot & Spicy",
                 Description = "Extra Hot & Spicy Zinger sauce on the side",
                 Price = 0,
-                MenuId = kfcAddOnsGuid
+                MenuId = kfcAddOnsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/bEZLbUGmprwC7wW3i0GsS/73b63ef3ac73d2e805688b74cdbc31c0/Hot_n_Spicy_sauce_-_1200x900.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -1439,7 +1837,8 @@ namespace Gaolos.Persistence
                 Name = "Large Chips",
                 Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
                 Price = 0,
-                MenuId = kfcAddOnsGuid
+                MenuId = kfcAddOnsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/5Zt1jvrey6zim41HKaarJr/6c4e0a08f94a83f04ad98dc130ce67e1/CHI1002-lrg_chips.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -1448,7 +1847,8 @@ namespace Gaolos.Persistence
                 Name = "Regular Chips",
                 Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
                 Price = 26.90M,
-                MenuId = kfcAddOnsGuid
+                MenuId = kfcAddOnsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/23emjPvgiS9FE3xT6UiBa/9a5d9ceffa02d18a26679472e7f62cfc/CHI1001-reg_chips.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -1457,7 +1857,8 @@ namespace Gaolos.Persistence
                 Name = "1 Piece Chicken",
                 Description = "1 Piece Chicken",
                 Price = 26.90M,
-                MenuId = kfcAddOnsGuid
+                MenuId = kfcAddOnsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/2XhP71I12p5tncjyX1P81w/d94f9543674f4728165031f42dcb2653/ALA1001-1pc_cob.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -1466,7 +1867,8 @@ namespace Gaolos.Persistence
                 Name = "Large Mash & Gravy",
                 Description = "A portion of creamy mash and our delicious gravy.",
                 Price = 27.90M,
-                MenuId = kfcAddOnsGuid
+                MenuId = kfcAddOnsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/16hT15F1AVhciJyE32xbGE/f83f8d8d906a2593420739e995086bc4/MAG1003-reg_mash___gravy.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -1475,7 +1877,8 @@ namespace Gaolos.Persistence
                 Name = "Regular Coleslaw",
                 Description = "A portion of freshly prepared cabbage, onions and carrots in a delicious dressing",
                 Price = 24.90M,
-                MenuId = kfcAddOnsGuid
+                MenuId = kfcAddOnsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/1LvCxHqjAFXs2XFgAbQpnG/44719dee762ff4f7106e33d8c4f300f9/ABC2225-reg_coleslaw.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -1484,7 +1887,8 @@ namespace Gaolos.Persistence
                 Name = "Regular Mash & Gravy",
                 Description = "A portion of creamy mash and our delicious gravy.",
                 Price = 19.90M,
-                MenuId = kfcAddOnsGuid
+                MenuId = kfcAddOnsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/16hT15F1AVhciJyE32xbGE/f83f8d8d906a2593420739e995086bc4/MAG1003-reg_mash___gravy.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -1493,7 +1897,8 @@ namespace Gaolos.Persistence
                 Name = "Small Chips",
                 Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
                 Price = 16.90M,
-                MenuId = kfcAddOnsGuid
+                MenuId = kfcAddOnsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/4J7RauzcyD6KkQu9Qhpp28/da6827d46db9161d26ae26c874be5123/ABC1247-sml_chips.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
             modelBuilder.Entity<MenuItem>().HasData(new MenuItem
@@ -1502,7 +1907,8 @@ namespace Gaolos.Persistence
                 Name = "Mini Loaf",
                 Description = "Oven baked, fresh mini loaf",
                 Price = 14.90M,
-                MenuId = kfcAddOnsGuid
+                MenuId = kfcAddOnsGuid,
+                ImageUrl= "https://images.ctfassets.net/0p42pznmbeec/2X0ukPSNX6j4kHDE2o2mGa/e910e8f156eb5ca37642fb19944603a0/MIS1001-1_mini_loaf.jpg?h=600&w=800&fm=webp&fit=fill"
 
             });
 

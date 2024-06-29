@@ -185,6 +185,10 @@
       "PackagePath": "staticwebassets\\css\\theme.min.css"
     },
     {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\css\\vendor.min.css",
+      "PackagePath": "staticwebassets\\css\\vendor.min.css"
+    },
+    {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\dist\\vendor\\bootstrap\\scss\\_accordion.scss",
       "PackagePath": "staticwebassets\\dist\\vendor\\bootstrap\\scss\\_accordion.scss"
     },
@@ -689,6 +693,74 @@
       "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\09.jpg"
     },
     {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\10.jpg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\11.jpeg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\11.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\12.jpg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\13.jpg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\14.jpg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\15.jpg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\16.jpeg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\16.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\17.jpeg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\17.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\18.jpg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\19.jpeg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\19.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\20.jpeg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\20.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\21.jpeg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\21.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\22.jpeg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\22.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\23.jpg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\24.jpg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\24.jpg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\25.jpeg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\25.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\26.jpg",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\26.jpg"
+    },
+    {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\01.png",
       "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\01.png"
     },
@@ -739,6 +811,74 @@
     {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\13.png",
       "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\13.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\14.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\14.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\15.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\15.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\16.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\16.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\17.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\17.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\18.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\18.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\19.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\19.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\20.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\20.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\21.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\21.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\22.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\22.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\23.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\23.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\24.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\24.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\25.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\25.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\26.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\26.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\27.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\27.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\28.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\28.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\29.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\29.png"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\logos\\30.png",
+      "PackagePath": "staticwebassets\\img\\food-delivery\\restaurants\\logos\\30.png"
     },
     {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\img\\food-delivery\\restaurants\\single\\01.jpg",
@@ -825,8 +965,16 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\carousel.js",
+      "PackagePath": "staticwebassets\\js\\carousel.js"
+    },
+    {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\theme.min.js",
       "PackagePath": "staticwebassets\\js\\theme.min.js"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\vendor.min.js",
+      "PackagePath": "staticwebassets\\js\\vendor.min.js"
     },
     {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css",

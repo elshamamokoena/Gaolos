@@ -7,7 +7,7 @@ namespace Gaolos.Web.App.Components.Restaurant
     public partial class MenuNavigation
     {
         [Parameter]
-        public Guid RestaurantId { get; set; }
+        public RestaurantViewModel Restaurant { get; set; }
         [Inject]
         public IMenuDataService MenuDataService { get; set; }
 
@@ -17,16 +17,35 @@ namespace Gaolos.Web.App.Components.Restaurant
         [Parameter]
         public EventCallback<Guid> OnMenuSelected { get; set; }
 
-        protected override async Task OnInitializedAsync()
-        {
-            Menus = await MenuDataService.GetMenusForRestaurant(RestaurantId);
-            await SelectMenu(Menus.FirstOrDefault());
+        public ICollection<MenuItemViewModel> MenuItemsList { get; set; }
+      = new List<MenuItemViewModel>();
 
+        private MenuItemViewModel? _selectedMenuItem;
+
+
+        //protected override async Task OnInitializedAsync()
+        //{
+        
+
+        //}
+        protected override async Task OnParametersSetAsync()
+        {
+            Menus = await MenuDataService.GetMenusForRestaurant(Restaurant.RestaurantId);
+            await SelectMenu(Menus.FirstOrDefault());
+            await base.OnParametersSetAsync();
         }
         private async Task SelectMenu(MenuViewModel menu)
         {
             _selectedMenu = menu;
-            await OnMenuSelected.InvokeAsync(menu.MenuId);
+            MenuItemsList = await MenuDataService.GetMenuItemsForMenu(menu.MenuId, Restaurant.RestaurantId);
+
+            //  await OnMenuSelected.InvokeAsync(menu.MenuId);
         }
+        public void ShowQuickViewPopup(MenuItemViewModel menuItem)
+        {
+            _selectedMenuItem = menuItem;
+        }
+
+     
     }
 }

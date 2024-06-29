@@ -23,7 +23,12 @@ namespace Gaolos.Application.Features.Orders.Queries.GetOrderForUser
         }
         public async Task<DetailedOrderForUserVm> Handle(GetOrderForUserQuery request, CancellationToken cancellationToken)
         {
-            return _mapper.Map<DetailedOrderForUserVm>(await _orderRepository.GetOrderById(request.UserId,request.OrderId));
+            var detailedOrder=  _mapper.Map<DetailedOrderForUserVm>(await _orderRepository.GetOrderById(request.UserId,request.OrderId));
+            foreach (var item in detailedOrder.OrderLines)
+            {
+                item.Price= item.MenuItem.Price* item.Quantity; 
+            }
+           return detailedOrder;
         }
     }
 }

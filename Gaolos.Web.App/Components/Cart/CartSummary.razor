@@ -1,35 +1,66 @@
 ﻿
-    
-<div class="navbar-tool dropdown ms-3">
-    <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" @onclick="async()=> await GetBasketLines()" href="@("/cart")"><span class="navbar-tool-label">@ApplicationState.NumberOfItems</span><i class="navbar-tool-icon ci-cart"></i></a>
-    @if(ApplicationState.NumberOfItems>0)
+ @if (ApplicationState.NumberOfItems > 0)
     {
-     <!-- Cart dropdown-->
-    <div class="dropdown-menu dropdown-menu-end">
-        <div class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem;">
-            <div style="height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
+<div class="navbar-tool dropdown ms-3">
 
-                @foreach(var line in BasketLines)
-                {
-                    
-                    <div class="widget-cart-item pb-2 border-bottom">
-                        <button class="btn-close text-danger" type="button" aria-label="Remove"><span aria-hidden="true">&times;</span></button>
-                        <div class="d-flex align-items-center">
-                            <a class="d-block" href="#"><img src="img/food-delivery/cart/th01.jpg" width="64" alt="Pizza"></a>
-                            <div class="ps-2">
-                                <h6 class="widget-product-title"><a href="#">Pizza Pepperoni with Tomatoes</a></h6>
-                                <div class="widget-product-meta"><span class="text-accent me-2">$9.<small>00</small></span><span class="text-muted">x 1</span></div>
+
+    <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" @onclick="async()=> await GetBasketLines()" href="@("/cart")">
+        <span class="navbar-tool-label">@ApplicationState.NumberOfItems</span>
+        <i class="navbar-tool-icon ci-cart"></i>
+    </a>
+   
+        <!-- Cart dropdown-->
+        <div class="dropdown-menu dropdown-menu-end">
+            <div class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem;">
+                <div style="@(ApplicationState.NumberOfItems>=4? "height: 15rem": "height: auto;")" data-simplebar data-simplebar-auto-hide="false">
+
+                    @foreach (var line in BasketLines)
+                    {
+
+                        <div class="widget-cart-item pb-2 border-bottom">
+                            <button @onclick="async()=> await RemoveItemFromBasket(line.BasketLineId)" class="btn-close text-danger" type="button" aria-label="Remove">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="d-flex align-items-center">
+                                <a class="d-block" href="#"><img src="@line.MenuItem?.ImageUrl" width="64" alt="@line.MenuItem?.Name"></a>
+                                <div class="ps-2">
+                                    <h6 class="widget-product-title">
+                                        <a href="#">@line.MenuItem?.Name</a>
+                                    </h6>
+                                    <div class="widget-product-meta">
+                                        <span class="text-accent me-2"> @($"{line.MenuItem?.Price}")@* <small>00</small> *@</span>
+                                        <span class="text-muted">x @line.Quantity</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     }
-            </div>
-            <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
-                    <div class="fs-sm me-2 py-2"><span class="text-muted">Total:</span><span class="text-accent fs-base ms-1">$24.<small>00</small></span></div><a class="btn btn-outline-secondary btn-sm" href="food-delivery-cart.html">Expand cart<i class="ci-arrow-right ms-1 me-n1"></i></a>
-                </div><a class="btn btn-primary btn-sm d-block w-100" href="food-delivery-checkout.html"><i class="ci-card me-2 fs-base align-middle"></i>Checkout</a>
+                </div>
+                <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                    <div class="fs-sm me-2 py-2">
+                        <span class="text-muted"> Total:</span>
+                        <span class="text-accent fs-base ms-1">@($"R{Basket?.BasketTotal}")@* <small>00</small> *@</span>
+                    </div>
+                    <a class="btn btn-outline-secondary btn-sm" href="@("/cart")">
+                        Expand cart
+                        <i class="ci-arrow-right ms-1 me-n1"></i>
+                    </a>
+
+                </div>
+                <a class="btn btn-primary btn-sm d-block w-100" href="javascript:void(0)" @onclick="SwitchToCheckout"><i class="ci-card me-2 fs-base align-middle"></i>Checkout</a>
             </div>
         </div>
-    }
 
     </div>
+}else
+{
+<div class="navbar-tool dropdown ms-3">
+        <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" @onclick="async()=> await GetBasketLines()" href="@("/cart")">
+            <span class="navbar-tool-label">@ApplicationState.NumberOfItems</span>
+            <i class="navbar-tool-icon ci-cart"></i>
+        </a>
+</div>
+    
+}
+
 

@@ -1,0 +1,19 @@
+﻿
+<div class="d-flex">
+
+    @foreach (var category in _categories)
+    {
+
+        <div class="mega-dropdown-column pt-4 px-3" style="width: 12rem;">
+            <div class="widget mb-3">
+                <a class="d-block" href="javascript:void(0) " @onclick="()=>NavigateToCategory(category.Name)">
+                    <img class="d-block mx-auto mb-3" src="@category.SvgUrl" width="60" alt="@category.Name">
+                    <h6 class="fs-base text-center">@category.Name</h6>
+                </a>
+            </div>
+        </div>
+    }
+
+    </div>
+
+

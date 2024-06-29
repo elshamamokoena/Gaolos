@@ -26,7 +26,12 @@ namespace Gaolos.Web.App.Pages.UserAccount
         private int? pageSize = 5;
         private string?  fields = string.Empty;
         private OrderStatus ? orderStatus;
+        private OrderViewModel ?_selectedOrder { get; set; }
 
+        private async Task SelectOrder(OrderViewModel order)
+        {
+            _selectedOrder = await AccountDataService.GetOrder(order.OrderId);
+        }
         protected override async Task OnInitializedAsync()
         {
             var orders = await AccountDataService.GetOrders(orderBy, orderStatus ,searchQuery, pageNumber.Value, pageSize.Value, fields   );

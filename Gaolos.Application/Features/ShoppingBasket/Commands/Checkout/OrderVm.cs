@@ -15,5 +15,6 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.Checkout
         public bool OrderPaid { get; set; }
         public ICollection<OrderLineDto> OrderLines { get; set; }
             = new List<OrderLineDto>();
+        public string Comments { get; set; } = string.Empty;
     }
 }

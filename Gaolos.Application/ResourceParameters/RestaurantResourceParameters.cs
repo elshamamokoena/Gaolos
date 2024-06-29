@@ -9,7 +9,7 @@ namespace Gaolos.Application.ResourceParameters
     public class RestaurantResourceParameters:BaseResourceParameters
     {
         public string? Tag { get; set; }
-        public string OrderBy { get; set; } = "Name";
+        public string ? OrderBy { get; set; } = "Name";
 
     }
 }

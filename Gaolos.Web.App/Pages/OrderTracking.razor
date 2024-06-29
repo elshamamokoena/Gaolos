@@ -1,6 +1,27 @@
 ﻿@page "/track-order/{orderId:guid}"
+@page "/track-order"
 
-<OrderDetailsModal OrderLines="_order.OrderLines"/>
+@if(_order== null)
+{
+    <div class="container pb-5 mb-sm-4">
+        <div class="pt-5">
+            <div class="card py-3 mt-sm-3">
+                <div class="card-body text-center">
+                    <h2 class="h4 pb-3">You haven't placed any orders yet!</h2>
+                    @* <p class="font-size-sm mb-2">Your order has been placed and will be processed as soon as possible.</p> *@
+                    @* <p class="font-size-sm mb-2">Make sure you make note of your order number, which is <span class="font-weight-medium">34VB5540K83.</span></p> *@
+                    <p class="font-size-sm">Browse our wide selection of products and <u>pick some treats.</u></p>
+                    <a class="btn btn-secondary mt-3 mr-3" href="@("/restaurants")">Go back shopping</a>
+                    @* <a class="btn btn-primary mt-3" href="order-tracking.html"><i class="czi-location"></i>&nbsp;Track order</a> *@
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    
+<OrderDetailsModal Order="_order" />
 <!-- Page Title (Dark)-->
 <div class="bg-dark py-4">
     <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
@@ -24,13 +45,13 @@
     <!-- Details-->
     <div class="row gx-4 mb-4">
         <div class="col-md-4 mb-2">
-            <div class="bg-secondary h-100 p-4 text-center rounded-3"><span class="fw-medium text-dark me-2">Shipped via:</span>UPS Ground</div>
+            <div class="bg-secondary h-100 p-4 text-center rounded-3"><span class="fw-medium text-dark me-2">Delivered by:</span>James Ogwok</div>
         </div>
         <div class="col-md-4 mb-2">
             <div class="bg-secondary h-100 p-4 text-center rounded-3"><span class="fw-medium text-dark me-2">Status:</span>Processing order</div>
         </div>
         <div class="col-md-4 mb-2">
-            <div class="bg-secondary h-100 p-4 text-center rounded-3"><span class="fw-medium text-dark me-2">Expected date:</span>October 15, 2019</div>
+            <div class="bg-secondary h-100 p-4 text-center rounded-3"><span class="fw-medium text-dark me-2">Expect delivery at:</span> 15:45 </div>
         </div>
     </div>
     <!-- Progress-->
@@ -89,6 +110,7 @@
         <div class="form-check mt-2 me-3">
             <input class="form-check-input" type="checkbox" id="notify-me" checked>
             <label class="form-check-label" for="notify-me">Notify me when order is delivered</label>
-        </div><a class="btn btn-primary btn-sm mt-2" href="#order-details" data-bs-toggle="modal">View Order Details</a>
+        </div><a class="btn btn-primary btn-sm mt-2" @onclick="async()=> await GetOrder()" href="#order-details" data-bs-toggle="modal">View Order Details</a>
     </div>
 </div>
+}

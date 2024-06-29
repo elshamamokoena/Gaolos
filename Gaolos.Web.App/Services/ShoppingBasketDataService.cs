@@ -21,7 +21,7 @@ namespace Gaolos.Web.App.Services
         }
 
 
-        public async Task<ApiResponse<BasketLineViewModel>> AddItemToBasket(Guid basketId, MenuItemViewModel item)
+        public async Task<ApiResponse<BasketLineViewModel>> AddItemToBasket(Guid basketId, MenuItemViewModel item, int quantity)
         {
 
             try
@@ -29,7 +29,7 @@ namespace Gaolos.Web.App.Services
                 ApiResponse<BasketLineViewModel> response =  new ApiResponse<BasketLineViewModel>();
                 BasketLineForCreationDto basketLine = new BasketLineForCreationDto
                 {
-                    Quantity = 1,
+                    Quantity = quantity,
                      MenuItemId = item.MenuItemId,
                      Price = item.Price
                 };
@@ -63,9 +63,12 @@ namespace Gaolos.Web.App.Services
             throw new NotImplementedException();
         }
 
-        public Task<ApiResponse> ApplyCouponToBasket(Guid basketId, string couponCode)
+        public async Task ApplyCouponToBasket(Guid basketId, string couponCode)
         {
-            throw new NotImplementedException();
+           await _client.ApplyCouponAsync(basketId, new CouponDto
+           {
+               Code = couponCode
+           });
         }
 
         public async Task<ApiResponse<OrderViewModel>> Checkout(CheckoutViewModel checkout)
@@ -75,7 +78,12 @@ namespace Gaolos.Web.App.Services
                 var user= await _loggedInUserService.GetUserDetails();
                 ApiResponse<OrderViewModel> response = new ApiResponse<OrderViewModel>();
                 CheckoutCommand checkoutCommand= _mapper.Map<CheckoutCommand>(checkout);
-                checkoutCommand.UserId = user.UserId;
+            
+                if(user != null)
+                {
+                    checkoutCommand.UserId = user.UserId;
+                }
+
                 checkoutCommand.BasketId = await _localStorage.GetItemAsync<Guid>("basketId");
                 var checkoutResponse =  await _client.CheckoutAsync(checkoutCommand);
                
@@ -106,12 +114,14 @@ namespace Gaolos.Web.App.Services
             {
                 var user= await _loggedInUserService.GetUserDetails();
                 ApiResponse<BasketViewModel> response = new ApiResponse<BasketViewModel>();
-                var createBasketResponse = await _client.AddBasketAsync(new CreateBasketCommand { UserId= user.UserId});
+                var userId= user != null ? user.UserId : Guid.NewGuid();
+                var createBasketResponse = await _client.AddBasketAsync(new CreateBasketCommand { UserId= userId });
                 if(createBasketResponse.Success)
                 {
                     response.Data = _mapper.Map<BasketViewModel>( createBasketResponse.Basket);
                     response.Success = true;
                     await _localStorage.SetItemAsync("basketId", response.Data.BasketId);
+
 
                 }
                 else
@@ -148,14 +158,29 @@ namespace Gaolos.Web.App.Services
             return _mapper.Map<IEnumerable<BasketLineViewModel>>(basketLines);
         }
 
-        public Task RemoveItemFromBasket(Guid basketId, Guid basketLineId)
+        public async Task<int> GetItemCount(Guid basketId, Guid menuItemId)
         {
-            throw new NotImplementedException();
+            var basketLines = await _client.GetBasketLinesAsync(basketId);
+            var line =  basketLines.FirstOrDefault(x => x.MenuItemId == menuItemId);
+            return line != null ? line.Quantity : 0;
         }
 
-        public Task UpdateBasketLine(Guid basketId, Guid basketLineId, int Quantity)
+        public async Task RemoveItemFromBasket(Guid basketId, Guid basketLineId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _client.DeleteBasketlineAsync(basketId, basketLineId);
+            }
+            catch (ApiException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task UpdateBasketLine(Guid basketId, Guid basketLineId, int Quantity)
+        {
+            await _client.UpdateBasketlineAsync(basketId, basketLineId,
+                new BasketLineForUpdateDto { Quantity = Quantity });
         }
     }
 }

@@ -14,26 +14,13 @@ namespace Gaolos.Web.App.Pages
 
         [Inject]
         public IRestaurantDataService RestaurantDataService { get; set; }
-        [Inject]
-        public IMenuDataService MenuDataService { get; set; }
-
-        public ICollection<MenuItemViewModel> MenuItemsList { get; set; }
-            = new List<MenuItemViewModel>();
 
         public RestaurantViewModel RestaurantVm { get; set; }
-        private MenuItemViewModel? _selectedMenuItem;
-        protected override async Task OnInitializedAsync()
+        protected override async Task OnParametersSetAsync()
         {
            RestaurantVm = await RestaurantDataService.GetRestaurant(RestaurantId,null, null);
-
         }
-        private async Task GetMenuItems(Guid menuId)
-        {
-            MenuItemsList = await MenuDataService.GetMenuItemsForMenu(menuId, RestaurantId);
-        }
-        public void ShowQuickViewPopup(MenuItemViewModel menuItem)
-        {
-            _selectedMenuItem = menuItem;
-        }
+    
+    
     }
 }

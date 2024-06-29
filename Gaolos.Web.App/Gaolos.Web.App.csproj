@@ -11,6 +11,7 @@
   </ItemGroup>
 
 
+
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
@@ -23,10 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="NewFolder\" />
     <Folder Include="wwwroot\img\New folder\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Components\Widgets\Loader.razor" />
     <None Include="Components\UserAccount\SideBar.razor" />
     <None Include="wwwroot\vendor\bootstrap\dist\js\bootstrap.bundle.min.js" />
     <None Include="wwwroot\vendor\bootstrap\js\index.umd.js" />
@@ -117,6 +120,7 @@
     <None Include="wwwroot\vendor\tiny-slider\dist\sourcemaps\tiny-slider.js" />
     <None Include="wwwroot\vendor\tiny-slider\dist\sourcemaps\tiny-slider.scss" />
   </ItemGroup>
+
 
 
 

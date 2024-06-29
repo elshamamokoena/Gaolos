@@ -7,5 +7,8 @@
         public string Expiry { get; set; }
         public string CardHolderName { get; set; }
         public bool isPrimary { get; set; }
+        public string CardType { get; set; } = "Visa";
+
+     
     }
 }

@@ -33,6 +33,15 @@ namespace Gaolos.Identity.Extensions
             user.Surname = surname;
             await UpdateAsync(user);
         }
+        //public async Task SetPhoneNumberAsync(ApplicationUser user, string phone)
+        //{
+        //    user.PhoneNumber = phone;
+        //    await UpdateAsync(user);
+        //}
+        //public async Task<string?> GetPhoneNumberAsync(ApplicationUser user)
+        //{
+        //    return await Task.FromResult(user.PhoneNumber);
+        //}
         public async Task<string?> GetNameAsync(ApplicationUser user)
         {
             return await Task.FromResult(user.Name);

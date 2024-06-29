@@ -26,6 +26,7 @@
     <Folder Include="Features\MenuItems\Commands\" />
     <Folder Include="Features\Menus\Commands\" />
     <Folder Include="Features\Orders\Commands\" />
+    <Folder Include="Features\ShoppingBasket\Queries\GetBasketLineCount\" />
     <Folder Include="Models\Account\Addresses\" />
     <Folder Include="Models\Menu\" />
   </ItemGroup>

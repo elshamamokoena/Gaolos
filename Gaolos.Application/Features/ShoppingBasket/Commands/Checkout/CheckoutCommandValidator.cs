@@ -15,9 +15,9 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.Checkout
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull();
 
-            RuleFor(p => p.UserId)
-                .NotEmpty().WithMessage("{PropertyName} is required.")
-                .NotNull();
+            //RuleFor(p => p.UserId)
+            //    .NotEmpty().WithMessage("{PropertyName} is required.")
+            //    .NotNull();
             
             RuleFor(p => p.Name)
                 .NotEmpty().WithMessage("{PropertyName} is required.")

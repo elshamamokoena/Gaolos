@@ -3,7 +3,7 @@
     public class BasketViewModel
     {
         public Guid BasketId { get; set; }
-        public double BasketTotal { get; set; }
+        public double BasketTotal { get; set; } =0;
         public Guid ? CouponId { get; set; }
         public int NumberOfItems { get; set; }
         //public IEnumerable<BasketLineViewModel> BasketLines { get; set; }

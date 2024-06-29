@@ -33,9 +33,20 @@ namespace Gaolos.Web.App.Components.Cart
 
         public async Task GetBasketLines()
         {
+            Basket = await ShoppingBasketService.GetBasket(ApplicationState.BasketId);
             BasketLines = await ShoppingBasketService.GetBasketLines(ApplicationState.BasketId);
             ApplicationState.NumberOfItems = BasketLines.Count();
             StateHasChanged();
+        }
+        public async Task RemoveItemFromBasket(Guid basketLineId)
+        {
+             await ShoppingBasketService.RemoveItemFromBasket(ApplicationState.BasketId, basketLineId);
+             await GetBasketLines();
+        }
+
+        private void SwitchToCheckout()
+        {
+            NavigationManager.NavigateTo($"/cart?checkout=true");
         }
 
     }

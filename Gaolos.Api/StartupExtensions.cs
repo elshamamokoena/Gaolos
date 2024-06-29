@@ -25,7 +25,7 @@ namespace Gaolos.Api
             builder.Services.AddIdentityServices(builder.Configuration);
 
             builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
-
+            //builder.Services.AddSession();
             builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddControllers();

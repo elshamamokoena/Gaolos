@@ -9,5 +9,8 @@
         public string CVV { get; set; }
         public string CardHolderName { get; set; }
         public bool isPrimary { get; set; } = true;
+        public string CardType { get; set; }= "Visa";
+
+     
     }
 }

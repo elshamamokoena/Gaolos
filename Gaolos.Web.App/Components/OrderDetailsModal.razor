@@ -1,43 +1,58 @@
 ﻿<div class="modal fade" id="order-details">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
+
+@if(Order!=null)
+{
+
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Order No - 34VB5540K83</h5>
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title">Order No - @Order.OrderId</h5>
+                <button class="btn-close" @onclick="Close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body pb-0">
-           
-                @foreach(var item in OrderLines)
+         
+                        
+                    @foreach(var item in Order.OrderLines)
                 {
                     
                 <!-- Item-->
                 <div class="d-sm-flex justify-content-between my-4 pb-3 pb-sm-2 border-bottom">
                     <div class="d-sm-flex text-center text-sm-start">
-                        <a class="d-inline-block flex-shrink-0 mx-auto" href="shop-single-v1.html" style="width: 10rem;"><img src="img/shop/cart/02.jpg" alt="Product"></a>
+                        <a class="d-inline-block flex-shrink-0 mx-auto" href="shop-single-v1.html" style="width: 10rem;"><img src="@item.MenuItem.ImageUrl" alt="Product"></a>
                         <div class="ps-sm-4 pt-2">
                             <h3 class="product-title fs-base mb-2"><a href="shop-single-v1.html">@item.MenuItem.Name</a></h3>
-                            <div class="fs-sm"><span class="text-muted me-2">Brand:</span>Tommy Hilfiger</div>
-                            <div class="fs-sm"><span class="text-muted me-2">Color:</span>Khaki</div>
-                            <div class="fs-lg text-accent pt-2">$79.<small>50</small></div>
-                        </div>
+                                <div class="fs-sm">@item.MenuItem.Description</div>
+
+                         @*    <div class="fs-sm"><span class="text-muted me-2">Brand:</span>Tommy Hilfiger</div>
+                            <div class="fs-sm"><span class="text-muted me-2">Color:</span>Khaki</div> *@
+                                    <div class="fs-lg text-accent pt-2">@($"R{item.MenuItem.Price}")@* .<small>00</small> *@</div>
+                                </div>
                     </div>
                     <div class="pt-2 ps-sm-3 mx-auto mx-sm-0 text-center">
-                        <div class="text-muted mb-2">Quantity:</div>1
+                        <div class="text-muted mb-2">Quantity:</div>@item.Quantity
                     </div>
                     <div class="pt-2 ps-sm-3 mx-auto mx-sm-0 text-center">
-                        <div class="text-muted mb-2">Subtotal</div>$79.<small>50</small>
+                        <div class="text-muted mb-2">Subtotal</div>@($"R{item.Price}") @* .<small>50</small> *@
                     </div>
                  </div>
-                }
+                        }
+                  
+
 
             </div>
             <!-- Footer-->
             <div class="modal-footer flex-wrap justify-content-between bg-secondary fs-md">
-                <div class="px-2 py-1"><span class="text-muted">Subtotal:&nbsp;</span><span>$265.<small>00</small></span></div>
-                <div class="px-2 py-1"><span class="text-muted">Shipping:&nbsp;</span><span>$22.<small>50</small></span></div>
-                <div class="px-2 py-1"><span class="text-muted">Tax:&nbsp;</span><span>$9.<small>50</small></span></div>
-                <div class="px-2 py-1"><span class="text-muted">Total:&nbsp;</span><span class="fs-lg">$297.<small>00</small></span></div>
+                <div class="px-2 py-1"><span class="text-muted">Subtotal:&nbsp;</span><span>@($"{Order.OrderTotal}")@* .<small>00</small> *@</span></div>
+                <div class="px-2 py-1"><span class="text-muted">Delivery fee:&nbsp;</span><span>R00.00@* <small>50</small> *@</span></div>
+                @* <div class="px-2 py-1"><span class="text-muted">Tax:&nbsp;</span><span>$9.<small>50</small></span></div> *@
+                <div class="px-2 py-1"><span class="text-muted">Total:&nbsp;</span><span class="fs-lg">@($"{Order.OrderTotal}")@* .<small>00</small> *@</span></div>
             </div>
         </div>
+    }else
+    {
+        <Loader/>
+    }
     </div>
+
 </div>
+

@@ -1,5 +1,8 @@
 ﻿   @page "/account/orders"
  
+
+<OrderDetailsModal Order="_selectedOrder" />
+
 <!-- Page Title-->
 <div class="page-title-overlap bg-dark pt-4">
     <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
@@ -61,7 +64,7 @@
                         {
                             
                         <tr>
-                    <td class="py-3"><a class="nav-link-style fw-medium fs-sm" href="#order-details" data-bs-toggle="modal">@order.OrderId</a></td>
+                    <td class="py-3"><a class="nav-link-style fw-medium fs-sm" @onclick="async ()=> await SelectOrder(order)" href="#order-details" data-bs-toggle="modal">@order.OrderId</a></td>
                     <td class="py-3">@order.OrderPlaced</td>
                     <td class="py-3"><span class="badge bg-info m-0">@order.OrderStatus</span></td>
                     <td class="py-3">R @order.OrderTotal</td>
