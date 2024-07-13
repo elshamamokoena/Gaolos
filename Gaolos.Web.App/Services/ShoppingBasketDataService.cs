@@ -76,6 +76,14 @@ namespace Gaolos.Web.App.Services
             try
             {
                 var user= await _loggedInUserService.GetUserDetails();
+
+                if(user!=null)
+                {
+                    checkout.Email = user.Email;
+                    checkout.Name = user.Name;
+                    checkout.Phone = "012 345 6789";
+                }
+
                 ApiResponse<OrderViewModel> response = new ApiResponse<OrderViewModel>();
                 CheckoutCommand checkoutCommand= _mapper.Map<CheckoutCommand>(checkout);
             

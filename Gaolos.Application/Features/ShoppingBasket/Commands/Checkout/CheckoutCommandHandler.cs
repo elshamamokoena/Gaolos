@@ -19,10 +19,12 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.Checkout
         private readonly IOrderRepository _orderRepository;
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
+        private readonly ICouponRepository _couponRepository;
+
         private readonly ILogger<CheckoutCommandHandler> _logger;
         public CheckoutCommandHandler(IBasketRepository shoppingBasketRepository, 
-            IOrderRepository orderRepository, IMapper mapper, 
-            IEmailService emailService, ILogger<CheckoutCommandHandler> logger)
+            IOrderRepository orderRepository, IMapper mapper,
+            IEmailService emailService, ILogger<CheckoutCommandHandler> logger, ICouponRepository couponRepository)
         {
             _shoppingBasketRepository = shoppingBasketRepository
                 ?? throw new ArgumentNullException(nameof(shoppingBasketRepository));
@@ -30,10 +32,12 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.Checkout
                 ?? throw new ArgumentNullException(nameof(orderRepository));
             _mapper = mapper
                 ?? throw new ArgumentNullException(nameof(mapper));
-            _emailService = emailService 
+            _emailService = emailService
                 ?? throw new ArgumentNullException(nameof(emailService));
-            _logger = logger 
+            _logger = logger
                 ?? throw new ArgumentNullException(nameof(logger));
+            _couponRepository = couponRepository 
+                ?? throw new ArgumentNullException(nameof(couponRepository));
         }
         public async Task<CheckoutCommandResponse> Handle(CheckoutCommand request, CancellationToken cancellationToken)
         {
@@ -70,7 +74,14 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.Checkout
                 var order = _mapper.Map<Order>(request);
                 order.UserId = basket.UserId;
                 order.OrderPlaced = DateTime.Now;
+
+                if (basket.CouponId != null)
+                { 
+                var coupon = await _couponRepository.GetCouponById(basket.CouponId.Value);
+                order.OrderTotal =  basket.BasketLines.Sum(x => x.Price * x.Quantity) - coupon.Discount ;
+                }
                 order.OrderTotal = basket.BasketLines.Sum(x => x.Price * x.Quantity);
+
                 order.OrderPaid = false;
                 order.OrderLines = _mapper.Map<List<OrderLine>>(basket.BasketLines);
                 await _orderRepository.AddOrder(order);
@@ -80,9 +91,9 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.Checkout
 
                 //Send Email
                 
-                var email = new Email(new List<string> { "elshamamokoena@gmail.com" },
-                    $"Order {order.OrderId}", 
-                    _emailService.GetEmailTemplate("OrderConfirmation", response.Order));
+                var email = new Email(new List<string> { order.Email },
+                    $"Order {order.OrderNumber}", 
+                    _emailService.GetEmailTemplate("OrderConfirmation", order));
                 
                 var result = await _emailService.SendAsync(email, new CancellationToken());
                 if (result)

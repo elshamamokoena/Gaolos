@@ -1,4 +1,12 @@
-﻿<div class="modal fade" id="order-details">
+﻿
+<ErrorBoundary>
+    <ChildContent>
+
+
+
+
+
+<div class="modal fade" id="order-details">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
 
 @if(Order!=null)
@@ -6,7 +14,7 @@
 
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Order No - @Order.OrderId</h5>
+                <h5 class="modal-title">Order No - @Order.OrderNumber</h5>
                 <button class="btn-close" @onclick="Close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body pb-0">
@@ -56,3 +64,8 @@
 
 </div>
 
+    </ChildContent>
+    <ErrorContent>
+        <p class="errorUI">😈 @context.Message </p>
+    </ErrorContent>
+</ErrorBoundary>

@@ -14,6 +14,7 @@ using Gaolos.Application.Features.Categories.Queries.GetCategory;
 using Gaolos.Application.Features.MenuItems.Queries.GetMenuItemForMenu;
 using Gaolos.Application.Features.MenuItems.Queries.GetMenuItemsForMenu;
 using Gaolos.Application.Features.Menus.Queries.GetMenusForRestaurant;
+using Gaolos.Application.Features.Orders.Queries.GetOrderAnonymously;
 using Gaolos.Application.Features.Orders.Queries.GetOrderForUser;
 using Gaolos.Application.Features.Orders.Queries.GetOrdersForUser;
 using Gaolos.Application.Features.Restaurants.Commands.CreateRestaurant;
@@ -46,18 +47,24 @@ namespace Gaolos.Application.Profiles
         {
 
             //Account
-        
-         
 
             CreateMap<CheckoutCommand, Order>().ReverseMap();
+
             CreateMap<DetailedOrderForUserVm, Order>()
               .ReverseMap()
+              .ForMember(d=> d.OrderPlaced, opt=> opt.MapFrom(src=> src.OrderPlaced.ToString("dddd, dd MMMM yyyy")))
               .ForMember(dest => dest.OrderStatus,
               opt => opt.MapFrom(src => src.OrderStatus.ToString()));
             CreateMap<OrderForUserVm, Order>()
                 .ReverseMap()
+                .ForMember(d => d.OrderPlaced, opt => opt.MapFrom(src => src.OrderPlaced.ToString("dddd, dd MMMM yyyy")))
                 .ForMember( dest=> dest.OrderStatus ,
                 opt=> opt.MapFrom(src =>  src.OrderStatus.ToString()));
+            CreateMap<AnonymousOrder, Order>()
+            .ReverseMap()
+            .ForMember(d => d.OrderPlaced, opt => opt.MapFrom(src => src.OrderPlaced.ToString("dddd, dd MMMM yyyy")))
+            .ForMember(dest => dest.OrderStatus,
+            opt => opt.MapFrom(src => src.OrderStatus.ToString()));
 
             CreateMap<OrderLine, OrderLineDto>().ReverseMap();
 
@@ -75,8 +82,13 @@ namespace Gaolos.Application.Profiles
             CreateMap<BasketLine, BasketLinesVm>().ReverseMap();
 
             CreateMap<OrderLine,OrderLineDto>().ReverseMap();
-            CreateMap<Order, OrderVm>().ReverseMap();
-            CreateMap<Order, OrderDto>().ReverseMap();
+            CreateMap<Order, OrderVm>()
+                .ForMember(d => d.OrderPlaced, opt => opt.MapFrom(src => src.OrderPlaced.ToString("dddd, dd MMMM yyyy")))
+                .ReverseMap()
+;
+            CreateMap<Order, OrderDto>()
+                .ForMember(d => d.OrderPlaced, opt => opt.MapFrom(src => src.OrderPlaced.ToString("dddd, dd MMMM yyyy")))
+                .ReverseMap();
 
             CreateMap<Coupon, CouponVm>().ReverseMap();
             CreateMap<CreateBasketCommand, Basket>();

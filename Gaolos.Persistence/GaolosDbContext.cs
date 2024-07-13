@@ -6,9 +6,25 @@ using Gaolos.Domain.Entities.ShoppingCart;
 using Gaolos.Domain.Entities.UserAccount;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 
 namespace Gaolos.Persistence
 {
+
+    public class OrderNumberGenerator : ValueGenerator<string>
+    {
+        public override bool GeneratesTemporaryValues { get; }
+
+        public override string Next(EntityEntry entry)
+        {
+            if (entry == null)
+            {
+                throw new ArgumentNullException(nameof(entry));
+            }
+            return "ORD"+ Guid.NewGuid().ToString().Substring(0, 8).ToUpper();
+            
+        }
+    }
     public class GaolosDbContext : DbContext
     {
         private readonly ILoggedInUserService? _loggedInUserService;
@@ -48,9 +64,17 @@ namespace Gaolos.Persistence
         public DbSet<DeliveryAddress> Addresses { get; set; }
         public DbSet<CreditCard> CreditCards { get; set; }
 
+    
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GaolosDbContext).Assembly);
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.OrderNumber)
+                .ValueGeneratedOnAdd()
+                .HasValueGenerator<OrderNumberGenerator>();
+
+
 
             //seed data, added through migrations
             var hauteCuisine = Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDA}");

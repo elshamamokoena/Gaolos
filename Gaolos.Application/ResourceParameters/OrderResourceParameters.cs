@@ -10,6 +10,7 @@ namespace Gaolos.Application.ResourceParameters
     public class OrderResourceParameters:BaseResourceParameters
     {
         public string OrderBy { get; set; } = "";
-        public OrderStatus ? OrderStatus { get; set; } 
+        public OrderStatus ? OrderStatus { get; set; }
+        public bool? Track { get; set; }
     }
 }

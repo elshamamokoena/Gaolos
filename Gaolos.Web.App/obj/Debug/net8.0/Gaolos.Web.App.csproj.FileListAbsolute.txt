@@ -1070,3 +1070,13 @@ C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\bg
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\r4hsyre86k.gz
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\b0lmw2g0i8.gz
 C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\6im1wl016d.gz
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.wasm
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Net.Http.Headers.wasm
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Net.Http.Headers.wasm.gz
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.wasm.gz
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\bin\Debug\net8.0\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.WebUtilities.wasm
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\webcil\Microsoft.Net.Http.Headers.wasm
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\xgz2kqwbsz.gz
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Web.App\obj\Debug\net8.0\compressed\rjio9y4xio.gz

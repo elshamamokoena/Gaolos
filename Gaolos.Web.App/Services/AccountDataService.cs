@@ -102,23 +102,27 @@ namespace Gaolos.Web.App.Services
 
         public async Task<OrderViewModel> GetOrder(Guid orderId)
         {
-            var user = await _loggedInUserService.GetUserDetails();
-            var order = await _client.GetOrderForUserAsync(user.UserId, orderId);
+            var order = await _client.GetOrderAnonymouslyAsync(orderId);
             return _mapper.Map<OrderViewModel>(order);
         }
 
-        public async Task<PagedOrdersViewModel> GetOrders(string orderBy, OrderStatus ?orderStatus, string searchQuery,
+        public async Task<PagedOrdersViewModel> GetOrders(string orderBy, OrderStatus ?orderStatus,bool? track ,string searchQuery,
             int pageNumber, int pageSize , string fields  )
         {
             var user = await _loggedInUserService.GetUserDetails();
             var orders = await _client.GetOrdersForUserAsync(user.UserId,
-                orderBy,orderStatus, searchQuery, pageNumber, pageSize, fields );
+                orderBy,orderStatus, track,searchQuery, pageNumber, pageSize, fields );
 
             return _mapper.Map<PagedOrdersViewModel>(orders);
 
 
 
         }
+
+        //public Task<IEnumerable<OrderViewModel>> GetOrders()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public async Task<IEnumerable<PaymentMethodViewModel>> GetPaymentMethods()
         {

@@ -10,7 +10,6 @@ namespace Gaolos.Web.App.Components.UserAccount
     public partial class SideBar
     {
 
-        [Parameter]
         public int OrderCount { get; set; }
 
         [Inject]
@@ -22,12 +21,22 @@ namespace Gaolos.Web.App.Components.UserAccount
         [Inject]
         public AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
-        public LoggedInUserViewModel LoggedInUser { get; set; } 
+        public LoggedInUserViewModel LoggedInUser { get; set; }
+        [Inject]
+        public IAccountDataService AccountDataService { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
+            var pendingOrders = await AccountDataService.GetOrders(null, null, true, null, 1, 10, null);
+            OrderCount = pendingOrders.TotalCount;
             LoggedInUser  = await LoggedInUserService.GetUserDetails();
             await base.OnInitializedAsync();
+        }
+
+        protected override Task OnParametersSetAsync()
+        {
+            StateHasChanged();
+            return base.OnParametersSetAsync();
         }
 
         protected void Logout()

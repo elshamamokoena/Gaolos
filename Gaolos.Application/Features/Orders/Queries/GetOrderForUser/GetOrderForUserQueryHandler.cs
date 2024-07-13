@@ -23,7 +23,9 @@ namespace Gaolos.Application.Features.Orders.Queries.GetOrderForUser
         }
         public async Task<DetailedOrderForUserVm> Handle(GetOrderForUserQuery request, CancellationToken cancellationToken)
         {
-            var detailedOrder=  _mapper.Map<DetailedOrderForUserVm>(await _orderRepository.GetOrderById(request.UserId,request.OrderId));
+            var order = await _orderRepository.GetOrderById(request.UserId,request.OrderId);
+
+            var detailedOrder=  _mapper.Map<DetailedOrderForUserVm>(order);
             foreach (var item in detailedOrder.OrderLines)
             {
                 item.Price= item.MenuItem.Price* item.Quantity; 

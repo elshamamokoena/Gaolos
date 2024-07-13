@@ -26,15 +26,23 @@ namespace Gaolos.Web.App.Pages.UserAccount
         private int? pageSize = 5;
         private string?  fields = string.Empty;
         private OrderStatus ? orderStatus;
-        private OrderViewModel ?_selectedOrder { get; set; }
+        private Guid _selectedOrder { get; set; }
 
-        private async Task SelectOrder(OrderViewModel order)
+        private int OrderCount { get; set; }
+
+        private void SelectOrder(OrderViewModel order)
         {
-            _selectedOrder = await AccountDataService.GetOrder(order.OrderId);
+            _selectedOrder =  order.OrderId;
+        }
+
+        private  void CloseOrderDetails()
+        {
+            _selectedOrder = Guid.Empty;
         }
         protected override async Task OnInitializedAsync()
         {
-            var orders = await AccountDataService.GetOrders(orderBy, orderStatus ,searchQuery, pageNumber.Value, pageSize.Value, fields   );
+       
+            var orders = await AccountDataService.GetOrders(orderBy, orderStatus,false ,searchQuery, pageNumber.Value, pageSize.Value, fields   );
             paginatedList = new PaginatedList<OrderViewModel>(orders.Orders.ToList(), orders.TotalCount, orders.CurrentPage, orders.PageSize);
             ordersList = paginatedList.Items;
             //var user = await AuthenticationService.GetUser();
@@ -58,7 +66,7 @@ namespace Gaolos.Web.App.Pages.UserAccount
 
         protected async Task GetSales()
         {
-            var orders = await AccountDataService.GetOrders(orderBy, orderStatus ,searchQuery, pageNumber.Value, pageSize.Value, fields);
+            var orders = await AccountDataService.GetOrders(orderBy, orderStatus, false,searchQuery, pageNumber.Value, pageSize.Value, fields);
             paginatedList = new PaginatedList<OrderViewModel>(orders.Orders.ToList(), orders.TotalCount, orders.CurrentPage, orders.PageSize);
             ordersList = paginatedList.Items;
             StateHasChanged();

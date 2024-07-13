@@ -31,6 +31,7 @@ builder.Services.AddHttpClient(
     client => client.BaseAddress = new Uri("https://localhost:7234"))
     .AddHttpMessageHandler<CookieHandler>();
 
+
 builder.Services.AddScoped<IRestaurantDataService, RestaurantDataService>();
 builder.Services.AddScoped<ICategoryDataService, CategoryDataService>();
 //builder.Services.AddScoped<IOrderDataService, OrderDataService>();
@@ -40,5 +41,4 @@ builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
 builder.Services.AddScoped<IAccountDataService, AccountDataService>();
 builder.Services.AddScoped<IShoppingBasketService, ShoppingBasketDataService>();
 builder.Services.AddScoped<ApplicationState>();
-
 await builder.Build().RunAsync();

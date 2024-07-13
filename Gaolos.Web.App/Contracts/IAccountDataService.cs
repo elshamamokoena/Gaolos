@@ -24,8 +24,10 @@ namespace Gaolos.Web.App.Contracts
         Task DeletePaymentMethod(Guid creditcardId);
 
         //orders
-        Task<PagedOrdersViewModel> GetOrders(string orderBy,OrderStatus ? orderStatus, string searchQuery,
+        Task<PagedOrdersViewModel> GetOrders(string orderBy,OrderStatus ? orderStatus,
+            bool? track, string searchQuery,
             int pageNumber, int pageSize, string fields);
+        //Task<IEnumerable<OrderViewModel>> GetOrders();
         Task<OrderViewModel> GetOrder(Guid orderId);
     }
 }

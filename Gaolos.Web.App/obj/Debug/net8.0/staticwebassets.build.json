@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "D37/pWl9oW6vcpCJIbvBD/wQ+aGwiAIlJ6stfX/5FvM=",
+  "Hash": "hG+bD0HanLpVgSd3qcsXRolATGM64fhS1zrLstCrsSg=",
   "Source": "Gaolos.Web.App",
   "BasePath": "/",
   "Mode": "Root",
@@ -454,6 +454,25 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\webcil\\Microsoft.AspNetCore.Metadata.wasm"
     },
     {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.WebUtilities.wasm",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.WebUtilities.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\webcil\\Microsoft.AspNetCore.WebUtilities.wasm"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.CSharp.wasm",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -851,6 +870,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\webcil\\Microsoft.JSInterop.WebAssembly.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.wasm",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Net.Http.Headers.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\webcil\\Microsoft.Net.Http.Headers.wasm"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.VisualBasic.Core.wasm",
@@ -6895,6 +6933,25 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\rjio9y4xio.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Net.Http.Headers.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.wasm"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\rq0frh4flz.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -7577,6 +7634,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.DependencyInjection.Abstractions.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\xgz2kqwbsz.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.WebUtilities.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.WebUtilities.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.WebUtilities.wasm"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\xn6wfzc5hx.gz",

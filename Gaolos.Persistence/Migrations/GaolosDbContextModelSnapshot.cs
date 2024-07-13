@@ -170,7 +170,7 @@ namespace Gaolos.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            CouponId = new Guid("b2f14a42-492c-4a08-ac70-d9668435bf42"),
+                            CouponId = new Guid("f5f05bd4-e2fc-45fd-835e-686c82c79765"),
                             AlreadyUsed = false,
                             Code = "BeNice",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -178,7 +178,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            CouponId = new Guid("85887c52-8511-4ac3-960f-932472b061ed"),
+                            CouponId = new Guid("b1ff0e3a-c946-4ba9-a3d0-03c12528051f"),
                             AlreadyUsed = false,
                             Code = "Awesome",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -186,7 +186,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            CouponId = new Guid("fe2b5edf-2307-49c4-a7ce-fc5e80ebf53e"),
+                            CouponId = new Guid("316f2a9a-c49b-466a-b9b1-d21f856a1ee4"),
                             AlreadyUsed = false,
                             Code = "AlmostFree",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -450,7 +450,7 @@ namespace Gaolos.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            MenuItemId = new Guid("ecfa4352-e320-4e65-a53f-a9aaa20e1308"),
+                            MenuItemId = new Guid("dcd5c428-abe3-49d5-97c4-0b300415da9a"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 pieces + toast + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/63_lunch-meal.png",
@@ -460,7 +460,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("b2a560a1-a871-407f-a956-2acd911c78db"),
+                            MenuItemId = new Guid("8fe16d32-6405-4f8b-9f62-6944b5a27213"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 pieces + toast + 440ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/64_lunch-meal-max.png",
@@ -470,7 +470,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("bfb536c8-486d-43fe-a0ff-37652bc275fa"),
+                            MenuItemId = new Guid("8d5fab19-0ed6-43a6-b691-f6576f3041ba"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "8 Hotwings + toast + 440ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/65_hotwings-meal-circle8ce.png",
@@ -480,7 +480,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("4b809180-ca96-44b6-89d3-1c1352acfb29"),
+                            MenuItemId = new Guid("696832c3-6236-4585-986c-389e520073d8"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "8 Hotwings + toast + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/66_hotwings-meal-max-circle8ce.png",
@@ -490,7 +490,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("caa4cc2a-89a4-45e7-8ef2-9d907d766338"),
+                            MenuItemId = new Guid("75e78e68-fc65-40ae-8d9b-79c959f0ffe7"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 Hotwings",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/98_hotwings-circle6ce.png",
@@ -500,7 +500,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("3b68f3d8-5a99-4087-9ccd-39dadaa7e50b"),
+                            MenuItemId = new Guid("1aefe4f0-9b80-4f7a-8918-fbe1f83b5c52"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "12 Hotwings",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/3_hotwings-circle12ce.png",
@@ -510,7 +510,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("c98e0a3b-518a-4cbb-9e5f-94d13c02e2d9"),
+                            MenuItemId = new Guid("fa757fc4-874c-46c4-8e81-e8db719ea8c5"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "24 Hotwings",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/4_hotwings-circle24ce.png",
@@ -520,7 +520,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("eca5558a-48f2-4714-9203-5eb19cc15c1e"),
+                            MenuItemId = new Guid("950ce23b-e75f-4908-b8c3-874c541c474d"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "36 Hotwings",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/5_hotwings-circle36ce.png",
@@ -530,7 +530,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("24b1032a-7d59-4bf1-ba59-eb9ae903bd2a"),
+                            MenuItemId = new Guid("d51e0a7e-cb07-4e62-8f8a-6b2939319d2d"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "1 Piece + 4 Hotwing®s + 1 Licken Loaf",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/128_soul-square-meal-.png",
@@ -540,7 +540,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("89bd50c8-0981-473f-8e3d-ea1d61ed9901"),
+                            MenuItemId = new Guid("117eb428-d8cc-428d-b340-42e5e868c2a7"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 Hotwings® + a portion of Soul Fries™",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/14_hotwings-soul-circle6ce.png",
@@ -550,7 +550,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("24696089-27ff-4c1f-8bcf-489fe5d50b8d"),
+                            MenuItemId = new Guid("759f7631-aad0-4b71-9d6e-45f124426e44"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 pieces SoulFire® chicken + 1 sachet SoulFire® sauce",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/19_rock-my-soul-circle3cew-straight.png",
@@ -560,7 +560,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("8326fadd-ee87-4a3d-b548-2e14e8a01f5e"),
+                            MenuItemId = new Guid("a5de3d61-6012-4b0f-b605-2b26608e6818"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 pieces SoulFire® chicken + a portion of Soul Fries™\r\n\r\n+ 1 sachet SoulFire® sauce ",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/20_rock-my-soul-circle3ce.png",
@@ -570,7 +570,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("7149f4bc-9a72-4f13-b135-1a8510c59bbd"),
+                            MenuItemId = new Guid("9cc0b7d0-de68-4d8a-95ad-608fecbd669e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 Hotwings® + a portion of Soul Fries™ + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/15_hotwings-circle6ce-deluxe.png",
@@ -580,7 +580,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("28f41a9a-5503-4222-95cc-efa759a0183c"),
+                            MenuItemId = new Guid("730a3fb4-f191-430f-b0fd-593d4712ad24"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 Hotwings® + a portion of Soul Fries™ + 440ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/16_hotwings-circle6ce-max.png",
@@ -590,7 +590,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("bb8851b6-f40e-461d-97ea-bd311bc565a8"),
+                            MenuItemId = new Guid("b36a36ed-e17c-462c-bc6e-95babaf7edc4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10 Hotwings® + a portion of Soul Fries™",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/18_feed-my-craving-circle10ce.png",
@@ -600,7 +600,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("ffe3857b-28ae-4b8d-989d-ed5391d31606"),
+                            MenuItemId = new Guid("dc89da39-144f-4b07-84b0-9bdd6d2e202b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Love Me Tender® Burger + a regular Soul Fries™\r\n\r\n+ 2 Hotwings® + 440ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/22_soulman-load-up.png",
@@ -610,7 +610,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("dcc28ee2-2482-4a58-a252-764ecf35ad90"),
+                            MenuItemId = new Guid("f8322e94-9ed9-4151-bf87-16604dec56ba"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 pieces SoulFire® chicken + 1 regular Soul Fries™\r\n\r\n+ 2 sachets SoulFire® sauce",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/21_rock-my-soul-circle6ce.png",
@@ -620,7 +620,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("dd6004ca-f1a9-4a22-86b2-0656f548e878"),
+                            MenuItemId = new Guid("b0371534-fbf4-4568-b335-f94f92014b20"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "16 Hotwings® + 2 regular Soul Fries™",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/17_hotwings-party-circle16ce.png",
@@ -630,7 +630,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("d1c6b773-3903-4137-a27b-a612c0b14ccb"),
+                            MenuItemId = new Guid("878cfc7e-e95e-49c8-bce1-d84f7493ebd8"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 pieces + 2 regular Soul Fries™\r\n\r\n+ 2 regular Soulslaw® / Achaar / Tomato Salsa\r\n\r\n+ 2 Licken Loafs®",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/24_family-full-house-circle6ce.png",
@@ -640,7 +640,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("6440f5cf-65eb-4fab-8b9b-4893cd752473"),
+                            MenuItemId = new Guid("d2a85f64-2a2a-46cb-b45d-bc61aa014ea6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "12 Hotwings® + 4 Sliders®\r\n\r\n+ 2 regular Soul Fries™",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/23_soul-mates-classic-party.png",
@@ -650,7 +650,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("abca4524-7544-4ed9-a36b-f2d93cbabba2"),
+                            MenuItemId = new Guid("8ad6aaa2-72b3-4384-af74-f0f8818cef38"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "8 pieces + 2 regular Soul Fries™\r\n\r\n+ 2 regular Soulslaw® / Achaar / Tomato Salsa\r\n\r\n+ 2 Licken Loafs®",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/25_family-full-house-circle8ce.png",
@@ -660,7 +660,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("39c56a7b-94df-451a-b022-7c0fcf5e2e64"),
+                            MenuItemId = new Guid("b140d833-28fd-4425-99f7-0173f8bfcc24"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 pieces + a Licken Loaf",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/129_soulsister-2-vibe.png",
@@ -670,7 +670,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("4b4f1ab1-4930-450e-97a8-7895565ffbac"),
+                            MenuItemId = new Guid("ff975b6c-7ef9-4638-81e3-764ed53cd3fa"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 pieces + a portion of Soul Fries™",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/49_soulsister-circle2ce.png",
@@ -680,7 +680,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("75d7d6b0-19a7-4876-a92d-d19c3742eb2e"),
+                            MenuItemId = new Guid("0b855bc3-3e56-4fbc-a0ea-4bfc3b8bf18e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 pieces + a portion of Soul Fries™ + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/50_soulsister-circle2ce-deluxe.png",
@@ -690,7 +690,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("feb6da23-d9f9-4294-9c36-2dded78b3413"),
+                            MenuItemId = new Guid("a3eb1d99-7c45-42ef-abad-ad69fb88824b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 pieces + a portion of Soul Fries™ + 440ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/51_soulsister-circle2ce-max.png",
@@ -700,7 +700,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("8cb2ca9d-595c-43d5-9e5a-9101e5b5bcb0"),
+                            MenuItemId = new Guid("e522cd94-7f8e-4920-893f-b4fd71429366"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 pieces + a portion of Soul Fries™ + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/52_soulsister-party-circle4ce.png",
@@ -710,7 +710,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("3b801a93-3fde-4208-a98b-6e9afa652dd5"),
+                            MenuItemId = new Guid("b3340c12-2fa7-4f41-a8e7-ff0526cff861"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "5 pieces + a portion of Soul Fries™ + 440ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/53_soulsister-party-circle5ce.png",
@@ -720,7 +720,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("01761248-fb23-4f93-998d-a86e51a565af"),
+                            MenuItemId = new Guid("94ed9037-c40e-4500-b585-a8b50a375b67"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "1 piece",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/54_just-circle1ce.png",
@@ -730,7 +730,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("85e8938d-8f66-4dc4-815a-5829da3e8070"),
+                            MenuItemId = new Guid("1792aabe-a64f-42a1-b0e2-df42dbfde379"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 pieces",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/55_just-circle2ce.png",
@@ -740,7 +740,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("d64e90d1-912d-4e80-8aed-0dff46ad7f37"),
+                            MenuItemId = new Guid("3fd9f184-3510-4e41-8fd9-c61e0c0b7217"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 pieces",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/56_just-circle3ce.png",
@@ -750,7 +750,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("5b0bfde5-2a01-4d27-93a6-25f8dfe890f1"),
+                            MenuItemId = new Guid("b863ef05-6c9d-498b-8316-b9365fa345a0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 pieces",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/57_just-circle4ce.png",
@@ -760,7 +760,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a6bc4cf8-e444-42c0-b1aa-609b0fd96de8"),
+                            MenuItemId = new Guid("52a4c6b2-0b54-4b4c-b614-b6f9648c0157"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "5 pieces",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/58_just-circle5ce.png",
@@ -770,7 +770,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("fed614a0-79f7-4d37-9798-02bfde370a83"),
+                            MenuItemId = new Guid("5e226abb-8431-4fc3-9e41-a0c70c686996"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 pieces",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/59_just-circle6ce.png",
@@ -780,7 +780,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("70f006bc-1fdb-41f0-bf3b-c1ee1f32ee9c"),
+                            MenuItemId = new Guid("2af24aa1-871a-4f39-9a1e-e48ff85c8cb6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "9 pieces",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/60_chicken-inn-circle9ce.png",
@@ -790,7 +790,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("c71660da-b932-4b5b-bc57-8955120b112a"),
+                            MenuItemId = new Guid("d018e40f-e7d4-4537-9239-4ab62f39b6cf"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "15 pieces",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/61_family-bucket-circle15ce.png",
@@ -800,7 +800,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("09483f19-e499-4639-82ef-ede1aa3d29a8"),
+                            MenuItemId = new Guid("6933e89f-54ce-4864-95a2-09fbb32dd4a0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "21 pieces",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/62_family-barrel-circle21ce.png",
@@ -810,7 +810,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("55b9612d-6125-4183-9dd8-fd946c31af53"),
+                            MenuItemId = new Guid("d766a38a-4b4f-4dd3-995c-e640b2feb9ab"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Original Slyders® + a portion of Soul Fries™",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/44_slyder-snack-circle2ce.png",
@@ -820,7 +820,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("bd131876-da83-40a7-82d7-4a204ba88b32"),
+                            MenuItemId = new Guid("588ab626-40ae-4470-90ef-31d50f18885b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Popcorn Chicken® in a shaker cup\r\n\r\n+ 2 sachets SoulFire® sauce or\r\n\r\n2 sachets of Uncle Jessup’s® Ketchup\r\n\r\nto shake up the taste!",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/45_popcorn-chicken-shaker.png",
@@ -830,7 +830,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("b78dc269-875b-42f7-8054-c93c8d4c97c9"),
+                            MenuItemId = new Guid("9f19d17f-6159-442b-95ea-b57d6da0f39b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 Hotwings® + a portion of Soul Fries™",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/46_hotwings-snack.png",
@@ -840,7 +840,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("af3b96f5-1548-43c7-b47f-2d3e5792a87e"),
+                            MenuItemId = new Guid("2a052608-c395-4106-8077-bdc3295fdab0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Hotwings® + a Slider®\r\n\r\n+ a portion of Soul Fries™",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/47_soul-mix-snack.png",
@@ -850,7 +850,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("adf4dc3d-6cb3-4dd4-b9b3-b1b93efc6659"),
+                            MenuItemId = new Guid("145ccc45-2196-4817-9928-ab97bf40d9d0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 SoulBites® + a portion of Soul Fries™ + a sachet of either \r\n\r\nUncle Jessups Ketchup®, SoulFire® sauce or Soulfirennaise™  sauce",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/125_soulbites-snack.png",
@@ -860,7 +860,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("70ff6447-eca2-4f9a-a2d0-da820d581c6e"),
+                            MenuItemId = new Guid("3da86c05-78d0-4c36-8a44-1f486d28468e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Chicken fillet + lettuce + tomato\r\n\r\n+ Dreamy Creamy® sauce on a toasted sesame bun",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/7_love-me-tender-burger.png",
@@ -870,7 +870,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("bd755214-0935-4e38-884c-4289dba7a4d4"),
+                            MenuItemId = new Guid("267a7385-75c6-46f8-8545-b19a6be41af6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Chicken fillet + lettuce + tomato\r\n\r\n+ Soulfirenaise™ sauce on a toasted sesame bun",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/10_love-me-hot-burger.png",
@@ -880,7 +880,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("018cfd65-1e6a-4f46-ad80-20181d38b7bc"),
+                            MenuItemId = new Guid("b86858cb-6f64-4005-9c02-1beb55ff3e77"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Chicken fillet + lettuce + tomato\r\n\r\n+ Dreamy Creamy® sauce + a slice of cheese\r\n\r\non a toasted sesame bun",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/9_love-me-tender-cheese-burger.png",
@@ -890,7 +890,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("7e144443-d472-4a98-a9e6-3322a98a8356"),
+                            MenuItemId = new Guid("7aa6a8fb-c719-4cb0-9478-03f23f11104a"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Chicken fillet + lettuce + tomato\r\n\r\n+ Soulfirenaise™ sauce + a slice of cheese\r\n\r\non a toasted sesame bun",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/12_love-me-hot-cheese-burger.png",
@@ -900,7 +900,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("eec99701-c88f-4952-bba0-95901dff3b74"),
+                            MenuItemId = new Guid("2154e265-9bb3-4c1f-afdb-67c04acc217c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Chicken Bresteaks® + lettuce + a slice of cheese\r\n\r\n+ 3 pickles + Dreamy Creamy® sauce\r\n\r\non a toasted sesame bun",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/13_big-john-burger.png",
@@ -910,7 +910,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("0988715b-e59e-4278-a5ac-07f40ac0d7d3"),
+                            MenuItemId = new Guid("3b5824c1-8ddd-419f-91ab-72e326d3ca33"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Includes a regular Soul Fries™ + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/29_love-me-tender-top-deluxe.png",
@@ -920,7 +920,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("1337270f-d3b8-457a-9100-308d7da8f196"),
+                            MenuItemId = new Guid("abba6c2a-0759-45a5-a9f2-fb33b69f963b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Includes a regular Soul Fries™ + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/31_love-me-hot-top-deluxe.png",
@@ -930,7 +930,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("37b3e2a7-4839-4861-9e17-520fd64920b1"),
+                            MenuItemId = new Guid("2c94e3b5-d152-428d-b8d0-15b1f6674d72"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Includes a regular Soul Fries™ + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/28_big-john-top-deluxe.png",
@@ -940,7 +940,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("e9cd515e-b769-4e93-8892-d0e82b0c22ac"),
+                            MenuItemId = new Guid("43585f6a-bf9f-4167-96b4-59146b6f1c00"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Includes a regular Soul Fries™ + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/30_love-me-tender-cheese-top-deluxe.png",
@@ -950,7 +950,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("4f9e6b88-3df6-41ee-be33-19a136c10d03"),
+                            MenuItemId = new Guid("ebacf111-8ac1-4ab7-953e-99ac690ca8f6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Includes a regular Soul Fries™ + 300ml Coke",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/32_love-me-hot-cheese-top-deluxe.png",
@@ -960,7 +960,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("f811bcf3-b60c-4f4e-a6b1-529e2af8006a"),
+                            MenuItemId = new Guid("0a71b070-9295-4901-83f8-ed1bc2cc6356"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 SoulBites®",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/123_soulbites-circle6ce.png",
@@ -970,7 +970,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("ba6926a2-2c5e-42cf-a6ce-d22c4ee0bae1"),
+                            MenuItemId = new Guid("246a785f-4e5b-42af-ab08-8690ef76b73f"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "9 SoulBites®",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/124_soulbites-circle9ce.png",
@@ -980,7 +980,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("38dd42ef-37da-4713-a289-97e64d853ce4"),
+                            MenuItemId = new Guid("3ef125c7-a0ca-4b5b-a915-11a78c133a11"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Square chick’n burger on a toasted square bun with DREAMY CREAMY® sauce and a pickle",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/33_1-slyder-original.png",
@@ -990,7 +990,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("6d420987-133d-4516-b160-b078408455b9"),
+                            MenuItemId = new Guid("176a24c9-8706-4f9e-9ec9-e8573821364c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Square chick’n burger on a toasted square bun with SOULFIRENAISE™ sauce and a pickle",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/39_1-slyder-chilli.png",
@@ -1000,7 +1000,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("25235e11-efc6-423a-9357-097bbeb2c35c"),
+                            MenuItemId = new Guid("9ec62bc7-b117-4215-873d-0825436d5480"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "  Square chick’n burger on a toasted square bun with DREAMY CREAMY® sauce and a pickle and cheese",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/36_1-slyder-cheese.png",
@@ -1010,7 +1010,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("4960e17d-aaa0-4ac6-9357-d30cdaa68d38"),
+                            MenuItemId = new Guid("861eb833-77a7-4c16-869a-5b5e4e59b792"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Square chick’n burgers on toasted square buns with DREAMY CREAMY® sauce and a pickle",
                             ImageUrl = "https://chickenlicken.co.za/assets/uploads/products/menu/34_2-slyders-original.png",
@@ -1020,7 +1020,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("9570ebfa-bb49-4ed4-bfce-b13ac5424635"),
+                            MenuItemId = new Guid("a0d4e71f-30db-41ff-baf4-cdcfb803520e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A generous sharing platter of 4 succulent Flame-grilled Shisanyama Chicken Sosaties and 20 Winglets, served with 2 portions of our Sharing Wedges, 2 Garlic Rolls and our special PERinase dip.",
                             ImageUrl = "https://imagesrv.nandos.co.za/179x212//MW_IMAGES/3d93a55d-440a-407c-8b7b-97cc1e6c510a",
@@ -1030,7 +1030,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("0188a0e3-8440-45e2-a943-db7d2477b407"),
+                            MenuItemId = new Guid("1eb20dcf-91b9-4e47-b2a0-f2df0a6c204f"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Half Platter",
                             ImageUrl = "https://imagesrv.nandos.co.za/179x212//MW_IMAGES/f93c9cbe-5f94-4bb4-a937-811c28bd88df",
@@ -1040,7 +1040,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("1872c945-39f5-4493-93de-79cdf6ec83d4"),
+                            MenuItemId = new Guid("7ffd840c-320a-4df3-a525-cbf11a18cea4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 Pulled Chicken Wraps (cut into 6), 3 Chicken Wraps (cut into 6), 2 Sharing Wedges, 16 Winglets, 2 Flame-grilled Mielies cut into 3 (6 portions). Includes 1 PERinaise dip and 1 Creamy dip. All platters serve 6-8 people.",
                             ImageUrl = "https://imagesrv.nandos.co.za/179x212//MW_IMAGES/ccc05d6a-734b-4fec-bbc7-50a7da7ad2da",
@@ -1050,7 +1050,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("1ee39270-cb79-475f-865b-89c67479291f"),
+                            MenuItemId = new Guid("c14de0f4-6942-43bc-8922-b0d51ead81cc"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "One and a 1/2 full chickens ( cut into 12), 2 Flame-grilled Mielies cut into 3 (6 portions), 4 Kids Burgers, 2 Sharing Wedges. Includes 1 PERinaise dip and 1 Creamy dip. All platters serve 6-8 people.",
                             ImageUrl = "https://imagesrv.nandos.co.za/179x215//MW_IMAGES/5182f543-741a-4317-a731-e8098a228c37",
@@ -1060,7 +1060,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("86ca2c0f-e218-4a49-844c-5eb4bdab0cbe"),
+                            MenuItemId = new Guid("8713d4ea-17f6-44db-8cc8-cb559ebe44a5"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Two full chickens (cut into 16), 16 Winglets, 2 Flame-grilled Mielies cut into 3 (6 portions), 2 Sharing Wedges. Includes 1 PERinaise dip and 1 Creamy dip. All platters serve 6-8 people.",
                             ImageUrl = "https://imagesrv.nandos.co.za/179x215//MW_IMAGES/fa60cb07-3c21-4718-8f02-cb91fd83319b",
@@ -1070,7 +1070,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("fb6cd346-1961-4d46-ba7d-f2ab17068a1f"),
+                            MenuItemId = new Guid("b28ccabb-38b6-4103-8d4c-77d7a225c523"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Veg Burgers, 2 Halloumi & Roast Veg Wraps, 2 Halloumi & Roast Veg Pitas, 2 Sharing Wedges, 4 Flame-grilled Mielies cut into 3 (12 portions). Includes 1 PERinaise dip and 1 Creamy dip. All platters serve 6-8 people.",
                             ImageUrl = "https://imagesrv.nandos.co.za/179x215//MW_IMAGES/3b7bc5aa-eb6c-4f3b-a289-ae9669f410dd",
@@ -1090,7 +1090,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("f99fd509-838c-4df3-b5ea-a14dd46f3e5e"),
+                            MenuItemId = new Guid("5626e3be-8c8b-4bc3-8711-6df435dc52de"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "15 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs & spices.",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/WKTb7n2vvpdYR1v8mvXX0/4d01e6a6cf892c116f2e82bdd4b64b6a/66752_-_E-Commerce_15_pc_Bucket_1200x900.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1100,7 +1100,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("dc617cb3-90c4-4c55-8028-2ef63665f8c7"),
+                            MenuItemId = new Guid("cae83128-6f19-4f51-8197-9ea231718839"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "9 Pieces of juicy Original Recipe chicken, seasoned with the 11 secret herbs and spices of Original Recipe® chicken, marinated and cooked to perfection.",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/2ZE6o3XzzI7YzGsVVT4ubY/e95c55d0c1b050b91a2b070a5ad1b32e/9_piece_bucket.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1110,7 +1110,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("414522da-9526-4c38-8806-a12dfdf77845"),
+                            MenuItemId = new Guid("3beca58c-e91a-4206-82b2-ae6df0cca9d5"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The new Burger standard…Boxed! The new Colonel burger, 1 piece of original recipe chicken, regular mash & gravy, chips & a buddy no sugar drink.",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/31yPC9ryh5KT1pOdwEOOzG/d1e2df6fc99eaf513f84b63f7d475f58/65129_kfc_-_FLBM_cheese_buddy_1200x900.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1120,7 +1120,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("199b4c71-52e8-4575-9e6f-895878e6601b"),
+                            MenuItemId = new Guid("41c7baec-8e3d-44c3-92fc-386ca080e3f2"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The new Burger standard…Boxed! The Crispy Zinger burger, 1 piece of original recipe chicken, regular mash & gravy, chips & Buddy no sugar.",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/3spYrESfEqEyv4TaIwhQnZ/e315445416a59f4ba60acf90090482dd/62279_WickedZinger_SF_-_1200x900.png?h=600&w=800&fm=webp&fit=fill",
@@ -1130,7 +1130,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("2fa8c10c-9a63-4407-b12e-47cb5ac42bc0"),
+                            MenuItemId = new Guid("a9907044-29fb-4d23-a723-88aa616b53d5"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 Nuggets, 1 Crunch Burger, 1 Small Chips and a Buddy Drink",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/1L5C3sZ1MmaHtuQLewHqYa/5e4ecba1d83ade38d554eba1a7431551/ABC2120-nugget_box_buddy_1.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1140,7 +1140,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("d131cf42-c69c-4699-a78e-b8b32ce45252"),
+                            MenuItemId = new Guid("2fdb9bce-c38c-4cf3-a6bd-90b37fd1ddf8"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Crunch Burger, 1 Piece of Original Recipe Chicken, 2 Zinger Wings, Small Chips & Buddy Drink",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/2tpR61h0KxupmA8U024fwu/55f538f6ae4384b9bbdf598435d6ea53/ABC1696-all_star_box_buddy.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1150,7 +1150,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("74bd55b2-2c66-46ad-94a3-21313c0fd2c3"),
+                            MenuItemId = new Guid("5374022e-eaec-473c-a4fb-67c379823c69"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wrapsta, 1 Piece of Original Recipe Chicken, Small Chips & Buddy Drink",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/2snvT5LNlzizE6TGQ9KN4F/3f5c8ebf26502ad1bdf5a1cc456ccfc0/ABC1723-wrapsta_box_buddy.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1160,7 +1160,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("b1b05ac1-13c3-4cd4-abf5-3b1c4d3677c5"),
+                            MenuItemId = new Guid("bb3d3b08-8d9a-4bff-a8ca-13fc581215b6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Get yourself a Streetwise 1, with a Buddy no sugar free drink",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/3QpxFh5qLJj5GT8dEMW3iZ/3acbea341f4c8d3162163373ff8ed48f/COM2029-streetwise_bucket_for_1.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1170,7 +1170,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("2b8ce430-c361-4eb6-a29c-a5369223c06e"),
+                            MenuItemId = new Guid("f430c03c-68bb-425a-88b3-e80ba2e4d209"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy a delicious Crunch Burger an orginal receipe chicken piece with small chips and a buddy no sugar drink",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/3QpxFh5qLJj5GT8dEMW3iZ/3acbea341f4c8d3162163373ff8ed48f/COM2029-streetwise_bucket_for_1.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1180,7 +1180,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("63d56ad9-81a0-4186-80ef-683a7a82cb95"),
+                            MenuItemId = new Guid("b1b6476f-d489-40b6-8f64-e955603c16db"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Get yourself a Streetwise 5, with 2 Buddy No Sugar",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/2uwM3hjbse4hzaZv6d5peO/576343077547dc714bf02883a79589f6/ICM1009-streetwise_5_chips.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1190,7 +1190,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a44fda2f-840f-4906-b5f7-10a78a8aa0a9"),
+                            MenuItemId = new Guid("f532c172-d914-4e2d-a040-3af58eefd55d"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "5 Pieces of Original Recipe chicken cooked to golden perfection and a large portion of chips or coleslaw.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -1199,7 +1199,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("c6c126c0-7f50-4bec-9953-0ca69762a3e7"),
+                            MenuItemId = new Guid("a3165ea9-a70c-41ba-a847-5cc93a377850"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 Pieces of original recipe chicken, a portion of small chips.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -1208,7 +1208,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("d2e4909b-04a6-41e2-b8a7-5a0d085f5772"),
+                            MenuItemId = new Guid("185526c5-f8f7-45a5-b1cf-4a6a7a2a1b42"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "3 Pieces of Original Recipe Chicken with a portion of pap and gravy",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -1217,7 +1217,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("5c4cefee-6b6b-499a-a0f4-1ce94df7f2e4"),
+                            MenuItemId = new Guid("e2cbf650-8c97-48df-99df-85a5e3a6e50e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Pieces of Original Recipe Chicken and Small Chips or Coleslaw.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -1226,7 +1226,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("4f54fa90-2dd3-47e6-8aae-d8598fcedfab"),
+                            MenuItemId = new Guid("5cdb9724-211c-43f4-aeaa-417a8ab56cb9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy a piece of original recipe chicken, 2 zinger wings and a small scrumptious chips.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -1235,7 +1235,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("4945b004-bd72-4663-ac13-6c3fc23b1cba"),
+                            MenuItemId = new Guid("000caff1-b740-43ca-8c9f-121e88c3bc7f"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "2 Pieces of original recipe chicken cooked to golden perfection and a regular portion of pap & small gravy.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a3"),
@@ -1244,7 +1244,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("f2315c7c-8dfc-4f33-8318-3892fa280d0e"),
+                            MenuItemId = new Guid("3a7e839f-4d6a-4a1a-85fb-35addc23ccf1"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1253,7 +1253,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("b314fda6-e7d0-44d4-b421-c5db4bbf84fa"),
+                            MenuItemId = new Guid("73bcb565-0dd2-4622-ab90-cfbf49db1703"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "An icy sippable treat with Oreo bitz, and creamy soft-serve.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1262,7 +1262,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("7daac64f-76e5-4ff4-aef2-47bb84ec3bd5"),
+                            MenuItemId = new Guid("c313ad68-5211-4a39-bfdd-c3bb1eadd286"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "An icy sippable treat with Berry bitz, and creamy soft-serve.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1271,7 +1271,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("c7a73b8e-e6ab-4a77-b3f5-ce5463d26372"),
+                            MenuItemId = new Guid("868a345e-7671-4279-9427-65bd4535ec72"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Milk shake milk shake shake shake",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1280,7 +1280,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("7c3bd244-1678-4688-a747-93b0c99bc8aa"),
+                            MenuItemId = new Guid("0a988e10-dd46-4400-8965-01e2ea043902"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Chocolate Milkshake",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1289,7 +1289,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("8e600125-240a-4532-94dc-18af742d931c"),
+                            MenuItemId = new Guid("2abdf6f0-dca8-40cd-8eba-b16501466333"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coke 1.5 Litre Bottle",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1298,7 +1298,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("21967ff4-3124-43b7-b7e7-0664c8bf6558"),
+                            MenuItemId = new Guid("4d160a0d-fbfb-4647-bb49-aa49684633e4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coke No Sugar 1.5 Litre",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1307,7 +1307,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("bf0cae70-d88a-4a78-bb33-a27044dee2d8"),
+                            MenuItemId = new Guid("a94c8475-55c5-4245-8c2c-d629aacf2e6b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coke No Sugar Buddy 440ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1316,7 +1316,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("b7dcca72-d148-4db6-8682-90b913479aa9"),
+                            MenuItemId = new Guid("87b856b3-e0bf-40d2-86be-68eccefb5806"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Coca-Cola Sugar Buddy 440ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1325,7 +1325,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("3902cb70-ea11-4238-af7d-5af7e9d0109c"),
+                            MenuItemId = new Guid("3bdd47d8-6a01-4af3-9ef5-2189692986ab"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fanta Sugar Buddy 440ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1334,7 +1334,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("1754fdde-0ffa-4e58-a5f3-a3d2ac94822e"),
+                            MenuItemId = new Guid("9044fe46-cb01-4a6f-9d43-40a69de8f388"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sprite Sugar Buddy 440ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1343,7 +1343,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a6801292-ff4f-455b-9740-727bee228bf7"),
+                            MenuItemId = new Guid("896eb24e-0eff-4325-ba16-f0d8fd6d1759"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bonaqua Still Spring Water 500ml",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a4"),
@@ -1352,7 +1352,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("8117149b-1831-486f-bcf5-03c135170656"),
+                            MenuItemId = new Guid("9a34a920-50a6-475e-8f01-7ab128ac4ec3"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10pc Chicken, 2 snack burgers, 4 Zinger Wings, 2 Reg Coleslaw, 2 Reg chips",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -1361,7 +1361,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a80ca283-d6a8-4eda-92ae-68392021cd04"),
+                            MenuItemId = new Guid("25ef12e9-e3c2-4686-bbd2-220c77057c95"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "8pc Chicken, 2 snack burgers, 4 Zinger Wings, 2 Reg Coleslaw, 2 Reg chips",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -1370,7 +1370,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("b4f8b75a-943c-4ffc-a5aa-30e267fce132"),
+                            MenuItemId = new Guid("350b8f99-a41c-4b03-94bc-46188c9e36e9"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "24 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -1379,7 +1379,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("d97052d7-98df-4072-a854-3a871379350b"),
+                            MenuItemId = new Guid("c3aab55c-5ab6-45fc-9cb9-9ba9f3cf02c0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy 6 pieces of delicious original recipe chicken, 1 large chips, 1 regular coleslaw plus 2 regular mash and gravies.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -1388,7 +1388,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("703e97ba-a67b-4335-bbeb-5082ae67d9ea"),
+                            MenuItemId = new Guid("cff4c488-336d-4a87-90fa-516ebe458973"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy 4 pieces of original recipe chicken, 2 small chips, 1 small pops & 2 buddy no sugar drinks.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a5"),
@@ -1397,7 +1397,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("8b6fddd5-ba04-4f58-8ef9-51b1157f3dd3"),
+                            MenuItemId = new Guid("7cd36f88-9553-4ae6-bcff-43d4c2ca00d4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Enjoy KFC`s new Jalapeno loaded fries with brand new Hot * spicy sauce",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1406,7 +1406,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("7098beba-a697-4d77-a1af-2a3a307097e6"),
+                            MenuItemId = new Guid("33f75396-8ca1-4329-8325-fb1bbc79c019"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "24 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1415,7 +1415,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a407139a-0061-44a0-8a5f-7daa9d78b256"),
+                            MenuItemId = new Guid("9555f82c-6921-49e2-8931-e66291c8f2ed"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10 KFC famous Zinger Wings dunked in a delicious honey, ginger and soy sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1424,7 +1424,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("99bcb380-1a33-4e34-82aa-9abe852b87da"),
+                            MenuItemId = new Guid("82db9376-ad09-413c-8b7b-f706c025d101"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "10 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1433,7 +1433,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("bf5ad1a3-29a1-446a-8745-40a6adda1966"),
+                            MenuItemId = new Guid("144afa99-78d2-4386-93a2-e1d825838583"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken, tender on the inside and crunchy on the outside.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1442,7 +1442,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("6a7a1f31-f9d3-46d8-8f0f-fe306f8ed4bc"),
+                            MenuItemId = new Guid("72d76cad-800f-4f6d-9c29-74e9231bd828"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken that are tender on the inside and crunchy on the outside. Served with a generous sprinkle of fruit chutney flavour.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1451,7 +1451,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("c89c8425-6b96-4a46-9922-e9619eeea33b"),
+                            MenuItemId = new Guid("35f7084a-c08b-4db3-8c8d-9841c753d68c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 KFC famous Zinger Wings dunked in a delicious honey, ginger and soy sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1460,7 +1460,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("11652272-09e2-4b97-896f-8270a783c5cd"),
+                            MenuItemId = new Guid("75926d8f-48b8-4403-8afe-0bc3dbdef7bb"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "4 Succulent winglets breaded in our hot Zinger breading to give you the delicious hot flavour you love, cooked to crispy-brown perfection.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1469,7 +1469,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("16a84715-ef11-4073-97e4-20b2e4f9ede6"),
+                            MenuItemId = new Guid("8f7beac2-86f6-47d9-a7ec-e6d77139662b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "9 pieces of crispy, delicious golden brown Nuggets, paired with 1 delicious Colonel dipping sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1478,7 +1478,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("39cffabf-9158-48a1-addf-e65281583699"),
+                            MenuItemId = new Guid("440dcaca-12c5-42ce-850f-846aec369025"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken dunked in KFC’s famous honey, ginger and soy sauce!",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1487,7 +1487,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("50a9b560-40df-4cf3-bbe4-a95b02266617"),
+                            MenuItemId = new Guid("ffd360ff-d732-40f5-8918-80e73e63f951"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "6 pieces of crispy, delicious golden brown Nuggets, paired with 1 delicious Colonel dipping sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1496,7 +1496,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a49bf7d9-816f-4e3e-bd4f-0f09a7f96ab9"),
+                            MenuItemId = new Guid("16d3384e-fc27-4744-bccd-fcef44f34c62"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bite-sized pieces of chicken that are tender on the inside and crunchy on the outside.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1505,7 +1505,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("f3338911-63ad-4913-b204-4bae4f2f855d"),
+                            MenuItemId = new Guid("c108f937-e0bd-4b9b-be3e-fc67f68ab330"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A delicious chicken patty served with shredded lettuce & Colonel dressing on a snack bun.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a6"),
@@ -1514,7 +1514,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("d6d39232-9a30-4131-8abd-ac79afa9bbbd"),
+                            MenuItemId = new Guid("4310749e-bcd4-4ac9-9c7e-81827edf7b9c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Try the new standard! The New Colonel burger, Our trademark real chicken fillet; A fresh Brioche bun, Creamy Colonel sauce and cheese on a fresh bed of lettuce & succulent tomatoes",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1523,7 +1523,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a9371c3d-c99b-4d11-98e4-212d716e6670"),
+                            MenuItemId = new Guid("eb0b5b2c-2caa-4773-8474-bc7afa1b1234"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Try the new standard! The New Crispy Zinger burger, Our trademark real chicken fillet; A fresh Brioche bun, New Hot & Spicy sauce and cheese on a fresh bed of lettuce & succulent tomatoes",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1532,7 +1532,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("957c13a2-4f5e-4a13-ac52-0fcf3c8dc789"),
+                            MenuItemId = new Guid("08229f99-2e65-42f0-ac67-4db9d90415eb"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The new standard in burgers! 2 Spicy, crunchy mini fillets with 2 cheese slices, lettuce & tomato covered in tangy dressing on a burger bun",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1541,7 +1541,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("e214a8a8-2c9f-4833-8af0-ebe5255fbb31"),
+                            MenuItemId = new Guid("a9dc10c2-2d45-4f5d-8dc6-1713c8afc9b2"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around a delicious fillet zinger recipe - a slice of cheese, hash brown, crisp lettuce, fresh tomato and a dash of Colonel dressing.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1550,7 +1550,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("0e5f5f81-34f6-4c9f-9bd2-786e4cc79e05"),
+                            MenuItemId = new Guid("c32e5bc2-ad1c-4aad-bd07-5582284f336f"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around a delicious fillet original recipe - a slice of cheese, hash brown, crisp lettuce, fresh tomato and a dash of Colonel dressing.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1559,7 +1559,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("b0a3d9ee-30bb-43af-a61a-6803be6ec70f"),
+                            MenuItemId = new Guid("48569339-0d8e-40f8-a7a6-3b92aba7433e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around 2 deliciously crispy chicken strips, shredded crisp lettuce, sliced tomato and a dash of Colonel dressing.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1568,7 +1568,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("ad531713-5b6b-401f-8258-2d70670a44e4"),
+                            MenuItemId = new Guid("81cd7903-6b6c-402e-89c4-aef5a487c4f6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A warm tortilla wrapped around 2 deliciously crispy new and improved chicken strips, shredded crisp lettuce, sliced tomato, topped with Colonel dressing and sweet chilli sauce.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1577,7 +1577,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("322a7b79-b099-454f-85e4-f1db6ed8a36b"),
+                            MenuItemId = new Guid("57539c74-a662-416b-ad1f-3f1f6e87623e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The game changer is here, and with a delicious spicy crunch fillet, tomato, lettuce and cheese with tangy dressing all wrapped up in a mini tortilla and grilled to perfection, meal time will never be the same again.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1586,7 +1586,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("8633e504-dedb-42da-a9d7-69cebfdbc75c"),
+                            MenuItemId = new Guid("e0a31a3f-7217-4370-a3c1-d07a1789d6a3"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A spicy, crunchy mini fillet with a slice of cheese and lettuce, covered in tangy dressing on a snack bun.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1595,7 +1595,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("c606f77e-fcd1-4b6c-8fcb-3fd97ba6fb05"),
+                            MenuItemId = new Guid("f3902e0d-224d-45a9-9a2f-9951b21d56bd"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A delicious chicken patty served with shredded lettuce & Colonel dressing on a snack bun.",
                             MenuId = new Guid("2013179f-1037-173a-a4d5-a6571b43e6a7"),
@@ -1604,7 +1604,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("2a8cbba6-80dd-437c-8a54-74a20fc3f0f6"),
+                            MenuItemId = new Guid("8ba32bc0-0c10-4b42-be64-6db7275b6089"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Extra Hot & Spicy Zinger sauce on the side",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/bEZLbUGmprwC7wW3i0GsS/73b63ef3ac73d2e805688b74cdbc31c0/Hot_n_Spicy_sauce_-_1200x900.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1614,7 +1614,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("ebbba262-ad19-42fa-83d6-d8dbbf922670"),
+                            MenuItemId = new Guid("7b6987e1-fbd4-40b9-bf23-04fa8863ded5"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/5Zt1jvrey6zim41HKaarJr/6c4e0a08f94a83f04ad98dc130ce67e1/CHI1002-lrg_chips.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1624,7 +1624,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("eb558b90-792d-429c-8b88-1f13fc3ceeed"),
+                            MenuItemId = new Guid("617640c8-a71d-441c-8e1f-61670b2b4990"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/23emjPvgiS9FE3xT6UiBa/9a5d9ceffa02d18a26679472e7f62cfc/CHI1001-reg_chips.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1634,7 +1634,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("793d34bc-b98c-4561-a859-99502b50e94e"),
+                            MenuItemId = new Guid("b47be2fb-c975-4129-894f-48562de99efe"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "1 Piece Chicken",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/2XhP71I12p5tncjyX1P81w/d94f9543674f4728165031f42dcb2653/ALA1001-1pc_cob.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1644,7 +1644,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("7490770e-811b-461f-9d71-af6280b615db"),
+                            MenuItemId = new Guid("663d76bd-b0d3-46e8-855a-68003db7a8bb"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of creamy mash and our delicious gravy.",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/16hT15F1AVhciJyE32xbGE/f83f8d8d906a2593420739e995086bc4/MAG1003-reg_mash___gravy.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1654,7 +1654,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("e44aa748-45a5-45fd-a47f-e5c65752e342"),
+                            MenuItemId = new Guid("132cc373-3414-4793-8216-7bd1b94dbb05"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of freshly prepared cabbage, onions and carrots in a delicious dressing",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/1LvCxHqjAFXs2XFgAbQpnG/44719dee762ff4f7106e33d8c4f300f9/ABC2225-reg_coleslaw.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1664,7 +1664,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("a7b5ed20-2893-481a-b98b-b66944eef7f3"),
+                            MenuItemId = new Guid("e1da75fb-9677-494e-82f2-40e984f45c9e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of creamy mash and our delicious gravy.",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/16hT15F1AVhciJyE32xbGE/f83f8d8d906a2593420739e995086bc4/MAG1003-reg_mash___gravy.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1674,7 +1674,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("d91c84eb-c21e-4252-941b-28a7ad5d59eb"),
+                            MenuItemId = new Guid("c0822b42-a5aa-4487-be28-68e3c2a1faef"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A portion of chips, crispy on the outside, soft and fluffy on the inside.",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/4J7RauzcyD6KkQu9Qhpp28/da6827d46db9161d26ae26c874be5123/ABC1247-sml_chips.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1684,7 +1684,7 @@ namespace Gaolos.Persistence.Migrations
                         },
                         new
                         {
-                            MenuItemId = new Guid("db25da73-e0dd-4713-91f0-7fc5fbc40082"),
+                            MenuItemId = new Guid("e3a642ba-4ef3-4adf-93b2-83816c3fff53"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Oven baked, fresh mini loaf",
                             ImageUrl = "https://images.ctfassets.net/0p42pznmbeec/2X0ukPSNX6j4kHDE2o2mGa/e910e8f156eb5ca37642fb19944603a0/MIS1001-1_mini_loaf.jpg?h=600&w=800&fm=webp&fit=fill",
@@ -1748,6 +1748,10 @@ namespace Gaolos.Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderNumber")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("OrderPaid")

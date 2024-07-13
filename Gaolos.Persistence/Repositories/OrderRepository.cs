@@ -32,6 +32,18 @@ namespace Gaolos.Persistence.Repositories
             await _dbContext.Orders.AddAsync(order);
         }
 
+        public async Task<Order> GetOrder(Guid orderId)
+        {
+            if(orderId == Guid.Empty) throw new ArgumentNullException(nameof(orderId));
+
+#pragma warning disable CS8603 // Possible null reference return.
+            return await _dbContext.Orders
+                .Include(x => x.OrderLines)
+                .ThenInclude(x => x.MenuItem)
+                .FirstOrDefaultAsync(x => x.OrderId == orderId);
+#pragma warning restore CS8603 // Possible null reference return.
+        }
+
         public async Task<Order> GetOrderById(Guid userId, Guid orderId)
         {
             if (orderId == Guid.Empty) throw new ArgumentNullException(nameof(orderId));
@@ -64,10 +76,22 @@ namespace Gaolos.Persistence.Repositories
                 collection = collection.Where(x => x.Name.Contains(searchQuery));
             }
 
-            if(resourceParameters.OrderStatus.HasValue)
+            if (resourceParameters.OrderStatus.HasValue)
             {
                 collection = collection
                     .Where(x => x.OrderStatus == resourceParameters.OrderStatus);
+            }
+            if (resourceParameters.Track.HasValue)
+            {
+                if (resourceParameters.Track.Value)
+                {
+                    collection = collection
+                        .Where(x =>
+                           x.OrderStatus == OrderStatus.Pending
+                        || x.OrderStatus == OrderStatus.Processing 
+                        || x.OrderStatus == OrderStatus.Collected);
+
+                }
             }
 
             if (!string.IsNullOrWhiteSpace(resourceParameters.OrderBy))
@@ -78,17 +102,13 @@ namespace Gaolos.Persistence.Repositories
                 collection = collection
                     .ApplySort(resourceParameters.OrderBy, orderPropertyMapping);
             }
-
+      
             return await PagedList<Order>
                 .CreateAsync(collection,
                 resourceParameters.PageNumber,
                 resourceParameters.PageSize);
 
-            //if(userId == Guid.Empty) throw new ArgumentNullException(nameof(userId));
-            //return await _dbContext.Orders
-            //    .Where(x => x.UserId == userId)
-            //    .Include(x => x.OrderLines)
-            //    .ToListAsync();
+   
         }
 
         public async Task<bool> SaveAsync()

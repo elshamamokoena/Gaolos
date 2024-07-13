@@ -14,6 +14,7 @@ namespace Gaolos.Application.Contracts.Persistence
         Task<PagedList<Order>> GetOrdersForUser(Guid userId, OrderResourceParameters resourceParameters);
         Task AddOrder(Order order);
         Task<Order> GetOrderById(Guid userId, Guid orderId);
+        Task<Order> GetOrder(Guid orderId);
         Task UpdateOrderPaymentStatus(Guid orderId, bool paid);
         Task<bool> SaveAsync();
     }

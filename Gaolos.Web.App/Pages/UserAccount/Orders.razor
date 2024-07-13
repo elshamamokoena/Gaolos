@@ -1,7 +1,7 @@
 ﻿   @page "/account/orders"
  
 
-<OrderDetailsModal Order="_selectedOrder" />
+<OrderDetailsModal OrderId="_selectedOrder" OnClose="CloseOrderDetails" />
 
 <!-- Page Title-->
 <div class="page-title-overlap bg-dark pt-4">
@@ -25,7 +25,7 @@
    <div class="container pb-5 mb-2 mb-md-4">
         <div class="row">
 
-        <SideBar OrderCount ="ordersList.Count()"/>
+        <SideBar />
 
           <!-- Content  -->
           <section class="col-lg-8">
@@ -64,9 +64,9 @@
                         {
                             
                         <tr>
-                    <td class="py-3"><a class="nav-link-style fw-medium fs-sm" @onclick="async ()=> await SelectOrder(order)" href="#order-details" data-bs-toggle="modal">@order.OrderId</a></td>
+                    <td class="py-3"><a class="nav-link-style fw-medium fs-sm" @onclick="()=> SelectOrder(order)" href="#order-details" data-bs-toggle="modal">@order.OrderNumber</a></td>
                     <td class="py-3">@order.OrderPlaced</td>
-                    <td class="py-3"><span class="badge bg-info m-0">@order.OrderStatus</span></td>
+                    <OrderStatusPill Status="@order.OrderStatus"/>
                     <td class="py-3">R @order.OrderTotal</td>
                   </tr>
                         }

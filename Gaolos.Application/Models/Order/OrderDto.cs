@@ -11,7 +11,7 @@ namespace Gaolos.Application.Models.Order
     {
         public Guid OrderId { get; set; }
         public decimal OrderTotal { get; set; }
-        public DateTime OrderPlaced { get; set; }
+        public string OrderPlaced { get; set; }
         public OrderStatus OrderStatus { get; set; }
 
     }

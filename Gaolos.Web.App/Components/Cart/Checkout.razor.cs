@@ -29,6 +29,7 @@ namespace Gaolos.Web.App.Components.Cart
         private CheckoutViewModel  Order { get; set; }
             = new CheckoutViewModel();
         private bool _isReady = false;
+        private bool _showDeliveryDetails = false;
 
         protected override async Task OnInitializedAsync()
         {
@@ -36,7 +37,6 @@ namespace Gaolos.Web.App.Components.Cart
             if (LoggedInUser != null)
             {
                 _isReady = await FetchData();
-                Order = GetCheckoutData();
 
             }
             else
@@ -65,10 +65,8 @@ namespace Gaolos.Web.App.Components.Cart
                 Address = await AccountDataService.GetPrimaryDeliveryAddress();
             }));
 
-            //tasks.Add(Task.Run(() =>
-            //{
-            //    Order = GetCheckoutData();
-            //}));
+
+            _showDeliveryDetails = Address != null && _selectedCard!=null;
 
             var t = Task.WhenAll(tasks);
             try
@@ -76,15 +74,18 @@ namespace Gaolos.Web.App.Components.Cart
                 await t.WaitAsync(CancellationToken.None);
             }catch 
             { }
+
             if (t.Status == TaskStatus.RanToCompletion)
+            {
+                return true;
+            }
+            if (t.Status == TaskStatus.Faulted)
             {
                 return true;
             }
             return false;
       
         }
-
-  
 
         private async Task PlaceOrder()
         {
@@ -94,8 +95,8 @@ namespace Gaolos.Web.App.Components.Cart
             if (response.Success)
             {
                 ApplicationState.NumberOfItems = 0;
-                var orderId = response.Data.OrderId;
-                NavigationManager.NavigateTo($"/order-confirmation/{orderId}",true);
+                var order = response.Data;
+                NavigationManager.NavigateTo($"/order-confirmation?orderid={order.OrderId}&ordernumber={order.OrderNumber}",true);
             }else
             {
                 Console.WriteLine("Errors: "+response.ValidationErrors);
@@ -108,25 +109,7 @@ namespace Gaolos.Web.App.Components.Cart
             _selectedCard = paymentMethod;
         }
 
-        private CheckoutViewModel GetCheckoutData()
-        {
-            return new CheckoutViewModel
-            {
-                UserId = LoggedInUser?.UserId,
-                Address = Address.ToString(),
-                Name = LoggedInUser?.Name + " " + LoggedInUser.Surname,
-                Phone = "+27679399796",
-                Email = LoggedInUser.Email,
-                ZipCode = Address.ZipCode,
-                City = Address.City,
-
-                CardName = _selectedCard.CardHolderName,
-                CardNumber = _selectedCard.CardNumber,
-                CardExpiration = _selectedCard.Expiry,
-                CvvCode = _selectedCard.CVV
-
-            };
-        }
+   
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Gaolos.Application.Features.Orders.Queries.GetOrderForUser;
+﻿using Gaolos.Application.Features.Orders.Queries.GetOrderAnonymously;
+using Gaolos.Application.Features.Orders.Queries.GetOrderForUser;
 using Gaolos.Application.Features.Orders.Queries.GetOrdersForUser;
 using Gaolos.Application.ResourceParameters;
 using MediatR;
@@ -15,6 +16,13 @@ namespace GloboTicket.TicketManagement.Api.Controllers
         public OrderController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet("/api/orders/{orderId}",Name ="GetOrderAnonymously")]
+        public async Task<ActionResult<AnonymousOrder>> GetOrderAnonymously(Guid orderId)
+        {
+            var dtos = await _mediator.Send(new GetOrderAnonymouslyQuery { OrderId = orderId });
+            return Ok(dtos);
         }
 
         [HttpGet(Name = "GetOrdersForUserAsync")]

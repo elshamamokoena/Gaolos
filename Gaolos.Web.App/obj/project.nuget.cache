@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cQpRjAlYdjk=",
+  "dgSpecHash": "T/GnNDQlHRk=",
   "success": true,
   "projectFilePath": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\Gaolos.Web.App.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.2\\microsoft.aspnetcore.components.webassembly.8.0.2.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\8.0.2\\microsoft.aspnetcore.components.webassembly.devserver.8.0.2.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.2\\microsoft.aspnetcore.metadata.8.0.2.nupkg.sha512",
+    "C:\\Users\\elsha\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\8.0.7\\microsoft.aspnetcore.webutilities.8.0.7.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
@@ -37,6 +38,7 @@
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.jsinterop\\8.0.2\\microsoft.jsinterop.8.0.2.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.jsinterop.webassembly\\8.0.2\\microsoft.jsinterop.webassembly.8.0.2.nupkg.sha512",
+    "C:\\Users\\elsha\\.nuget\\packages\\microsoft.net.http.headers\\8.0.7\\microsoft.net.http.headers.8.0.7.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.6\\microsoft.net.illink.tasks.8.0.6.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.5\\microsoft.net.sdk.webassembly.pack.8.0.5.nupkg.sha512",
     "C:\\Users\\elsha\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",

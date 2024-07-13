@@ -25,6 +25,7 @@ namespace Gaolos.Web.App.Services
         public async Task<List<MenuViewModel>> GetMenusForRestaurant(Guid restaurantId)
         {
             var menus = await _client.GetMenusForRestaurantAsync(restaurantId);
+            
             return _mapper.Map<List<MenuViewModel>>(menus);
 
         }

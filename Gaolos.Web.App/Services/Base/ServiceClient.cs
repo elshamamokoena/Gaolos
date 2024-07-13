@@ -283,12 +283,12 @@ namespace Gaolos.Web.App.Services
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-   //     System.Threading.Tasks.Task<TwoFactorResponse> 2faAsync(TwoFactorRequest body);
+        //System.Threading.Tasks.Task<TwoFactorResponse> 2faAsync(TwoFactorRequest body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-   //     System.Threading.Tasks.Task<TwoFactorResponse> 2faAsync(TwoFactorRequest body, System.Threading.CancellationToken cancellationToken);
+        //System.Threading.Tasks.Task<TwoFactorResponse> 2faAsync(TwoFactorRequest body, System.Threading.CancellationToken cancellationToken);
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
@@ -346,12 +346,21 @@ namespace Gaolos.Web.App.Services
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<PagedOrdersVm> GetOrdersForUserAsync(System.Guid userId, string orderBy, OrderStatus? orderStatus, string searchQuery, int? pageNumber, int? pageSize, string fields);
+        System.Threading.Tasks.Task<AnonymousOrder> GetOrderAnonymouslyAsync(System.Guid orderId);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<PagedOrdersVm> GetOrdersForUserAsync(System.Guid userId, string orderBy, OrderStatus? orderStatus, string searchQuery, int? pageNumber, int? pageSize, string fields, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AnonymousOrder> GetOrderAnonymouslyAsync(System.Guid orderId, System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<PagedOrdersVm> GetOrdersForUserAsync(System.Guid userId, string orderBy, OrderStatus? orderStatus, bool? track, string searchQuery, int? pageNumber, int? pageSize, string fields);
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<PagedOrdersVm> GetOrdersForUserAsync(System.Guid userId, string orderBy, OrderStatus? orderStatus, bool? track, string searchQuery, int? pageNumber, int? pageSize, string fields, System.Threading.CancellationToken cancellationToken);
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
@@ -3817,15 +3826,97 @@ namespace Gaolos.Web.App.Services
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<PagedOrdersVm> GetOrdersForUserAsync(System.Guid userId, string orderBy, OrderStatus? orderStatus, string searchQuery, int? pageNumber, int? pageSize, string fields)
+        public virtual System.Threading.Tasks.Task<AnonymousOrder> GetOrderAnonymouslyAsync(System.Guid orderId)
         {
-            return GetOrdersForUserAsync(userId, orderBy, orderStatus, searchQuery, pageNumber, pageSize, fields, System.Threading.CancellationToken.None);
+            return GetOrderAnonymouslyAsync(orderId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<PagedOrdersVm> GetOrdersForUserAsync(System.Guid userId, string orderBy, OrderStatus? orderStatus, string searchQuery, int? pageNumber, int? pageSize, string fields, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<AnonymousOrder> GetOrderAnonymouslyAsync(System.Guid orderId, System.Threading.CancellationToken cancellationToken)
+        {
+            if (orderId == null)
+                throw new System.ArgumentNullException("orderId");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    request_.Method = new System.Net.Http.HttpMethod("GET");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    var urlBuilder_ = new System.Text.StringBuilder();
+                
+                    // Operation Path: "api/orders/{orderId}"
+                    urlBuilder_.Append("api/orders/");
+                    urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(orderId, System.Globalization.CultureInfo.InvariantCulture)));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.IEnumerable<string>>();
+                        foreach (var item_ in response_.Headers)
+                            headers_[item_.Key] = item_.Value;
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<AnonymousOrder>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<PagedOrdersVm> GetOrdersForUserAsync(System.Guid userId, string orderBy, OrderStatus? orderStatus, bool? track, string searchQuery, int? pageNumber, int? pageSize, string fields)
+        {
+            return GetOrdersForUserAsync(userId, orderBy, orderStatus, track, searchQuery, pageNumber, pageSize, fields, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<PagedOrdersVm> GetOrdersForUserAsync(System.Guid userId, string orderBy, OrderStatus? orderStatus, bool? track, string searchQuery, int? pageNumber, int? pageSize, string fields, System.Threading.CancellationToken cancellationToken)
         {
             if (userId == null)
                 throw new System.ArgumentNullException("userId");
@@ -3853,6 +3944,10 @@ namespace Gaolos.Web.App.Services
                     if (orderStatus != null)
                     {
                         urlBuilder_.Append(System.Uri.EscapeDataString("OrderStatus")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(orderStatus, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
+                    }
+                    if (track != null)
+                    {
+                        urlBuilder_.Append(System.Uri.EscapeDataString("Track")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(track, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
                     }
                     if (searchQuery != null)
                     {
@@ -5095,6 +5190,33 @@ namespace Gaolos.Web.App.Services
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class AnonymousOrder
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("orderId")]
+        public System.Guid OrderId { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("orderNumber")]
+        public string OrderNumber { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("orderTotal")]
+        public int OrderTotal { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("orderPlaced")]
+        public string OrderPlaced { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("orderPaid")]
+        public bool OrderPaid { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("orderStatus")]
+        public string OrderStatus { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("orderLines")]
+        public System.Collections.Generic.ICollection<OrderLineDto> OrderLines { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class BasketLineForCreationDto
     {
 
@@ -5223,9 +5345,9 @@ namespace Gaolos.Web.App.Services
 
         [System.Text.Json.Serialization.JsonPropertyName("basketId")]
         public System.Guid BasketId { get; set; }
-        [System.Text.Json.Serialization.JsonPropertyName("comments")]
-        public string ? Comments { get; set; }
 
+        [System.Text.Json.Serialization.JsonPropertyName("comments")]
+        public string Comments { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("name")]
         public string Name { get; set; }
@@ -5315,7 +5437,7 @@ namespace Gaolos.Web.App.Services
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("userId")]
-        public System.Guid UserId { get; set; }
+        public System.Guid? UserId { get; set; }
 
     }
 
@@ -5493,9 +5615,9 @@ namespace Gaolos.Web.App.Services
 
         [System.Text.Json.Serialization.JsonPropertyName("isPrimary")]
         public bool IsPrimary { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("cardType")]
         public string CardType { get; set; }
-
 
     }
 
@@ -5506,6 +5628,9 @@ namespace Gaolos.Web.App.Services
         [System.Text.Json.Serialization.JsonPropertyName("orderId")]
         public System.Guid OrderId { get; set; }
 
+        [System.Text.Json.Serialization.JsonPropertyName("orderNumber")]
+        public string OrderNumber { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("userId")]
         public System.Guid UserId { get; set; }
 
@@ -5513,7 +5638,7 @@ namespace Gaolos.Web.App.Services
         public int OrderTotal { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("orderPlaced")]
-        public System.DateTime OrderPlaced { get; set; }
+        public string OrderPlaced { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("orderPaid")]
         public bool OrderPaid { get; set; }
@@ -5670,6 +5795,7 @@ namespace Gaolos.Web.App.Services
 
         [System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
         public string ImageUrl { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string Description { get; set; }
 
@@ -5682,6 +5808,9 @@ namespace Gaolos.Web.App.Services
         [System.Text.Json.Serialization.JsonPropertyName("orderId")]
         public System.Guid OrderId { get; set; }
 
+        [System.Text.Json.Serialization.JsonPropertyName("orderNumber")]
+        public string OrderNumber { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("userId")]
         public System.Guid UserId { get; set; }
 
@@ -5689,7 +5818,7 @@ namespace Gaolos.Web.App.Services
         public int OrderTotal { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("orderPlaced")]
-        public System.DateTime OrderPlaced { get; set; }
+        public string OrderPlaced { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("orderPaid")]
         public bool OrderPaid { get; set; }
@@ -5743,23 +5872,29 @@ namespace Gaolos.Web.App.Services
         [System.Text.Json.Serialization.JsonPropertyName("orderId")]
         public System.Guid OrderId { get; set; }
 
+        [System.Text.Json.Serialization.JsonPropertyName("orderNumber")]
+        public string OrderNumber { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("userId")]
         public System.Guid UserId { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("orderTotal")]
         public int OrderTotal { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("orderPlaced")]
-        public System.DateTime OrderPlaced { get; set; }
+        public string OrderPlaced { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("orderPaid")]
         public bool OrderPaid { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("orderLines")]
         public System.Collections.Generic.ICollection<OrderLineDto> OrderLines { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("comments")]
         public string Comments { get; set; }
-
 
     }
 
@@ -5907,9 +6042,9 @@ namespace Gaolos.Web.App.Services
 
         [System.Text.Json.Serialization.JsonPropertyName("isPrimary")]
         public bool IsPrimary { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("cardType")]
         public string CardType { get; set; }
-
 
     }
 
@@ -6009,6 +6144,7 @@ namespace Gaolos.Web.App.Services
 
         [System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
         public string ImageUrl { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("logoUrl")]
         public string LogoUrl { get; set; }
 

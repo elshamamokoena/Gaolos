@@ -1,0 +1,29 @@
+﻿
+@if(Status == "Pending")
+{
+    <td class="py-3"><span class="badge bg-warning m-0">Pending</span></td>
+}
+else if(Status == "Processing")
+{
+    <td class="py-3"><span class="badge bg-info m-0">Processing</span></td>
+}
+else if(Status == "Delivered")
+{
+    <td class="py-3"><span class="badge bg-success m-0">Delivered</span></td>
+}
+else if(Status == "Cancelled")
+{
+    <td class="py-3"><span class="badge bg-danger m-0">Canceled</span></td>
+}
+else if(Status == "Collected")
+{
+    <td class="py-3"><span class="badge bg-secondary m-0">Collected</span></td>
+}
+
+
+
+@code {
+    [Parameter]
+    public string Status { get; set; }
+
+}

@@ -32,6 +32,7 @@ namespace Gaolos.Web.App.Profiles
             CreateMap<OrderViewModel, OrderForUserVm>().ReverseMap();
             CreateMap<OrderViewModel, DetailedOrderForUserVm>().ReverseMap();
             CreateMap<OrderViewModel, OrderVm>().ReverseMap();
+            CreateMap<OrderViewModel, AnonymousOrder>().ReverseMap();
             CreateMap<PagedOrdersViewModel, PagedOrdersVm>().ReverseMap();
             CreateMap<CheckoutCommand, CheckoutViewModel>().ReverseMap();
             CreateMap<OrderLineViewModel, OrderLineDto>().ReverseMap();
