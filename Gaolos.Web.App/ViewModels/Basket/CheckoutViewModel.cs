@@ -18,10 +18,10 @@
         public Guid? UserId { get; set; }
 
         //payment information
-        public string CardNumber { get; set; } = "1234567891111213";
-        public string CardName { get; set; } = "Elhihi";
-        public string CardExpiration { get; set; } = "04/04";
-        public string CvvCode { get; set; } = "099";
+        public string CardNumber { get; set; }// = "1234567891111213";
+        public string CardName { get; set; } //= "Elhihi";
+        public string CardExpiration { get; set; } //= "04/04";
+        public string CvvCode { get; set; } //= "099";
 
     }
 }

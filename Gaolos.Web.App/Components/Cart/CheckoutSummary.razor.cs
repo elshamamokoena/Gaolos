@@ -1,4 +1,6 @@
-﻿using Gaolos.Web.App.Contracts;
+﻿using Fluxor;
+using Gaolos.Web.App.Contracts;
+using Gaolos.Web.App.Store.CartState;
 using Gaolos.Web.App.ViewModels.Basket;
 using Microsoft.AspNetCore.Components;
 
@@ -11,12 +13,12 @@ namespace Gaolos.Web.App.Components.Cart
         [Inject]
         public IShoppingBasketService ShoppingBasketService { get; set; }
         [Inject]
-        public ApplicationState ApplicationState { get; set; }
-
+        public IState<CartSummaryState> State { get; set; }
+       
         protected override async Task OnInitializedAsync()
         {
-            Basket = await ShoppingBasketService.GetBasket(ApplicationState.BasketId);
             await base.OnInitializedAsync();
+           // Dispatcher.Dispatch(new FetchDataAction());
         }
 
 

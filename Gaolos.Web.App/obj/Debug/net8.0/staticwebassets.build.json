@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hG+bD0HanLpVgSd3qcsXRolATGM64fhS1zrLstCrsSg=",
+  "Hash": "nOArzUyeknvUgTCvSmdcy4E05DapllCXb9aCgqZ/oZ0=",
   "Source": "Gaolos.Web.App",
   "BasePath": "/",
   "Mode": "Root",
@@ -128,7 +128,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.js"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.js"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
@@ -147,15 +147,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.js.map"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.js.map"
     },
     {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.5.4mf7u6qvwk.js",
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.5.ew1vqrwwsw.js",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.5.4mf7u6qvwk.js",
+      "RelativePath": "_framework/dotnet.native.8.0.5.ew1vqrwwsw.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -166,7 +166,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.native.js"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.native.js"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
@@ -185,15 +185,15 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
     },
     {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.5.m024wrunna.js",
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.5.gongq8hbow.js",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.5.m024wrunna.js",
+      "RelativePath": "_framework/dotnet.runtime.8.0.5.gongq8hbow.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -204,7 +204,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
@@ -223,7 +223,45 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Fluxor.Blazor.Web.wasm",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Fluxor.Blazor.Web.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\webcil\\Fluxor.Blazor.Web.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Fluxor.wasm",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Fluxor.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\webcil\\Fluxor.wasm"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Gaolos.Web.App.pdb",
@@ -280,7 +318,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
@@ -299,7 +337,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
@@ -318,7 +356,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.5\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.wasm",
@@ -4273,25 +4311,6 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Globalization.Calendars.wasm"
     },
     {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\1ap7timjrd.gz",
-      "SourceId": "Gaolos.Web.App",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.wasm.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
-    },
-    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\1c8sst61ja.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -4596,25 +4615,6 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.IO.FileSystem.Primitives.wasm"
     },
     {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\4mf7u6qvwk.gz",
-      "SourceId": "Gaolos.Web.App",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.5.4mf7u6qvwk.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.5.4mf7u6qvwk.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.5.4mf7u6qvwk.js"
-    },
-    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\4o747o0qwt.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -4900,6 +4900,25 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.Configuration.Binder.wasm"
     },
     {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\641whrt3d5.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\6cvn63r0a6.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -4917,25 +4936,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\6im1wl016d.gz",
-      "SourceId": "Gaolos.Web.App",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\6rk1f53j4w.gz",
@@ -5031,6 +5031,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.Cryptography.OpenSsl.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\7hm6s93b13.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\7qr5cv96pa.gz",
@@ -5394,25 +5413,6 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Reflection.Primitives.wasm"
     },
     {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\b0lmw2g0i8.gz",
-      "SourceId": "Gaolos.Web.App",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
-    },
-    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\b1k7rvo50v.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -5449,25 +5449,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Dynamic.Runtime.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\bgqd2cbcc1.gz",
-      "SourceId": "Gaolos.Web.App",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\bi62vqu2hf.gz",
@@ -5660,6 +5641,25 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.WebSockets.wasm"
     },
     {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\dy4gi8c26s.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Fluxor.Blazor.Web.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Fluxor.Blazor.Web.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Fluxor.Blazor.Web.wasm"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\e2rgof16jg.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -5734,6 +5734,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\AutoMapper.Extensions.Microsoft.DependencyInjection.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\ew1vqrwwsw.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.8.0.5.ew1vqrwwsw.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.5.ew1vqrwwsw.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.5.ew1vqrwwsw.js"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\follmcscpl.gz",
@@ -5812,25 +5831,6 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.CSharp.wasm"
     },
     {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\ga002lfj42.gz",
-      "SourceId": "Gaolos.Web.App",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
-    },
-    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\ghfebt6w5i.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -5867,6 +5867,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\gongq8hbow.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.8.0.5.gongq8hbow.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.5.gongq8hbow.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.5.gongq8hbow.js"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\gtlo8ze7it.gz",
@@ -5943,6 +5962,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ComponentModel.TypeConverter.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\ibgvc3mbbn.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\iej2j9l1j3.gz",
@@ -6382,25 +6420,6 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Xml.wasm"
     },
     {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\m024wrunna.gz",
-      "SourceId": "Gaolos.Web.App",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.5.m024wrunna.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.5.m024wrunna.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.5.m024wrunna.js"
-    },
-    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\m6g3fah4gx.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -6494,6 +6513,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Globalization.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\my5ub1ju9q.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Fluxor.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Fluxor.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Fluxor.wasm"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\mzrh4g72rx.gz",
@@ -6648,6 +6686,25 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Globalization.Extensions.wasm"
     },
     {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\nzvv05lacr.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\obat18nnz4.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -6781,6 +6838,25 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Text.Encoding.Extensions.wasm"
     },
     {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\q2rv227kvb.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\qdx8s8vl0p.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -6836,25 +6912,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ComponentModel.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\r4hsyre86k.gz",
-      "SourceId": "Gaolos.Web.App",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\r6a9ql0tgi.gz",
@@ -7275,6 +7332,25 @@
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.Tasks.Parallel.wasm"
     },
     {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\uwh8dnsva1.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\uy2p62mv8n.gz",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Computed",
@@ -7368,25 +7444,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.Tasks.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\vsdvdb8mjl.gz",
-      "SourceId": "Gaolos.Web.App",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\vwvq98c1i2.gz",
@@ -7520,6 +7577,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.IO.FileSystem.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\wj55uthord.gz",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\obj\\Debug\\net8.0\\compressed\\wl67jn3811.gz",
@@ -12709,6 +12785,25 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\card.min.js",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/card.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\card.min.js"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\carousel.js",
       "SourceId": "Gaolos.Web.App",
       "SourceType": "Discovered",
@@ -12726,6 +12821,63 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\carousel.js"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\cleave.min.js",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/cleave.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\cleave.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\data-input-format.js",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/data-input-format.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\data-input-format.js"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\newcard.js",
+      "SourceId": "Gaolos.Web.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/newcard.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\newcard.js"
     },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\theme.min.js",

@@ -20089,6 +20089,21 @@ html:not([dir=rtl]) .range-slider-ui.noUi-horizontal .noUi-handle {
     }
 }
 
+.card-wrapper {
+    margin: 1.875rem -.9375rem
+}
+
+@media(max-width: 575.98px) {
+    .card-wrapper .jp-card-container {
+        width: 16.25rem !important
+    }
+
+    .card-wrapper .jp-card {
+        min-width: 15.625rem !important
+    }
+}
+
+
 .credit-card-wrapper {
     margin: 1.875rem -0.9375rem
 }

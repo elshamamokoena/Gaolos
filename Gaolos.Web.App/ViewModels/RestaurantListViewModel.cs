@@ -1,5 +1,4 @@
-﻿using Gaolos.Web.App.Pages;
-
+﻿
 namespace Gaolos.Web.App.ViewModels
 {
     public class RestaurantListViewModel:ListViewModel

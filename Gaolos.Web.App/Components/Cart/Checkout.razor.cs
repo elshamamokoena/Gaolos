@@ -1,8 +1,13 @@
-﻿using Gaolos.Web.App.Contracts;
+﻿using Blazored.LocalStorage;
+using Fluxor;
+using Gaolos.ComponentLibrary;
+using Gaolos.Web.App.Contracts;
+using Gaolos.Web.App.Store.CartState;
 using Gaolos.Web.App.ViewModels;
 using Gaolos.Web.App.ViewModels.Account.DeliveryAddress;
 using Gaolos.Web.App.ViewModels.Basket;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace Gaolos.Web.App.Components.Cart
 {
@@ -30,7 +35,16 @@ namespace Gaolos.Web.App.Components.Cart
             = new CheckoutViewModel();
         private bool _isReady = false;
         private bool _showDeliveryDetails = false;
+        [Inject]
+        public JsInterop jSRuntime { get; set; }
+        [Inject]
+        public ILocalStorageService LocalStorageService { get; set; }
 
+        private bool _emptyBasket;
+        [Inject]
+        public IState<CartSummaryState> CartSummaryState { get; set; }
+        [Inject]
+        public IDispatcher Dispatcher { get; set; }
         protected override async Task OnInitializedAsync()
         {
             LoggedInUser = await LoggedInUserService.GetUserDetails();
@@ -43,9 +57,19 @@ namespace Gaolos.Web.App.Components.Cart
             {
                 _isReady = true;
             }
-
+            _emptyBasket = CartSummaryState.Value.Basket == null || CartSummaryState.Value.Basket.NumberOfItems == 0;
             await base.OnInitializedAsync();
         }
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+
+
+            await jSRuntime.FormatInput();
+
+
+            await base.OnAfterRenderAsync(firstRender);
+        }
+
 
         private async Task<bool> FetchData()
         {
@@ -66,7 +90,7 @@ namespace Gaolos.Web.App.Components.Cart
             }));
 
 
-            _showDeliveryDetails = Address != null && _selectedCard!=null;
+            _showDeliveryDetails = Address != null || _selectedCard!=null;
 
             var t = Task.WhenAll(tasks);
             try
@@ -90,6 +114,12 @@ namespace Gaolos.Web.App.Components.Cart
         private async Task PlaceOrder()
         {
             _isReady = false;
+            if(Address != null)
+            {
+                Order.City = Address.City;
+                Order.ZipCode = Address.ZipCode;
+                Order.Address = Address.ToString();
+            }
             var response = await ShoppingBasketService.Checkout(Order);
 
             if (response.Success)

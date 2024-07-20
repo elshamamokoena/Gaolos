@@ -1,6 +1,8 @@
-﻿using Gaolos.Web.App.Contracts;
+﻿using Gaolos.ComponentLibrary;
+using Gaolos.Web.App.Contracts;
 using Gaolos.Web.App.ViewModels;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace Gaolos.Web.App.Components.UserAccount
 {
@@ -13,12 +15,25 @@ namespace Gaolos.Web.App.Components.UserAccount
         public EventCallback OnPaymentMethodAdded { get; set; }
         [Inject]
         public IAccountDataService  AccountDataService { get; set; }
+        private string _dateString { get; set; }
+
+        private void FormatDate()
+        {
+            if(_dateString.Count()==2)
+            {
+
+               _dateString += "/";
+                Console.WriteLine("Date striiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiing:"+_dateString);
+            }
+            PaymentMethod.Expiry = _dateString;
+        }
 
         public string Message { get; set; } 
             = string.Empty;
+               [Inject]
+               public JsInterop JsInterop { get; set; }
 
-       
-       
+  
         private async void HandleValidSubmit()
         {
             // Call the service to add the payment method

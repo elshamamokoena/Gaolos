@@ -45,7 +45,7 @@ namespace Gaolos.Application.Features.ShoppingBasket.Commands.ApplyCouponToBaske
                 var coupoun = await _couponRepository.GetCouponByCode(request.CouponCode);
                 basket.CouponId = coupoun.CouponId;
                 await _shoppingBasketRepository.SaveAsync();
-
+                
                 response.Message = "Coupon Applied to Basket";
             }
             if(request.CouponId != null)

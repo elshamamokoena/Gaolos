@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vOvKku93oNmd8HFmseYn81xIp6sZHcfB3XZczWbiyHY=",
+  "Hash": "oTDBWzdg2Nv3myyvSUGWTDwcNO1TY3bVzJoQl0mPgEk=",
   "Source": "Gaolos.ComponentLibrary",
   "BasePath": "_content/Gaolos.ComponentLibrary",
   "Mode": "Default",
@@ -16,44 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentLibrary\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Gaolos.ComponentLibrary.styles.css",
-      "SourceId": "Gaolos.ComponentLibrary",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentLibrary\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/Gaolos.ComponentLibrary",
-      "RelativePath": "Gaolos.ComponentLibrary.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentLibrary\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Gaolos.ComponentLibrary.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentLibrary\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Gaolos.ComponentLibrary.bundle.scp.css",
-      "SourceId": "Gaolos.ComponentLibrary",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentLibrary\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/Gaolos.ComponentLibrary",
-      "RelativePath": "Gaolos.ComponentLibrary.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentLibrary\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Gaolos.ComponentLibrary.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.ComponentLibrary\\wwwroot\\background.png",
       "SourceId": "Gaolos.ComponentLibrary",

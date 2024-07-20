@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Gaolos.Web.App.Server.props" />
+</Project>

@@ -1,4 +1,6 @@
-﻿@page "/cart"
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@page "/cart"
 @attribute [AllowAnonymous]
 <div class="container pt-4 pb-3 py-sm-4">
     <nav aria-label="breadcrumb">
@@ -16,9 +18,9 @@
                 </ul>
          
 
-          @if(ApplicationState.NumberOfItems<=0)
+          @if(CartState.Value.IsLoading)
         {
-            <EmptyCartMessage/>
+            <Loader/>
         }else
         {
             <DynamicComponent Type="Widget" />

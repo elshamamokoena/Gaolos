@@ -6,6 +6,8 @@ using Gaolos.Web.App;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Gaolos.ComponentLibrary;
+using Fluxor;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -20,6 +22,11 @@ builder.Services.AddScoped<CookieHandler>();
 builder.Services.AddAuthorizationCore();
 
 builder.Services.AddScoped<AuthenticationStateProvider, CookieAuthenticationStateProvider>();
+builder.Services.AddScoped<JsInterop>();
+
+//fluxor
+builder.Services.AddFluxor(o => o
+      .ScanAssemblies(typeof(Program).Assembly));
 
 builder.Services.AddTransient<CookieAuthenticationStateProvider>();
 

@@ -15,9 +15,7 @@ C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\stat
 C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Gaolos.ComponentLibrary.props
 C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Gaolos.ComponentLibrary.props
 C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\scopedcss\Component1.razor.rz.scp.css
 C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\scopedcss\bundle\Gaolos.ComponentLibrary.styles.css
-C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\scopedcss\projectbundle\Gaolos.ComponentLibrary.bundle.scp.css
 C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\Gaolos.ComponentLibrary.dll
 C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\refint\Gaolos.ComponentLibrary.dll
 C:\Users\elsha\source\repos\Gaolos\Gaolos.ComponentLibrary\obj\Debug\net8.0\Gaolos.ComponentLibrary.pdb

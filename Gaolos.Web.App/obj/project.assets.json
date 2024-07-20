@@ -43,6 +43,32 @@
           "lib/net8.0/Blazored.LocalStorage.dll": {}
         }
       },
+      "Fluxor/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Fluxor.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.dll": {}
+        }
+      },
+      "Fluxor.Blazor.Web/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Fluxor": "6.0.0",
+          "Microsoft.AspNetCore.Components.Web": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Fluxor.Blazor.Web.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.Blazor.Web.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -759,6 +785,32 @@
           "lib/net8.0/Blazored.LocalStorage.dll": {}
         }
       },
+      "Fluxor/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Fluxor.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.dll": {}
+        }
+      },
+      "Fluxor.Blazor.Web/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Fluxor": "6.0.0",
+          "Microsoft.AspNetCore.Components.Web": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Fluxor.Blazor.Web.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.Blazor.Web.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -1472,6 +1524,36 @@
         "lib/net6.0/Blazored.LocalStorage.dll",
         "lib/net7.0/Blazored.LocalStorage.dll",
         "lib/net8.0/Blazored.LocalStorage.dll"
+      ]
+    },
+    "Fluxor/6.0.0": {
+      "sha512": "1Z8q9wOdRmjyxf4BDRkZTggreZPMXbUgD54oXK4qKoLnSuYbVqX/Lxy39Ieok33hxahBd3qcyH1ZF+Qvw0eHCg==",
+      "type": "package",
+      "path": "fluxor/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluxor-small-logo.png",
+        "fluxor.6.0.0.nupkg.sha512",
+        "fluxor.nuspec",
+        "lib/net6.0/Fluxor.dll",
+        "lib/net7.0/Fluxor.dll",
+        "lib/net8.0/Fluxor.dll"
+      ]
+    },
+    "Fluxor.Blazor.Web/6.0.0": {
+      "sha512": "6wxUROUcLxOBdBA1f9Ei2cqw+UglBS8fHgP8QjgIBfvlxc7HIYakp3jXLPHUvX9glpE7+ZNYApBPzy48SgTEEA==",
+      "type": "package",
+      "path": "fluxor.blazor.web/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluxor-blazor-logo-small.png",
+        "fluxor.blazor.web.6.0.0.nupkg.sha512",
+        "fluxor.blazor.web.nuspec",
+        "lib/net6.0/Fluxor.Blazor.Web.dll",
+        "lib/net7.0/Fluxor.Blazor.Web.dll",
+        "lib/net8.0/Fluxor.Blazor.Web.dll"
       ]
     },
     "Microsoft.AspNetCore.Authorization/8.0.2": {
@@ -2839,6 +2921,7 @@
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "Blazored.LocalStorage >= 4.5.0",
+      "Fluxor.Blazor.Web >= 6.0.0",
       "Microsoft.AspNetCore.Components.Authorization >= 8.0.2",
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.2",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 8.0.2",
@@ -2911,6 +2994,10 @@
             "target": "Package",
             "version": "[4.5.0, )"
           },
+          "Fluxor.Blazor.Web": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
           "Microsoft.AspNetCore.Components.Authorization": {
             "target": "Package",
             "version": "[8.0.2, )"
@@ -2960,12 +3047,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[8.0.5, 8.0.5]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

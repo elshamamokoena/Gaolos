@@ -82,6 +82,7 @@ namespace Gaolos.Web.App.Services
                     checkout.Email = user.Email;
                     checkout.Name = user.Name;
                     checkout.Phone = "012 345 6789";
+                    checkout.UserId = user.UserId;
                 }
 
                 ApiResponse<OrderViewModel> response = new ApiResponse<OrderViewModel>();
@@ -129,6 +130,8 @@ namespace Gaolos.Web.App.Services
                     response.Data = _mapper.Map<BasketViewModel>( createBasketResponse.Basket);
                     response.Success = true;
                     await _localStorage.SetItemAsync("basketId", response.Data.BasketId);
+                    await _localStorage.SetItemAsync("numberOfItems", response.Data.NumberOfItems);
+
 
 
                 }

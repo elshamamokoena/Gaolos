@@ -1,6 +1,7 @@
-﻿<CascadingAuthenticationState>
+﻿<Fluxor.Blazor.Web.StoreInitializer/>
+<CascadingAuthenticationState>
 
-    <Router AppAssembly="@typeof(Program).Assembly">
+    <Router AppAssembly="@typeof(Program).Assembly" >
         <Found Context="routeData">
             <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" >
 
@@ -21,3 +22,15 @@
         </NotFound>
     </Router>
 </CascadingAuthenticationState>
+
+@* @code{
+    private List<Assembly> _lazyLoadedAssemblies = new List<Assembly>();
+    private async Task OnNavigateAsync(NavigationContext args)
+    {
+        if(args .Path.Contains("Helllo"))
+        {
+            var assemblies = await LazyAssemblyLoader.LoadAssembliesAsync(new string[]{""});
+            _lazyLoadedAssemblies.AddRange(assemblies);
+        }
+    }
+} *@

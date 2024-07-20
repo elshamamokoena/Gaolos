@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaolos.Web.App", "Gaolos.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaolos.ComponentLibrary", "Gaolos.ComponentLibrary\Gaolos.ComponentLibrary.csproj", "{0FCEC013-66F6-433A-84C5-3DD53AA1EEEC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaolos.Shared", "Gaolos.Shared\Gaolos.Shared.csproj", "{BAEDC6B8-55BD-4504-AD67-38B5A55B1CA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{0FCEC013-66F6-433A-84C5-3DD53AA1EEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FCEC013-66F6-433A-84C5-3DD53AA1EEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FCEC013-66F6-433A-84C5-3DD53AA1EEEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAEDC6B8-55BD-4504-AD67-38B5A55B1CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAEDC6B8-55BD-4504-AD67-38B5A55B1CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAEDC6B8-55BD-4504-AD67-38B5A55B1CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAEDC6B8-55BD-4504-AD67-38B5A55B1CA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{A9F17786-A162-4A1F-847A-43EE647B3795} = {2012051C-3976-4FD8-BD7F-1640F1A0E58F}
 		{4BA7017F-54B6-4DC3-94AB-E75E6A67E5EC} = {473E7CF9-0F74-43DC-8233-538F83A6FDD9}
 		{0FCEC013-66F6-433A-84C5-3DD53AA1EEEC} = {473E7CF9-0F74-43DC-8233-538F83A6FDD9}
+		{BAEDC6B8-55BD-4504-AD67-38B5A55B1CA3} = {473E7CF9-0F74-43DC-8233-538F83A6FDD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4F8BAAA-0E33-4ABB-8914-622F1F7D665A}

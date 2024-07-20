@@ -1,4 +1,7 @@
-﻿using Gaolos.Web.App.Contracts;
+﻿using Blazored.LocalStorage;
+using Fluxor;
+using Gaolos.Web.App.Contracts;
+using Gaolos.Web.App.Store.CartState;
 using Gaolos.Web.App.ViewModels;
 using Microsoft.AspNetCore.Components;
 
@@ -15,13 +18,17 @@ namespace Gaolos.Web.App.Components.Restaurant
         public IShoppingBasketService ShoppingBasketService { get; set; }
         [Inject]
         public ApplicationState ApplicationState { get; set; }
-        
+        [Inject]
+        public ILocalStorageService LocalStorageService { get; set; }
+        [Inject]    
+        private IStore Store { get; set; }
+        [Inject]
+        public IState<CounterState> CounterState { get; set; }
+        [Inject]
+        public IDispatcher Dispatcher { get; set; }
         private int _cartQuantity=0;
 
-        //protected override async Task OnInitializedAsync()
-        //{
-        //    _cartQuantity = 0;
-        //}
+ 
         protected override async Task OnParametersSetAsync()
         {
             await GetCartQuantity();
@@ -31,19 +38,22 @@ namespace Gaolos.Web.App.Components.Restaurant
 
         private async Task AddToCart(MenuItemViewModel menuItem)
         {
-
-            var response = await ShoppingBasketService.AddItemToBasket(ApplicationState.BasketId, menuItem);
+            var id= await LocalStorageService.GetItemAsync<Guid>("BasketId");
+            var response = await ShoppingBasketService.AddItemToBasket(id, menuItem);
 
             if (response.Success)
             {
-                ApplicationState.NumberOfItems = (await ShoppingBasketService.GetBasketLines(ApplicationState.BasketId)).Count();
+             //   var count = (await ShoppingBasketService.GetBasketLines(ApplicationState.BasketId)).Count();
                 await GetCartQuantity();
+                Dispatcher.Dispatch(new FetchDataAction());
+
             }
 
         }
         private async Task GetCartQuantity()
         {
-           _cartQuantity = await ShoppingBasketService.GetItemCount(ApplicationState.BasketId, Item.MenuItemId);
+            var id = await LocalStorageService.GetItemAsync<Guid>("BasketId");
+           _cartQuantity = await ShoppingBasketService.GetItemCount(id, Item.MenuItemId);
         }
 
     }

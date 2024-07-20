@@ -1,8 +1,19 @@
-﻿ 
+﻿ @inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+
+ 
  
 
-@if(_isReady)
-        {
+@if(_isReady) {
+
+    @if(_emptyBasket)
+    {
+        <EmptyCartMessage></EmptyCartMessage>
+    }
+    else
+    {
+        
+
 <AuthorizeView Context="authContext">
 
     <Authorized>
@@ -45,42 +56,41 @@
 
             <h2 class="h5 pb-3">Delivery details</h2>
 
-            @if(Address!=null && _selectedCard!=null)
+           
+            @if(_showDeliveryDetails)
             {
-                    
-
+                
             <div class="bg-secondary rounded-3 px-4 pt-4 pb-2"   >
                 <div class="row">
-                    <div class="col-sm-6">
-                        <h4 class="h6">Deliver to:</h4>
-                        <ul class="list-unstyled fs-sm">
-                            <li><span class="text-muted">Client:&nbsp;</span>@($"{LoggedInUser.Name} {LoggedInUser.Surname}")</li>
-                            <li><span class="text-muted">Address:&nbsp;</span>@Address.ToString()</li>
-                            <li><span class="text-muted">Phone:&nbsp;</span>+1 (808) 764 554 </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6">
-                        <h4 class="h6">Payment method:</h4>
-                        <ul class="list-unstyled fs-sm">
-                            <li><span class="text-muted">Credit Card:&nbsp;</span>@_selectedCard.CardNumber</li>
-                        </ul>
-                    </div>
+                    @if(Address!=null)
+                    {
+                        <div class="col-sm-6">
+                            <h4 class="h6">Deliver to:</h4>
+                            <ul class="list-unstyled fs-sm">
+                                <li><span class="text-muted">Client:&nbsp;</span>@($"{LoggedInUser.Name} {LoggedInUser.Surname}")</li>
+                                <li><span class="text-muted">Address:&nbsp;</span>@Address.ToString()</li>
+                                <li><span class="text-muted">Phone:&nbsp;</span>+1 (808) 764 554 </li>
+                            </ul>
+                        </div>
+                    }
+
+                    @if(_selectedCard!=null)
+                    {
+                                
+
+                        <div class="col-sm-6">
+                            <h4 class="h6">Payment method:</h4>
+                            <ul class="list-unstyled fs-sm">
+                                <li><span class="text-muted">Credit Card:&nbsp;</span>@_selectedCard.CardNumber</li>
+                            </ul>
+                        </div>
+                     }
+
                 </div>
              </div>
-            }else if(Address==null)
+             }
+            @if(Address==null)
             {
-                    <div class="bg-secondary rounded-3 px-4 pt-4 pb-2">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h4 class="h6">Deliver to:</h4>
-                                <ul class="list-unstyled fs-sm">
-                                    <li><span class="text-muted">Client:&nbsp;</span>@($"{LoggedInUser.Name} {LoggedInUser.Surname}")</li>
-                                    <li><span class="text-muted">Phone:&nbsp;</span>+1 (808) 764 554 </li>
-                                </ul>
-                            </div>
-                 
-                        </div>
-                    </div>
 
 
             <div class="row pb-4 pt-3">
@@ -145,32 +155,40 @@
                 }
                 else
                 {
-                            
 
 
-                    <div class="form-check form-check-inline pb-4">
-                        <input class="form-check-input" type="radio" name="payment" checked id="online">
-                        <label class="form-check-label" for="online">Pay with:&nbsp;&nbsp;&nbsp;<img class="d-inline-block align-middle" src="img/cards.png" style="width: 187px;" alt="Cerdit Cards"></label>
-                    </div>
 
-                    <div class="row g-3 mb-2">
-                        <div class="col-sm-6">
-                            <InputText @bind-Value="Order.CardNumber" class="form-control" type="text" placeholder="Card Number" required />
-                            <div class="invalid-feedback">Please fill in the card number!</div>
-                        </div>
-                        <div class="col-sm-6">
-                            <InputText @bind-Value="Order.CardName" class="form-control" type="text" placeholder="Full Name" required />
-                            <div class="invalid-feedback">Please provide name on the card!</div>
-                        </div>
-                        <div class="col-sm-3">
-                            <InputText @bind-Value="Order.CardExpiration" class="form-control" type="text" placeholder="MM/YY" required />
-                            <div class="invalid-feedback">Please provide card expiration date!</div>
-                        </div>
-                        <div class="col-sm-3">
-                            <InputText @bind-Value="Order.CvvCode" class="form-control" type="text" placeholder="CVV" required />
-                            <div class="invalid-feedback">Please provide card CVC code!</div>
-                        </div>
-                    </div>
+                                <div class="accordion mb-2" id="payment-method" role="tablist">
+                                    <div class="card">
+                                        <div class="card-header" role="tab">
+                                            <h3 class="accordion-heading"><a href="#card" data-toggle="collapse"><i class="czi-card font-size-lg mr-2 mt-n1 align-middle"></i>Pay with Credit Card<span class="accordion-indicator"><i data-feather="chevron-up"></i></span></a></h3>
+                                        </div>
+                                        <div class="collapse show" id="card" data-parent="#payment-method" role="tabpanel">
+                                            <div class="card-body">
+                                                <p class="font-size-sm">We accept following credit cards:&nbsp;&nbsp;<img class="d-inline-block align-middle" src="img/cards.png" style="width: 187px;" alt="Cerdit Cards"></p>
+                                                <div class="card-wrapper"></div>
+                                                <div class="interactive-credit-card row">
+                                                    <div class="form-group col-sm-6">
+                                                        <InputText class="form-control" @bind-Value="Order.CardNumber" type="text" name="number" placeholder="Card Number" required />
+                                                    </div>
+                                                    <div class="form-group col-sm-6">
+                                                        <InputText class="form-control" @bind-Value="Order.CardName" type="text" name="name" placeholder="Full Name" required />
+                                                    </div>
+                                                    <div class="form-group col-sm-3">
+                                                        <InputText class="form-control" @bind-Value="Order.CardExpiration" type="text" name="expiry" placeholder="MM/YY" required />
+                                                    </div>
+                                                    <div class="form-group col-sm-3">
+                                                        <InputText class="form-control" @bind-Value="Order.CvvCode" type="text" name="cvc" placeholder="CVC" required />
+                                                    </div>
+
+                                                    @*   <div class="col-sm-6">
+                                        <button class="btn btn-outline-primary btn-block mt-0" type="submit">Add Card</button>
+                                        </div> *@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                 }
 
                     <button class="btn btn-primary d-block w-100 mt-3" type="submit">Place order</button>
@@ -264,8 +282,52 @@
                     <InputTextArea @bind-Value="Order.Comments" class="form-control" rows="5" id="fd-comments"/>
                 </div>
             </div>
+
+
+
             <div class="row">
-                <div class="col-sm-6 mb-4 mb-sm-0">
+
+
+                <div class="col-sm-6 mb-4 mb-sm-0 ">
+                    @if(CartSummaryState.Value.IsLoading)
+                    {
+                                <Loader/>
+                            }else
+                            {
+                            
+                            <div class="accordion mb-2" id="payment-method" role="tablist">
+                                <div class="card">
+                                    <div class="card-header" role="tab">
+                                        <h3 class="accordion-heading"><a href="#card" data-toggle="collapse"><i class="czi-card font-size-lg mr-2 mt-n1 align-middle"></i>Pay with Credit Card<span class="accordion-indicator"><i data-feather="chevron-up"></i></span></a></h3>
+                                    </div>
+                                    <div class="collapse show" id="card" data-parent="#payment-method" role="tabpanel">
+                                        <div class="card-body">
+                                            <p class="font-size-sm">We accept following credit cards:&nbsp;&nbsp;<img class="d-inline-block align-middle" src="img/cards.png" style="width: 187px;" alt="Cerdit Cards"></p>
+                                            <div class="card-wrapper"></div>
+                                            <div class="interactive-credit-card row">
+                                                    <div class="form-group col-sm-6">
+                                                        <InputText class="form-control" @bind-Value="Order.CardNumber" type="text" name="number" placeholder="Card Number" required/>
+                                                    </div>
+                                                    <div class="form-group col-sm-6">
+                                                        <InputText class="form-control" @bind-Value="Order.CardName" type="text" name="name" placeholder="Full Name" required/>
+                                                    </div>
+                                                    <div class="form-group col-sm-3">
+                                                        <InputText class="form-control" @bind-Value="Order.CardExpiration" type="text" name="expiry" placeholder="MM/YY" required/>
+                                                    </div>
+                                                    <div class="form-group col-sm-3">
+                                                        <InputText class="form-control" @bind-Value="Order.CvvCode" type="text" name="cvc" placeholder="CVC" required />
+                                                    </div>
+                                            
+                                                  @*   <div class="col-sm-6">
+                                                        <button class="btn btn-outline-primary btn-block mt-0" type="submit">Add Card</button>
+                                                    </div> *@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+
                 @*     <h2 class="h5 pb-2">Cash on delivery</h2>
                     <div class="form-check form-check-inline mb-3">
                         <input class="form-check-input" type="radio" name="payment" checked id="cash">
@@ -278,13 +340,13 @@
                             <input class="form-control bg-none pe-3" type="text" id="fd-change">
                         </div>
                     </div> *@
-                    <h2 class="h5 mt-3 pt-4 pb-2">Online payment</h2>
+           @*          <h2 class="h5 mt-3 pt-4 pb-2">Online payment</h2>
                     <div class="form-check form-check-inline pb-4">
                         <input class="form-check-input" type="radio" name="payment" checked id="online">
                         <label class="form-check-label" for="online">Pay with:&nbsp;&nbsp;&nbsp;<img class="d-inline-block align-middle" src="img/cards.png" style="width: 187px;" alt="Cerdit Cards"></label>
-                    </div>
+                    </div> *@
 
-                    <div class="row g-3 mb-2">
+           @*          <div class="interactive-credit-card row g-3 mb-2">
                         <div class="col-sm-6">
                             <InputText @bind-Value="Order.CardNumber" class="form-control" type="text" placeholder="Card Number"  required/>
                             <div class="invalid-feedback">Please fill in the card number!</div>
@@ -301,7 +363,7 @@
                             <InputText @bind-Value="Order.CvvCode" class="form-control" type="text" placeholder="CVV" required/>
                             <div class="invalid-feedback">Please provide card CVC code!</div>
                         </div>
-                    </div>
+                    </div> *@
 
                     <button class="btn btn-primary d-block w-100 mt-3" type="submit">Place order</button>
                 </div>
@@ -311,6 +373,8 @@
 
     </NotAuthorized>
 </AuthorizeView>
+    }
+
 
 }
 else

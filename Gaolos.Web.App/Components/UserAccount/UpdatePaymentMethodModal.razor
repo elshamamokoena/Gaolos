@@ -36,6 +36,14 @@
                     <div class="col-sm-3">
                         <InputText @bind-Value="PaymentMethod.CVV" class="form-control" type="text" name="cvc" placeholder="CVV" required></InputText>
                         <div class="invalid-feedback">Please provide card CVC code!</div>
+                        </div>             
+                        <div class="col-12">
+
+                    <div class="form-check">
+                            <InputCheckbox @bind-Value="PaymentMethod.isPrimary" class="form-check-input" type="checkbox" id="payment-primary"></InputCheckbox>
+                            <label class="form-check-label" for="payment-primary">Make this address primary</label>
+
+                    </div>
                     </div>
                     <div class="col-sm-6">
                         <button class="btn btn-primary d-block w-100" data-bs-dismiss="modal" type="submit">Update card</button>

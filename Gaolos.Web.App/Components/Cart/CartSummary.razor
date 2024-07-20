@@ -1,20 +1,37 @@
-﻿
- @if (ApplicationState.NumberOfItems > 0)
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+
+ @if (CartSummaryState.Value.IsLoading)
     {
-<div class="navbar-tool dropdown ms-3">
+            <div class="navbar-tool dropdown ms-3">
 
-
-    <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" @onclick="async()=> await GetBasketLines()" href="@("/cart")">
-        <span class="navbar-tool-label">@ApplicationState.NumberOfItems</span>
+    <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="@("/cart")">
+        <span class="navbar-tool-label">0</span>
         <i class="navbar-tool-icon ci-cart"></i>
     </a>
+    </div>
+}
+else
+{
    
+
+    <div class="navbar-tool dropdown ms-3">
+
+
+        <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="@("/cart")">
+            <span class="navbar-tool-label">@CartSummaryState.Value.ItemCount</span>
+            <i class="navbar-tool-icon ci-cart"></i>
+        </a>
+
+        @if (CartSummaryState.Value.ItemCount > 0)
+        {
+
         <!-- Cart dropdown-->
         <div class="dropdown-menu dropdown-menu-end">
             <div class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem;">
                 <div style="@(ApplicationState.NumberOfItems>=4? "height: 15rem": "height: auto;")" data-simplebar data-simplebar-auto-hide="false">
 
-                    @foreach (var line in BasketLines)
+                    @foreach (var line in CartSummaryState.Value.BasketLines)
                     {
 
                         <div class="widget-cart-item pb-2 border-bottom">
@@ -39,7 +56,7 @@
                 <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
                     <div class="fs-sm me-2 py-2">
                         <span class="text-muted"> Total:</span>
-                        <span class="text-accent fs-base ms-1">@($"R{Basket?.BasketTotal}")@* <small>00</small> *@</span>
+                            <span class="text-accent fs-base ms-1">@($"R{CartSummaryState.Value.Basket?.BasketTotal}")@* <small>00</small> *@</span>
                     </div>
                     <a class="btn btn-outline-secondary btn-sm" href="@("/cart")">
                         Expand cart
@@ -50,16 +67,12 @@
                 <a class="btn btn-primary btn-sm d-block w-100" href="javascript:void(0)" @onclick="SwitchToCheckout"><i class="ci-card me-2 fs-base align-middle"></i>Checkout</a>
             </div>
         </div>
+        }
 
     </div>
-}else
-{
-<div class="navbar-tool dropdown ms-3">
-        <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" @onclick="async()=> await GetBasketLines()" href="@("/cart")">
-            <span class="navbar-tool-label">@ApplicationState.NumberOfItems</span>
-            <i class="navbar-tool-icon ci-cart"></i>
-        </a>
-</div>
+
+
+
     
 }
 

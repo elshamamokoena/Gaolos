@@ -1,0 +1,12 @@
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\obj\Debug\net8.0\Gaolos.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\obj\Debug\net8.0\Gaolos.Shared.AssemblyInfoInputs.cache
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\obj\Debug\net8.0\Gaolos.Shared.AssemblyInfo.cs
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\obj\Debug\net8.0\Gaolos.Shared.csproj.CoreCompileInputs.cache
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\obj\Debug\net8.0\Gaolos.Shared.sourcelink.json
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\bin\Debug\net8.0\Gaolos.Shared.deps.json
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\bin\Debug\net8.0\Gaolos.Shared.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\bin\Debug\net8.0\Gaolos.Shared.pdb
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\obj\Debug\net8.0\Gaolos.Shared.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\obj\Debug\net8.0\refint\Gaolos.Shared.dll
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\obj\Debug\net8.0\Gaolos.Shared.pdb
+C:\Users\elsha\source\repos\Gaolos\Gaolos.Shared\obj\Debug\net8.0\ref\Gaolos.Shared.dll

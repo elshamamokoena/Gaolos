@@ -1,4 +1,5 @@
-﻿  <!-- Item-->
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+  <!-- Item-->
 <div class="col-lg-3 col-md-4 col-sm-6 mb-grid-gutter">
     <div class="card product-card border pb-2">
         <a class="d-block" href="#quick-view" @onclick=@(async ()=>await OnMenuItemSelected.InvokeAsync(Item)) data-bs-toggle="modal"><img class="card-img-top" src="@Item.ImageUrl" alt="Pizza"></a>

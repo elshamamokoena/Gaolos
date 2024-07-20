@@ -1,5 +1,0 @@
-2024-05-31 22:35:04.395 +02:00 [INF] Now listening on: https://localhost:7234
-2024-05-31 22:35:04.582 +02:00 [INF] Now listening on: http://localhost:5206
-2024-05-31 22:35:04.586 +02:00 [INF] Application started. Press Ctrl+C to shut down.
-2024-05-31 22:35:04.588 +02:00 [INF] Hosting environment: Development
-2024-05-31 22:35:04.589 +02:00 [INF] Content root path: C:\Users\elsha\source\repos\Gaolos\Gaolos.Api

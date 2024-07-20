@@ -37,10 +37,15 @@ namespace Gaolos.Application.Features.ShoppingBasket.Queries.GetBasket
             var result= _mapper.Map<BasketVm>(basket);
             result.NumberOfItems = basket.BasketLines.Sum(bl => bl.Quantity);
 
-            if(basket.CouponId != null)
+            if(basket.CouponId != Guid.Empty 
+                && basket.CouponId !=null)
             {
                 var coupon = await _couponRepository.GetCouponById(basket.CouponId.Value);
-                result.BasketTotal = basket.BasketLines.Sum(bl => bl.Quantity * bl.MenuItem.Price) - coupon.Discount;
+
+               // result.BasketTotal = basket.BasketLines.Sum(bl => bl.Quantity * bl.MenuItem.Price) - coupon.Discount;
+                var total = basket.BasketLines.Sum(bl => bl.Quantity * bl.MenuItem.Price);
+                result.BasketTotal = (total - coupon.Discount) < 0 ? 0 : total - coupon.Discount;
+
             }
             else
             {
@@ -49,5 +54,7 @@ namespace Gaolos.Application.Features.ShoppingBasket.Queries.GetBasket
             }
             return result;
         }
+
+
     }
 }

@@ -1,6 +1,10 @@
-﻿using Gaolos.Web.App.Contracts;
+﻿using Blazored.LocalStorage;
+using Fluxor;
+using Gaolos.Web.App.Contracts;
+using Gaolos.Web.App.Store.CartState;
 using Gaolos.Web.App.ViewModels.Basket;
 using Microsoft.AspNetCore.Components;
+using System.Net.NetworkInformation;
 
 namespace Gaolos.Web.App.Components.Cart
 {
@@ -10,38 +14,46 @@ namespace Gaolos.Web.App.Components.Cart
         public NavigationManager NavigationManager { get; set; }
         [Inject]
         public IShoppingBasketService ShoppingBasketService { get; set; }
+   
         [Inject]
         public ApplicationState ApplicationState { get; set; }
-        
+        [Inject]
+        public ILocalStorageService LocalStorageService { get; set; }
 
+    
+        [Inject]
+        public IState<CartSummaryState> CartSummaryState { get; set; }
+        [Inject]
+        public IDispatcher Dispatcher { get; set; }
         public BasketViewModel ?  Basket { get; set; }
         public IEnumerable<BasketLineViewModel> BasketLines { get; set; }
             = new List<BasketLineViewModel>();
 
         protected override async Task OnInitializedAsync()
         {
-            var response = await ShoppingBasketService.CreateBasket();
 
-            Basket = response.Success
-                ? response.Data : new BasketViewModel();
+            Dispatcher.Dispatch(new FetchDataAction());
 
-            if(Basket is not null)
-                ApplicationState.BasketId = Basket.BasketId;
 
             await base.OnInitializedAsync();
+
         }
 
-        public async Task GetBasketLines()
-        {
-            Basket = await ShoppingBasketService.GetBasket(ApplicationState.BasketId);
-            BasketLines = await ShoppingBasketService.GetBasketLines(ApplicationState.BasketId);
-            ApplicationState.NumberOfItems = BasketLines.Count();
-            StateHasChanged();
-        }
+
+
+        //public async Task GetBasketLines()
+        //{
+        //    Basket = await ShoppingBasketService.GetBasket(ApplicationState.BasketId);
+        //    BasketLines = await ShoppingBasketService.GetBasketLines(ApplicationState.BasketId);
+        //    StateHasChanged();
+        //}
         public async Task RemoveItemFromBasket(Guid basketLineId)
         {
-             await ShoppingBasketService.RemoveItemFromBasket(ApplicationState.BasketId, basketLineId);
-             await GetBasketLines();
+            await ShoppingBasketService.RemoveItemFromBasket(CartSummaryState.Value.Basket.BasketId, basketLineId);
+            Dispatcher.Dispatch(new FetchDataAction());
+
+            //await GetBasketLines();
+
         }
 
         private void SwitchToCheckout()

@@ -965,8 +965,24 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\card.min.js",
+      "PackagePath": "staticwebassets\\js\\card.min.js"
+    },
+    {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\carousel.js",
       "PackagePath": "staticwebassets\\js\\carousel.js"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\cleave.min.js",
+      "PackagePath": "staticwebassets\\js\\cleave.min.js"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\data-input-format.js",
+      "PackagePath": "staticwebassets\\js\\data-input-format.js"
+    },
+    {
+      "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\newcard.js",
+      "PackagePath": "staticwebassets\\js\\newcard.js"
     },
     {
       "Id": "C:\\Users\\elsha\\source\\repos\\Gaolos\\Gaolos.Web.App\\wwwroot\\js\\theme.min.js",

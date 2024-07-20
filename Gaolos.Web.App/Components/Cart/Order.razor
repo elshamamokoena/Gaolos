@@ -1,13 +1,28 @@
-﻿
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@if(CartSummaryState.Value.IsLoading)
+{
+    <Loader/>
+
+}else
+{
+    @if(_emptyBasket)
+    {
+        <EmptyCartMessage></EmptyCartMessage>
+    }
+    else
+    {
+        
+
 <div class="px-3 px-sm-4 px-xl-5 pt-1 pb-4 pb-sm-5">
     <div class="row">
         <!-- Items in cart-->
         <div class="col-lg-8 col-md-7 pt-sm-2">
 
-          
 
-     
-                @foreach(var item in BasketLines)
+
+
+            @foreach (var item in CartSummaryState.Value.BasketLines)
                 {
                     
             <!-- Item-->
@@ -21,9 +36,9 @@
                         <div class="fs-lg text-accent pt-2">@($"R{item.MenuItem?.Price}")@* <small>00</small> *@</div>
                     </div>
                 </div>
-                <div class="pt-2 pt-sm-0 ps-sm-3 mx-auto mx-sm-0 text-center text-sm-start" style="max-width: 9rem;">
+                <div class="form-group pt-2 pt-sm-0 ps-sm-3 mx-auto mx-sm-0 text-center text-sm-start" style="max-width: 9rem;">
                     <label class="form-label" for="quantity1">Quantity</label>
-                    <input @bind-value="item.Quantity" @bind-value:event="oninput" @onclick="async()=>await UpdateBasketLine(item)" class="form-control" type="number" id="quantity1"  min="1">
+                            <input @bind-value="item.Quantity" @bind-value:event="oninput"  @onchange="async()=>await UpdateBasketLine(item)" class="form-control" type="number" id="quantity1" min="1">
                     <button @onclick="async()=>await RemoveItemFromBasket(item.BasketLineId)" class="btn btn-link px-0 text-danger" type="button"><i class="ci-close-circle me-2"></i><span class="fs-sm">Remove</span></button>
                 </div>
             </div>
@@ -73,7 +88,7 @@
             <div class="rounded-3 bg-secondary px-3 px-sm-4 py-4">
                 <div class="text-center mb-4 pb-3 border-bottom">
                     <h3 class="h5 mb-3 pb-1">Total</h3>
-                    <h4 class="fw-normal">R @Basket.BasketTotal @* <small>00</small> *@</h4>
+                    <h4 class="fw-normal">R @CartSummaryState.Value.Basket.BasketTotal @* <small>00</small> *@</h4>
                 </div>
               @*   <div class="mb-4">
                     <label class="form-label mb-3" for="order-comments"><span class="badge bg-info fs-xs me-2">Note</span>Additional comments</label>
@@ -81,9 +96,12 @@
                 </div> *@
                 <h3 class="h6 mb-4">Apply promo code</h3>
                 <EditForm OnValidSubmit="ApplyCoupon" Model="@Coupon" class="needs-validation" method="post" novalidate>
+                    <DataAnnotationsValidator/>
                     <div class="mb-3">
                         <InputText @bind-Value="@Coupon.Code" class="form-control" type="text" placeholder="Promo code" required/>
-                        <div class="invalid-feedback">Please provide promo code.</div>
+                        <div class="invalid-feedback">
+                            <ValidationMessage For="@(()=> Coupon.Code)" />
+                        </div>
                     </div>
                     <button class="btn btn-outline-primary d-block w-100" type="submit">Apply promo code</button>
                 </EditForm>
@@ -92,3 +110,6 @@
         </div>
     </div>
 </div>
+    }
+
+}
